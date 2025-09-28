@@ -13,4 +13,4 @@ with open("high_scores.csv", "w") as file:
     writer.writerow(["name", "score"])
     writer.writerow(high_scores)   # ❌ PROBLEM
 
-
+print("Hello World")
