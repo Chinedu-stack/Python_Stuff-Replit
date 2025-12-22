@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+    <h2>This is the Home Page</h2>
+    <p>Welcome! This content replaces the content block in base.html</p>
+    <p>Yo what is {{username}} doing</p>
+    <h1>hello</h1>
+    <h2>Sports i play: </h2>
+    <ul>
+        {% for sport in sports %}
+          <li>{{sport}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

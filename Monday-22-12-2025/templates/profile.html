@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{username}}'s First excersize{% endblock %}
+
+{% block content %}
+<h2>Grettings from {{username}}</h2>
+<h3>{{username}}'s hobbies: </h3>
+<ul>
+    {% for hobby in hobbies %}
+      <li>{{hobby}}</li>
+    {% endfor %}
+</ul>
+<p>{{username}}'s favourite quote:</p>
+<p>{{quote}}</p>
+{% if is_admin  %}
+  <a href="https://www.youtube.com/watch?v=rhiODh-mtRs/">FOOTBALL</a>
+{% else %}
+  <p>NO FOOTBALL FOR YOU {{username}} YOU HAVE TO BE ADMIN TO GET THAT HEHEHEHAA</p>
+{% endif %}
+{% endblock %}
