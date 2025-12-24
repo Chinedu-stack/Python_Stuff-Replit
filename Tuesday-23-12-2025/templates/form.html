@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Simple Form</h2>
+
+<form method="GET" action="/result/">
+    <input type="text" name="sport">
+    <input type="number" name="number">
+    <input type="text"name="color">
+    <button type="submit">Send</button>
+</form>
+{% endblock %}

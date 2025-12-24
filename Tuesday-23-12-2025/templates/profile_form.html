@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>User Profile Form</h2>
+
+<form method="GET" action="/profile_result/">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age">
+
+    <label for="sport">Sport:</label>
+    <input type="text" name="sport" id="sport">
+
+    <label for="color">Color:</label>
+    <input type="text" name="color" id="color">
+
+    <label for="hobby">Hobby:</label>
+    <input type="text" name="hobby" id="hobby">
+
+    <button type="submit">Send</button>
+</form>
+
+
+
+{% endblock %}

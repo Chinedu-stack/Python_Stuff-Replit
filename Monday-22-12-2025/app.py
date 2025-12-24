@@ -21,7 +21,7 @@ def login():
     username = "Jayden"
     hobbies = ["Eating", "Swimming", "Watching anime"]
     quote = "It's not about how many times you eat poo. It's about how many times you get back up - Some random Guy"
-    is_admin = False
+    is_admin = True
     return render_template('profile.html', username=username, hobbies=hobbies, quote=quote, is_admin=is_admin)
 
 
