@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header { background-color: #f0f0f0; padding: 10px; }
+        footer { background-color: #f0f0f0; padding: 10px; margin-top: 20px; text-align: center; }
+        main { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Welcome to My Flask App{% endblock %}</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        {% block footer %}© 2025 Flask Lessons{% endblock %}
+    </footer>
+</body>
+</html>

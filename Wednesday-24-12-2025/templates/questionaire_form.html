@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Questionaire!!!</h1>
+
+{% if error %}
+  {{error}}
+{% endif %}
+
+<form action="/processing/" method="POST">
+    <label for="name" id="name">Name:</label>
+    <input  type="text" id="name" name="name">
+
+    <label for="food" id="food">Favourite Food:</label>
+    <input type="text" id="food" name="food">
+
+    <label for="color" id="color">Favourite Color:</label>
+    <input type="text" id="color" name="color">
+ 
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
