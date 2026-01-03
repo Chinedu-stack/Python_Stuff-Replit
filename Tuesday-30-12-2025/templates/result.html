@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block header %}You have submitted {{number}} foods.{% endblock %}
+{% block content %}
+
+
+{% if number == 1 %}
+    <p>Good you don't eat too much food</p>
+{% elif number == 2 %}
+    <p>Okay that is kind of a lot of food</p>
+{% elif number == 3 %}
+    <p>You are fat ma boy.WORD</p>
+{% endif %}
+
+<ul>
+    {% for item in clean_food %}
+        <li>{{item}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
