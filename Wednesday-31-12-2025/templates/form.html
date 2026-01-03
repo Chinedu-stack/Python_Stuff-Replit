@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Your list of animals:</h2>
+
+{% if animals %}
+  <ul>
+      {% for animal, sound in animals.items() %}
+        <li>The {{animal}} makes the sound {{sound}}</li>
+      {% endfor %}
+
+  </ul>
+{% endif %} 
+
+
+<form method="POST" action="/animals/">
+
+    <label for="Animal">Animal:</label>
+    <input type="text" name="Animal" id="Animal">
+
+    <label for="Sound">Sound:</label>
+    <input type="text" name="Sound" id="Sound">
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+
+{% endblock %}

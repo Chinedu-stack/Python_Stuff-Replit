@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+    {% for animal, sound in animals.items() %}
+        {% if sound == "Roar" %}
+            <li>The {{animal}} is special because it makes the {{sound}} sound</li>
+        {% else %}
+            <li>The {{animal}} makes the sound {{sound}}</li>
+        {% endif %}
+    {% endfor %}
+
+</ul>
+{% endblock %}
