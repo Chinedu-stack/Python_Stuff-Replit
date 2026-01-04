@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}<h1>Student Dashboard</h1>{% endblock %}
+
+{% block content %}
+
+{% if not students %}
+    <p>Sorry mate there are no students.But do you want to add some more click down below.</p>
+{% else %}
+    {% for student in students %}
+        <div>
+            {% for key, value in student.items() %}
+                <p><b>{{key}}</b>:{{value}}</p>
+            {% endfor %}
+
+            {% if student["iq"] > 100 %}
+                <p><i>Damn {{student["Name"]}} has a very high iq of {{student["iq"]}}</i></p>
+            {% endif %}
+            <hr>
+        </div>
+    {% endfor %}
+        
+{% endif %}
+
+
+<form action="/form/">
+    <button type="submit">Add New Student</button>
+</form>
+
+{% endblock %}

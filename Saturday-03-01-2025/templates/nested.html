@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for thing in players %}
+  <div>
+        {% for key, value in thing.items() %}
+            <p><b>{{key}}</b>: {{value}}</p>
+        {% endfor %}
+        <hr>
+  </div>
+    
+{% endfor %}
+
+
+
+{% endblock %}

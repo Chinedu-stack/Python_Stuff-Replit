@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}<h1>Student Form</h1>{% endblock %}
+
+{% block content %}
+
+<form method="POST" action="/processing/">
+  
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required><br>
+
+    <label for="sport">Sport</label>
+    <input type="text" name="sport" id="sport" required><br>
+
+    <label for="instrument">Instrument</label>
+    <input type="text" name="instrument" id="instrument" required><br>
+
+    <label for="iq">IQ</label>
+    <input type="number" name="iq" id="iq" required><br>
+
+    <button type="submit">Add student</button>
+
+</form>
+{% endblock %}
