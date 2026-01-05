@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Name: {{name}}</p>
+<p>Age: {{age}}</p>
+<p>Gender: {{gender}}</p>
+<p>Hobbies: {{hobbies | join(', ')}}</p> 
+
+
+
+{% endblock %}
+
+

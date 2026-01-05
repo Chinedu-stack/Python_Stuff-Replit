@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if errors %}
+    {% for e in errors %}
+        <p style="color:red">{{e}}</p>
+    {% endfor %}
+{% endif %}
+
+<form method="POST" action="/result/">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="{{ name|default('') }}"><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" value="{{ age|default('') }}"><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male" {% if gender == "Male" %}checked{% endif %}> Male
+    <input type="radio" name="gender" value="Female" {% if gender == "Female" %}checked{% endif %}> Female<br><br>
+
+    <label for="hobbies">Hobbies:</label>
+    <select name="hobbies" id="hobbies" multiple>
+        <option value="football" {% if 'football' in hobbies %}selected{% endif %}>Football</option>
+        <option value="music" {% if 'music' in hobbies %}selected{% endif %}>Music</option>
+        <option value="reading" {% if 'reading' in hobbies %}selected{% endif %}>Reading</option>
+        <option value="ice-skating" {% if 'ice-skating' in hobbies %}selected{% endif %}>Ice-skating</option>
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+ 
+</form>
+{% endblock %}
