@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if name %}
+    <P>Your name is {{name}}</P>
+{% endif %}
+
+{% if age %}
+    <p>Your age is {{age}}</p>
+{% endif %}
+
+<ul>
+    {% if hobbies %}
+        <p>Hobbies:</p>
+        {% for hobby in hobbies %}
+            <li>{{hobby}}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
+{% if filename %}
+    <p>{{name}}'s profile picture:</p>
+    <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Uploaded Image" width="200">
+{% endif %}
+
+{% endblock %}

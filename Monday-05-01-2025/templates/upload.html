@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form method="POST" enctype="multipart/form-data" action="/result/">
+    <label for="profile_pic">Profile picture:</label>
+    <input type="file" name="profile_pic">
+    
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age">
+
+    <label for="hobbies">Hobbies:</label>
+    <input type="checkbox" name="hobbies" value="football"> Football
+    <input type="checkbox" name="hobbies" value="music"> Music
+    <input type="checkbox" name="hobbies" value="reading"> Reading
+
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<ul>
+    {% if errors %}
+        {% for error in errors %}
+            <li>{{error}}</li>
+        {% endfor %}
+    {% endif %}
+</ul>
+
+
+
+{% endblock %}
