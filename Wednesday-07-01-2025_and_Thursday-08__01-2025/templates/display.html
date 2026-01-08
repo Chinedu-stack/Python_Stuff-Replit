@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if profile %}
+    <ul>
+        {% for key, value in profile.items()%}
+        <li>
+            {{ key }}:
+            {% if value is iterable and value is not string %}
+                {{ value|join(', ') }}
+            {% else %}
+                {{ value }}
+            {% endif %}
+        </li>
+ 
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if not profile %}
+    <p>No profile stored. Go back to form</p>
+{% endif %}
+
+{% endblock %}

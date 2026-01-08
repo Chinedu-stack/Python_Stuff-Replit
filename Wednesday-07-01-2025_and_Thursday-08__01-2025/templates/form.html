@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form method="POST" action="/">
+    <label for="name">Name</label>
+    <input name="name" id="name" type="text" value="{{ session.get('profile', {}).get('name', '') }}">
+
+    <label for="age">Age</label>
+    <input name="age" id="age" type="number" value="{{ session.get('profile', {}).get('age', '') }}">
+
+    <label>Select hobbies:</label><br>
+    <input type="checkbox" name="hobbies" value="football" {% if 'football' in session.get('profile', {}).get('hobbies', []) %}checked{% endif %}> Football<br>
+    <input type="checkbox" name="hobbies" value="coding" {% if 'coding' in session.get('profile', {}).get('hobbies', []) %}checked{% endif %}> Coding<br>
+    <input type="checkbox" name="hobbies" value="reading" {% if 'reading' in session.get('profile', {}).get('hobbies', []) %}checked{% endif %}> Reading<br>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}
