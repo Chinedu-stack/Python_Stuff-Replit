@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if success %}
+    <p>{{success}}</p>
+{% endif %}
+
+{% if fail %}
+    <p>{{fail}}</p>
+{% endif %}
+
+
+<form method="POST" action="/upload/" enctype="multipart/form-data">
+    <label for="user_file">Submit File</label>
+    <input type="file" name="user_file" id="user_file">
+    <button type="submit" >Submit File</button>
+</form>
+
+{% endblock %}
