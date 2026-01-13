@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+    Welcome {{username}}
+{% endblock %}
+
+{% block content %}
+
+<p>Welcome {{username}} I hope you are having a very good time Chinedu just played well and captained his football team to an 8-1 victory. Hurray!!!</p>
+
+<h3>Press one of the options down below to change the theme of your dashboard:</h3>
+
+<form method="POST" action="/theme/">
+    <label for="theme">Theme options:</label>
+    <input type="radio" name="theme" value="light">Light
+    <input type="radio" name="theme" value="dark">Dark
+
+    <button type="submit">Submit Theme</button>
+</form>
+
+{% endblock %}
