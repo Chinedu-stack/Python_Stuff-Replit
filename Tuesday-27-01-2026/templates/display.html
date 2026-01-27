@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{session["username"]}}'s Files:</h2>
+
+    {% for file in files %}
+        {% if file.endswith(('.png', '.jpg', '.jpeg', '.gif'))%}
+            <li>
+                <img src="{{ url_for('static', filename='uploads/' ~ file) }}" width="150">
+                <p>{{ file }}</p>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ url_for('static', filename='uploads/' ~ file) }}">{{ file }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+
+   <form method="POST" action="/">
+    <button type="submit">Submit another file</button>
+   </form>
+{% endblock %}
