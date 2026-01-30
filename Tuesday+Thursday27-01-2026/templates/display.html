@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>{{session["username"]}}'s Files:</h2>
+    <h2>{{session["name"]["name"]}}'s {{total}} Files:</h2>
 
     {% for file in files %}
         {% if file.endswith(('.png', '.jpg', '.jpeg', '.gif'))%}
@@ -16,7 +16,11 @@
         {% endif %}
     {% endfor %}
 
+   <form method="POST" action="/file/">
+        <button type="submit">Submit another file</button>
+   </form>
+   
    <form method="POST" action="/">
-    <button type="submit">Submit another file</button>
+        <buton type="submit">Create new session</buton>
    </form>
 {% endblock %}
