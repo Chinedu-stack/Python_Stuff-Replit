@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Welcome {{session[username]["name"]}}</h1>
+
+{% if error %}
+    <p>{{error}}</p>
+{% endif %}
+
+
+<form action="/upload_file/" method="POST">
+    <button type="submit">Add new file</button>
+</form>
+
+<form action="/display/" method="POST">
+    <button type="submit">Display files</button>
+</form>
+
+<form action="/switch_user/" method="POST">
+    <button type="submit">Switch user</button>
+</form> 
+
+<form action="/new_user/" method="POST">
+    <button type="submit">Create new user</button>
+</form>
+
+{% endblock %}

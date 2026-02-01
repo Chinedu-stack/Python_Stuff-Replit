@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My App{% endblock %}</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.85);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #34495e;
+        }
+
+        /* -------- BUTTON STYLING -------- */
+        button {
+            background: #34495e;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px; /* ADD SPACE BETWEEN BUTTONS */
+        }
+
+        button:hover {
+            background: #2c3e50;
+        }
+
+        /* Optional: container for horizontal buttons */
+        .button-container {
+            display: flex;       /* arrange buttons in a row */
+            gap: 15px;           /* space between buttons */
+            flex-wrap: wrap;     /* wrap to next line if too many buttons */
+            justify-content: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        My Cool App
+    </header>
+    <main>
+        <div class="container">
+            {% block content %}
+            <!-- Page content goes here -->
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        &copy; 2026 My Cool App
+    </footer>
+</body>
+</html>
