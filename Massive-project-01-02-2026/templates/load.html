@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if error %}
+    <p>{{error}}</p>
+{% endif %}
+
+<form method="POST" action="/check_users/">
+    <label for="name">Enter user you wish to login as:</label>
+    <input name="name" type="text" id="name">
+    <button type="submit">Login in</button>
+</form>
+
+
+<form method="POST" action="/load_dashboard/">
+    <button type="submit">Return to dashboard</button>
+</form>
+{% endblock %}

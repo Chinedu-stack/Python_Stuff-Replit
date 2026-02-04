@@ -14,6 +14,13 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 user_database = {}
 total = 0
 
+#------helper function to safely get the current user
+def get_current_user():
+    if not session:
+        return None
+    return next(iter(session.keys()))
+
+
 # ------------------ HOME ------------------
 @app.route("/")
 def home():
@@ -44,7 +51,9 @@ def submit():
 @app.route("/file/", methods=["POST"])
 def files():
     uploaded_file = request.files.get("file", "")
-    username = list(session.keys())[0]
+    username = get_current_user()
+    if not username:
+        return redirect(url_for("home"))
 
     if uploaded_file and uploaded_file.filename != "":
         filename = secure_filename(uploaded_file.filename)
@@ -65,38 +74,53 @@ def files():
 # ------------------ DISPLAY ------------------
 @app.route("/display/", methods=["GET", "POST"])
 def display():
-    username = list(session.keys())[0]
+    username = get_current_user()
+    if not username:
+        return redirect(url_for("home"))
     files = session[username]["files"]
     total = len(files)
     return render_template("display.html", username=username, total=total, files=files)
 
 
 # ------------------ DASHBOARD ------------------
-@app.route("/dashboard/", methods=["GET", "POST"])
+@app.route("/dashboard/", methods=["GET"])
 def dashboard():
-    username = list(session.keys())[0]
+    username = get_current_user()
+    if not username:
+        return redirect(url_for("home"))
     files = session[username]["files"]
     return render_template("dashboard.html", username=username, files=files)
 
 
+@app.route("/load_dashboard/", methods=["POST"])
+def dashboard_get():
+    return redirect(url_for("dashboard"))
+
 # ------------------ SWITCH USERS ------------------
 @app.route("/switch_user/", methods=["POST"])
 def switch_user():
-    username = list(session.keys())[0]
-    user_database.setdefault(username, {"name": username, "files": []})
+    username = get_current_user()
+    if not username:
+        return redirect(url_for("home"))
+    files = session[username]["files"]
+    user_database.setdefault(username, {"name": username, "files": files})
     user_database[username]["files"] = list(session[username]["files"])
 
     session.clear()
-    return redirect(url_for("home"))  # redirect to home to choose a new user
+    return redirect(url_for("load"))  # redirect to home to choose a new user
 
+#  loads form to input name of user you want to login as
+@app.route("/load_user/", methods=["POST", "GET"])
+def load():
+    return render_template("load.html")
 
 # ------------------ CHECK USERS ------------------
-@app.route("/check_users", methods=["POST"])
+@app.route("/check_users/", methods=["POST"])
 def check():
     name = request.form.get("name", "").strip()
     if not name:
         error = "Please fill out the name box. Please try again"
-        return render_template("login.html", error=error)
+        return render_template("load.html", error=error)
 
     if name in user_database:
         username = user_database[name]["name"]
@@ -107,7 +131,7 @@ def check():
         return redirect(url_for("dashboard"))  # redirect to dashboard
     else:
         error = "Name is not found in the user database. Please try again."
-        return render_template("login.html", error=error)
+        return render_template("load.html", error=error)
 
 
 # ------------------ CREATE NEW USER ------------------
