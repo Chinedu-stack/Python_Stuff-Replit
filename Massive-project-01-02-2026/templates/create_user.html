@@ -3,13 +3,13 @@
 {% block content %}
 
 {% if error %}
-    <p>{{error}}</p>
+    <p style="color:red;">{{ error }}</p>
 {% endif %}
 
-
-<form method="POST" action="/session_create/">
-    <label for="name" id="name">Create User:</label>
-    <input type="text" name="name">
+<form method="POST" action="{{ url_for('create_user') }}">
+    <label for="name">Create User:</label>
+    <input type="text" name="name" id="name">
     <button type="submit">Submit</button>
 </form>
+
 {% endblock %}
