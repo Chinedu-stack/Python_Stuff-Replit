@@ -60,7 +60,7 @@ def dashboard():
 def upload():
     return render_template("upload_files.html")
 
-@app.route("/upload", methods=["POST", "GET"])
+@app.route("/upload", methods=["POST"])
 def post_file():
     username = get_current_user()
     if not username:
@@ -120,6 +120,7 @@ def load_user():
     return render_template("load.html")
 
 #-----------------Check If User to switch user exists---------------------
+
 @app.route("/check_user", methods=["POST"])
 def load_existing_user():
     name = request.form.get("name", "").strip()

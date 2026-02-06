@@ -6,13 +6,13 @@
     {{error}}
 {% endif %}
 
-<form methods="POST" action="/check_users_get/">
+<form methods="POST" action="/check_user">
     <label for="name">Enter name of session you wish to access</label>
     <input type="text" name="name" id="name">
     <button type="submit">Submit</button>
 </form>
 
-<form methods="POST" action="/load_dashboard/">
+<form methods="POST" action="/dashboard">
     <button type="submit">Go back to dashboard</button>
 </form>
 {% endblock %}
