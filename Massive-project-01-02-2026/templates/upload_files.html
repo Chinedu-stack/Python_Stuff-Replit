@@ -2,9 +2,19 @@
 
 {% block content %}
 
-<form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+{% if error %}
+    <p style="color:red;">{{error}}</p>
+{% endif %}
+
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
     <input type="file" name="file">
     <button type="submit">Submit</button>
+</form>
+
+
+<form method="POST" action="/dashboard">
+    <button type="submit">Return to dashboard</button>
 </form>
 
 {% endblock %}

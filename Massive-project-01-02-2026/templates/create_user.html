@@ -6,7 +6,7 @@
     <p style="color:red;">{{ error }}</p>
 {% endif %}
 
-<form method="POST" action="{{ url_for('create_user') }}">
+<form method="POST" action="/create_user">
     <label for="name">Create User:</label>
     <input type="text" name="name" id="name">
     <button type="submit">Submit</button>

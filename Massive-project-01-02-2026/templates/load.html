@@ -6,13 +6,13 @@
     <p style="color:red;">{{ error }}</p>
 {% endif %}
 
-<form method="POST" action="{{ url_for('load_existing_user') }}">
+<form method="POST" action="/check_user">
     <label for="name">Enter user you wish to login as:</label>
     <input name="name" type="text" id="name">
     <button type="submit">Log in</button>
 </form>
 
-<form method="GET" action="{{ url_for('dashboard') }}">
+<form method="POST" action="/dashboard">
     <button type="submit">Return to dashboard</button>
 </form>
 

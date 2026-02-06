@@ -9,11 +9,11 @@ UPLOAD_FOLDER = os.path.join(app.root_path, "static", "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-# Fake database (RAM only)
+
 user_database = {}
 
 
-# ------------------ HELPERS ------------------
+# ------------------ GET CURRENT USER ------------------
 
 def get_current_user():
     return session.get("current_user")
@@ -44,7 +44,7 @@ def create_user():
 
 # ------------------ DASHBOARD ------------------
 
-@app.route("/dashboard", methods=["GET"])
+@app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
     username = get_current_user()
     if not username:
@@ -56,8 +56,12 @@ def dashboard():
 
 # ------------------ UPLOAD FILE (PRG) ------------------
 
-@app.route("/upload", methods=["POST"])
+@app.route("/file", methods=["POST"])
 def upload():
+    return render_template("upload_files.html")
+
+@app.route("/upload", methods=["POST", "GET"])
+def post_file():
     username = get_current_user()
     if not username:
         return redirect(url_for("home"))
@@ -73,13 +77,14 @@ def upload():
         user_folder = os.path.join(app.config["UPLOAD_FOLDER"], username)
         os.makedirs(user_folder, exist_ok=True)
         uploaded_file.save(os.path.join(user_folder, filename))
-
-    return redirect(url_for("dashboard"))
+        return redirect(url_for("dashboard"))
+    else:
+        return render_template("upload_files.html", error="Please enter file name")
 
 
 # ------------------ DISPLAY FILES ------------------
 
-@app.route("/display", methods=["GET"])
+@app.route("/display", methods=["GET","POST"])
 def display():
     username = get_current_user()
     if not username:
@@ -101,13 +106,12 @@ def switch_user():
     username = get_current_user()
     if not username:
         return redirect(url_for("home"))
-
+#--Save session info in database
     user_database[username] = {
         "name": username,
         "files": list(session[username]["files"])
     }
-
-    session.clear()
+ 
     return redirect(url_for("load_user"))
 
 
@@ -115,13 +119,16 @@ def switch_user():
 def load_user():
     return render_template("load.html")
 
-
-@app.route("/load_user", methods=["POST"])
+#-----------------Check If User to switch user exists---------------------
+@app.route("/check_user", methods=["POST"])
 def load_existing_user():
     name = request.form.get("name", "").strip()
 
+    if not name:
+            return render_template("load.html", error="Please enter user")
     if name not in user_database:
         return render_template("load.html", error="User not found")
+
 
     session.clear()
     session["current_user"] = name
