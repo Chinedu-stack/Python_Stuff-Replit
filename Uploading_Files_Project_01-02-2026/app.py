@@ -38,6 +38,8 @@ def create_user():
     session.clear()
     session["current_user"] = name
     session[name] = {"name": name, "files": []}
+    #-----store user in database
+    user_database[name] = {"name": name, "files":[]}  
 
     return redirect(url_for("dashboard"))
 
