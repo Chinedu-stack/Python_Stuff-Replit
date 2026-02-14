@@ -38,12 +38,7 @@ def create_user():
     session.clear()
     session["current_user"] = name
     session[name] = {"name": name, "files": []}
-<<<<<<< HEAD:Uploading_Files_Project_01-02-2026/app.py
-    #-----store user in database
-    user_database[name] = {"name": name, "files":[]}  
-=======
     user_database[name] = {"name":name, "files":[]}
->>>>>>> 16b5f46587088ac93ab84c144e9f519ccadf4ee8:Massive-project-01-02-2026/app.py
 
     return redirect(url_for("dashboard"))
 
