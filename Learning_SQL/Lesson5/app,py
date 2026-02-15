@@ -1,0 +1,45 @@
+import sqlite3
+import os
+
+# --- FILE PATH
+basedir = os.path.abspath(os.path.dirname(__file__))
+db_path = os.path.join(basedir, "study_tracker.db")
+
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+cursor.execute("""CREATE TABLE IF NOT EXISTS sessions(
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
+               subject TEXT NOT NULL,
+               topic TEXT NOT NULL,
+               duration REAL NOT NULL,
+               date TEXT NOT NULL
+               )""")
+
+###----Insert values function
+def add(subject, topic, duration, date):
+    cursor.execute("INSERT INTO sessions (subject, topic, duration, date) VALUES (?,?,?,?)", (subject, topic, duration, date))
+    conn.commit()
+
+#### -----FILTERING SUBROUTINE----------
+
+def where(column, value):
+
+    allowed_columns = ["subject", "topic", "duration", "date"]
+
+    if column not in allowed_columns:
+        print("Invalid column name")
+        return
+
+    query = f"SELECT * FROM sessions WHERE {column} = ?"
+
+    cursor.execute(query, (value,))
+    rows = cursor.fetchall()
+
+    for row in rows:
+        print(row)
+
+
+
+where("date", "1/1/2026")
+
