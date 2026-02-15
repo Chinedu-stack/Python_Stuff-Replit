@@ -39,7 +39,23 @@ def where(column, value):
     for row in rows:
         print(row)
 
+# add("biology", "kinestetic", 6, "monday")
+# add("biology", "glucose", 5, "tuesday")
+# add("thursday", "stuff", 3,"sunday")
+# print("success")
+
+# cursor.execute("""SELECT * FROM sessions
+#                WHERE subject = ? OR duration > ? """, ("biology", 2))
 
 
-where("date", "1/1/2026")
+cursor.execute(
+    "SELECT * FROM sessions WHERE (subject = ? OR subject = ?) AND duration > ?",
+    ("maths", "english", 1)
+)
+
+
+
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
 
