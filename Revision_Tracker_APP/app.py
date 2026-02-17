@@ -8,7 +8,7 @@ app = Flask(__name__)
 conn = None
 cursor = None
 basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "study_tracker.db") ### --- makes sure the db is made in the same folder as the app.py
+db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db") ### --- makes sure the db is made in the same folder as the app.py
 
 
 ### --- LOADS THE LANDING PAGE

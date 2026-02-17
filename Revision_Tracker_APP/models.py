@@ -4,7 +4,7 @@ import helpers
 
 # --- FILE PATH
 basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "study_tracker.db")
+db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db")
 
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
