@@ -28,7 +28,7 @@ def login():
 
     user_bytes_password = password.encode('utf-8')
     if bcrypt.checkpw(user_bytes_password, stored_hash_bytes): ### --- takes the salt from the stored_hash_bytes and hashes user_password with same salt and compares results
-        return "Login successful! Dashboard page coming soon."  ### -- BUILD THE DASHBOARD
+        return render_template("dashboard.html", msg="Login successful! Chinedu is currently building the dashboard.")  ### -- BUILD THE DASHBOARD
     else:
         return render_template("landing.html", error="Email or Password not found")
           
@@ -49,7 +49,7 @@ def register():
     if email and password:
         hashed = helpers.cipher(password) 
         helpers.add(email, hashed)
-        return "Registration successful! Dashboard coming soon." ### --- CREATE DASHBOARD
+        return render_template("dashboard.html", msg="Account Created! Chinedu is currently building the dashboard.") ### --- CREATE DASHBOARD
     else:
         return render_template("create_user.html", error="Please submit an email and password")
     
