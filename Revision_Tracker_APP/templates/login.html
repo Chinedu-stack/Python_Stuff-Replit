@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    The first prototype of chinedu's revision tracker
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+    <p style="color: red;">{{error}}</p>
+{% endif %}
+
+
+<h3>Login in to your account</h3>
+<form method="POST" action="/login">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit">Login</button>
+</form>
+
+
+<a href="/create_user">New to my app. Sign up.</a>
+{% endblock %}

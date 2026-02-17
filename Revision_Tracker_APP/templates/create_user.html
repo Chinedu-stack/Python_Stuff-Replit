@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+
+{% block title %}
+    Creating User Page
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+    <p style="color:red">{{error}}</p>
+{% endif %}
+
+<h2>Create Account</h2>
+<form action="/register" method="POST">
+    <label for="email">Email</label>
+    <input name="email" type="email" id="email" required>
+
+    <label for="password">Password</label>
+    <input name="password" type="password" id="password" required>
+    <button type="submit">Create Account</button>
+</form>
+
+{% endblock %}
