@@ -7,26 +7,32 @@ import helpers
 app = Flask(__name__)
 conn = None
 cursor = None
+basedir = os.path.abspath(os.path.dirname(__file__))
+db_path = os.path.join(basedir, "study_tracker.db") ### --- makes sure the db is made in the same folder as the app.py
 
 
-### --- LOADS LOGIN PAGE
+### --- LOADS THE LANDING PAGE
 @app.route("/", methods=["GET"])
 def landing_page():
-    return render_template("login.html")
+    return render_template("landing.html")
 
 ### --- CHECKS DATABASE FOR INPUTTED EMAIL AND PASSWORD
 @app.route("/login", methods=["POST"])
 def login():
     email = request.form.get("email", "")
     password = request.form.get("password", "")
-    if email and password:
-        stored_hash = helpers.check(email)
-        if bcrypt.checkpw(password.encode('utf-8'), stored_hash):
-            return "Registration successful! Dashboard page coming soon."  ### -- BUILD THE DASHBOARD
-        else:
-            return render_template("login.html", error="Email or Password not found")
+
+    stored_hash_bytes = helpers.check(email) ### --- Returns the hashed password for the email in bytes
+    if stored_hash_bytes is None: ### - if the email isn't in database check function returns none
+            return render_template("landing.html", error="Email or Password not found")
+
+    user_bytes_password = password.encode('utf-8')
+    if bcrypt.checkpw(user_bytes_password, stored_hash_bytes): ### --- takes the salt from the stored_hash_bytes and hashes user_password with same salt and compares results
+        return "Login successful! Dashboard page coming soon."  ### -- BUILD THE DASHBOARD
     else:
-        return render_template("login.html", error="Please enter Email and Password")
+        return render_template("landing.html", error="Email or Password not found")
+          
+
     
 
 ### --- LOADS CREATE_USER PAGE
@@ -42,9 +48,7 @@ def register():
 
     if email and password:
         hashed = helpers.cipher(password) 
-        helpers.open_db()
         helpers.add(email, hashed)
-        helpers.close_db()
         return "Registration successful! Dashboard coming soon." ### --- CREATE DASHBOARD
     else:
         return render_template("create_user.html", error="Please submit an email and password")
