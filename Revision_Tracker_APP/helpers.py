@@ -11,7 +11,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 db_path = os.path.join(basedir, "Database_Folder", "study_tracker.db")
 
 
-### --- OPEN DATABASE
+### --- OPEN DATABASE 
 def open_db():
     global conn, cursor, db_path
     conn = sqlite3.connect(db_path)
