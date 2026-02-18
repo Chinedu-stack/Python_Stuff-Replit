@@ -7,17 +7,17 @@
 {% block content %}
 
 {% if error %}
-    <p style="color:red">{{error}}</p>
+    <p class="txt" style="color:red">{{error}}</p>
 {% endif %}
 
 <h2>Create Account</h2>
 <form action="/register" method="POST">
-    <label for="email">Email</label>
-    <input name="email" type="email" id="email" required>
+    <label class="txt" for="email">Email</label>
+    <input class="box" name="email" type="email" id="email" required>
 
-    <label for="password">Password</label>
-    <input name="password" type="password" id="password" required>
-    <button type="submit">Create Account</button>
+    <label class="txt" for="password">Password</label>
+    <input class="box" name="password" type="password" id="password" required>
+    <button class="btn" type="submit">Create Account</button>
 </form>
 
 {% endblock %}

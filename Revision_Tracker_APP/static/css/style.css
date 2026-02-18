@@ -1,0 +1,41 @@
+
+
+.btn:hover {
+    background-color: rgb(33, 126, 188);
+    transform: scale(1.001);
+    color: whitesmoke;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body {
+    background-color: #343541;
+}
+
+h1, h2, h3, p{
+    padding: 10px;
+    margin: 20px 0;
+    color:white;
+    text-align: center;
+}
+
+body{
+    font-family:"Roboto", sans-serif;
+}
+
+.box{
+  text-align: center;
+}
+
+.box input{
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+}
+.txt{
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+}

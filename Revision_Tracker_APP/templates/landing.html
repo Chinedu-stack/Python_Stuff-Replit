@@ -7,20 +7,20 @@
 {% block content %}
 
 {% if error %}
-    <p style="color: red;">{{error}}</p>
+    <p class="txt" style="color: red;">{{error}}</p>
 {% endif %}
 
 
 <h3>Login in to your account</h3>
 <form method="POST" action="/login">
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required>
+    <label class="txt" for="email">Email</label>
+    <input  class="box" type="email" name="email" id="email" required>
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <button type="submit">Login</button>
+    <label class="txt" for="password">Password</label>
+    <input class="box" type="password" name="password" id="password" required>
+    <button class="btn" type="submit">Login</button>
 </form>
 
 
-<a href="/create_user">New to my app. Sign up.</a>
+<a class="txt" href="/create_user">New to my app. Sign up.</a>
 {% endblock %}
