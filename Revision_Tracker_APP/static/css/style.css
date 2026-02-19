@@ -78,3 +78,13 @@ button:hover {
     border-radius: 10px;
     padding: 7px;
 }
+
+.logout {
+  display: flex; 
+  flex-direction: row;               
+  justify-content: flex-start;    
+  align-items: flex-start;      
+  height: 100px;                
+  border: none; 
+    
+}

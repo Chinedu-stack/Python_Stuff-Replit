@@ -4,4 +4,10 @@
     {% if msg %}
         <h2 class="form-box2">{{msg}}</h2>
     {% endif %}
+
+    <form action="/logout" method="POST" class="logout">
+        <button type="submit">Logout</button>
+    </form>
 {% endblock %}
+
+

@@ -60,5 +60,9 @@ def register():
         return render_template("create_user.html", error="Please submit an email and password")
     
 
+@app.route("/logout", methods=["POST"])
+def logout():
+    return redirect(url_for("landing_page"))
+
 if __name__ == "__main__":
     app.run(debug=True)
