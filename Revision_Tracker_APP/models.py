@@ -9,11 +9,9 @@ db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db")
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
-cursor.execute("""CREATE TABLE IF NOT EXISTS users(
-               id INTEGER PRIMARY KEY AUTOINCREMENT,
-               email TEXT NOT NULL,
-               hashed_password TEXT NOT NULL)""")
+cursor.execute("""DELETE FROM sqlite_sequence WHERE name='users'""")
 
 conn.commit()
 conn.close()
+
 print("success")
