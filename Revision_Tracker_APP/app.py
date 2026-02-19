@@ -16,6 +16,12 @@ db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db") ### --- ma
 def landing_page():
     return render_template("landing.html")
 
+### --- LOADS THE DASHBOARD
+@app.route("/dashboard", methods=["GET"])
+def dashboard():
+    msg = request.args.get('msg')
+    return render_template("dashboard.html", msg=msg)
+
 ### --- CHECKS DATABASE FOR INPUTTED EMAIL AND PASSWORD
 @app.route("/login", methods=["POST"])
 def login():
@@ -28,9 +34,9 @@ def login():
 
     user_bytes_password = password.encode('utf-8')
     if bcrypt.checkpw(user_bytes_password, stored_hash_bytes): ### --- takes the salt from the stored_hash_bytes and hashes user_password with same salt and compares results
-        return render_template("dashboard.html", msg="Login successful! Chinedu is currently building the dashboard.")  ### -- BUILD THE DASHBOARD
-    else:
-        return render_template("landing.html", error="Email or Password not found")
+        return redirect(url_for("dashboard", msg="Login successful! Chinedu is currently building the dashboard." ))
+    
+    return render_template("landing.html", error="Email or Password not found")
           
 
     
@@ -49,7 +55,7 @@ def register():
     if email and password:
         hashed = helpers.cipher(password) 
         helpers.add(email, hashed)
-        return render_template("dashboard.html", msg="Account Created! Chinedu is currently building the dashboard.") ### --- CREATE DASHBOARD
+        return redirect(url_for("dashboard", msg="Account created! Chinedu is currently building the dashboard." )) ### --- CREATE DASHBOARD
     else:
         return render_template("create_user.html", error="Please submit an email and password")
     

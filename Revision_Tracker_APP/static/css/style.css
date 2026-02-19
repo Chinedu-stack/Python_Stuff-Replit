@@ -45,6 +45,21 @@ button:hover {
     text-align: center;
     
 }
+
+.form-box2 {
+    display: flex;                
+    justify-content: center;      
+    align-items: center;          
+    background-color: white;
+    width: 500px;
+    height: 125px;
+    border-radius: 10px;
+    color: rgb(13, 180, 209);
+    text-align: center; 
+    margin: 20px auto;
+    margin-top: 60px;
+}
+
 .form-box input{
     width: 200px;
 
