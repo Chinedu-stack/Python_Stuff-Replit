@@ -8,7 +8,7 @@
         
 
         <div class="child-container">
-            <form action="/add_task" method="POST">
+            <form action="/create_task" method="POST">
                 <label for="name" >Timetable Name:</label>
                 <input name="name" id="name" type="text" required>
 
@@ -16,7 +16,12 @@
                 <input name="start-date" id="start-date" type="date" required>
 
                 <label for="end-date">End Date:</label>
-                <input name="end-date" id="start-date" type="date" required>
+                <input name="end-date" id="end-date" type="date" required>
+
+                <label for="duration">Duration (mins):</label>
+                <input type="number" id="duration" name="duration" required >
+
+                <button type="submit" class="button2">Create New Timetable</button>
 
 
             </form>

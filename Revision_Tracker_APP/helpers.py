@@ -53,3 +53,22 @@ def check(email):
     else:
         close_db()
         return None
+    
+### --- GETS USER ID FROM TABLE OF USERS
+def get_user_id(current_user,):
+    open_db()
+    cursor.execute("""SELECT id FROM users
+                   WHERE email = ?""", (current_user,))
+    user_id = cursor.fetchone()
+    close_db()
+    if user_id:
+        return user_id[0]
+        
+    return None
+    
+### --- ADDS CREATED TIMETABLE TO DATABASE
+def add_task(user_id, timetable_name, start_date, end_date, duration):
+    open_db()
+    cursor.execute("""INSERT INTO timetables (user_id, timetable_name, start_date, end_date, duration)
+                   VALUES (?,?,?,?,?)""", (user_id, timetable_name, start_date, end_date, duration))
+    close_db()

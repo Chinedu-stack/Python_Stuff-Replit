@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template, redirect, url_for, session
-from werkzeug.utils import secure_filename
 import os
 import bcrypt
 import sqlite3
 import helpers
 app = Flask(__name__)
+app.secret_key = "your_super_secret_key_here"
 conn = None
 cursor = None
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -15,6 +15,11 @@ db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db") ### --- ma
 @app.route("/", methods=["GET"])
 def landing_page():
     return render_template("landing.html")
+
+
+@app.route("/logout", methods=["POST"])
+def logout():
+    return redirect(url_for("landing_page"))
 
 ### --- LOADS THE DASHBOARD
 @app.route("/dashboard", methods=["GET"])
@@ -34,6 +39,7 @@ def login():
 
     user_bytes_password = password.encode('utf-8')
     if bcrypt.checkpw(user_bytes_password, stored_hash_bytes): ### --- takes the salt from the stored_hash_bytes and hashes user_password with same salt and compares results
+        session["current_user"] = email
         return redirect(url_for("dashboard", msg="Login successful! Chinedu is currently building the dashboard." ))
     
     return render_template("landing.html", error="Email or Password not found")
@@ -60,10 +66,7 @@ def register():
         return render_template("create_user.html", error="Please submit an email and password")
     
 
-@app.route("/logout", methods=["POST"])
-def logout():
-    return redirect(url_for("landing_page"))
-
+### --- Loads add timetable page
 @app.route("/add_task", methods=["POST"])
 def add_task():
     return redirect(url_for("load_add_task"))
@@ -71,6 +74,18 @@ def add_task():
 @app.route("/load_add_task", methods=["GET"])
 def load_add_task():
     return render_template("add_timetable.html")
+
+### --- Creates timetable and stores it
+@app.route("/create_task", methods=["POST"])
+def create_task():
+    timetable_name = request.form.get("name", "")
+    duration = request.form.get("duration", "")
+    start_date = request.form.get("start-date", "")
+    end_date = request.form.get("end-date", "") 
+    current_user = session["current_user"]
+    user_id = helpers.get_user_id(current_user)
+    helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

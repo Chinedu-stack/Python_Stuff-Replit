@@ -45,7 +45,7 @@ button:hover {
     margin: 20px auto;
     border-radius: 10px;   
     width: 250px;
-    height: 125px;
+    height: 175px;
     text-align: center;
     color: black ;
     
@@ -67,6 +67,7 @@ button:hover {
 
 .form-box input{
     width: 200px;
+    margin: 10px auto;
 
 }
 
@@ -122,6 +123,7 @@ button:hover {
     padding: 15px;
     border-radius: 10px;
     background-color: white;
+    flex-direction: column;
     
 }
 
@@ -151,9 +153,22 @@ button:hover {
     display: flex;
     justify-content: center;  
     align-items: center;
-    background-color: None;
+    background-color: none;
     color: black; 
-    border: None; 
+    border: none; 
     border-radius: 15px;
+}
+
+.button2 {
+    background-color: #414044;
+    color: #ffffff;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    margin-top: 15px;
+    width: 110px;
+    height: 50px;
+
 }
 
