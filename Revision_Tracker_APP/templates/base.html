@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}My Site{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    
 </head>
 <body>
 
     <header>
-        <h1>{% block header %}My Revision Tracker{% endblock %}</h1>
+        <h1>{% block header %}{% endblock %}</h1>
     </header>
 
     <main>
@@ -16,6 +17,8 @@
         <!-- Default content goes here -->
         {% endblock %}
     </main>
+
+    
 
 
 

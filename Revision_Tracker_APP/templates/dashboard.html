@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if msg %}
-        <h2 class="form-box2">{{msg}}</h2>
-    {% endif %}
+    <div class="parent-container1">
+        {% if msg %}
+            <h2 class="form-box2">{{msg}}</h2>
+        {% endif %}
 
-    <form action="/logout" method="POST" class="logout">
-        <button type="submit">Logout</button>
-    </form>
+        <div class="child-container-button">
+            <form action="/logout" method="POST">
+                <button class="btn" type="submit">Logout</button>
+            </form>
+        </div>
+
+        <div class="child-container-button">
+            <form action="/add_task" method="POST">
+                <button class="btn" type="submit">Add Timetable</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
 
 
