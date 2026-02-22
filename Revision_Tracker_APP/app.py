@@ -64,5 +64,13 @@ def register():
 def logout():
     return redirect(url_for("landing_page"))
 
+@app.route("/add_task", methods=["POST"])
+def add_task():
+    return redirect(url_for("load_add_task"))
+
+@app.route("/load_add_task", methods=["GET"])
+def load_add_task():
+    return render_template("add_timetable.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="parent-container2">
+        <div class="child-container">
+            <h2>Add New Timetable</h2>
+        </div>
+        
+
+        <div class="child-container">
+            <form action="/add_task" method="POST">
+                <label for="name" >Timetable Name:</label>
+                <input name="name" id="name" type="text" required>
+
+                <label for="start-date">Start Date: </label>
+                <input name="start-date" id="start-date" type="date" required>
+
+                <label for="end-date">End Date:</label>
+                <input name="end-date" id="start-date" type="date" required>
+
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
