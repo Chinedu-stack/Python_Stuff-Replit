@@ -73,7 +73,18 @@ def add_task(user_id, timetable_name, start_date, end_date, duration):
                    VALUES (?,?,?,?,?)""", (user_id, timetable_name, start_date, end_date, duration))
     close_db()
 
+### --- FETCHES TASKS FOR THAT USER FROM DB
 def display(current_user):
     open_db()
+    
     user_id = get_user_id(current_user)
-    cursor.execute("SELECT FROM timetables ")
+    open_db()
+    cursor.execute("""SELECT timetable_name, duration FROM timetables
+                   WHERE user_id = ? """, (user_id,))
+    rows = cursor.fetchall()   
+    close_db()
+    tasks = {}
+    for i, row in enumerate(rows):
+        tasks[i+1] = {"task": row[0], "duration": row[1]}
+    return tasks
+    

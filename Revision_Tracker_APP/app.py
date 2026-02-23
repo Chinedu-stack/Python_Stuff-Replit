@@ -16,6 +16,7 @@ db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db") ### --- ma
 @app.route("/", methods=["GET"])
 def landing_page():
     return render_template("landing.html")
+    
 
 
 @app.route("/logout", methods=["POST"])
@@ -26,8 +27,11 @@ def logout():
 ### --- LOADS THE DASHBOARD
 @app.route("/dashboard", methods=["GET"])
 def dashboard():
-    msg = request.args.get('msg')
-    return render_template("dashboard.html", msg=msg)
+    current_user = session["current_user"]
+    tasks = helpers.display(current_user)
+    if tasks:
+        return render_template("dashboard.html", tasks=tasks)
+    return render_template("dashboard.html", tasks="No tasks for today.")
 
 ### --- CHECKS DATABASE FOR INPUTTED EMAIL AND PASSWORD
 @app.route("/login", methods=["POST"])
@@ -42,7 +46,7 @@ def login():
     user_bytes_password = password.encode('utf-8')
     if bcrypt.checkpw(user_bytes_password, stored_hash_bytes): ### --- takes the salt from the stored_hash_bytes and hashes user_password with same salt and compares results
         session["current_user"] = email
-        return redirect(url_for("dashboard", msg="Login successful! Chinedu is currently building the dashboard." ))
+        return redirect(url_for("dashboard"))
     
     return render_template("landing.html", error="Email or Password not found")
           
@@ -64,7 +68,7 @@ def register():
         hashed = helpers.cipher(password) 
         helpers.add(email, hashed)
         session["current_user"] = email
-        return redirect(url_for("dashboard", msg="Account created! Chinedu is currently building the dashboard." )) ### --- CREATE DASHBOARD
+        return redirect(url_for("dashboard",)) 
     else:
         return render_template("create_user.html", error="Please submit an email and password")
     
@@ -90,7 +94,6 @@ def create_task():
     end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
     current_user = session["current_user"]
     user_id = helpers.get_user_id(current_user)
-<<<<<<< HEAD
     if start_date < today:
         flash("Please enter valid date.")
         return redirect(url_for("load_add_task"))
@@ -98,10 +101,7 @@ def create_task():
         helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
         flash("Timetable successfully created!!!")
         return redirect(url_for("dashboard"))
-=======
-    helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
-    return redirect(url_for("dashboard"))
->>>>>>> 522329516f766f711574e7264b2e597dbea65055
+
 
 
 if __name__ == "__main__":

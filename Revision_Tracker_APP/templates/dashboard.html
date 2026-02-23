@@ -14,6 +14,13 @@
             {% endif %}
         {% endwith %}
 
+
+        <div class="child-container">
+            {% if tasks %}
+                {{tasks}}
+            {% endif %}
+        </div>
+        
         <div class="child-container-button" >
             <form action="/logout" method="POST">
                 <button class="btn" type="submit">Logout</button>
