@@ -85,6 +85,7 @@ def create_task():
     current_user = session["current_user"]
     user_id = helpers.get_user_id(current_user)
     helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
+    return redirect(url_for("dashboard"))
 
 
 if __name__ == "__main__":

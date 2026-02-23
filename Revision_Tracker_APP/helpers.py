@@ -72,3 +72,8 @@ def add_task(user_id, timetable_name, start_date, end_date, duration):
     cursor.execute("""INSERT INTO timetables (user_id, timetable_name, start_date, end_date, duration)
                    VALUES (?,?,?,?,?)""", (user_id, timetable_name, start_date, end_date, duration))
     close_db()
+
+def display(current_user):
+    open_db()
+    user_id = get_user_id(current_user)
+    cursor.execute("SELECT FROM timetables ")
