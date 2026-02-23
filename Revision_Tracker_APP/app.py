@@ -90,6 +90,7 @@ def create_task():
     end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
     current_user = session["current_user"]
     user_id = helpers.get_user_id(current_user)
+<<<<<<< HEAD
     if start_date < today:
         flash("Please enter valid date.")
         return redirect(url_for("load_add_task"))
@@ -97,6 +98,10 @@ def create_task():
         helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
         flash("Timetable successfully created!!!")
         return redirect(url_for("dashboard"))
+=======
+    helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
+    return redirect(url_for("dashboard"))
+>>>>>>> 522329516f766f711574e7264b2e597dbea65055
 
 
 if __name__ == "__main__":
