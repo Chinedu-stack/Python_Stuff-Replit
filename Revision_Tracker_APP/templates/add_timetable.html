@@ -7,6 +7,15 @@
         </div>
         
 
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="error">{{msg}}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+
         <div class="child-container">
             <form action="/create_task" method="POST">
                 <label for="name" >Timetable Name:</label>

@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import Flask, flash, request, render_template, redirect, url_for, session
 import os
 import bcrypt
 import sqlite3
 import helpers
+from datetime import datetime, date
 app = Flask(__name__)
 app.secret_key = "your_super_secret_key_here"
 conn = None
@@ -19,6 +20,7 @@ def landing_page():
 
 @app.route("/logout", methods=["POST"])
 def logout():
+    session.clear()
     return redirect(url_for("landing_page"))
 
 ### --- LOADS THE DASHBOARD
@@ -61,6 +63,7 @@ def register():
     if email and password:
         hashed = helpers.cipher(password) 
         helpers.add(email, hashed)
+        session["current_user"] = email
         return redirect(url_for("dashboard", msg="Account created! Chinedu is currently building the dashboard." )) ### --- CREATE DASHBOARD
     else:
         return render_template("create_user.html", error="Please submit an email and password")
@@ -78,13 +81,22 @@ def load_add_task():
 ### --- Creates timetable and stores it
 @app.route("/create_task", methods=["POST"])
 def create_task():
+    today = date.today()
     timetable_name = request.form.get("name", "")
     duration = request.form.get("duration", "")
-    start_date = request.form.get("start-date", "")
-    end_date = request.form.get("end-date", "") 
+    start_str = request.form.get("start-date", "")
+    end_str = request.form.get("end-date", "") 
+    start_date = datetime.strptime(start_str, "%Y-%m-%d").date()
+    end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
     current_user = session["current_user"]
     user_id = helpers.get_user_id(current_user)
-    helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
+    if start_date < today:
+        flash("Please enter valid date.")
+        return redirect(url_for("load_add_task"))
+    else:
+        helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
+        flash("Timetable successfully created!!!")
+        return redirect(url_for("dashboard"))
 
 
 if __name__ == "__main__":
