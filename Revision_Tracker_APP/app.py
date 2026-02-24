@@ -9,6 +9,7 @@ app.secret_key = "your_super_secret_key_here"
 conn = None
 cursor = None
 basedir = os.path.abspath(os.path.dirname(__file__))
+
 db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db") ### --- makes sure the db is made in the same folder as the app.py
 
 
@@ -102,7 +103,18 @@ def create_task():
         flash("Timetable successfully created!!!")
         return redirect(url_for("dashboard"))
 
+### --- Deletes Timetable -------
+@app.route("/delete_task", methods=["POST"])
+def deletion():
+    return redirect(url_for("delete"))
 
+@app.route("/delete", methods=["GET"])
+def delete():
+    current_user = session["current_user"]
+    tasks = helpers.display(current_user)
+    if tasks:
+        return render_template("delete_timetable.html", tasks=tasks)
+    return render_template("delete_timeetable.html", tasks="No  current timetables")
 
 if __name__ == "__main__":
     app.run(debug=True)

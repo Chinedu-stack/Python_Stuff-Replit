@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<div class="parent-container2">
+{% if tasks %}
+    {% for task in tasks %}
+        <div class="child-container">
+            <form action="/delete" method="POST">
+                <p><p>Task {{loop.index}}:  Task: {{task["task"]}}    |    Duration: {{task["duration"]}} mins </p></p>
+                <input>
+                <button class="child-container-button">Delete</button>
+            </form>
+        </div>
+
+    
+</div>
