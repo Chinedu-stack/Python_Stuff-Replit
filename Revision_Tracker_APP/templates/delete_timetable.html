@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 
-<div class="parent-container2">
-    {% if tasks %}
-        {% for task in tasks %}
-            <div class="child-container">
-                <form action="/delete" method="POST">
-                    <p>Task {{loop.index}}:  Task: {{task["task"]}}    |    Duration: {{task["duration"]}} mins </p>
-                    <input type="hidden" name="task" value="{{task["task"]}}">
-                    <button class="child-container-button">Delete</button>
-                </form>
-            </div>
-        {% endfor %}
-    {% else %}
+{% block content %}
+
+    <div class="parent-container2">
         <div class="child-container">
-            <p>No timetables to delete.</p>
+            <h2>Current Tasks:</h2>
         </div>
-    {% endif %}
-</div>
+        {% if tasks %}
+            {% for task in tasks %}
+                <div class="child-container">
+                    <form action="/delete" method="POST">
+                        <p>Task {{loop.index}}:  Task: {{task["task"]}}    |    Duration: {{task["duration"]}} mins </p>
+                        <input type="hidden" name="task" value="{{task["task"]}}">
+                        <button class="button">Delete</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="child-container">
+                <p>No timetables to delete.</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -105,13 +105,15 @@ def create_task():
 
 ### --- Deletes Timetable -------
 
-@app.route("/delete_task", methods=["GET"])
+@app.route("/delete_task", methods=["POST"])
 def deletion():
+    return redirect(url_for("load_delete"))
+
+@app.route("/load_delete", methods=["GET"])
+def load_delete():
     current_user = session.get("current_user")
     tasks = helpers.display(current_user)
-    if tasks:
-        return render_template("delete_timetable.html", tasks=tasks)
-    return render_template("delete_timetable.html")
+    return render_template("delete_timetable.html", tasks=tasks)
 
 @app.route("/delete", methods=["POST"])
 def delete():
