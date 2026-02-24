@@ -104,17 +104,26 @@ def create_task():
         return redirect(url_for("dashboard"))
 
 ### --- Deletes Timetable -------
-@app.route("/delete_task", methods=["POST"])
-def deletion():
-    return redirect(url_for("delete"))
 
-@app.route("/delete", methods=["GET"])
-def delete():
-    current_user = session["current_user"]
+@app.route("/delete_task", methods=["GET"])
+def deletion():
+    current_user = session.get("current_user")
     tasks = helpers.display(current_user)
     if tasks:
         return render_template("delete_timetable.html", tasks=tasks)
-    return render_template("delete_timeetable.html", tasks="No  current timetables")
+    return render_template("delete_timetable.html")
+
+@app.route("/delete", methods=["POST"])
+def delete():
+    current_user = session.get("current_user")
+    if not current_user:
+         return redirect(url_for("landing_page"))
+    task_name = request.form.get("task")
+    user_id = helpers.get_user_id(current_user)
+    helpers.delete(user_id, task_name)
+    return redirect(url_for("dashboard"))
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

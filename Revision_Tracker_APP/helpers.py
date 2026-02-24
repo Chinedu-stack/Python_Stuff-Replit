@@ -91,4 +91,11 @@ def display(current_user):
             })
        
     return tasks
+
+### --- DELETES TIMETABLE 
+def delete( user_id, task_name):
+    open_db()
+    cursor.execute("""DELETE FROM timetables
+                   WHERE user_id = ? AND timetable_name = ? """, (user_id, task_name))
+    close_db()
     
