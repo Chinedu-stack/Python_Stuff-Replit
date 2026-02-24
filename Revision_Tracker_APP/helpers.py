@@ -65,7 +65,7 @@ def get_user_id(current_user,):
         return user_id[0]
         
     return None
-    
+
 ### --- ADDS CREATED TIMETABLE TO DATABASE
 def add_task(user_id, timetable_name, start_date, end_date, duration):
     open_db()
@@ -83,8 +83,12 @@ def display(current_user):
                    WHERE user_id = ? """, (user_id,))
     rows = cursor.fetchall()   
     close_db()
-    tasks = {}
-    for i, row in enumerate(rows):
-        tasks[i+1] = {"task": row[0], "duration": row[1]}
+    tasks = []
+    for row in rows:
+        tasks.append({
+            "task": row[0],
+            "duration": row[1]
+            })
+       
     return tasks
     

@@ -15,12 +15,19 @@
         {% endwith %}
 
 
-        <div class="child-container">
+        <div class="title-2">
+            <h3>Current Tasks:</h3>
+        </div>
+        <div class="tasks">
             {% if tasks %}
-                {{tasks}}
+                {% for task in tasks %}
+                    <p>Task {{loop.index}}:  Task: {{task["task"]}}  |  Duration: {{task["duration"]}} mins </p>
+                {% endfor %}
+            {% else %}
+                <p>No tasks for today.</p>
             {% endif %}
         </div>
-        
+
         <div class="child-container-button" >
             <form action="/logout" method="POST">
                 <button class="btn" type="submit">Logout</button>

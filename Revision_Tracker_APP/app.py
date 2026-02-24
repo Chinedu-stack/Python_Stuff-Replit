@@ -31,7 +31,7 @@ def dashboard():
     tasks = helpers.display(current_user)
     if tasks:
         return render_template("dashboard.html", tasks=tasks)
-    return render_template("dashboard.html", tasks="No tasks for today.")
+    return render_template("dashboard.html")
 
 ### --- CHECKS DATABASE FOR INPUTTED EMAIL AND PASSWORD
 @app.route("/login", methods=["POST"])

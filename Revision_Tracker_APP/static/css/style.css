@@ -114,7 +114,6 @@ button:hover {
 
 
 .child-container {
-    
     margin-top: 40px;
     margin-bottom: 40px;
     margin: 20px 0;
@@ -123,7 +122,7 @@ button:hover {
     padding: 15px;
     border-radius: 10px;
     background-color: white;
-    flex-direction: column;
+    
     
 }
 
@@ -178,4 +177,29 @@ button:hover {
 
 .success {
     color: green;
+}
+
+.tasks {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin: 20px 0;
+    text-align: center;
+    color: rgb(1, 13, 40);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+}
+
+.title-2 {
+    margin-top: 40px;
+    margin-bottom: 55px;
+    margin: 20px 0;
+    text-align: center;
+    color: rgb(1, 13, 40);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+    font-size: 20px;
 }
