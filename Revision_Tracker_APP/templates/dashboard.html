@@ -21,7 +21,7 @@
         <div class="tasks">
             {% if tasks %}
                 {% for task in tasks %}
-                    <p>Task {{loop.index}}:  Task: {{task["task"]}}  |  Duration: {{task["duration"]}} mins </p>
+                    <p>{{loop.index}}:        Task: {{task["task"]}}       |      Duration: {{task["duration"]}} mins </p>
                 {% endfor %}
             {% else %}
                 <p>No tasks for today.</p>

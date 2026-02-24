@@ -100,7 +100,6 @@ def create_task():
         return redirect(url_for("load_add_task"))
     else:
         helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
-        flash("Timetable successfully created!!!")
         return redirect(url_for("dashboard"))
 
 ### --- Deletes Timetable -------
