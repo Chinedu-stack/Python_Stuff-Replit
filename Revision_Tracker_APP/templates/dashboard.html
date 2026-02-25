@@ -22,6 +22,10 @@
             {% if tasks %}
                 {% for task in tasks %}
                     <p>{{loop.index}}:        {{task["task"]}}</p>
+                    <form method="POST" action="/mark_done" class="btn">
+                        <input type="hidden" name="task" value="{{task["task"]}}">
+                        <button type="submit" >Mark Done</button>
+                    </form>
                 {% endfor %}
             {% else %}
                 <p>No tasks for today.</p>

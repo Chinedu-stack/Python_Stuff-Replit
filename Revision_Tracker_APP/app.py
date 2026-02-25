@@ -126,5 +126,11 @@ def delete():
     return redirect(url_for("dashboard"))
 
 
+
+### --- MARKS TASK AS DONE -------
+@app.route("mark_done", methods=["POST"])
+def done():
+    task = request.form.get("task")
+    
 if __name__ == "__main__":
     app.run(debug=True)
