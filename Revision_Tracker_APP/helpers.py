@@ -98,3 +98,22 @@ def delete( user_id, task_name):
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
     close_db()
     
+
+
+### --- REMOVE TASK FROM DISPLAY TO MARK AS DONE
+def mark_done(current_user, task):
+    open_db()
+    
+    user_id = get_user_id(current_user)
+    open_db()
+    cursor.execute("""SELECT task_name FROM tasks
+                   WHERE user_id = ? """, (user_id,))
+    rows = cursor.fetchall()   
+    close_db()
+    tasks = []
+    for row in rows:
+        if row[0] != task:
+            tasks.append({
+                "task": row[0]
+                })
+            return tasks

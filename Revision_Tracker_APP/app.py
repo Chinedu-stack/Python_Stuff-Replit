@@ -30,9 +30,17 @@ def logout():
 def dashboard():
     current_user = session["current_user"]
     tasks = helpers.display(current_user)
-    if tasks:
+    mark = request.args.get("mark")
+    task = request.args.get("task")
+    if mark and task:
+        tasks = helpers.mark_done(current_user, task)
         return render_template("dashboard.html", tasks=tasks)
-    return render_template("dashboard.html")
+    tasks = helpers.display(current_user)
+    return render_template("dashboard.html", tasks=tasks)
+    
+
+       
+
 
 ### --- CHECKS DATABASE FOR INPUTTED EMAIL AND PASSWORD
 @app.route("/login", methods=["POST"])
@@ -128,9 +136,15 @@ def delete():
 
 
 ### --- MARKS TASK AS DONE -------
-@app.route("mark_done", methods=["POST"])
+@app.route("/mark_done", methods=["POST"])
 def done():
-    task = request.form.get("task")
-    
+   task = request.form.get("task")
+   mark = True
+   task = task
+   return redirect(url_for("dashboard", mark=mark, task=task ))
+
+   
+
+
 if __name__ == "__main__":
     app.run(debug=True)
