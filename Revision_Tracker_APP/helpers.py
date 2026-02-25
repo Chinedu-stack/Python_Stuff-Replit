@@ -67,10 +67,10 @@ def get_user_id(current_user,):
     return None
 
 ### --- ADDS CREATED TIMETABLE TO DATABASE
-def add_task(user_id, timetable_name, start_date, end_date, duration):
+def add_task(user_id, task_name, start_date, end_date, duration):
     open_db()
-    cursor.execute("""INSERT INTO timetables (user_id, timetable_name, start_date, end_date, duration)
-                   VALUES (?,?,?,?,?)""", (user_id, timetable_name, start_date, end_date, duration))
+    cursor.execute("""INSERT INTO tasks (user_id, task_name, start_date, end_date, duration)
+                   VALUES (?,?,?,?,?)""", (user_id, task_name, start_date, end_date, duration))
     close_db()
 
 ### --- FETCHES TASKS FOR THAT USER FROM DB
@@ -79,7 +79,7 @@ def display(current_user):
     
     user_id = get_user_id(current_user)
     open_db()
-    cursor.execute("""SELECT timetable_name, duration FROM timetables
+    cursor.execute("""SELECT task_name, duration FROM tasks
                    WHERE user_id = ? """, (user_id,))
     rows = cursor.fetchall()   
     close_db()
@@ -96,6 +96,6 @@ def display(current_user):
 def delete( user_id, task_name):
     open_db()
     cursor.execute("""DELETE FROM timetables
-                   WHERE user_id = ? AND timetable_name = ? """, (user_id, task_name))
+                   WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
     close_db()
     

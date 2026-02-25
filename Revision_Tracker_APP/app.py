@@ -79,10 +79,6 @@ def register():
 def add_task():
     return redirect(url_for("load_add_task"))
 
-@app.route("/load_add_task", methods=["GET"])
-def load_add_task():
-    return render_template("add_timetable.html")
-
 ### --- Creates timetable and stores it
 @app.route("/create_task", methods=["POST"])
 def create_task():
@@ -101,6 +97,12 @@ def create_task():
     else:
         helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
         return redirect(url_for("dashboard"))
+    
+@app.route("/load_add_task", methods=["GET"])
+def load_add_task():
+    return render_template("add_task.html")
+
+
 
 ### --- Deletes Timetable -------
 
@@ -112,7 +114,7 @@ def deletion():
 def load_delete():
     current_user = session.get("current_user")
     tasks = helpers.display(current_user)
-    return render_template("delete_timetable.html", tasks=tasks)
+    return render_template("delete_task.html", tasks=tasks)
 
 @app.route("/delete", methods=["POST"])
 def delete():

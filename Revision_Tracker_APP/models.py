@@ -9,10 +9,10 @@ db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db")
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
-cursor.execute("""CREATE TABLE IF NOT EXISTS timetables (
+cursor.execute("""CREATE TABLE IF NOT EXISTS tasks (
                id INTEGER PRIMARY KEY AUTOINCREMENT,
                user_id INTEGER NOT NULL,
-               timetable_name TEXT NOT NULL,
+               task_name TEXT NOT NULL,
                start_date TEXT NOT NULL,
                end_date TEXT NOT NULL,
                duration NOT NULL,
@@ -20,7 +20,12 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS timetables (
                
                )""")
 
-
-
+cursor.execute("""CREATE TABLE IF NOT EXISTS users (
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
+               email TEXT NOT NULL,
+               hashed_password TEXT NOT NULL
+               )""")
+conn.commit()
+conn.close()
 print("success")
 
