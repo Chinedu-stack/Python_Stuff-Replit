@@ -8,7 +8,7 @@ app = Flask(__name__)
 conn = None
 cursor = None
 basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "Database_Folder", "study_tracker.db")
+db_path = os.path.join(basedir, "Database_Folder", "task_manager.db")
 
 
 ### --- OPEN DATABASE 
@@ -67,10 +67,10 @@ def get_user_id(current_user,):
     return None
 
 ### --- ADDS CREATED TIMETABLE TO DATABASE
-def add_task(user_id, task_name, start_date, end_date, duration):
+def add_task(user_id, task_name, start_date, end_date):
     open_db()
-    cursor.execute("""INSERT INTO tasks (user_id, task_name, start_date, end_date, duration)
-                   VALUES (?,?,?,?,?)""", (user_id, task_name, start_date, end_date, duration))
+    cursor.execute("""INSERT INTO tasks (user_id, task_name, start_date, end_date)
+                   VALUES (?,?,?,?)""", (user_id, task_name, start_date, end_date))
     close_db()
 
 ### --- FETCHES TASKS FOR THAT USER FROM DB
@@ -79,15 +79,14 @@ def display(current_user):
     
     user_id = get_user_id(current_user)
     open_db()
-    cursor.execute("""SELECT task_name, duration FROM tasks
+    cursor.execute("""SELECT task_name FROM tasks
                    WHERE user_id = ? """, (user_id,))
     rows = cursor.fetchall()   
     close_db()
     tasks = []
     for row in rows:
         tasks.append({
-            "task": row[0],
-            "duration": row[1]
+            "task": row[0]
             })
        
     return tasks
@@ -95,7 +94,7 @@ def display(current_user):
 ### --- DELETES TIMETABLE 
 def delete( user_id, task_name):
     open_db()
-    cursor.execute("""DELETE FROM timetables
+    cursor.execute("""DELETE FROM tasks
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
     close_db()
     

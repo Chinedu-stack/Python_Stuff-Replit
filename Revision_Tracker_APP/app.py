@@ -10,7 +10,7 @@ conn = None
 cursor = None
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-db_path = os.path.join(basedir,"Database_Folder", "study_tracker.db") ### --- makes sure the db is made in the same folder as the app.py
+db_path = os.path.join(basedir,"Database_Folder", "task_manager.db") ### --- makes sure the db is made in the same folder as the app.py
 
 
 ### --- LOADS THE LANDING PAGE
@@ -84,7 +84,6 @@ def add_task():
 def create_task():
     today = date.today()
     timetable_name = request.form.get("name", "")
-    duration = request.form.get("duration", "")
     start_str = request.form.get("start-date", "")
     end_str = request.form.get("end-date", "") 
     start_date = datetime.strptime(start_str, "%Y-%m-%d").date()
@@ -95,7 +94,7 @@ def create_task():
         flash("Please enter valid date.")
         return redirect(url_for("load_add_task"))
     else:
-        helpers.add_task(user_id, timetable_name, start_date, end_date, duration)
+        helpers.add_task(user_id, timetable_name, start_date, end_date)
         return redirect(url_for("dashboard"))
     
 @app.route("/load_add_task", methods=["GET"])
