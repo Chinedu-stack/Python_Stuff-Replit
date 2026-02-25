@@ -28,7 +28,18 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS users (
                email TEXT NOT NULL,
                hashed_password TEXT NOT NULL
                )""")
+
+
+cursor.execute("""CREATE TABLE IF NOT EXISTS tasks_today (
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
+               user_id INTEGER NOT NULL,
+               task_name,
+               FOREIGN KEY(user_id) REFERENCES users(id)
+               )""")
+
 conn.commit()
+
+
 conn.close()
 print("success")
 

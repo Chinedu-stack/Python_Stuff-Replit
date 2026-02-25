@@ -29,13 +29,9 @@ def logout():
 @app.route("/dashboard", methods=["GET"])
 def dashboard():
     current_user = session["current_user"]
-    tasks = helpers.display(current_user)
-    mark = request.args.get("mark")
-    task = request.args.get("task")
-    if mark and task:
-        tasks = helpers.mark_done(current_user, task)
-        return render_template("dashboard.html", tasks=tasks)
-    tasks = helpers.display(current_user)
+    today = datetime.today().strftime("%Y-%m-%d")
+
+    tasks = helpers.display_today(current_user, today)
     return render_template("dashboard.html", tasks=tasks)
     
 
@@ -135,13 +131,7 @@ def delete():
 
 
 
-### --- MARKS TASK AS DONE -------
-@app.route("/mark_done", methods=["POST"])
-def done():
-   task = request.form.get("task")
-   mark = True
-   task = task
-   return redirect(url_for("dashboard", mark=mark, task=task ))
+
 
    
 

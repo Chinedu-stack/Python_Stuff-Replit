@@ -73,14 +73,14 @@ def add_task(user_id, task_name, start_date, end_date):
                    VALUES (?,?,?,?)""", (user_id, task_name, start_date, end_date))
     close_db()
 
-### --- FETCHES TASKS FOR THAT USER FROM DB
-def display(current_user):
+### --- FETCHES TASKS FOR THAT USER FROM DB for that DAY
+def display_today(current_user, today):
     open_db()
     
     user_id = get_user_id(current_user)
     open_db()
     cursor.execute("""SELECT task_name FROM tasks
-                   WHERE user_id = ? """, (user_id,))
+                   WHERE user_id = ? AND start_date <= ? """, (user_id, today))
     rows = cursor.fetchall()   
     close_db()
     tasks = []
@@ -98,22 +98,8 @@ def delete( user_id, task_name):
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
     close_db()
     
-
-
-### --- REMOVE TASK FROM DISPLAY TO MARK AS DONE
-def mark_done(current_user, task):
+### --- ADDS TASKS FOR THAT DAY TO tasks_today
+def tasks_today(tasks):
     open_db()
-    
-    user_id = get_user_id(current_user)
-    open_db()
-    cursor.execute("""SELECT task_name FROM tasks
-                   WHERE user_id = ? """, (user_id,))
-    rows = cursor.fetchall()   
-    close_db()
-    tasks = []
-    for row in rows:
-        if row[0] != task:
-            tasks.append({
-                "task": row[0]
-                })
-            return tasks
+    cursor.execute("""""")
+
