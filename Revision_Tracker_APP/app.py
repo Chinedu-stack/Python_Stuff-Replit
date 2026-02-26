@@ -31,7 +31,7 @@ def dashboard():
     current_user = session["current_user"]
     today = datetime.today().strftime("%Y-%m-%d")
 
-    tasks = helpers.display_today(current_user, today)
+    helpers.display_today(current_user, today)
     return render_template("dashboard.html", tasks=tasks)
     
 

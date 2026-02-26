@@ -73,7 +73,7 @@ def add_task(user_id, task_name, start_date, end_date):
                    VALUES (?,?,?,?)""", (user_id, task_name, start_date, end_date))
     close_db()
 
-### --- FETCHES TASKS FOR THAT USER FROM DB for that DAY
+### --- FETCHES TASKS FOR THAT USER FROM DB
 def display_today(current_user, today):
     open_db()
     
@@ -85,11 +85,9 @@ def display_today(current_user, today):
     close_db()
     tasks = []
     for row in rows:
-        tasks.append({
-            "task": row[0]
-            })
+        tasks_today(user_id, row[0])
        
-    return tasks
+
 
 ### --- DELETES TIMETABLE 
 def delete( user_id, task_name):
@@ -99,7 +97,14 @@ def delete( user_id, task_name):
     close_db()
     
 ### --- ADDS TASKS FOR THAT DAY TO tasks_today
-def tasks_today(tasks):
+def tasks_today(user_id, task):
     open_db()
-    cursor.execute("""""")
+    cursor.execute("""INSERT INTO task_today (user_id, task_name)
+                   VALUES (?, ?)""", (user_id, task))
+    close_db()
+
+
+def display_today():
+    open_db()
+    cursor.execute("""SELECT FROM tasks_today""")
 
