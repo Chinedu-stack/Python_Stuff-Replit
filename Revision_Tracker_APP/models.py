@@ -30,12 +30,6 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS users (
                )""")
 
 
-cursor.execute("""CREATE TABLE IF NOT EXISTS tasks_today (
-               id INTEGER PRIMARY KEY AUTOINCREMENT,
-               user_id INTEGER NOT NULL,
-               task_name,
-               FOREIGN KEY(user_id) REFERENCES users(id)
-               )""")
 
 conn.commit()
 

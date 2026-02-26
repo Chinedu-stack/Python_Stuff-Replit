@@ -29,9 +29,9 @@ def logout():
 @app.route("/dashboard", methods=["GET"])
 def dashboard():
     current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
     today = datetime.today().strftime("%Y-%m-%d")
-    helpers.display_today(current_user, today)
-    tasks = helpers.display_today()      
+    tasks = helpers.display_tasks_day(user_id, today)      
     return render_template("dashboard.html", tasks=tasks)
     
 
@@ -116,7 +116,8 @@ def deletion():
 @app.route("/load_delete", methods=["GET"])
 def load_delete():
     current_user = session.get("current_user")
-    tasks = helpers.display(current_user)
+    user_id = helpers.get_user_id(current_user)
+    tasks = helpers.display_all_tasks(user_id)
     return render_template("delete_task.html", tasks=tasks)
 
 @app.route("/delete", methods=["POST"])

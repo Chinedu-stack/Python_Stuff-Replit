@@ -73,21 +73,6 @@ def add_task(user_id, task_name, start_date, end_date):
                    VALUES (?,?,?,?)""", (user_id, task_name, start_date, end_date))
     close_db()
 
-### --- FETCHES TASKS FOR THAT USER FROM DB
-def display_today(current_user, today):
-    open_db()
-    
-    user_id = get_user_id(current_user)
-    open_db()
-    cursor.execute("""SELECT task_name FROM tasks
-                   WHERE user_id = ? AND start_date <= ? """, (user_id, today))
-    rows = cursor.fetchall()   
-    close_db()
-    tasks = []
-    for row in rows:
-        tasks_today(user_id, row[0])
-       
-
 
 ### --- DELETES TIMETABLE 
 def delete( user_id, task_name):
@@ -96,21 +81,26 @@ def delete( user_id, task_name):
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
     close_db()
     
-### --- ADDS TASKS FOR THAT DAY TO tasks_today
-def tasks_today(user_id, task):
-    open_db()
-    cursor.execute("""INSERT INTO task_today (user_id, task_name)
-                   VALUES (?, ?)""", (user_id, task))
-    close_db()
+### --- Display tasks for that day
 
-
-def display_today():
-    
+def display_tasks_day(user_id, today):
     open_db()
-    cursor.execute("SELECT task_name FROM tasks_today")
-    rows = cursor.fetchall()
+    cursor.execute("""SELECT task_name FROM tasks
+                   WHERE user_id = ? AND start_date <= ?""", (user_id, today))
+    results = cursor.fetchall()
     tasks = []
-    for row in rows:
-        tasks.append({"task":row[0]})
+    for task in results:
+        tasks.append({"task":task[0]})
     return tasks
 
+### --- Display All tasks 
+
+def display_all_tasks(user_id):
+    open_db()
+    cursor.execute("""SELECT task_name FROM tasks
+                   WHERE user_id = ?""", user_id)
+    results = cursor.fetchall()
+    tasks = []
+    for task in results:
+        tasks.append({"task":task[0]})
+    return tasks
