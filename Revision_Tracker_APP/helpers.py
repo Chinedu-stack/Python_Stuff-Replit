@@ -105,6 +105,12 @@ def tasks_today(user_id, task):
 
 
 def display_today():
+    
     open_db()
-    cursor.execute("""SELECT FROM tasks_today""")
+    cursor.execute("SELECT task_name FROM tasks_today")
+    rows = cursor.fetchall()
+    tasks = []
+    for row in rows:
+        tasks.append({"task":row[0]})
+    return tasks
 

@@ -28,10 +28,10 @@ def logout():
 ### --- LOADS THE DASHBOARD
 @app.route("/dashboard", methods=["GET"])
 def dashboard():
-    current_user = session["current_user"]
+    current_user = session.get("current_user")
     today = datetime.today().strftime("%Y-%m-%d")
-
     helpers.display_today(current_user, today)
+    tasks = helpers.display_today()      
     return render_template("dashboard.html", tasks=tasks)
     
 
