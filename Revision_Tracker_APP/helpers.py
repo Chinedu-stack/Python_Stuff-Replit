@@ -119,8 +119,8 @@ def is_done(user_id, task_name):
 
 ### ----- DELETE ACCOUNT ------
 
-def delete_account(user_id):
+def delete_account(email):
     open_db()
     cursor.execute("""DELETE FROM users
-                   WHERE user_id  = ? """, user_id)
+                   WHERE email  = ? """, (email,))
     close_db()

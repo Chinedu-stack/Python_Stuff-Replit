@@ -147,9 +147,8 @@ def mark_done():
 ### --- DELETES ACCOUNT -------
 @app.route("/delete_account", methods=["POST"])
 def delete_account():
-    current_user = session.get("current_user")
-    user_id = helpers.get_user_id(current_user)
-    helpers.delete_account(user_id)
+    email = session.get("current_user")
+    helpers.delete_account(email)
     return redirect(url_for("landing_page"))
 
 
