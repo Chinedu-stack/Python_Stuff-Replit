@@ -75,7 +75,7 @@ def add_task(user_id, task_name, start_date, end_date):
 
 
 ### --- DELETES TIMETABLE 
-def delete( user_id, task_name):
+def delete(user_id, task_name):
     open_db()
     cursor.execute("""DELETE FROM tasks
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
@@ -98,7 +98,7 @@ def display_tasks_day(user_id, today):
 def display_all_tasks(user_id):
     open_db()
     cursor.execute("""SELECT task_name FROM tasks
-                   WHERE user_id = ?""", user_id)
+                   WHERE user_id = ?""", (user_id,))
     results = cursor.fetchall()
     tasks = []
     for task in results:
