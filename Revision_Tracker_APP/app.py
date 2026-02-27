@@ -28,11 +28,13 @@ def logout():
 ### --- LOADS THE DASHBOARD
 @app.route("/dashboard", methods=["GET"])
 def dashboard():
+    date_today = date.today()
+    day = date_today.strftime("%A")  # e.g., "Thursday" 
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
     today = datetime.today().strftime("%Y-%m-%d")
     tasks = helpers.display_tasks_day(user_id, today)      
-    return render_template("dashboard.html", tasks=tasks)
+    return render_template("dashboard.html", tasks=tasks, day=day)
     
 
        
@@ -131,10 +133,24 @@ def delete():
     return redirect(url_for("dashboard"))
 
 
-
+### --- MARKS TASK AS DONE -------
+@app.route("/mark_done", methods=["POST"])
+def mark_done():
+    task_name = request.form.get("task")
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    helpers.is_done(user_id, task_name)
+    return redirect(url_for("dashboard"))
 
 
    
+### --- DELETES ACCOUNT -------
+@app.route("/delete_account", methods=["POST"])
+def delete_account():
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    helpers.delete_account(user_id)
+    return redirect(url_for("landing_page"))
 
 
 if __name__ == "__main__":

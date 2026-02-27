@@ -207,3 +207,7 @@ button:hover {
 .btn :hover{
     background-color: rgb(206, 205, 205)
 }
+
+.completed {
+     text-decoration: line-through;
+}

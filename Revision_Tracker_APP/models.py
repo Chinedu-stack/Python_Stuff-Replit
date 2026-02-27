@@ -19,6 +19,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS tasks (
                task_name TEXT NOT NULL,
                start_date TEXT NOT NULL,
                end_date TEXT NOT NULL,
+               is_done INTEGER DEFAULT 0,
                FOREIGN KEY(user_id) REFERENCES users(id) 
                
                )""")

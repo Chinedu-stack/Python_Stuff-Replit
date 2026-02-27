@@ -16,16 +16,20 @@
 
 
         <div class="title-2">
-            <h3>Current Tasks:</h3>
+            <h3>Tasks for {{day}}:</h3>
         </div>
         <div class="tasks">
             {% if tasks %}
                 {% for task in tasks %}
-                    <p>{{loop.index}}:        {{task["task"]}}</p>
-                    <form method="POST" action="/mark_done">
-                        <input type="hidden" name="task" value="{{task["task"]}}">
-                        <button type="submit" >Mark Done</button>
-                    </form>
+                    {% if not task["is_done"]%}
+                        <p>{{loop.index}}:        {{task["task"]}}</p>
+                        <form method="POST" action="/mark_done">
+                            <input type="hidden" name="task" value="{{task["task"]}}">
+                            <button type="submit" >Mark Done</button>
+                        </form>
+                    {% else %}
+                        <p class="completed">{{loop.index}}:        {{task["task"]}} ✅</p>
+                    {% endif %}
                 {% endfor %}
             {% else %}
                 <p>No tasks for today.</p>
@@ -48,7 +52,13 @@
             <form action="/delete_task" method="POST">
                 <button class="btn" type="submit">Delete Task</button>
             </form>
-            
+        </div>
+
+        <div class="child-container_button">
+            <form action="/delete_account" method="POST">
+                <button class="btn" type="submit">Delete Account</button>
+            </form>
+
         </div>
     </div>
 {% endblock %}
