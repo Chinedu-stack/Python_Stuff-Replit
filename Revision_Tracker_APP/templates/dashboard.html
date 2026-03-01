@@ -27,7 +27,7 @@
                         <p>{{loop.index}}:        {{task["task"]}}</p>
                         <form method="POST" action="/mark_done">
                             <input type="hidden" name="task" value="{{task["task"]}}">
-                            <button type="submit" >Mark Done</button>
+                            <button type="submit" class="mark_done">Mark Done</button>
                         </form>
                     {% else %}
                         <p class="completed">{{loop.index}}:        {{task["task"]}} ✅</p>

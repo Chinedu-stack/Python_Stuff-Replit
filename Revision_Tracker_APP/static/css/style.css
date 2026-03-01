@@ -230,3 +230,21 @@ button {
     align-items: center;
     font-weight: bold;
 }
+
+.dashboard-button:hover {
+    background-color: rgb(188, 188, 188);
+}
+
+
+.mark_done {
+    border-radius: 12.5px;
+    background-color: #414044;
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    
+}
+
+.mark_done:hover {
+    background-color: rgb(89, 88, 88);
+}
