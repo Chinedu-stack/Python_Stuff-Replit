@@ -98,12 +98,12 @@ def display_tasks_day(user_id, today):
 
 def display_all_tasks(user_id):
     open_db()
-    cursor.execute("""SELECT task_name FROM tasks
+    cursor.execute("""SELECT task_name, is_done FROM tasks
                    WHERE user_id = ?""", (user_id,))
     results = cursor.fetchall()
     tasks = []
     for task in results:
-        tasks.append({"task":task[0]})
+        tasks.append({"task":task[0], "is_done":task[1]})
     return tasks
 
 ### --- PUTS is_done as TRUE in the DB
