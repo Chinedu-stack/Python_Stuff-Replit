@@ -74,14 +74,21 @@ def new_user():
 def register():
     email = request.form.get("email", "")
     password = request.form.get("password", "")
+    errors = []
 
-    if email and password:
-        hashed = helpers.cipher(password) 
-        helpers.add(email, hashed)
-        session["current_user"] = email
-        return redirect(url_for("dashboard",)) 
-    else:
-        return render_template("create_user.html", error="Please submit an email and password")
+    if not email or not password:
+        errors.append("Please enter email and password")
+    if helpers.check_email(email):
+        errors.append("Email taken. Please use another email")
+    
+    if errors:
+        return render_template("create_user.html", errors=errors) 
+       
+    hashed = helpers.cipher(password) 
+    helpers.add(email, hashed)
+    session["current_user"] = email
+    return redirect(url_for("dashboard")) 
+
     
 
 ### --- Loads add timetable page
@@ -93,19 +100,27 @@ def add_task():
 @app.route("/create_task", methods=["POST"])
 def create_task():
     today = date.today()
-    timetable_name = request.form.get("name", "")
+    task_name = request.form.get("name", "")
     start_str = request.form.get("start-date", "")
     end_str = request.form.get("end-date", "") 
     start_date = datetime.strptime(start_str, "%Y-%m-%d").date()
     end_date = datetime.strptime(end_str, "%Y-%m-%d").date()
     current_user = session["current_user"]
     user_id = helpers.get_user_id(current_user)
+    task_exists = helpers.check_name(user_id, task_name)
+    errors = []
+    if task_exists:
+        errors.append("Task name already exists. Please choose new name.")
     if start_date < today:
-        flash("Please enter valid date.")
+        errors.append("Please enter valid dates")
+    
+    if errors:
+        for e in errors:
+            flash(e)
         return redirect(url_for("load_add_task"))
-    else:
-        helpers.add_task(user_id, timetable_name, start_date, end_date)
-        return redirect(url_for("dashboard"))
+    
+    helpers.add_task(user_id, task_name, start_date, end_date)
+    return redirect(url_for("dashboard"))
     
 @app.route("/load_add_task", methods=["GET"])
 def load_add_task():

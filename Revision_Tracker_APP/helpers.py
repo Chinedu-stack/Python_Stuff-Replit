@@ -126,3 +126,22 @@ def delete_account(email, user_id):
     cursor.execute("""DELETE FROM tasks 
                    WHERE user_id = ? """, (user_id,))
     close_db()
+
+
+### ---- Check to see if there is no other task with that name
+
+def check_name(user_id, task_name):
+    open_db()
+    cursor.execute("""SELECT 1 FROM tasks
+                   WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
+    close_db()
+    return cursor.fetchone() is not None
+
+### --- check to see if there if email is in db when creating an account
+
+def check_email(email):
+    open_db()
+    cursor.execute("""SELECT 1 FROM users
+                   WHERE email = ?""", (email,))
+    close_db()
+    return cursor.fetchone() is not None

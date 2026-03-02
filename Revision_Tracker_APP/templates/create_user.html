@@ -7,8 +7,10 @@
 {% block content %}
 
 <div>
-    {% if error %}
-        <p style="color:red">{{error}}</p>
+    {% if errors %}
+        {% for error in errors %}
+            <p style="color:red">{{error}}</p>
+        {% endfor %}
     {% endif %}
 </div>
 
