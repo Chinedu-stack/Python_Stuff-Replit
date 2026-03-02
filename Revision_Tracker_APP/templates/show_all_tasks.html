@@ -4,14 +4,14 @@
     <div class="parent-container1">
 
         <div class="title-2">
-            <h3>Tasks for {{day}}:</h3>
+            <h3>All Tasks:</h3>
         </div>
         <div class="tasks">
             {% if tasks %}
                 {% for task in tasks %}
                     {% if not task["is_done"]%}
                         <p>{{loop.index}}:        {{task["task"]}}</p>
-                        <form method="POST" action="/mark_done">
+                        <form method="POST" action="/mark_done_all">
                             <input type="hidden" name="task" value="{{task["task"]}}">
                             <button type="submit" class="mark_done">Mark Done</button>
                         </form>
@@ -49,8 +49,8 @@
         </div>
 
         <div class="child-container-button">
-            <form action="/show_all" method="POST">
-                <button class="btn" type="submit">Show all tasks</button>
+            <form action="/post_dashboard" method="POST">
+                <button class="btn" type="submit">Show Today's Tasks</button>
             </form>
         </div>
     </div>

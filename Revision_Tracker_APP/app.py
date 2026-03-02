@@ -35,6 +35,10 @@ def dashboard():
     today = datetime.today().strftime("%Y-%m-%d")
     tasks = helpers.display_tasks_day(user_id, today)      
     return render_template("dashboard.html", tasks=tasks, day=day)
+
+@app.route("/post_dashboard", methods=["POST"])
+def reroute():
+    return redirect(url_for("dashboard"))
     
 
        
@@ -142,8 +146,24 @@ def mark_done():
     helpers.is_done(user_id, task_name)
     return redirect(url_for("dashboard"))
 
+@app.route("/mark_done_all", methods=["POST"])
+def mark_done_all():
+    task_name = request.form.get("task")
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    helpers.is_done(user_id, task_name)
+    return redirect(url_for("show_all"))
 
-   
+### --- Shows All tasks --------
+@app.route("/show_all", methods=["POST", "GET"])
+def show_all():
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    tasks = helpers.display_all_tasks(user_id)
+    return render_template("show_all_tasks.html", tasks=tasks)
+
+
+
 ### --- DELETES ACCOUNT -------
 @app.route("/delete_account", methods=["POST"])
 def delete_account():
