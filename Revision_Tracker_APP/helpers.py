@@ -134,8 +134,11 @@ def check_name(user_id, task_name):
     open_db()
     cursor.execute("""SELECT 1 FROM tasks
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
+    task_exists = cursor.fetchone()
     close_db()
-    return cursor.fetchone() is not None
+    if task_exists:
+        return True
+    return False
 
 ### --- check to see if there if email is in db when creating an account
 
@@ -143,5 +146,8 @@ def check_email(email):
     open_db()
     cursor.execute("""SELECT 1 FROM users
                    WHERE email = ?""", (email,))
+    email_exists = cursor.fetchone()
     close_db()
-    return cursor.fetchone() is not None
+    if email_exists:
+        return True
+    return False
