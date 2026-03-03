@@ -1,5 +1,5 @@
 let age = 14;
-console.log(age);
+let myName = "Chinedu";
 
-age = 15;
-console.log(age);
+const year = 2011;
+console.log(`Name: ${myName}, Age: ${age}, Birth Year: ${year}`);
