@@ -13,4 +13,7 @@ function add(a, b) {
 
 const divide = (x, y) => `${x}/${y} = ${(x/y).toFixed(2)}`
 
-console.log(divide(11, 12))
+const concatonate = (x,y) => `${x}${y}`
+
+console.log(add(11.999,-12.908385));
+console.log(concatonate("Race", "car"));

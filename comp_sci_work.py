@@ -22,3 +22,10 @@ while answer != num:
         print(f"Try again. Number is too low. Attempts: {attempts}")
         
 
+
+
+word1 = "race"
+word2 = "car"
+total = word1 + word2
+print(total)
+
