@@ -1,1 +1,0 @@
-console.log("MY name is chinedu");
