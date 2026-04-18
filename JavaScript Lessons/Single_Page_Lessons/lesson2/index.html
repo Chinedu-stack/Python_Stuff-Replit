@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My SPA</title>
+  <style>
+    .section {
+      display: none;
+      padding: 20px;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation buttons -->
+  <button onclick="switchPage('home')">Home</button>
+  <button onclick="switchPage('football')">Football</button>
+  <button onclick="switchPage('school')">School</button>
+
+  <!-- Sections -->
+  <div class="section" id="home">
+    <h2>Home Page</h2>
+    <p>Welcome to my site!</p>
+    <p>I will be successful when im older. Its all about small consistent actions</p>
+  </div>
+
+  <div class="section" id="football">
+    <h2>Football Page</h2>
+    <p>Tmr I have a football math against swanley rangers. it would be calm if my knee didn't hurt a bit but i will be calm. Light work.</p>
+  </div>
+
+  <div class="section" id="school">
+    <h2>School Page</h2>
+    <p>School is boring but i have to keep on grinding. Its life innit broski.</p>
+  </div>
+
+  <script>
+    function switchPage(pageId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      document.getElementById(pageId).style.display = 'block'
+
+    }
+
+    switchPage('home');
+
+  </script>
+
+</body>
+</html>
