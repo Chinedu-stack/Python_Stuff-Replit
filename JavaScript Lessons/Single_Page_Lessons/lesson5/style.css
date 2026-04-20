@@ -1,0 +1,9 @@
+ body { font-family: Arial; padding: 20px; }
+
+.section { display: none; 
+           background-color: rgb(0, 166, 195)
+}
+
+nav button { margin-right: 10px; padding: 8px 16px; cursor: pointer; }
+
+nav button.active { background-color: #333; color: white; }
