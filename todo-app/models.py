@@ -3,7 +3,7 @@ import os
 
 # --- FILE PATH
 basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "task_manager.db")
+db_path = os.path.join(basedir, "database.db")
 
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()

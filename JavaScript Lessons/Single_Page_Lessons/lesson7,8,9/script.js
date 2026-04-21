@@ -7,11 +7,13 @@ const content = {
 }
 
 function init() {
-    document.getElementById("home").style.display = 'block';
-    document.getElementById("home").innerHTML = content['home'];
-    document.getElementById("nav-btn-home").classList.add('active');
+    if (window.location.hash) {
+        const section = window.location.hash.slice(1);
+        display(section, document.getElementById("nav-btn-" + section))
+    } else {
+        display("home", document.getElementById('nav-btn-home'));
+    }
 }
-
 
 
 function display(page_id, btn) {
@@ -28,6 +30,7 @@ function display(page_id, btn) {
     document.getElementById(page_id).style.display = "block";
     document.getElementById(page_id).innerHTML = content[page_id]
     btn.classList.add("active");
+    window.location.hash = page_id;
 }
 
 init()
