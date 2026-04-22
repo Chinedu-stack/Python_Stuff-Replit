@@ -6,8 +6,7 @@ import base64
 app = Flask(__name__)
 conn = None
 cursor = None
-basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "database.db")
+db_path = os.path.join("todo-app", "db", "database.db")
 
 
 ### --- OPEN DATABASE 

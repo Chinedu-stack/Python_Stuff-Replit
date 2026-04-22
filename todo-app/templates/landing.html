@@ -11,6 +11,12 @@
     </div>
 
     <div>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+    </div>
+
+    <div>
         <form class="form"  method="POST" action="/login">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required>

@@ -1,19 +1,4 @@
-let content = {};
-
-async function loadContent() {
-    const response = await fetch('/static/DATA/data.json');
-
-    if (!response.ok) {
-        console.log("Failed to load JSON:", response.status);
-        return;
-    }
-
-    content = await response.json();
-    console.log("It works Nedu: " + content); // check if it loads
-    init();
-}
-
-function init() {
+export function init() {
     if (window.location.hash) {
         const section = window.location.hash.slice(1);
         display(section, document.getElementById(section + "_btn"))
@@ -23,7 +8,9 @@ function init() {
 }
 
 
-function display(section, btn) {
+
+
+export function display(section, btn) {
     const pages = document.querySelectorAll(".section");
     pages.forEach(function(page) {
         page.style.display = "none";
@@ -39,4 +26,3 @@ function display(section, btn) {
     window.location.hash = section;
 }
 
-loadContent()
