@@ -1,4 +1,4 @@
-import {display, init } from "./ui.js";
+import { display, init } from "./ui.js";
 
 
 let content = {};
@@ -13,5 +13,6 @@ export async function loadDashboard() {
 
     content = await response.json();
     console.log("It works Nedu: " + content); // check if it loads
-    init();
+    init(content);
+    return content
 }

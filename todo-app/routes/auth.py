@@ -25,7 +25,7 @@ def login():
     user_bytes_password = password.encode('utf- 8')
     if bcrypt.checkpw(user_bytes_password, stored_hash_bytes): ### --- takes the salt from the stored_hash_bytes and hashes user_password with same salt and compares results
         session["current_user"] = email
-        return redirect(url_for("show_dashboard"))
+        return redirect(url_for("auth.show_dashboard"))
     
     return render_template("landing.html", error="Email or Password not found")
 
@@ -54,7 +54,7 @@ def register():
     hashed = helpers.cipher(password) 
     helpers.add(email, hashed)
     session["current_user"] = email
-    return redirect(url_for("show_dashboard")) 
+    return redirect(url_for("auth.show_dashboard")) 
 
 @auth_bp.route("/show_dashboard", methods=["GET", "POST"])
 def show_dashboard():

@@ -1,16 +1,16 @@
-export function init() {
+export function init(content) {
     if (window.location.hash) {
         const section = window.location.hash.slice(1);
-        display(section, document.getElementById(section + "_btn"))
+        display(section, document.getElementById(section + "_btn"), content)
     } else {
-        display("home", document.getElementById("dashboard_btn"));
+        display("dashboard", document.getElementById("dashboard_btn"), content);
     }
 }
 
 
 
 
-export function display(section, btn) {
+export function display(section_name, btn, content) {
     const pages = document.querySelectorAll(".section");
     pages.forEach(function(page) {
         page.style.display = "none";
@@ -20,9 +20,9 @@ export function display(section, btn) {
         nav_btn.classList.remove("active")
     })
 
-    document.getElementById(section).style.display = "block";
+    document.getElementById(section_name).style.display = "block";
     btn.classList.add("active")
-    document.getElementById(section).innerHTML = content[section]
-    window.location.hash = section;
+    document.getElementById(section_name).innerHTML = content[section_name]
+    window.location.hash = section_name;
 }
 
