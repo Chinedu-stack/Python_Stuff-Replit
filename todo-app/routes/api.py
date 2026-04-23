@@ -5,7 +5,7 @@ from datetime import datetime, date
 
 api_bp = Blueprint('api', __name__)
 
-@api_bp.route("/api_fetch_dashboard", methods=["GET"])
+@api_bp.route("/tasks", methods=["GET"])
 def dashboard():
     date_today = date.today()
     day = date_today.strftime("%A")

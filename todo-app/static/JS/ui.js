@@ -1,4 +1,7 @@
-export function init(content) {
+import { fetch_tasks } from "./api.js";
+
+
+export function init(content) {  // this function is for when the page reloads and so that the thing you were on previously stays on when the page reloads
     if (window.location.hash) {
         const section = window.location.hash.slice(1);
         display(section, document.getElementById(section + "_btn"), content)
@@ -10,8 +13,9 @@ export function init(content) {
 
 
 
-export function display(section_name, btn, content) {
-    const pages = document.querySelectorAll(".section");
+export function display(section_name, btn, content) {   // this function hides all the pages and removes the active class from all the buttons and only shows the page that we are
+    const tasks = fetch_tasks();
+    const pages = document.querySelectorAll(".section"); // on and puts the active class on the btn
     pages.forEach(function(page) {
         page.style.display = "none";
     })
@@ -22,6 +26,13 @@ export function display(section_name, btn, content) {
 
     document.getElementById(section_name).style.display = "block";
     btn.classList.add("active")
+    if (section_name == "dashboard") {
+        document.getElementById(section_name).innerHTML = content[section_name]
+        tasks.forEach(function(task) {
+             document.getElementById(section_name).innerHTML += task["task"];
+        })
+        document.getElementById(section_name).innerHTML += 
+    }
     document.getElementById(section_name).innerHTML = content[section_name]
     window.location.hash = section_name;
 }

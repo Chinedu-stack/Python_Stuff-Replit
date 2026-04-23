@@ -1,5 +1,6 @@
 {
     "dashboard": "<p>dashboard</p>",
     "add_task": "<p>add tasks</p>",
-    "delete_task": "<p>delete tasks</p>"
+    "delete_task": "<p>delete tasks</p>",
+    "tasks": "The Tasks"
 }
