@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>My Page</title>
+</head>
+<body>
+    <div>
+        <h3>Login in to your account</h3>
+    </div>
+
+    <div>
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <form class="form"  method="POST" action="/login">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+
+            <button class="button" type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="signup" >
+        <a href="/create_user">New to my app. Sign up.</a>
+    </div>
+
+</body>
+</html>

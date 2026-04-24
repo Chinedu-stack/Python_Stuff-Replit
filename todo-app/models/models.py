@@ -2,8 +2,7 @@ import sqlite3
 import os
 
 # --- FILE PATH
-basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "task_manager.db")
+db_path = os.path.join("todo-app", "db", "database.db")
 
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
@@ -35,5 +34,7 @@ conn.commit()
 
 
 conn.close()
-print("success")
+
+
+print("table created")
 

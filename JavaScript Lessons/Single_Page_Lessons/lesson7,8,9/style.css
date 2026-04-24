@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f3460;
+  color: white;
+}
+.section {
+    display: none;
+    background-color: rgb(183, 0, 101);
+    color: white;
+}
+
+nav button { 
+            margin-right: 10px;
+            padding: 8px 16px;
+            cursor: pointer;
+     }
+
+nav button.active {
+    background-color: rgb(38, 103, 164);
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 50px;
+    background-color: #1a1a2e;
+
+}
+
+button:hover {
+  background-color: #e94560;
+  cursor: pointer;
+}
+
+button {
+  background-color: #b8d8ff; /* your normal colour */
+  transition: background-color 0.3s; /* animates the background-color property */
+}
+
+
+#content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1a1a2e;
+  border-radius: 10px;
+}

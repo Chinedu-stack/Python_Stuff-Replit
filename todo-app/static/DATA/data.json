@@ -1,0 +1,5 @@
+{
+    "dashboard": "<p>dashboard</p><ol id='task_list'>Tasks:</ol>",
+    "add_task": "<p>add tasks</p>",
+    "delete_task": "<p>delete tasks</p>"
+}

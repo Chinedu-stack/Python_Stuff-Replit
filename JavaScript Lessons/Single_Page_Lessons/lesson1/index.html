@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Hide</title>
+</head>
+<body>
+
+  <div id="myBox" style="background: red; padding: 20px;">
+    Click to reveal the spoiler!
+  </div>
+
+  <button id="btn" onclick="change()">Show spoiler</button>
+  
+
+
+
+
+  <script>
+
+    function change() {
+        const btn = document.getElementById('btn');
+        const box = document.getElementById("myBox");
+        if (box.style.display == 'none') {
+            box.style.display = 'block'
+            btn.textContent = "Hide Spoiler"
+            box.textContent = "The spoiler is I love football"
+        } else {
+            box.style.display = 'none'
+            btn.textContent = "Show Spoiler"
+        };
+      
+    };
+
+   
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>My Page</title>
+</head>
+<body>
+    <div>
+        {% if errors %}
+            {% for error in errors %}
+                <p style="color:red">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div>
+        <h2>Create Account</h2>
+    </div>
+
+    <div>
+        <form action="/register" method="POST">
+            <label for="email">Email</label>
+            <input name="email" type="email" id="email" required>
+
+            <label for="password">Password</label>
+            <input name="password" type="password" id="password" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+
+</body>
+</html>

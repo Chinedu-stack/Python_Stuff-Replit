@@ -6,8 +6,7 @@ import base64
 app = Flask(__name__)
 conn = None
 cursor = None
-basedir = os.path.abspath(os.path.dirname(__file__))
-db_path = os.path.join(basedir, "database.db")
+db_path = os.path.join("todo-app", "db", "database.db")
 
 
 ### --- OPEN DATABASE 
@@ -84,13 +83,13 @@ def delete(user_id, task_name):
 
 def display_tasks_day(user_id, today):
     open_db()
-    cursor.execute("""SELECT task_name, is_done FROM tasks
+    cursor.execute("""SELECT task_name, is_done, id FROM tasks
                    WHERE user_id = ? AND start_date <= ?""", (user_id, today))
     results = cursor.fetchall()
     close_db()
     tasks = []
     for task in results:
-        tasks.append({"task":task[0], "is_done":task[1]})
+        tasks.append({"task":task[0], "is_done":task[1], "id":task[2]})
     return tasks
 
 ### --- Display All tasks 
@@ -100,7 +99,6 @@ def display_all_tasks(user_id):
     cursor.execute("""SELECT task_name, is_done FROM tasks
                    WHERE user_id = ?""", (user_id,))
     results = cursor.fetchall()
-    close_db()
     tasks = []
     for task in results:
         tasks.append({"task":task[0], "is_done":task[1]})
