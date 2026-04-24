@@ -83,13 +83,13 @@ def delete(user_id, task_name):
 
 def display_tasks_day(user_id, today):
     open_db()
-    cursor.execute("""SELECT task_name, is_done FROM tasks
+    cursor.execute("""SELECT task_name, is_done, id FROM tasks
                    WHERE user_id = ? AND start_date <= ?""", (user_id, today))
     results = cursor.fetchall()
     close_db()
     tasks = []
     for task in results:
-        tasks.append({"task":task[0], "is_done":task[1]})
+        tasks.append({"task":task[0], "is_done":task[1], "id":task[2]})
     return tasks
 
 ### --- Display All tasks 

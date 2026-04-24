@@ -1,8 +1,8 @@
 import { display, init } from "./ui.js";
 
 
-let content = {};
-let tasks = {};
+
+
 
 export async function loadDashboard() {     // this function fetches the html from the json files and then passes that content into the init function
     const response = await fetch('/static/DATA/data.json');  
@@ -12,24 +12,28 @@ export async function loadDashboard() {     // this function fetches the html fr
         return;
     }
 
-    content = await response.json();
+    const content = await response.json();
     console.log("It works Nedu: " + content); // check if it loads
     init(content);
     return content
 }
 
 
-export function fetch_tasks() { // this fetches the tasks from flask from the db
-    fetch("/tasks")
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(task => {
-            let task = {"task":task["task"], "completed":task["is_done"]};
-            tasks[task.id] = task
+export async function fetch_tasks() { // this fetches the tasks from flask from the db
+    const res = await fetch("/tasks");
+    const data = await res.json()
 
-        })
-      console.log("Tasks successfully fetched");
-      return tasks;  
+    const tasks = {};
+
+    data.forEach(item => {
+        tasks[item.id] = {
+            id: item.id,
+            task: item.task,
+            completed: item.is_done
+        }
     })
+
+    return tasks
+    
     
 }
