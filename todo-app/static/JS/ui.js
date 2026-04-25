@@ -13,8 +13,8 @@ export function init(content) {  // this function is for when the page reloads a
 
 
 
-export function display(section_name, btn, content) {   // this function hides all the pages and removes the active class from all the buttons and only shows the page that we are
-    const fetched_tasks = fetch_tasks();
+export async function display(section_name, btn, content) {   // this function hides all the pages and removes the active class from all the buttons and only shows the page that we are
+    const fetched_tasks =  await fetch_tasks();
     const pages = document.querySelectorAll(".section"); // on and puts the active class on the btn
     pages.forEach(function(page) {
         page.style.display = "none";
@@ -32,7 +32,7 @@ export function display(section_name, btn, content) {   // this function hides a
         fetched_tasks.forEach(function(fetched_task) {
              const li = document.createElement("li");
              li.textContent = fetched_task["task"];
-             li.appendChild(ul);
+             ul.appendChild(li);
         })
         window.location.hash = section_name;
         
