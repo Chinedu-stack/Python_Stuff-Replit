@@ -100,6 +100,7 @@ def display_all_tasks(user_id):
     cursor.execute("""SELECT task_name, is_done FROM tasks
                    WHERE user_id = ?""", (user_id,))
     results = cursor.fetchall()
+    close_db()
     tasks = []
     for task in results:
         tasks.append({"task":task[0], "is_done":task[1]})
