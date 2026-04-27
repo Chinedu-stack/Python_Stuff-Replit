@@ -1,4 +1,5 @@
 import { display } from "./ui.js";
+import { init } from "./ui.js";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -9,5 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             display(section, btn);
         });
     });
+
+init();
+console.log("Dashboard successfully loaded");
 });
 
