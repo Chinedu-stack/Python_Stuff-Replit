@@ -15,10 +15,28 @@
 
     <div class="section" id="dashboard">
         <h1>Dashboard</h1>
-        <ol id="task_list"></ol>
+        <ol id="task_list">Tasks:</ol>
     </div>
-    <div class="section" id="add_task"></div>
-    <div class="section" id="delete_task"></div>
+
+
+    <div class="section" id="add_task">
+        <label for="name" >Task Name:</label>
+        <input name="name" id="name" type="text" required>
+
+        <label for="start-date">Start Date: </label>
+        <input name="start-date" id="start-date" type="date" required>
+
+        <label for="end-date">End Date:</label>
+        <input name="end-date" id="end-date" type="date" required>
+
+        <button id="submit_btn"  >Create New Task</button>
+    
+    </div>
+
+
+    <div class="section" id="delete_task">
+        <p>delete_tasks</p>
+    </div>
 
 
 

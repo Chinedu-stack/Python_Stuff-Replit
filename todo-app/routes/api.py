@@ -7,13 +7,9 @@ api_bp = Blueprint('api', __name__)
 
 @api_bp.route("/tasks", methods=["GET"])
 def dashboard():
-    date_today = date.today()
-    day = date_today.strftime("%A")
-    today = datetime.today().strftime("%Y-%m-%d")
-
     current_user = session.get("current_user")     
     user_id = helpers.get_user_id(current_user)
 
-    tasks = helpers.display_tasks_day(user_id, today)
+    tasks = helpers.display_all_tasks(user_id)
     return jsonify(tasks)
 

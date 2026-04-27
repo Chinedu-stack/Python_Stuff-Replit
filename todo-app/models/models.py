@@ -1,6 +1,7 @@
 import sqlite3
 import os
 
+
 # --- FILE PATH
 db_path = os.path.join("todo-app", "db", "database.db")
 
@@ -34,7 +35,4 @@ conn.commit()
 
 
 conn.close()
-
-
-print("table created")
 
