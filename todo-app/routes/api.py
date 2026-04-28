@@ -14,7 +14,7 @@ def dashboard():
     return jsonify(tasks)
 
 
-@api_bp.route("add_tasks", methods=["POST"])
+@api_bp.route("/add_tasks", methods=["POST"])
 def add_task():
     json_task = request.get_json()
     task = json.loads(json_task)
@@ -25,4 +25,6 @@ def add_task():
     end_date = task["end_date"]
 
     helpers.add_task(user_id, task_name, start_date, end_date)
+    print("task added")
+    return jsonify({"success":True})
 

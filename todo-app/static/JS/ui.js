@@ -1,4 +1,5 @@
 import { fetch_tasks } from "./api.js";
+import { add_task } from "./api.js";
 
 export function init() {
     if (window.location.hash) {
@@ -9,9 +10,10 @@ export function init() {
     }
 }
 
-function showError(error) {
+function showMsg(message, color) {
     const msg = document.getElementById("message");
-    msg.textContent = error;
+    msg.textContent = message;
+    msg.style.color = color;
 
     setTimeout(() => {
         msg.textContent = "";
@@ -51,9 +53,14 @@ export async function display(section_name, btn) {
 
         submit_btn.addEventListener("click", function() {
 
-            task_value = document.getElementById("name").value.trim();
-            start_date = document.getElementById("start-date").value.trim();
-            end_date = document.getElementById("end-date").value.trim();
+            const task_value = document.getElementById("name").value.trim();
+            const start_date = document.getElementById("start-date").value.trim();
+            const end_date = document.getElementById("end-date").value.trim();
+
+            const task_element = document.getElementById("name");
+            const start_date_element = document.getElementById("start-date");
+            const end_date_element = document.getElementById("end-date");
+
 
 
             const task = {
@@ -66,11 +73,21 @@ export async function display(section_name, btn) {
 
             if (!task_value || !start_date || !end_date) {
                 const error = "Please fill in all inputs.";
-                showError(error);
-            }
+                showMsg(error, "red");
+            } else {
+                add_task(task); 
+                task_element.textContent = "";
+                start_date_element.textContent = "";
+                end_date_element.textContent = "";
+                showMsg("task added", "green");
 
+            }
+        window.location.hash = section_name;
         });
 
+        
+    } else {
         window.location.hash = section_name;
     }
+    
 }

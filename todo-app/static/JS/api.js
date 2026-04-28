@@ -23,8 +23,8 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
 }
 
 
-async function add_task(task) {
-    fetch("/add_tasks", {
+export async function add_task(task) {
+    const res =  await fetch("/add_tasks", {
         method: "POST",
         headers : {
             "Content-type": "application/json"
@@ -33,6 +33,12 @@ async function add_task(task) {
             task: task
         })
     })
+
+   const response = await res.json()
+
+   if (response.success) {
+    console.log("Task added")
+   }
 
     
 }
