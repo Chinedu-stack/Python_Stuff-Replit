@@ -16,8 +16,7 @@ def dashboard():
 
 @api_bp.route("/add_tasks", methods=["POST"])
 def add_task():
-    json_task = request.get_json()
-    task = json.loads(json_task)
+    task = request.get_json()
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
     task_name = task["task"]

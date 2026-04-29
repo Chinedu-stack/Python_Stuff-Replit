@@ -21,6 +21,7 @@ function showMsg(message, color) {
 }
 
 export async function display(section_name, btn) {
+    window.location.hash = section_name;
     const fetched_tasks = await fetch_tasks();
     const pages = document.querySelectorAll(".section");
 
@@ -42,11 +43,19 @@ export async function display(section_name, btn) {
 
         fetched_tasks.forEach(function(fetched_task) {
             const li = document.createElement("li");
+            const task_name = fetched_task["task"];
             li.textContent = fetched_task["task"];
+
+            const delete_btn = document.createElement("button");
+            delete_btn.textContent = "Delete";
+            delete_btn.addEventListener("click", () => {
+                // the function to take the taskname and then send it to the 
+                // backend with fetch and then remove it from the db and then rerender the dashboard
+                display("dashboard", document.getElementById("dashboard_btn"));
+            })
             ul.appendChild(li);
         });
 
-        window.location.hash = section_name;
 
     } else if (section_name == "add_task") {
         const submit_btn = document.getElementById("submit_btn");
@@ -76,18 +85,17 @@ export async function display(section_name, btn) {
                 showMsg(error, "red");
             } else {
                 add_task(task); 
-                task_element.textContent = "";
-                start_date_element.textContent = "";
-                end_date_element.textContent = "";
+                task_element.value = "";
+                start_date_element.value = "";
+                end_date_element.value = "";
                 showMsg("task added", "green");
 
             }
-        window.location.hash = section_name;
         });
 
         
     } else {
-        window.location.hash = section_name;
+
     }
     
 }

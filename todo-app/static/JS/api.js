@@ -29,9 +29,7 @@ export async function add_task(task) {
         headers : {
             "Content-type": "application/json"
         },
-        body: JSON.stringify({
-            task: task
-        })
+        body: JSON.stringify(task)
     })
 
    const response = await res.json()
