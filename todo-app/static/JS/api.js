@@ -15,7 +15,7 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
         }
         tasks.push(task)
     })
-    console.log("tasks fetch successfully");
+    console.log("tasks fetched successfully");
 
     return tasks
     
