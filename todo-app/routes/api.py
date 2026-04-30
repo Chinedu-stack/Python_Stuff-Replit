@@ -27,3 +27,14 @@ def add_task():
     print("task added")
     return jsonify({"success":True})
 
+
+@api_bp.route("/delete_tasks", methods=["POST"])
+def delete_task():
+    data = request.get_json()
+    task_name = data["task"]
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    
+    helpers.delete_task(user_id, task_name)
+    print("Task deleted")
+    return jsonify({"success":True})

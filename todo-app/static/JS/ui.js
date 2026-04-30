@@ -1,5 +1,6 @@
 import { fetch_tasks } from "./api.js";
 import { add_task } from "./api.js";
+import { delete_task } from "./api.js";
 
 export function init() {
     if (window.location.hash) {
@@ -48,11 +49,11 @@ export async function display(section_name, btn) {
 
             const delete_btn = document.createElement("button");
             delete_btn.textContent = "Delete";
-            delete_btn.addEventListener("click", () => {
-                // the function to take the taskname and then send it to the 
-                // backend with fetch and then remove it from the db and then rerender the dashboard
+            delete_btn.addEventListener("click", async () => {
+                await delete_task(task_name);
                 display("dashboard", document.getElementById("dashboard_btn"));
             })
+            li.appendChild(delete_btn);
             ul.appendChild(li);
         });
 
@@ -60,7 +61,7 @@ export async function display(section_name, btn) {
     } else if (section_name == "add_task") {
         const submit_btn = document.getElementById("submit_btn");
 
-        submit_btn.addEventListener("click", function() {
+        submit_btn.addEventListener("click", async function() {
 
             const task_value = document.getElementById("name").value.trim();
             const start_date = document.getElementById("start-date").value.trim();
@@ -84,7 +85,7 @@ export async function display(section_name, btn) {
                 const error = "Please fill in all inputs.";
                 showMsg(error, "red");
             } else {
-                add_task(task); 
+                await add_task(task); 
                 task_element.value = "";
                 start_date_element.value = "";
                 end_date_element.value = "";
@@ -94,8 +95,5 @@ export async function display(section_name, btn) {
         });
 
         
-    } else {
-
     }
-    
 }

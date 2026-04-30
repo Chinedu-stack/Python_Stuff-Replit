@@ -23,13 +23,13 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
 }
 
 
-export async function add_task(task) {
+export async function add_task(task_name) {
     const res =  await fetch("/add_tasks", {
         method: "POST",
         headers : {
             "Content-type": "application/json"
         },
-        body: JSON.stringify(task)
+        body: JSON.stringify(task_name)
     })
 
    const response = await res.json()
@@ -39,4 +39,23 @@ export async function add_task(task) {
    }
 
     
+}
+
+
+export async function delete_task(task_name) {
+    const res = await fetch("/delete_tasks", {
+        method: "POST",
+        headers : {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            task: task_name
+        })
+    })
+
+    const response = await res.json()
+
+    if (response.success) {
+    console.log("Task deleted from DB")
+   }
 }

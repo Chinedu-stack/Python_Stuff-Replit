@@ -75,8 +75,8 @@ def add_task(user_id, task_name, start_date, end_date):
     close_db(conn)
 
 
-### --- DELETES TIMETABLE 
-def delete(user_id, task_name):
+### --- DELETES Task
+def delete_task(user_id, task_name):
     conn, cursor = open_db()
     cursor.execute("""DELETE FROM tasks
                    WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
