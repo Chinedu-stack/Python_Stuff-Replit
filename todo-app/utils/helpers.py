@@ -155,3 +155,14 @@ def check_email(email):
     if email_exists:
         return True
     return False
+
+
+### --- Edits task in DB
+
+def edit_task(new_task, user_id, task):
+    conn, cursor = open_db()
+    cursor.execute("""UPDATE tasks
+                   SET task_name = ?
+                   WHERE user_id = ?
+                   AND task_name = ?""", (new_task, user_id, task))
+    close_db(conn)

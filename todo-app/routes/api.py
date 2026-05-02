@@ -38,3 +38,16 @@ def delete_task():
     helpers.delete_task(user_id, task_name)
     print("Task deleted")
     return jsonify({"success":True})
+
+
+@api_bp.route("/edit_task", methods=["POST"])
+def edit_task():
+    data = request.get_json()
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    task = data["task"]
+    new_task = data["new_task"]
+
+    helpers.edit_task(new_task, user_id, task)
+    print("task edited")
+    return jsonify({"success": True})

@@ -59,3 +59,22 @@ export async function delete_task(task_name) {
     console.log("Task deleted from DB")
    }
 }
+
+export async function edit_task(task, new_task) {
+    const res = await fetch("/edit_task", {
+        method: "POST",
+        headers : {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            task: task,
+            new_task: new_task
+        })
+    })
+
+    const response = await res.json()
+
+    if (response.success) {
+        console.log("Task edited")
+    }
+}
