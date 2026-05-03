@@ -1,4 +1,4 @@
-import { fetch_tasks, edit_task, add_task, delete_task } from "./api.js";
+import { fetch_tasks, edit_task, add_task, delete_task, task_done} from "./api.js";
 
 export function init() {
     setupAddTaskForm();
@@ -86,16 +86,34 @@ async function render_dashboard() {
     ul.innerHTML = "";
 
     tasks.forEach(task => {
+
         const li = document.createElement("li");
         li.textContent = task.task;
+
+        if (task.completed) {
+            li.classList.add("done");
+            li.innerHTML = `${task.task}✔️`;
+        } else {
+            li.textContent = task.task;
+            li.classList.add("not_done")
+        }
 
         const delete_btn = document.createElement("button");
         delete_btn.textContent = "Delete";
 
+        
         delete_btn.addEventListener("click", async () => {
             await delete_task(task.task);
             render_dashboard(); // refresh list
         });
+
+        const done_btn = document.createElement("button");
+        done_btn.textContent = "done"
+
+        done_btn.addEventListener("click", async () => {
+            await task_done(task.task);
+            render_dashboard();
+        })
 
         const edit_btn = document.createElement("button");
         edit_btn.textContent = "Edit";
@@ -119,8 +137,10 @@ async function render_dashboard() {
                 render_dashboard();
             });
         });
+
+        li.appendChild(done_btn);
+        li.appendChild(edit_btn);
         li.appendChild(delete_btn);
-        li.append(edit_btn);
         ul.appendChild(li);
     });
  }

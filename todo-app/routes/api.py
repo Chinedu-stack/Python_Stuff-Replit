@@ -34,8 +34,9 @@ def delete_task():
     task_name = data["task"]
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
+    task_id = helpers.get_task_id(user_id, task_name)
     
-    helpers.delete_task(user_id, task_name)
+    helpers.delete_task(user_id, task_id)
     print("Task deleted")
     return jsonify({"success":True})
 
@@ -46,8 +47,22 @@ def edit_task():
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
     task = data["task"]
+    task_id = helpers.get_task_id(user_id, task)
     new_task = data["new_task"]
 
-    helpers.edit_task(new_task, user_id, task)
+    helpers.edit_task(new_task, user_id, task_id)
     print("task edited")
+    return jsonify({"success": True})
+
+
+@api_bp.route("/task_done", methods=["POST"])
+def mark_done():
+    data = request.get_json()
+    current_user = session.get("current_user")
+    user_id = helpers.get_user_id(current_user)
+    task = data["task"]
+    task_id = helpers.get_task_id(user_id, task)
+
+    helpers.mark_task_done(user_id, task_id)
+    print("task marked as done")
     return jsonify({"success": True})

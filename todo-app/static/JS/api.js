@@ -78,3 +78,21 @@ export async function edit_task(task, new_task) {
         console.log("Task edited")
     }
 }
+
+export async function task_done(task_name) {
+    const res = await fetch("/task_done", {
+        method: "POST",
+        headers : {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            task: task_name
+        })
+    })
+
+    const response = await res.json()
+
+    if (response.success) {
+        console.log("Task marked as done")
+    }
+}

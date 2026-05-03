@@ -76,10 +76,10 @@ def add_task(user_id, task_name, start_date, end_date):
 
 
 ### --- DELETES Task
-def delete_task(user_id, task_name):
+def delete_task(user_id, task_id):
     conn, cursor = open_db()
     cursor.execute("""DELETE FROM tasks
-                   WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
+                   WHERE user_id = ? AND id = ? """, (user_id, task_id))
     close_db(conn)
 
 
@@ -112,12 +112,12 @@ def display_all_tasks(user_id):
 
 
 ### --- PUTS is_done as TRUE in the DB
-def is_done(user_id, task_name):
+def mark_task_done(user_id, task_id):
     conn, cursor = open_db()
     cursor.execute("""UPDATE tasks
                    SET is_done = 1
                    WHERE user_id = ? AND
-                   task_name = ?""", (user_id, task_name))
+                   id = ?""", (user_id, task_id))
     close_db(conn)
 
 
@@ -158,11 +158,26 @@ def check_email(email):
 
 
 ### --- Edits task in DB
-
-def edit_task(new_task, user_id, task):
+def edit_task(new_task, user_id, task_id):
     conn, cursor = open_db()
     cursor.execute("""UPDATE tasks
                    SET task_name = ?
                    WHERE user_id = ?
-                   AND task_name = ?""", (new_task, user_id, task))
+                   AND id = ?""", (new_task, user_id, task_id))
     close_db(conn)
+
+
+### --- get task id from DB
+def get_task_id(user_id, task_name):
+    conn,cursor = open_db()
+    cursor.execute("""SELECT id FROM tasks
+                   WHERE user_id = ? 
+                   AND task_name = ?""", (user_id, task_name))
+    
+    data = cursor.fetchone()
+    close_db(conn)
+    if data is None:
+        return None
+    task_id = data[0]
+    return task_id
+
