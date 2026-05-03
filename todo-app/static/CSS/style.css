@@ -15,3 +15,12 @@ nav button.active {
     background-color: #f33500ab;
     color: white;
 }
+
+.done {
+    color: green;
+    text-decoration: line-through;
+}
+
+.not_done {
+    color: red;
+}
