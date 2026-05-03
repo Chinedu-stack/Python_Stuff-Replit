@@ -132,10 +132,10 @@ def delete_account(email, user_id):
 
 
 ### ---- Check to see if there is no other task with that name
-def check_name(user_id, task_name):
+def check_name(user_id, task_id):
     conn, cursor = open_db()
     cursor.execute("""SELECT 1 FROM tasks
-                   WHERE user_id = ? AND task_name = ? """, (user_id, task_name))
+                   WHERE user_id = ? AND task_id = ? """, (user_id, task_id))
     task_exists = cursor.fetchone()
     close_db(conn)
 
