@@ -1,7 +1,8 @@
-from flask import Flask, flash, request, render_template, redirect, url_for, session, jsonify, Blueprint
-import os
-import utils.helpers as helpers
+from flask import Flask, request, render_template, redirect, url_for, session, Blueprint
 import bcrypt
+import utils.auth_helpers as helpers
+import utils.validation_helpers as validation
+
 
 auth_bp = Blueprint("auth", __name__)
 auth_bp.secret_key = "Chinedu's_Key"
@@ -45,7 +46,7 @@ def register():
 
     if not email or not password:
         errors.append("Please enter email and password")
-    if helpers.check_email(email):
+    if validation.check_email(email):
         errors.append("Email taken. Please use another email")
     
     if errors:

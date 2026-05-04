@@ -47,30 +47,26 @@ async function setupAddTaskForm() {
     submit_btn.addEventListener("click", async () => {
 
     const task_value = document.getElementById("name").value.trim();
-    const start_date = document.getElementById("start-date").value.trim();
     const end_date = document.getElementById("end-date").value.trim();
 
     const task_element = document.getElementById("name");
-    const start_date_element = document.getElementById("start-date");
     const end_date_element = document.getElementById("end-date");
 
 
 
     const task = {
         task: task_value,
-        start_date: start_date,
         end_date: end_date
 
     };
 
 
-    if (!task_value || !start_date || !end_date) {
+    if (!task_value || !end_date) {
         const error = "Please fill in all inputs.";
         showMsg(error, "red");
     } else {
         await add_task(task); 
         task_element.value = "";
-        start_date_element.value = "";
         end_date_element.value = "";
         showMsg("task added", "green");
 

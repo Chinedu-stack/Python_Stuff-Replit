@@ -1,6 +1,5 @@
-from flask import Blueprint, jsonify, render_template, session, request
-import json
-import utils.helpers as helpers
+from flask import Blueprint, jsonify, session, request
+import utils.task_helpers as helpers
 from datetime import datetime, date
 
 api_bp = Blueprint('api', __name__)
@@ -13,17 +12,15 @@ def dashboard():
     tasks = helpers.display_all_tasks(user_id)
     return jsonify(tasks)
 
-
 @api_bp.route("/add_tasks", methods=["POST"])
 def add_task():
     task = request.get_json()
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
     task_name = task["task"]
-    start_date = task["start_date"]
     end_date = task["end_date"]
 
-    helpers.add_task(user_id, task_name, start_date, end_date)
+    helpers.add_task(user_id, task_name, end_date)
     print("task added")
     return jsonify({"success":True})
 
