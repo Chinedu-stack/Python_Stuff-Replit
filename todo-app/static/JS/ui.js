@@ -1,4 +1,4 @@
-import { fetch_tasks, edit_task, add_task, delete_task, task_done} from "./api.js";
+import { fetch_tasks, edit_task, add_task, delete_task, task_done, fetch_today} from "./api.js";
 
 export function init() {
     setupAddTaskForm();
@@ -11,9 +11,26 @@ export function init() {
 }
 
 function showMsg(message, color) {
-    const msg = document.getElementById("message");
-    msg.textContent = message;
+    const msg = document.getElementById("message")
+    const msg_list = document.getElementById("msg_list");
+
+
     msg.style.color = color;
+
+    msg.textContent = "";
+    msg_list.textContent = "";
+
+    if (Array.isArray(message)) {
+        message.forEach(function(msg_element) {
+            const li = document.createElement("li");
+            li.textContent = msg_element;
+            msg_list.appendChild(li);
+        })
+    }   else {
+        msg.textContent = message
+    }
+
+
 
     setTimeout(() => {
         msg.textContent = "";
@@ -60,17 +77,29 @@ async function setupAddTaskForm() {
 
     };
 
+    const errors = []
+
 
     if (!task_value || !end_date) {
         const error = "Please fill in all inputs.";
-        showMsg(error, "red");
+        errors.push(error)
+    }
+    if (check_date(end_date)) {
+        const error = "Please put in valid date"
+        errors.push(error)
+    }   
+
+    if (errors.length > 0) {
+        showMsg(errors, "red")
     } else {
         await add_task(task); 
         task_element.value = "";
         end_date_element.value = "";
         showMsg("task added", "green");
-
     }
+ 
+
+    
     })
     
 }
@@ -141,4 +170,12 @@ async function render_dashboard() {
     });
  }
 
+ async function check_date(end_date) {
+    const today = await fetch_today()
+    if (end_date < today.today) {
+        return true
+    } else {
+        return false
+    }
+ }
  

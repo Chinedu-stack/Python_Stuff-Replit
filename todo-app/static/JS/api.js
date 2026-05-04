@@ -22,6 +22,12 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
     
 }
 
+export async function fetch_today() {
+    const res = await fetch("/fetch_today");
+    const today = await res.json()
+    return today
+}
+
 
 export async function add_task(task_name) {
     const res =  await fetch("/add_tasks", {

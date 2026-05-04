@@ -12,6 +12,12 @@ def dashboard():
     tasks = helpers.display_all_tasks(user_id)
     return jsonify(tasks)
 
+@api_bp.route("/fetch_today", methods=["GET"])
+def get_today():
+    today = date.today()
+    today = str(today)
+    return jsonify(today=today)
+
 @api_bp.route("/add_tasks", methods=["POST"])
 def add_task():
     task = request.get_json()
