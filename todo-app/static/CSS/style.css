@@ -19,8 +19,14 @@ nav button.active {
 .done {
     color: green;
     text-decoration: line-through;
+    font-weight: bold;
 }
 
 .not_done {
-    color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.active_msg {
+    display: block;
 }

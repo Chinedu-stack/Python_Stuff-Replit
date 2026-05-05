@@ -1,4 +1,4 @@
-import { fetch_tasks, edit_task, add_task, delete_task, task_done, fetch_today} from "./api.js";
+import { fetch_tasks, edit_task, add_task, delete_task, task_done} from "./api.js";
 
 export function init() {
     setupAddTaskForm();
@@ -11,13 +11,10 @@ export function init() {
 }
 
 function showMsg(message, color) {
-    const msg = document.getElementById("message")
     const msg_list = document.getElementById("msg_list");
 
 
-    msg.style.color = color;
-
-    msg.textContent = "";
+    msg_list.style.color = color;
     msg_list.textContent = "";
 
     if (Array.isArray(message)) {
@@ -27,14 +24,16 @@ function showMsg(message, color) {
             msg_list.appendChild(li);
         })
     }   else {
-        msg.textContent = message
+        const li = document.createElement("li");
+        li.textContent = message;
+        msg_list.appendChild(li);
     }
 
 
 
     setTimeout(() => {
-        msg.textContent = "";
-    }, 3000);
+        msg_list.textContent = "";
+    }, 1000);
 }
 
 export  function display(section_name, btn) {
@@ -170,9 +169,12 @@ async function render_dashboard() {
     });
  }
 
- async function check_date(end_date) {
-    const today = await fetch_today()
-    if (end_date < today.today) {
+ function check_date(end_date) {
+    const today = new Date()
+    today.setHours(0,0,0,0)
+    
+    const date = new Date(end_date)
+    if (date < today) {
         return true
     } else {
         return false
