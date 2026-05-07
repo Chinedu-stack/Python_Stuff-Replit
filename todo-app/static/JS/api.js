@@ -96,3 +96,12 @@ export async function task_done(task_name) {
         console.log("Task marked as done")
     }
 }
+export async function delete_account() {
+    const res = await fetch("/delete_account", {
+        method: "POST"
+    });
+
+    if (res.redirected) {
+        window.location.href = res.url; // follow redirect
+    }
+}

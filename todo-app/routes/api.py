@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify, session, request
+from flask import Blueprint, jsonify, session, request, url_for, redirect
 import utils.task_helpers as helpers
+import utils.auth_helpers as auth
 from datetime import datetime, date
 
 api_bp = Blueprint('api', __name__)
@@ -64,3 +65,12 @@ def mark_done():
     helpers.mark_task_done(user_id, task_id)
     print("task marked as done")
     return jsonify({"success": True})
+
+@api_bp.route("/delete_account", methods=["POST"])
+def delete_account():
+    email = session.get("current_user")
+    auth.delete_account(email)
+
+    session.clear()
+    print("account deleted")
+    return redirect(url_for("auth.landing_page"))

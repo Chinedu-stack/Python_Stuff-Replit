@@ -1,7 +1,8 @@
-import { fetch_tasks, edit_task, add_task, delete_task, task_done} from "./api.js";
+import { fetch_tasks, edit_task, add_task, delete_task, task_done, delete_account} from "./api.js";
 
 export function init() {
     setupAddTaskForm();
+    setupDeleteAccount();
     if (window.location.hash) {
         const section = window.location.hash.slice(1);
         display(section, document.getElementById(section + "_btn"));
@@ -169,6 +170,12 @@ async function render_dashboard() {
     });
  }
 
+ async function setupDeleteAccount() {
+    const delete_account_btn = document.getElementById("delete_account_btn")
+    delete_account_btn.addEventListener("click", async ()=> {
+        await delete_account();
+    })
+ }
  function check_date(end_date) {
     const today = new Date()
     today.setHours(0,0,0,0)

@@ -57,3 +57,10 @@ def check_email(email):
     if email_exists:
         return True
     return False
+
+### --- Delete Account
+def delete_account(email):
+    conn, cursor = helpers.open_db()
+    cursor.execute("""DELETE FROM users
+                   WHERE email = ? """, (email,))
+    helpers.close_db(conn)

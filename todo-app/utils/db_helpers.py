@@ -9,6 +9,7 @@ db_path = os.path.join("todo-app", "db", "database.db")
 ### --- OPEN DATABASE 
 def open_db():
     conn = sqlite3.connect(db_path)
+    conn.execute("PRAGMA foreign_keys = ON")
     cursor = conn.cursor()
     return conn, cursor
 
