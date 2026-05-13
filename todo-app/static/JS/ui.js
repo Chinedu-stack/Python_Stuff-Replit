@@ -3,6 +3,7 @@ import { fetch_tasks, edit_task, add_task, delete_task, task_done, delete_accoun
 export function init() {
     setupAddTaskForm();
     setupDeleteAccount();
+    search();
     if (window.location.hash) {
         const section = window.location.hash.slice(1);
         display(section, document.getElementById(section + "_btn"));
@@ -113,13 +114,13 @@ async function render_dashboard() {
     tasks.forEach(task => {
 
         const li = document.createElement("li");
-        li.textContent = task.task;
+        li.textContent = task.task_name;
 
         if (task.completed) {
             li.classList.add("done");
-            li.innerHTML = `${task.task}✔️`;
+            li.innerHTML = `${task.task_name}✔️`;
         } else {
-            li.textContent = task.task;
+            li.textContent = task.task_name;
             li.classList.add("not_done")
         }
 
@@ -128,7 +129,7 @@ async function render_dashboard() {
 
         
         delete_btn.addEventListener("click", async () => {
-            await delete_task(task.task);
+            await delete_task(task.task_name);
             render_dashboard(); // refresh list
         });
 
@@ -136,7 +137,7 @@ async function render_dashboard() {
         done_btn.textContent = "done"
 
         done_btn.addEventListener("click", async () => {
-            await task_done(task.task);
+            await task_done(task.task_name);
             render_dashboard();
         })
 
@@ -145,7 +146,7 @@ async function render_dashboard() {
 
         edit_btn.addEventListener("click", async () => {
             const input = document.createElement("input");
-            input.value = task.task;
+            input.value = task.task_name;
 
             const save_btn = document.createElement("button");
             save_btn.textContent = "Save";
@@ -154,7 +155,7 @@ async function render_dashboard() {
             li.appendChild(save_btn);
 
             save_btn.addEventListener("click", async () => {
-                await edit_task(task.task, input.value);
+                await edit_task(task.task_name, input.value);
 
                 input.remove();
                 save_btn.remove();
@@ -176,6 +177,7 @@ async function render_dashboard() {
         await delete_account();
     })
  }
+
  function check_date(end_date) {
     const today = new Date()
     today.setHours(0,0,0,0)
@@ -186,5 +188,83 @@ async function render_dashboard() {
     } else {
         return false
     }
+ }
+
+ async function search() {
+    const tasks = await fetch_tasks();
+    const search_bar = document.getElementById("search_bar");
+    search_bar.addEventListener("input", () => {
+        const value = search_bar.value.toLowerCase();
+
+        const filtered = tasks.filter(task => 
+            task.task_name.toLowerCase().includes(value)
+        );
+
+        render_filtered_dashboard(filtered)
+    })
+ }
+
+ async function render_filtered_dashboard(filtered_tasks) {
+    const ul = document.getElementById("task_list");
+    ul.innerHTML = "";
+
+    filtered_tasks.forEach(task => {
+
+        const li = document.createElement("li");
+        li.textContent = task.task_name;
+
+        if (task.completed) {
+            li.classList.add("done");
+            li.innerHTML = `${task.task_name}✔️`;
+        } else {
+            li.textContent = task.task_name;
+            li.classList.add("not_done")
+        }
+
+        const delete_btn = document.createElement("button");
+        delete_btn.textContent = "Delete";
+
+        
+        delete_btn.addEventListener("click", async () => {
+            await delete_task(task.task_name);
+            render_filtered_dashboard(filtered_tasks); // refresh list
+        });
+
+        const done_btn = document.createElement("button");
+        done_btn.textContent = "done"
+
+        done_btn.addEventListener("click", async () => {
+            await task_done(task.task_name);
+            render_filtered_dashboard(filtered_tasks);
+        })
+
+        const edit_btn = document.createElement("button");
+        edit_btn.textContent = "Edit";
+
+        edit_btn.addEventListener("click", async () => {
+            const input = document.createElement("input");
+            input.value = task.task_name;
+
+            const save_btn = document.createElement("button");
+            save_btn.textContent = "Save";
+
+            li.appendChild(input);
+            li.appendChild(save_btn);
+
+            save_btn.addEventListener("click", async () => {
+                await edit_task(task.task_name, input.value);
+
+                input.remove();
+                save_btn.remove();
+
+                render_filtered_dashboard(filtered_tasks);
+            });
+        });
+
+        li.appendChild(done_btn);
+        li.appendChild(edit_btn);
+        li.appendChild(delete_btn);
+        ul.appendChild(li);
+    });
  }
  

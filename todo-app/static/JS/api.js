@@ -10,7 +10,7 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
     data.forEach(item => {
         const task = {
             id: item.id,
-            task: item.task,
+            task_name: item.task,
             completed: item.is_done
         }
         tasks.push(task)
