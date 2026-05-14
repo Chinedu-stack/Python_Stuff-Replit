@@ -30,3 +30,16 @@ nav button.active {
 .active_msg {
     display: block;
 }
+
+.page_not_active {
+    display: none;
+}
+
+.page_active {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgb(0, 180, 200);
+    color: white;
+    border-radius: 20px
+}

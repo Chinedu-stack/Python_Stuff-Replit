@@ -6,15 +6,15 @@ export function display(section_name, btn) {
     const pages = document.querySelectorAll(".section");
 
     pages.forEach(function(page) {
-        page.style.display = "none";
+        page.classList.remove("page_active");
     });
 
     const nav_btns = document.querySelectorAll("nav button");
     nav_btns.forEach(function(nav_btn) {
         nav_btn.classList.remove("active");
     });
-
-    document.getElementById(section_name).style.display = "block";
+    
+    document.getElementById(section_name).classList.add("page_active");
     btn.classList.add("active");
 
     if (section_name == "dashboard") {
