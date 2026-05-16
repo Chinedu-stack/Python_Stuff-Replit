@@ -16,16 +16,17 @@
     <ul id="msg_list" class="active_msg"></ul>
 
     <div class="section" id="dashboard">
-        <h1>Dashboard</h1>
-        <label for="search_bar">Search:</label>
-        <input type="text"  id="search_bar" placeholder="Search Tasks...">
-        <ol id="task_list">Tasks:</ol>
+        <h1 class="title" >Dashboard</h1>
+        <label for="search_bar" class="search">Search:</label>
+        <input  class="search_input"   type="text"  id="search_bar" placeholder="Search Tasks...">
+        <ol class="tasks"     id="task_list">Tasks:</ol>
     </div>
 
 
     <div class="section" id="add_task">
+        <h1 class="title">Add Task</h1>
         <label for="name" >Task Name:</label>
-        <input name="name" id="name" type="text" required>
+        <input name="name" id="name" type="text" placeholder="Add Task...">
 
         <label for="end-date">End Date:</label>
         <input name="end-date" id="end-date" type="date" required>
