@@ -9,17 +9,21 @@ export async function render_dashboard() {
     tasks.forEach(task => {
 
         const li = document.createElement("li");
-        li.textContent = task.task_name;
+
+        const task_text = document.createElement("span");
 
         if (task.completed) {
-            li.classList.add("done");
-            li.innerHTML = `${task.task_name}✔️`;
+            task_text.classList.add("done");
+            task_text.textContent = `${task.task_name}✔️`;
         } else {
-            li.textContent = task.task_name;
-            li.classList.add("not_done");
+            task_text.classList.add("not_done");
+            task_text.textContent = task.task_name;
         }
 
+        li.appendChild(task_text);
+
         const delete_btn = document.createElement("button");
+        delete_btn.classList.add("crud_btns");
         delete_btn.textContent = "Delete";
 
         delete_btn.addEventListener("click", async () => {
@@ -28,6 +32,7 @@ export async function render_dashboard() {
         });
 
         const done_btn = document.createElement("button");
+        done_btn.classList.add("crud_btns");
         done_btn.textContent = "done";
 
         done_btn.addEventListener("click", async () => {
@@ -36,19 +41,23 @@ export async function render_dashboard() {
         });
 
         const edit_btn = document.createElement("button");
+        edit_btn.classList.add("crud_btns");
         edit_btn.textContent = "Edit";
 
         edit_btn.addEventListener("click", async () => {
+
             const input = document.createElement("input");
             input.value = task.task_name;
 
             const save_btn = document.createElement("button");
+            save_btn.classList.add("crud_btns");
             save_btn.textContent = "Save";
 
             li.appendChild(input);
             li.appendChild(save_btn);
 
             save_btn.addEventListener("click", async () => {
+
                 await edit_task(task.task_name, input.value);
 
                 input.remove();
@@ -61,6 +70,7 @@ export async function render_dashboard() {
         li.appendChild(done_btn);
         li.appendChild(edit_btn);
         li.appendChild(delete_btn);
+
         ol.appendChild(li);
     });
 }
@@ -90,6 +100,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar) {
         }
 
         const delete_btn = document.createElement("button");
+        delete_btn.classList.add("crud_btns");
         delete_btn.textContent = "Delete";
 
         delete_btn.addEventListener("click", async () => {
@@ -103,6 +114,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar) {
         });
 
         const done_btn = document.createElement("button");
+        done_btn.classList.add("crud_btns");
         done_btn.textContent = "done";
 
         done_btn.addEventListener("click", async () => {
@@ -116,6 +128,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar) {
         });
 
         const edit_btn = document.createElement("button");
+        edit_btn.classList.add("crud_btns");
         edit_btn.textContent = "Edit";
 
         edit_btn.addEventListener("click", async () => {
@@ -123,6 +136,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar) {
             input.value = task.task_name;
 
             const save_btn = document.createElement("button");
+            save_btn.classList.add("crud_btns");
             save_btn.textContent = "Save";
 
             li.appendChild(input);
