@@ -1,0 +1,28 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Production-ready full-stack todo application",
+  "scripts": {
+    "backend:install": "cd backend && pip install -r requirements.txt",
+    "backend:migrate": "cd backend && python manage.py migrate",
+    "backend:migrations": "cd backend && python manage.py makemigrations",
+    "backend:superuser": "cd backend && python manage.py createsuperuser",
+    "backend:start": "cd backend && source venv/bin/activate && python manage.py runserver",
+    "backend:test": "cd backend && python manage.py test",
+    "frontend:install": "cd frontend && npm install",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "todo",
+    "task",
+    "django",
+    "react",
+    "fullstack"
+  ],
+  "author": "",
+  "license": "MIT"
+}
