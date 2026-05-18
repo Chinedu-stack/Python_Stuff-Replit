@@ -45,7 +45,7 @@ nav button.active {
 }
 
 .not_done {
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -83,6 +83,7 @@ input {
     border-radius: 20px;
     padding: 15px;
     border: none;
+    outline: 2px solid black;
 }
 
 #task_list li {
