@@ -1,17 +1,20 @@
-/*  Page switching  */
-.page_not_active {
-    display: none;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
 }
+
+/*  Page switching  */
+
 
 .section.page_active {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
     background-color: rgb(70, 193, 237);
-    color: white;
-    border-radius: 20px;
+    border-radius: 30px
 }
 
 .section {
@@ -20,16 +23,54 @@
     color: black;
 }
 
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+    color: rgb(70, 193, 237)
+}
+
+
+
+.title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(70, 193, 237);
+    padding: 15px 30px;
+    
+}
+
 /* Navegation buttons */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 nav button {
-    margin-right: 10px;
     padding: 8px 16px;
     cursor: pointer;
     background-color: rgb(80, 80, 80);
     color: white;
     border-radius: 20px;
-    display: block;
-    margin: auto;
+    margin-right: 10px;
+
 }
 nav button.active {
     background-color: #f33500ab;
@@ -54,30 +95,7 @@ nav button.active {
 }
 
 
-.search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    padding: 15px;
-    background-color: white;
-    color: rgb(70, 193, 237)
-}
 
-
-
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color: white;
-    color: rgb(70, 193, 237);
-    padding: 30px;
-    width:130px;
-    height: 50px;
-    
-}
 
 input {
     border-radius: 20px;
@@ -90,7 +108,7 @@ input {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
     background-color: white;
     color: rgb(70, 193, 237);
@@ -104,9 +122,13 @@ input {
     color: white;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    gap: 10px; /* key addition */
     border-radius: 20px;
     margin: 10px;
     padding: 7px;
 }
+
+
+
+

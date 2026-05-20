@@ -7,39 +7,45 @@
     <title>My Page</title>
 </head>
 <body>
-    <nav>
-        <button  id="dashboard_btn"   >Dashboard</button>
-        <button  id="add_task_btn"    >Add Task</button>
-    </nav>
+
+    <div class="container">
+        <nav>
+            <button  id="dashboard_btn"   >Dashboard</button>
+            <button  id="add_task_btn"    >Add Task</button>
+        </nav>
+        <ul id="msg_list" class="active_msg"></ul>
+
+        <div class="section" id="dashboard">
+            <div class="content">
+                <h1 class="title" >Dashboard</h1>
+                <label for="search_bar" class="search">Search:</label>
+                <input  class="search_input"   type="text"  id="search_bar" placeholder="Search Tasks...">
+                <h3>Tasks:</h3>
+                <ol class="tasks"     id="task_list"></ol>
+            </div>
+        </div>
 
 
-    <ul id="msg_list" class="active_msg"></ul>
+        <div class="section" id="add_task">
+            <div class="content">
+                <h1 class="title">Add Task</h1>
+                <label for="name" >Task Name:</label>
+                <input name="name" id="name" type="text" placeholder="Add Task...">
 
-    <div class="section" id="dashboard">
-        <h1 class="title" >Dashboard</h1>
-        <label for="search_bar" class="search">Search:</label>
-        <input  class="search_input"   type="text"  id="search_bar" placeholder="Search Tasks...">
-        <ol class="tasks"     id="task_list">Tasks:</ol>
+                <label for="end-date">End Date:</label>
+                <input name="end-date" id="end-date" type="date" required>
+
+                <button id="submit_btn"  >Create New Task</button>
+            </div>
+        </div>
+
+
+        <a href="/">Logout</a>
+        <div>
+            <button id="delete_account_btn">Delete Account</button>
+        </div>
+
     </div>
-
-
-    <div class="section" id="add_task">
-        <h1 class="title">Add Task</h1>
-        <label for="name" >Task Name:</label>
-        <input name="name" id="name" type="text" placeholder="Add Task...">
-
-        <label for="end-date">End Date:</label>
-        <input name="end-date" id="end-date" type="date" required>
-
-        <button id="submit_btn"  >Create New Task</button>
-    </div>
-
-
-    <a href="/">Logout</a>
-    <div>
-        <button id="delete_account_btn">Delete Account</button>
-    </div>
-
 
 </body>
 <script  type="module" src="static/JS/main.js"></script>
