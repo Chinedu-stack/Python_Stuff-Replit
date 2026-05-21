@@ -29,20 +29,9 @@
     flex-direction: column;
     margin: 20px;
     padding: 20px;
+    gap:20px;
+    text-align: center;
 }
-
-
-.search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    padding: 15px;
-    background-color: white;
-    color: rgb(70, 193, 237)
-}
-
-
 
 .title {
     display: inline-flex;
@@ -54,6 +43,34 @@
     padding: 15px 30px;
     
 }
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+    color: rgb(70, 193, 237);
+    width: 100px;
+    margin: auto;
+}
+
+.sub_title {
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+    color: rgb(70, 193, 237);
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+
+
+
 
 /* Navegation buttons */
 
@@ -78,24 +95,6 @@ nav button.active {
 }
 
 
-/* Showing Messages */
-.done {
-    color: green;
-    text-decoration: line-through;
-    font-weight: bold;
-}
-
-.not_done {
-    color: black;
-    font-weight: bold;
-}
-
-.active_msg {
-    display: block;
-}
-
-
-
 
 input {
     border-radius: 20px;
@@ -118,17 +117,38 @@ input {
 }
 
 .crud_btns {
-    background-color: rgb(70, 193, 237);
-    color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px; /* key addition */
+    background-color: white;
+    color: rgb(70, 193, 237);
+    text-align: center;
     border-radius: 20px;
-    margin: 10px;
+    margin: auto;
     padding: 7px;
 }
 
+.create_task {
+    background-color: white;
+    color: rgb(70, 193, 237);
+    text-align: center;
+    border-radius: 20px;
+    margin: auto;
+    padding: 7px;
+    border: none;
+}
 
+/* Showing Messages */
+.done {
+    color: green;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.not_done {
+    color: black;
+    font-weight: bold;
+}
+
+.active_msg {
+    display: block;
+}
 
 
