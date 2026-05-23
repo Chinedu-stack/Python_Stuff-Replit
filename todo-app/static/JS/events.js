@@ -1,6 +1,7 @@
-import {render_filtered_dashboard } from "./render.js";
+import { render_filtered_dashboard, render_dashboard} from "./render.js";
 import {showMsg, check_date } from "./ui-core.js";
 import {fetch_tasks, delete_account, add_task } from "./api.js";
+import { getPageFromHash } from "./ui.js";
 
 
 export async function setupSearch() {
@@ -62,3 +63,13 @@ export async function setupDeleteAccount() {
         await delete_account();
     });
 }
+
+export function hashchange() {
+    window.addEventListener("hashchange", () => {
+        const section = "dashboard";
+        let current_page = getPageFromHash();
+        render_dashboard(current_page);
+    });
+
+}
+

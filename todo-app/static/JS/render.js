@@ -1,12 +1,23 @@
 import {fetch_tasks, delete_task, task_done, edit_task} from "./api.js";
 
-export async function render_dashboard() {
+
+export async function render_dashboard(current_page) {
     const tasks = await fetch_tasks();
+    const page_size = 3;
+
+
+    let start = (current_page - 1) * page_size;
+    let end = start + page_size;
+
+    let paginatedTasks = tasks.slice(start, end);
+
+    console.log(start, end);
+    console.log(paginatedTasks);    
 
     const ol = document.getElementById("task_list");
     ol.innerHTML = "";
 
-    tasks.forEach(task => {
+    paginatedTasks.forEach(task => {
 
         const li = document.createElement("li");
 
@@ -47,6 +58,7 @@ export async function render_dashboard() {
         edit_btn.addEventListener("click", async () => {
 
             const input = document.createElement("input");
+            input.classList.add("edit_input");
             input.value = task.task_name;
 
             const save_btn = document.createElement("button");
@@ -73,6 +85,28 @@ export async function render_dashboard() {
 
         ol.appendChild(li);
     });
+
+    if (tasks.length > page_size) {
+
+    const next_page = document.createElement("button");
+    next_page.textContent = "Next Page";
+    next_page.classList.add("create_task_btn");
+
+    next_page.addEventListener("click", async () => {
+        import("./ui.js").then(module => module.nextPage());
+    });
+
+    const prev_page = document.createElement("button");
+    prev_page.textContent = "Previous Page";
+    prev_page.classList.add("create_task_btn");
+
+    prev_page.addEventListener("click", () => {
+        import("./ui.js").then(module => module.prevPage());
+    });
+
+    ol.appendChild(prev_page);
+    ol.appendChild(next_page);
+}
 }
 
 export async function render_filtered_dashboard(filtered_tasks, search_bar) {
@@ -164,3 +198,4 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar) {
         ol.appendChild(li);
     });
 }
+
