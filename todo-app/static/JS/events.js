@@ -66,7 +66,6 @@ export async function setupDeleteAccount() {
 
 export function hashchange() {
     window.addEventListener("hashchange", () => {
-        const section = "dashboard";
         let current_page = getPageFromHash();
         render_dashboard(current_page);
     });

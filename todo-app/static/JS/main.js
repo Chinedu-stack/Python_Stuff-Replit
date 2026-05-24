@@ -14,4 +14,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 console.log("Dashboard successfully loaded");
 });
-

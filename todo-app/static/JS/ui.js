@@ -2,14 +2,17 @@ import {setupAddTaskForm, setupDeleteAccount, setupSearch, hashchange } from "./
 import {render_dashboard } from "./render.js";
 import { fetch_tasks } from "./api.js";
 
-let current_page = 1;
 const page_size = 3;
 
-export function display(section_name, btn) {
+export function display(section_name, btn, page_num = 1) {
+
+    const current_page = page_num;
+
     if (section_name == "dashboard") {
-        window.location.hash = `section=${section_name}&page=1`
+        window.location.hash = `section=${section_name}&page=${current_page}`
+    } else {
+        window.location.hash = `section=${section_name}`;
     }
-    window.location.hash = section_name;
     const pages = document.querySelectorAll(".section");
 
     pages.forEach(function(page) {
@@ -35,8 +38,11 @@ export function init() {
     setupDeleteAccount();
     setupSearch();
     if (window.location.hash) {
-        const section = window.location.hash.slice(1);
-        display(section, document.getElementById(section + "_btn"));
+        const hash = window.location.hash.slice(1);
+        const params = new URLSearchParams(hash);
+        const section = params.get("section")
+        const page = params.get("page");
+        display(section, document.getElementById(section + "_btn"), page);
     } else {
         display("dashboard", document.getElementById("dashboard_btn"));
     }
@@ -44,17 +50,21 @@ export function init() {
 export async function nextPage() {
     const tasks = await fetch_tasks();
     const totalPages = Math.ceil(tasks.length/page_size);
+    let current_page = getPageFromHash();
     if (current_page < totalPages ) {
         current_page += 1;
         updateHash(current_page);
+        console.log("Next page: ");
     }
     
 }
 
 export function prevPage() {
+    let current_page = getPageFromHash();
     if (current_page > 1) {
         current_page -= 1;
         updateHash(current_page);
+        console.log("Previous page: ");
     }
 }
 
