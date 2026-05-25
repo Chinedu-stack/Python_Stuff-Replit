@@ -7,7 +7,7 @@ export async function render_dashboard(current_page) {
     const page_size = 3;
     const ol = document.getElementById("task_list");
     ol.innerHTML = "";
-    const state = "dashboard";
+    const mode = "dashboard";
 
 
     let start = (current_page - 1) * page_size;
@@ -92,7 +92,7 @@ export async function render_dashboard(current_page) {
     next_page.classList.add("create_task_btn");
 
     next_page.addEventListener("click", async () => {
-        nextPage(state);
+        nextPage(mode);
     });
 
     const prev_page = document.createElement("button");
@@ -100,7 +100,7 @@ export async function render_dashboard(current_page) {
     prev_page.classList.add("create_task_btn");
 
     prev_page.addEventListener("click", () => {
-        prevPage(state);
+        prevPage(mode);
     });
 
     ol.appendChild(prev_page);

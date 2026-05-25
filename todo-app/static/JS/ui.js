@@ -6,12 +6,12 @@ const page_size = 3;
 
 export function display(section_name, btn, page_num = 1) {
 
-    const current_page = page_num;
+
 
     if (section_name == "dashboard") {
-        window.location.hash = `section=${section_name}&page=${current_page}`
+        window.location.hash = `section=${section_name}&page=${page_num}&mode=${section_name}&query=`
     } else {
-        window.location.hash = `section=${section_name}`;
+        window.location.hash = `section=${section_name}&mode=${section_name}`;
     }
     const pages = document.querySelectorAll(".section");
 
@@ -28,7 +28,7 @@ export function display(section_name, btn, page_num = 1) {
     btn.classList.add("active");
 
     if (section_name == "dashboard") {
-        render_dashboard(current_page)
+        render_dashboard(page_num)
     }
 }
 
@@ -40,62 +40,67 @@ export function init() {
     if (window.location.hash) {
         const hash = window.location.hash.slice(1);
         const params = new URLSearchParams(hash);
-        const section = params.get("section")
+        const section = params.get("section");
         const page = params.get("page");
+        const mode = params.get("mode");
+        const query = params.get("query");
         display(section, document.getElementById(section + "_btn"), page);
     } else {
         display("dashboard", document.getElementById("dashboard_btn"));
     }
 }
-export async function nextPage(state, filtered_tasks=1, current_page=1) {
-    if (state == "dashboard") {
+export  function nextPage() {
+    const info = getHashInfo();
+    const mode = info.mode;
+    let page = Number(info.page);
+    const query = info.query;
+    page += 1;
+    update_page(page);
+}
+ 
+export function prevPage() {
+   const info = getHashInfo();
+    const mode = info.mode;
+    let page = Number(info.page);
+    const query = info.query;
+    page -= 1;
+    update_page(page);
+}
 
-    
-        const tasks = await fetch_tasks();
-        const totalPages = Math.ceil(tasks.length/page_size);
-        let current_page = getPageFromHash();
-        if (current_page < totalPages ) {
-            current_page += 1;
-            updateHash(current_page);
-            console.log("Next page: ");
-        }
-    } else if (state == "search") {
-        current_page += 1;
-        render_filtered_dashboard(filtered_tasks, current_page);
+
+
+
+export function getHashInfo() {
+    const hash = window.location.hash.slice(1);
+    const params = new URLSearchParams(hash);
+    const section = params.get("section")
+    const mode = params.get("mode");
+    const query = params.get("query");
+    const page = params.get("page");
+    const info = {
+        "mode": mode,
+        "query": query,
+        "page": page,
+        "section": section
 
     }
+    return info;
 }
 
-export function prevPage(state, filtered_tasks, current_page=1) {
-    if (state == "dashboard") {
-        let current_page = getPageFromHash();
-        if (current_page > 1) {
-            current_page -= 1;
-            updateHash(current_page);
-            console.log("Previous page: ");
-        }
-    } else if (state == "search") {
-        current_page -= 1;
-        render_filtered_dashboard(filtered_tasks, current_page);
-    }
+function update_page(page) {
+    const info = getHashInfo();
+    const mode = info.mode;
+    const query = info.query;
+    const section = info.section;
+
+    window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
 }
 
-
-
-
-export function getPageFromHash() {
-    const hash = window.location.hash;
-
-    if (hash.includes("page=")) {
-        const page = parseInt(hash.split("page=")[1]);
-        return isNaN(page) ? 1 : page;
-    }
-
-    return 1;
+export function newHashSearch(query) {
+    const info = getHashInfo();
+    const section = info["section"];
+    const page = 1;
+    const mode = "search"
+    window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
 }
-
-function updateHash(page) {
-    window.location.hash = `section=dashboard&page=${page}`;
-}
-
 

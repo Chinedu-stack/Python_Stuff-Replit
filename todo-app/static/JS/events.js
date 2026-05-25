@@ -1,21 +1,16 @@
 import { render_filtered_dashboard, render_dashboard} from "./render.js";
 import {showMsg, check_date } from "./ui-core.js";
 import {fetch_tasks, delete_account, add_task } from "./api.js";
-import { getPageFromHash } from "./ui.js";
+import { getHashInfo, newHashSearch } from "./ui.js";
 
 
 export async function setupSearch() {
     const search_bar = document.getElementById("search_bar");
 
-    search_bar.addEventListener("input", async () => {
-        const tasks = await fetch_tasks();
-        const value = search_bar.value.toLowerCase();
-
-        const filtered = tasks.filter(task =>
-            task.task_name.toLowerCase().includes(value)
-        );
-
-        render_filtered_dashboard(filtered);
+    search_bar.addEventListener("input", () => {
+       const value = search_bar.value;
+       newHashSearch(value);
+       
     });
 }
 
@@ -64,11 +59,25 @@ export async function setupDeleteAccount() {
     });
 }
 
-export function hashchange() {
-    window.addEventListener("hashchange", () => {
-        let current_page = getPageFromHash();
-        render_dashboard(current_page);
-    });
+export async function hashchange() {
+    window.addEventListener("hashchange", async () => {
+        let { mode, query, page, section } = getHashInfo();
 
+        page = Number(page);
+        query = query.toLowerCase();
+
+        if (mode === "search") {
+            const tasks = await fetch_tasks();
+
+            const filtered = tasks.filter(task =>
+                task.task_name.toLowerCase().includes(query)
+            );
+
+            render_filtered_dashboard(filtered, page);
+
+        } else {
+            render_dashboard(page);
+        }
+    });
 }
 
