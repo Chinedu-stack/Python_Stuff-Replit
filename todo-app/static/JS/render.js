@@ -1,4 +1,5 @@
 import {fetch_tasks, delete_task, task_done, edit_task} from "./api.js";
+import {nextPage, prevPage } from "./ui.js";
 
 
 export async function render_dashboard(current_page) {
@@ -6,6 +7,7 @@ export async function render_dashboard(current_page) {
     const page_size = 3;
     const ol = document.getElementById("task_list");
     ol.innerHTML = "";
+    const state = "dashboard";
 
 
     let start = (current_page - 1) * page_size;
@@ -90,7 +92,7 @@ export async function render_dashboard(current_page) {
     next_page.classList.add("create_task_btn");
 
     next_page.addEventListener("click", async () => {
-        import("./ui.js").then(module => module.nextPage());
+        nextPage(state);
     });
 
     const prev_page = document.createElement("button");
@@ -98,7 +100,7 @@ export async function render_dashboard(current_page) {
     prev_page.classList.add("create_task_btn");
 
     prev_page.addEventListener("click", () => {
-        import("./ui.js").then(module => module.prevPage());
+        prevPage(state);
     });
 
     ol.appendChild(prev_page);
@@ -106,10 +108,11 @@ export async function render_dashboard(current_page) {
 }
 }
 
-export async function render_filtered_dashboard(filtered_tasks, search_bar, current_page=1) {
+export async function render_filtered_dashboard(filtered_tasks, current_page=1) {
     const ol = document.getElementById("task_list");
     ol.innerHTML = "";
     const page_size = 3;
+    const state = "search";
 
 
     let start = (current_page - 1) * page_size;
@@ -150,7 +153,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar, curr
             const filtered = tasks.filter(task =>
                 task.task_name.toLowerCase().includes(value)
             );
-            render_filtered_dashboard(filtered, search_bar);
+            render_filtered_dashboard(filtered);
         });
 
         const done_btn = document.createElement("button");
@@ -164,7 +167,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar, curr
             const filtered = tasks.filter(task =>
                 task.task_name.toLowerCase().includes(value)
             );
-            render_filtered_dashboard(filtered, search_bar);
+            render_filtered_dashboard(filtered);
         });
 
         const edit_btn = document.createElement("button");
@@ -194,7 +197,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar, curr
                     task.task_name.toLowerCase().includes(value)
                 );
 
-                render_filtered_dashboard(filtered, search_bar);
+                render_filtered_dashboard(filtered);
             });
         });
 
@@ -211,7 +214,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar, curr
     next_page.classList.add("create_task_btn");
 
     next_page.addEventListener("click", async () => {
-        import("./ui.js").then(module => module.nextPage());
+        nextPage(state, filtered_tasks, current_page);
     });
 
     const prev_page = document.createElement("button");
@@ -219,7 +222,7 @@ export async function render_filtered_dashboard(filtered_tasks, search_bar, curr
     prev_page.classList.add("create_task_btn");
 
     prev_page.addEventListener("click", () => {
-        import("./ui.js").then(module => module.prevPage());
+        prevPage(state, filtered_tasks, current_page);
     });
 
     ol.appendChild(prev_page);

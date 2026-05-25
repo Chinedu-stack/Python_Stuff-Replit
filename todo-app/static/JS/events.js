@@ -15,7 +15,7 @@ export async function setupSearch() {
             task.task_name.toLowerCase().includes(value)
         );
 
-        render_filtered_dashboard(filtered, search_bar);
+        render_filtered_dashboard(filtered);
     });
 }
 

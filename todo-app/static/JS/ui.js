@@ -1,5 +1,5 @@
 import {setupAddTaskForm, setupDeleteAccount, setupSearch, hashchange } from "./events.js";
-import {render_dashboard } from "./render.js";
+import {render_dashboard, render_filtered_dashboard } from "./render.js";
 import { fetch_tasks } from "./api.js";
 
 const page_size = 3;
@@ -47,26 +47,40 @@ export function init() {
         display("dashboard", document.getElementById("dashboard_btn"));
     }
 }
-export async function nextPage() {
-    const tasks = await fetch_tasks();
-    const totalPages = Math.ceil(tasks.length/page_size);
-    let current_page = getPageFromHash();
-    if (current_page < totalPages ) {
-        current_page += 1;
-        updateHash(current_page);
-        console.log("Next page: ");
-    }
+export async function nextPage(state, filtered_tasks=1, current_page=1) {
+    if (state == "dashboard") {
+
     
+        const tasks = await fetch_tasks();
+        const totalPages = Math.ceil(tasks.length/page_size);
+        let current_page = getPageFromHash();
+        if (current_page < totalPages ) {
+            current_page += 1;
+            updateHash(current_page);
+            console.log("Next page: ");
+        }
+    } else if (state == "search") {
+        current_page += 1;
+        render_filtered_dashboard(filtered_tasks, current_page);
+
+    }
 }
 
-export function prevPage() {
-    let current_page = getPageFromHash();
-    if (current_page > 1) {
+export function prevPage(state, filtered_tasks, current_page=1) {
+    if (state == "dashboard") {
+        let current_page = getPageFromHash();
+        if (current_page > 1) {
+            current_page -= 1;
+            updateHash(current_page);
+            console.log("Previous page: ");
+        }
+    } else if (state == "search") {
         current_page -= 1;
-        updateHash(current_page);
-        console.log("Previous page: ");
+        render_filtered_dashboard(filtered_tasks, current_page);
     }
 }
+
+
 
 
 export function getPageFromHash() {
