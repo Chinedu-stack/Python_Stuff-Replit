@@ -1,18 +1,12 @@
 import {setupAddTaskForm, setupDeleteAccount, setupSearch, hashchange } from "./events.js";
 import {render_dashboard, render_filtered_dashboard } from "./render.js";
 import { fetch_tasks } from "./api.js";
+import { get_filtered_tasks } from "./ui-core.js";
 
 const page_size = 3;
 
 export function display(section_name, btn, page_num = 1) {
 
-
-
-    if (section_name == "dashboard") {
-        window.location.hash = `section=${section_name}&page=${page_num}&mode=${section_name}&query=`
-    } else {
-        window.location.hash = `section=${section_name}&mode=${section_name}`;
-    }
     const pages = document.querySelectorAll(".section");
 
     pages.forEach(function(page) {
@@ -28,7 +22,10 @@ export function display(section_name, btn, page_num = 1) {
     btn.classList.add("active");
 
     if (section_name == "dashboard") {
+        update_section(section_name);
         render_dashboard(page_num)
+    }   else {
+        update_section(section_name);
     }
 }
 
@@ -53,21 +50,17 @@ export  function nextPage() {
     const info = getHashInfo();
     const mode = info.mode;
     let page = Number(info.page);
-    const query = info.query;
     page += 1;
     update_page(page);
+   
 }
  
 export function prevPage() {
    const info = getHashInfo();
-    const mode = info.mode;
     let page = Number(info.page);
-    const query = info.query;
     page -= 1;
     update_page(page);
 }
-
-
 
 
 export function getHashInfo() {
@@ -87,20 +80,52 @@ export function getHashInfo() {
     return info;
 }
 
-function update_page(page) {
+async function update_page(page) {
     const info = getHashInfo();
     const mode = info.mode;
     const query = info.query;
     const section = info.section;
+    const tasks = await fetch_tasks();
+    const max_pages = Math.ceil(tasks.length/3);
 
-    window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
+    if (mode == "dashboard") {
+        if (page >= 1 && page <= max_pages) {
+        window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
+    }  else {
+        console.log("can't do that cuz it just doesn't make sense");
+    }
+    }   else {
+            const filtered_tasks =  await get_filtered_tasks();
+            const filtered_max_pages = Math.ceil(filtered_tasks.length/3)
+            if (page >= 1 && page <= filtered_max_pages){
+                window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
+            } else {
+                console.log("can't do that cuz it just doesn't make sense");
+            }
+
+    }
+
+    
+
+    
 }
 
 export function newHashSearch(query) {
     const info = getHashInfo();
-    const section = info["section"];
+    const section = info.section;
     const page = 1;
     const mode = "search"
     window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
 }
 
+function update_section(section) {
+    const page = 1;
+    if (section == "dashboard") {
+        const mode = "dashboard";
+        window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=`;
+    }   else {
+        const mode = "add_task";
+        window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=`;
+    }
+    
+}

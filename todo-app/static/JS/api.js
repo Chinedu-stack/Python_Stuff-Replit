@@ -9,7 +9,7 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
 
     data.forEach(item => {
         const task = {
-            id: item.id,
+            task_id: item.id,
             task_name: item.task,
             completed: item.is_done
         }
@@ -42,14 +42,14 @@ export async function add_task(task_name) {
 }
 
 
-export async function delete_task(task_name) {
+export async function delete_task(task_id) {
     const res = await fetch("/delete_tasks", {
         method: "POST",
         headers : {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            task: task_name
+            task_id: task_id
         })
     })
 
@@ -60,14 +60,14 @@ export async function delete_task(task_name) {
    }
 }
 
-export async function edit_task(task, new_task) {
+export async function edit_task(task_id, new_task) {
     const res = await fetch("/edit_task", {
         method: "POST",
         headers : {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            task: task,
+            task_id: task_id,
             new_task: new_task
         })
     })
@@ -79,14 +79,14 @@ export async function edit_task(task, new_task) {
     }
 }
 
-export async function task_done(task_name) {
+export async function task_done(task_id) {
     const res = await fetch("/task_done", {
         method: "POST",
         headers : {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            task: task_name
+            task_id: task_id
         })
     })
 
@@ -102,6 +102,6 @@ export async function delete_account() {
     });
 
     if (res.redirected) {
-        window.location.href = res.url; // follow redirect
+        window.location.href = res.url; 
     }
 }

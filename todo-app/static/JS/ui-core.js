@@ -1,3 +1,7 @@
+import { getHashInfo } from "./ui.js"
+import { fetch_tasks } from "./api.js"
+
+
 export function showMsg(message, color) {
     const msg_list = document.getElementById("msg_list");
 
@@ -32,4 +36,19 @@ export function check_date(end_date) {
     } else {
         return false;
     }
+}
+
+export async function get_filtered_tasks() {
+    const info = getHashInfo();
+    const tasks = await fetch_tasks();
+
+    if (info.mode === "search") {
+        return tasks.filter(task =>
+            task.task_name.toLowerCase().includes(info.query.toLowerCase())
+        );
+    }
+
+
+
+    
 }

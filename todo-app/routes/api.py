@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, session, request, url_for, redirect
 import utils.task_helpers as helpers
 import utils.auth_helpers as auth
-from datetime import datetime, date
 
 api_bp = Blueprint('api', __name__)
 
@@ -19,7 +18,7 @@ def add_task():
     task = request.get_json()
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
-    task_name = task["task"]
+    task_name = task["task_name"]
     end_date = task["end_date"]
 
     helpers.add_task(user_id, task_name, end_date)
@@ -30,10 +29,9 @@ def add_task():
 @api_bp.route("/delete_tasks", methods=["POST"])
 def delete_task():
     data = request.get_json()
-    task_name = data["task"]
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
-    task_id = helpers.get_task_id(user_id, task_name)
+    task_id =  data["task_id"]
     
     helpers.delete_task(user_id, task_id)
     print("Task deleted")
@@ -45,8 +43,7 @@ def edit_task():
     data = request.get_json()
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
-    task = data["task"]
-    task_id = helpers.get_task_id(user_id, task)
+    task_id = data["task_id"]
     new_task = data["new_task"]
 
     helpers.edit_task(new_task, user_id, task_id)
@@ -59,8 +56,7 @@ def mark_done():
     data = request.get_json()
     current_user = session.get("current_user")
     user_id = helpers.get_user_id(current_user)
-    task = data["task"]
-    task_id = helpers.get_task_id(user_id, task)
+    task_id = data["task_id"]
 
     helpers.mark_task_done(user_id, task_id)
     print("task marked as done")

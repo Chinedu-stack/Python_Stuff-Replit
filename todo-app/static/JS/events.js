@@ -1,5 +1,5 @@
 import { render_filtered_dashboard, render_dashboard} from "./render.js";
-import {showMsg, check_date } from "./ui-core.js";
+import {showMsg, check_date, get_filtered_tasks } from "./ui-core.js";
 import {fetch_tasks, delete_account, add_task } from "./api.js";
 import { getHashInfo, newHashSearch } from "./ui.js";
 
@@ -8,9 +8,20 @@ export async function setupSearch() {
     const search_bar = document.getElementById("search_bar");
 
     search_bar.addEventListener("input", () => {
-       const value = search_bar.value;
-       newHashSearch(value);
-       
+
+        const query = search_bar.value;
+
+        if (query) {
+
+            newHashSearch(query);
+
+        } else {
+
+            const info = getHashInfo();
+
+            window.location.hash =
+                `section=${info.section}&page=${info.page}&mode=dashboard&query=`;
+        }
     });
 }
 
@@ -63,20 +74,16 @@ export async function hashchange() {
     window.addEventListener("hashchange", async () => {
         let { mode, query, page, section } = getHashInfo();
 
-        page = Number(page);
-        query = query.toLowerCase();
+        const page_num = Number(page);
+        const query_value = query.toLowerCase();
 
         if (mode === "search") {
-            const tasks = await fetch_tasks();
+            const filtered = await get_filtered_tasks();
 
-            const filtered = tasks.filter(task =>
-                task.task_name.toLowerCase().includes(query)
-            );
-
-            render_filtered_dashboard(filtered, page);
+            render_filtered_dashboard(filtered, page_num);
 
         } else {
-            render_dashboard(page);
+            render_dashboard(page_num);
         }
     });
 }

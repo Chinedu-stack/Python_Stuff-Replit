@@ -1,5 +1,7 @@
 import {fetch_tasks, delete_task, task_done, edit_task} from "./api.js";
-import {nextPage, prevPage } from "./ui.js";
+import {nextPage, prevPage, getHashInfo } from "./ui.js";
+import { get_filtered_tasks } from "./ui-core.js";
+
 
 
 export async function render_dashboard(current_page) {
@@ -8,6 +10,7 @@ export async function render_dashboard(current_page) {
     const ol = document.getElementById("task_list");
     ol.innerHTML = "";
     const mode = "dashboard";
+    const info = getHashInfo();
 
 
     let start = (current_page - 1) * page_size;
@@ -37,8 +40,9 @@ export async function render_dashboard(current_page) {
         delete_btn.textContent = "Delete";
 
         delete_btn.addEventListener("click", async () => {
-            await delete_task(task.task_name);
-            render_dashboard();
+            await delete_task(task.task_id);
+            const page = Number(getHashInfo().page);
+            await render_dashboard(page);
         });
 
         const done_btn = document.createElement("button");
@@ -46,8 +50,9 @@ export async function render_dashboard(current_page) {
         done_btn.textContent = "done";
 
         done_btn.addEventListener("click", async () => {
-            await task_done(task.task_name);
-            render_dashboard();
+            await task_done(task.task_id);
+            const page = Number(getHashInfo().page);
+            await render_dashboard(page);
         });
 
         const edit_btn = document.createElement("button");
@@ -69,12 +74,13 @@ export async function render_dashboard(current_page) {
 
             save_btn.addEventListener("click", async () => {
 
-                await edit_task(task.task_name, input.value);
+                await edit_task(task.task_id, input.value);
 
                 input.remove();
                 save_btn.remove();
 
-                render_dashboard();
+                const page = Number(getHashInfo().page);
+                await render_dashboard(page);
             });
         });
 
@@ -113,12 +119,11 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
     ol.innerHTML = "";
     const page_size = 3;
     const state = "search";
-
+    const info = getHashInfo();
+    const value = info.query.toLowerCase();
 
     let start = (current_page - 1) * page_size;
     let end = start + page_size;
-
-    
 
     if (filtered_tasks.length === 0) {
         const li = document.createElement("li");
@@ -132,28 +137,29 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
     paginatedTasks.forEach(task => {
 
         const li = document.createElement("li");
-        li.textContent = task.task_name;
+
+        const task_text = document.createElement("span");
 
         if (task.completed) {
-            li.classList.add("done");
-            li.innerHTML = `${task.task_name}✔️`;
+            task_text.classList.add("done");
+            task_text.textContent = `${task.task_name}✔️`;
         } else {
-            li.textContent = task.task_name;
-            li.classList.add("not_done");
+            task_text.classList.add("not_done");
+            task_text.textContent = task.task_name;
         }
+
+        li.appendChild(task_text);
 
         const delete_btn = document.createElement("button");
         delete_btn.classList.add("crud_btns");
         delete_btn.textContent = "Delete";
 
         delete_btn.addEventListener("click", async () => {
-            await delete_task(task.task_name);
-            const tasks = await fetch_tasks();
-            const value = search_bar.value.toLowerCase();
-            const filtered = tasks.filter(task =>
-                task.task_name.toLowerCase().includes(value)
-            );
-            render_filtered_dashboard(filtered);
+            await delete_task(task.task_id);
+
+            const filtered = await get_filtered_tasks();
+            const page = Number(getHashInfo().page);
+            await render_filtered_dashboard(filtered, page);
         });
 
         const done_btn = document.createElement("button");
@@ -161,13 +167,12 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
         done_btn.textContent = "done";
 
         done_btn.addEventListener("click", async () => {
-            await task_done(task.task_name);
-            const tasks = await fetch_tasks();
-            const value = search_bar.value.toLowerCase();
-            const filtered = tasks.filter(task =>
-                task.task_name.toLowerCase().includes(value)
-            );
-            render_filtered_dashboard(filtered);
+            await task_done(task.task_id);
+            const page = Number(getHashInfo().page);
+
+
+            const filtered = await get_filtered_tasks();
+            await render_filtered_dashboard(filtered, page);
         });
 
         const edit_btn = document.createElement("button");
@@ -186,18 +191,14 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
             li.appendChild(save_btn);
 
             save_btn.addEventListener("click", async () => {
-                await edit_task(task.task_name, input.value);
+                await edit_task(task.task_id, input.value);
 
                 input.remove();
                 save_btn.remove();
 
-                const tasks = await fetch_tasks();
-                const value = search_bar.value.toLowerCase();
-                const filtered = tasks.filter(task =>
-                    task.task_name.toLowerCase().includes(value)
-                );
-
-                render_filtered_dashboard(filtered);
+                const filtered = await get_filtered_tasks();
+                const page = Number(getHashInfo().page);
+                await render_filtered_dashboard(filtered, page);
             });
         });
 
@@ -209,25 +210,24 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
 
     if (filtered_tasks.length > page_size) {
 
-    const next_page = document.createElement("button");
-    next_page.textContent = "Next Page";
-    next_page.classList.add("create_task_btn");
+        const next_page = document.createElement("button");
+        next_page.textContent = "Next Page";
+        next_page.classList.add("create_task_btn");
 
-    next_page.addEventListener("click", async () => {
-        nextPage(state, filtered_tasks, current_page);
-    });
+        next_page.addEventListener("click", async () => {
+            nextPage();
+        });
 
-    const prev_page = document.createElement("button");
-    prev_page.textContent = "Previous Page";
-    prev_page.classList.add("create_task_btn");
+        const prev_page = document.createElement("button");
+        prev_page.textContent = "Previous Page";
+        prev_page.classList.add("create_task_btn");
 
-    prev_page.addEventListener("click", () => {
-        prevPage(state, filtered_tasks, current_page);
-    });
+        prev_page.addEventListener("click", () => {
+            prevPage();
+        });
 
-    ol.appendChild(prev_page);
-    ol.appendChild(next_page);
-}
-    
+        ol.appendChild(prev_page);
+        ol.appendChild(next_page);
+    }
 }
 
