@@ -5,7 +5,7 @@ import { get_filtered_tasks } from "./ui-core.js";
 
 const page_size = 3;
 
-export function display(section_name, btn, page_num = 1) {
+export function display(section_name, btn, page_num) {
 
     const pages = document.querySelectorAll(".section");
 
@@ -128,4 +128,12 @@ function update_section(section) {
         window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=`;
     }
     
+}
+
+export function update_page_only(page) {
+    const info = getHashInfo();
+    const mode = info.mode;
+    const query = info.query;
+    const section = info.section;
+    window.location.hash = `section=${section}&page=${page}&mode=${mode}&query=${query}`;
 }

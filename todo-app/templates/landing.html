@@ -3,33 +3,42 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>My Page</title>
+    <link rel="stylesheet" href="static/CSS/style.css">
+    <title>My Todo App</title>
 </head>
 <body>
-    <div>
-        <h3>Login in to your account</h3>
-    </div>
 
-    <div>
-        {% if error %}
-            <p style="color: red;">{{error}}</p>
-        {% endif %}
-    </div>
+    <div class="container">
+        <div class="content">
 
-    <div>
-        <form class="form"  method="POST" action="/login">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <h3 class="landing_title">Login to your account</h3>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+            {% if error %}
+                <p style="color: red;">{{error}}</p>
+            {% endif %}
 
-            <button class="button" type="submit">Login</button>
-        </form>
-    </div>
+            <form class="form" method="POST" action="/login">
 
-    <div class="signup" >
-        <a href="/create_user">New to my app. Sign up.</a>
+                <div class="landing_input_element">
+                    <label for="email" class="landing_sub_title">Email</label>
+                    <input class="landing_input" type="email" name="email" id="email" required>
+                </div>
+
+                <div class="landing_input_element">
+                    <label for="password" class="landing_sub_title">Password</label>
+                    <input class="landing_input" type="password" name="password" id="password" required>
+                </div>
+
+                <button class="crud_btns" type="submit">Login</button>
+
+            </form>
+
+            <div class="signup">
+                <a href="/create_user">New to my app. Sign up.</a>
+            </div>
+
+        </div>
+
     </div>
 
 </body>

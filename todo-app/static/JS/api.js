@@ -9,7 +9,7 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
 
     data.forEach(item => {
         const task = {
-            task_id: item.id,
+            task_id: item.task_id,
             task_name: item.task,
             completed: item.is_done
         }
@@ -23,13 +23,16 @@ export async function fetch_tasks() { // this fetches the tasks from flask from 
 }
 
 
-export async function add_task(task_name) {
+export async function add_task(task_name, end_date) {
     const res =  await fetch("/add_tasks", {
         method: "POST",
         headers : {
             "Content-type": "application/json"
         },
-        body: JSON.stringify(task_name)
+        body: JSON.stringify({
+            task_name: task_name,
+            end_date: end_date
+        })
     })
 
    const response = await res.json()

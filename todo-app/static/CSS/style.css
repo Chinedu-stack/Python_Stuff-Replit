@@ -175,3 +175,55 @@ input {
 }
 
 
+
+
+/*  LANDING PAGE DESIGN  */
+
+.landing_title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(70, 193, 237) ;
+    color: white;
+    padding: 15px 30px;
+}
+
+.landing_sub_title {
+    border-radius: 20px;
+    padding: 15px;
+    background-color: rgb(70, 193, 237);;
+    color: white;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 16px;
+}
+
+.landing_input_element {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.signup {
+    border-radius: 20px;
+    padding: 15px;
+    background-color: rgb(70, 193, 237);
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+
+}
+
+.landing_input {
+    width: 150px;
+}

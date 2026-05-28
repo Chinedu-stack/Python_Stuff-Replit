@@ -69,7 +69,7 @@ def display_tasks_day(user_id, today):
 
 
 ### --- Display All tasks 
-def display_all_tasks(user_id):
+def fetch_tasks(user_id):
     conn, cursor = db_helper.open_db()
     cursor.execute("""SELECT task_name, is_done, id FROM tasks
                    WHERE user_id = ?""", (user_id,))

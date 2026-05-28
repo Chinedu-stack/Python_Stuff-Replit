@@ -1,5 +1,5 @@
 import {fetch_tasks, delete_task, task_done, edit_task} from "./api.js";
-import {nextPage, prevPage, getHashInfo } from "./ui.js";
+import {nextPage, prevPage, getHashInfo, update_page_only } from "./ui.js";
 import { get_filtered_tasks } from "./ui-core.js";
 
 
@@ -39,10 +39,23 @@ export async function render_dashboard(current_page) {
         delete_btn.classList.add("crud_btns");
         delete_btn.textContent = "Delete";
 
-        delete_btn.addEventListener("click", async () => {
+       delete_btn.addEventListener("click", async () => {
             await delete_task(task.task_id);
-            const page = Number(getHashInfo().page);
-            await render_dashboard(page);
+            let page = Number(getHashInfo().page);
+            if (page < 1) {
+                page = 1;
+            }
+            const tasks = await fetch_tasks();
+            const page_size = 3;
+            const max_page = Math.ceil(tasks.length / page_size);
+            const safe_max_page = Math.max(1, max_page);
+            let new_page = page;
+
+            if (page > safe_max_page) {
+                new_page = safe_max_page;
+            }
+            update_page_only(new_page);
+            await render_dashboard(new_page);
         });
 
         const done_btn = document.createElement("button");
@@ -156,10 +169,20 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
 
         delete_btn.addEventListener("click", async () => {
             await delete_task(task.task_id);
-
+            let page = Number(getHashInfo().page);
+            if (page < 1) {
+                page = 1;
+            }
             const filtered = await get_filtered_tasks();
-            const page = Number(getHashInfo().page);
-            await render_filtered_dashboard(filtered, page);
+            const page_size = 3;
+            const max_page = Math.ceil(filtered.length / page_size);
+            const safe_max_page = Math.max(1, max_page);
+            let new_page = page;
+            if (page > safe_max_page) {
+                new_page = safe_max_page;
+            }
+            update_page_only(new_page);
+            await render_filtered_dashboard(filtered, new_page);
         });
 
         const done_btn = document.createElement("button");

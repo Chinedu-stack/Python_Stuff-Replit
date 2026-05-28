@@ -30,20 +30,17 @@ export async function setupAddTaskForm() {
 
     submit_btn.addEventListener("click", async () => {
 
-        const task_value = document.getElementById("name").value.trim();
+        const task_name = document.getElementById("name").value.trim();
         const end_date = document.getElementById("end-date").value.trim();
 
         const task_element = document.getElementById("name");
         const end_date_element = document.getElementById("end-date");
 
-        const task = {
-            task: task_value,
-            end_date: end_date
-        };
+
 
         const errors = [];
 
-        if (!task_value || !end_date) {
+        if (!task_name || !end_date) {
             errors.push("Please fill in all inputs.");
         }
 
@@ -54,7 +51,7 @@ export async function setupAddTaskForm() {
         if (errors.length > 0) {
             showMsg(errors, "red");
         } else {
-            await add_task(task);
+            await add_task(task_name, end_date);
             task_element.value = "";
             end_date_element.value = "";
             showMsg("task added", "green");
@@ -80,10 +77,10 @@ export async function hashchange() {
         if (mode === "search") {
             const filtered = await get_filtered_tasks();
 
-            render_filtered_dashboard(filtered, page_num);
+            await render_filtered_dashboard(filtered, page_num);
 
         } else {
-            render_dashboard(page_num);
+            await render_dashboard(page_num);
         }
     });
 }

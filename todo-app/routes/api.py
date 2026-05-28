@@ -9,7 +9,7 @@ def dashboard():
     current_user = session.get("current_user")     
     user_id = helpers.get_user_id(current_user)
 
-    tasks = helpers.display_all_tasks(user_id)
+    tasks = helpers.fetch_tasks(user_id)
     return jsonify(tasks)
 
 
