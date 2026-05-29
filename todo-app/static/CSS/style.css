@@ -1,3 +1,10 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -49,7 +56,7 @@ nav {
 nav button {
     padding: 8px 16px;
     cursor: pointer;
-    background-color: rgb(80, 80, 80);
+    background-color: rgb(70, 193, 237);
     color: white;
     border-radius: 20px;
     margin-right: 10px;
@@ -57,10 +64,10 @@ nav button {
 }
 
 nav button:hover {
-    background: orange;
+    background: rgb(50, 173, 217);
 }
 nav button.active {
-    background-color: #f33500ab;
+    background-color: rgb(30, 153, 197);
     color: white;
 }
 
@@ -68,8 +75,9 @@ nav button.active {
 input {
     border-radius: 20px;
     padding: 15px;
-    border: none;
     outline: none;
+    background-color: #f3f4f6;
+    border: 1px solid #3a3a3a;
 }
 
 .title {
@@ -94,6 +102,7 @@ input {
     color: rgb(70, 193, 237);
     width: 100px;
     margin: auto;
+    font-weight: bold;
 }
 
 .sub_title {
@@ -225,5 +234,5 @@ input {
 }
 
 .landing_input {
-    width: 150px;
+    width: 175px;
 }

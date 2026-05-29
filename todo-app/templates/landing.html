@@ -4,14 +4,18 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="stylesheet" href="static/CSS/style.css">
-    <title>My Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Chinedu's Todo App</title>
 </head>
 <body>
 
     <div class="container">
         <div class="content">
-
-            <h3 class="landing_title">Login to your account</h3>
+            <div class="landing_title">
+                <h1>Login</h1>
+            </div>
 
             {% if error %}
                 <p style="color: red;">{{error}}</p>
@@ -26,7 +30,7 @@
 
                 <div class="landing_input_element">
                     <label for="password" class="landing_sub_title">Password</label>
-                    <input class="landing_input" type="password" name="password" id="password" required>
+                    <input class="landing_input"   type="password" name="password" id="password" required>
                 </div>
 
                 <button class="crud_btns" type="submit">Login</button>

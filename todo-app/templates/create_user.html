@@ -4,33 +4,42 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="stylesheet" href="static/CSS/style.css">
-    <title>My Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Chinedu's Todo App</title>
 </head>
 <body>
-    <div>
-        {% if errors %}
-            {% for error in errors %}
-                <p style="color:red">{{error}}</p>
-            {% endfor %}
-        {% endif %}
+    <div class="container">
+        <div class="content">
+            <div>
+                {% if errors %}
+                    {% for error in errors %}
+                        <p style="color:red">{{error}}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="landing_title">
+                <h3>Create Account</h3>
+            </div>
+
+            <form class="form" action="/register" method="POST">
+                <div class="landing_input_element">
+                    <label for="email" class="landing_sub_title">Email</label>
+                    <input name="email" type="email" id="email" class="landing_input" required>
+                </div>
+
+                <div class="landing_input_element">
+                    <label for="password"  class="landing_sub_title" >Password</label>
+                    <input name="password" class="landing_input" type="password" id="password" required>
+                </div>
+
+                <button type="submit" class="crud_btns">Create Account</button>
+            </form>
+
+        </div>
     </div>
-
-    <div>
-        <h2>Create Account</h2>
-    </div>
-
-    <div>
-        <form action="/register" method="POST">
-            <label for="email">Email</label>
-            <input name="email" type="email" id="email" required>
-
-            <label for="password">Password</label>
-            <input name="password" type="password" id="password" required>
-
-            <button type="submit">Create Account</button>
-        </form>
-    </div>
-
 
 </body>
 </html>

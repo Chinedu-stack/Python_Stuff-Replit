@@ -13,10 +13,20 @@ export async function render_dashboard(current_page) {
     const info = getHashInfo();
 
 
+    if (tasks.length == 0) {
+        const li = document.createElement("li");
+        const text = document.createElement("span");
+        text.textContent = "No Tasks"
+        li.appendChild(text);
+        ol.appendChild(li);
+    }
+
     let start = (current_page - 1) * page_size;
     let end = start + page_size;
 
     let paginatedTasks = tasks.slice(start, end);
+
+
 
 
     paginatedTasks.forEach(task => {
@@ -73,6 +83,10 @@ export async function render_dashboard(current_page) {
         edit_btn.textContent = "Edit";
 
         edit_btn.addEventListener("click", async () => {
+            if (li.querySelector(".edit_input")) {
+                console.log("you can't have multiple edit input boxes")
+                return;
+            }
 
             const input = document.createElement("input");
             input.classList.add("edit_input");
@@ -203,8 +217,13 @@ export async function render_filtered_dashboard(filtered_tasks, current_page=1) 
         edit_btn.textContent = "Edit";
 
         edit_btn.addEventListener("click", async () => {
+            if (li.querySelector(".edit_input")) {
+                console.log("you can't have multiple edit input boxes")
+                return;
+            }
             const input = document.createElement("input");
             input.value = task.task_name;
+            input.classList.add("edit_input");
 
             const save_btn = document.createElement("button");
             save_btn.classList.add("crud_btns");

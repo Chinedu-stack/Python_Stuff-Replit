@@ -4,7 +4,10 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="stylesheet" href="static/CSS/style.css">
-    <title>My Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Chinedu's Todo App</title>
 </head>
 <body>
 
@@ -12,13 +15,15 @@
         <nav>
             <button  id="dashboard_btn"   >Dashboard</button>
             <button  id="add_task_btn"    >Add Task</button>
+            <button id="delete_account_btn">Delete Account</button>
+            <button onclick="window.location.href='/'">Logout</button>
         </nav>
         <ul id="msg_list" class="active_msg"></ul>
 
         <div class="section" id="dashboard">
             <div class="content">
                 <h1 class="title" >Dashboard</h1>
-                <label for="search_bar" class="search">Search:</label>
+                <label for="search_bar" class="sub_title">Search:</label>
                 <input  class="search_input"   type="text"  id="search_bar" placeholder="Search Tasks...">
                 <h3 class="sub_title">Tasks:</h3>
                 <ol class="tasks" id="task_list"></ol>
@@ -37,12 +42,6 @@
 
                 <button id="submit_btn" class="create_task_btn" >Create New Task</button>
             </div>
-        </div>
-
-
-        <a href="/">Logout</a>
-        <div>
-            <button id="delete_account_btn">Delete Account</button>
         </div>
 
     </div>
