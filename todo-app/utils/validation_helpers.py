@@ -4,7 +4,8 @@ import utils.db_helpers as db_helper
 
 ### ---- Check to see if there is no other task with that name
 def check_name(user_id, task_id):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""SELECT 1 FROM tasks
                    WHERE user_id = ? AND task_id = ? """, (user_id, task_id))
     task_exists = cursor.fetchone()
@@ -17,7 +18,8 @@ def check_name(user_id, task_id):
 
 ### --- check to see if there if email is in db when creating an account
 def check_email(email):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""SELECT 1 FROM users
                    WHERE email = ?""", (email,))
     email_exists = cursor.fetchone()

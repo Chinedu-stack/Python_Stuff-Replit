@@ -23,7 +23,8 @@ def cipher(password):
 
 ### --- ADD USER TO DATABASE
 def add(email, hashed_password):
-    conn, cursor = helpers.open_db()
+    conn = helpers.open_db()
+    cursor = conn.cursor()
     cursor.execute("INSERT INTO users (email, hashed_password) VALUES (?,?)", (email, hashed_password))
     helpers.close_db(conn)
 
@@ -32,7 +33,8 @@ def add(email, hashed_password):
 
 ### --- CHECKING USERS AND PASSWORDS
 def check(email):
-    conn, cursor = helpers.open_db()
+    conn = helpers.open_db()
+    cursor = conn.cursor()
     cursor.execute("SELECT hashed_password FROM users WHERE email = ?", (email,))
     b64_password = cursor.fetchone()
 
@@ -48,7 +50,8 @@ def check(email):
 
 ### --- CHECK TO SEE IF EMAIL EXISTS WHEN CREATING NEW ACCOUNT
 def check_email(email):
-    conn, cursor = helpers.open_db()
+    conn = helpers.open_db()
+    cursor = conn.cursor()
     cursor.execute("""SELECT 1 FROM users
                    WHERE email = ?""", (email,))
     email_exists = cursor.fetchone()
@@ -60,7 +63,8 @@ def check_email(email):
 
 ### --- Delete Account
 def delete_account(email):
-    conn, cursor = helpers.open_db()
+    conn = helpers.open_db()
+    cursor = conn.cursor()
     cursor.execute("""DELETE FROM users
                    WHERE email = ? """, (email,))
     helpers.close_db(conn)

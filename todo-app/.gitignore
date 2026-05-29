@@ -6,7 +6,6 @@ venv/
 .venv/
 
 db/database.db
-*.db
 *.sqlite3
 
 .vscode/

@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 ### --- GETS USER ID FROM TABLE OF USERS
 def get_user_id(current_user):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""SELECT id FROM users
                    WHERE email = ?""", (current_user,))
     user_id = cursor.fetchone()
@@ -23,7 +24,8 @@ def get_user_id(current_user):
 
 ### --- ADDS CREATED TASK TO DATABASE
 def add_task(user_id, task_name, end_date):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""INSERT INTO tasks (user_id, task_name, end_date)
                    VALUES (?,?,?)""", (user_id, task_name, end_date))
     db_helper.close_db(conn)
@@ -31,7 +33,8 @@ def add_task(user_id, task_name, end_date):
 
 ### --- DELETES Task
 def delete_task(user_id, task_id):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""DELETE FROM tasks
                    WHERE user_id = ? AND id = ? """, (user_id, task_id))
     db_helper.close_db(conn)
@@ -40,7 +43,8 @@ def delete_task(user_id, task_id):
 ### ========= TASK FETCHING =========
 
 def fetch_tasks(user_id):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""SELECT task_name, is_done, id FROM tasks
                    WHERE user_id = ?""", (user_id,))
     results = cursor.fetchall()
@@ -53,7 +57,8 @@ def fetch_tasks(user_id):
 
 ### --- get task id from DB
 def get_task_id(user_id, task_name):
-    conn,cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""SELECT id FROM tasks
                    WHERE user_id = ? 
                    AND task_name = ?""", (user_id, task_name))
@@ -70,7 +75,8 @@ def get_task_id(user_id, task_name):
 
 ### --- PUTS is_done as TRUE in the DB
 def mark_task_done(user_id, task_id):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""UPDATE tasks
                    SET is_done = 1
                    WHERE user_id = ? AND
@@ -80,7 +86,8 @@ def mark_task_done(user_id, task_id):
 
 ### --- Edits task in DB
 def edit_task(new_task, user_id, task_id):
-    conn, cursor = db_helper.open_db()
+    conn = db_helper.open_db()
+    cursor = conn.cursor()
     cursor.execute("""UPDATE tasks
                    SET task_name = ?
                    WHERE user_id = ?
