@@ -10,7 +10,7 @@ db_path = os.path.join(BASE_DIR, "database.db")
 def open_db():
     os.makedirs(os.path.dirname(db_path), exist_ok=True)  # ensures folder exists
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=10)
     conn.execute("PRAGMA foreign_keys = ON")
     return conn
 

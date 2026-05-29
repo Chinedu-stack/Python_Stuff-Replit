@@ -80,10 +80,15 @@ input {
     border: 1px solid #3a3a3a;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     input[type="date"] {
         width: 100%;
     }
+}
+
+.task_input {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
