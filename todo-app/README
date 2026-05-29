@@ -1,0 +1,32 @@
+# Todo App (Flask)
+
+This is the first full stack app i have ever made. 
+
+A full-stack task management web application built with Flask, SQLite, and vanilla JavaScript.
+
+## Features
+- User authentication (register/login/logout)
+- Create, edit, delete tasks
+- Mark tasks as complete
+- Search/filter tasks
+- Pagination system
+- REST API backend
+- Responsive frontend
+
+## Tech Stack
+- Python (Flask)
+- SQLite
+- HTML/CSS
+- JavaScript (Vanilla)
+
+## Project Structure
+- routes/ → API + auth routes
+- models/ → database models
+- utils/ → helper functions
+- static/ → frontend JS & CSS
+- templates/ → HTML pages
+
+## Setup (local)
+```bash
+pip install -r requirements.txt
+python app.py

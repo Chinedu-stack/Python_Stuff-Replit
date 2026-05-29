@@ -39,6 +39,18 @@ def delete_task(user_id, task_id):
 
 ### ========= TASK FETCHING =========
 
+def fetch_tasks(user_id):
+    conn, cursor = db_helper.open_db()
+    cursor.execute("""SELECT task_name, is_done, id FROM tasks
+                   WHERE user_id = ?""", (user_id,))
+    results = cursor.fetchall()
+    db_helper.close_db(conn)
+
+    tasks = []
+    for task in results:
+        tasks.append({"task": task[0], "is_done": task[1], "task_id": task[2]})
+    return tasks
+
 ### --- get task id from DB
 def get_task_id(user_id, task_name):
     conn,cursor = db_helper.open_db()
@@ -52,34 +64,6 @@ def get_task_id(user_id, task_name):
         return None
     task_id = data[0]
     return task_id
-
-
-### --- Display tasks for that day
-def display_tasks_day(user_id, today):
-    conn, cursor = db_helper.open_db()
-    cursor.execute("""SELECT task_name, is_done, id FROM tasks
-                   WHERE user_id = ? AND start_date <= ?""", (user_id, today))
-    results = cursor.fetchall()
-    db_helper.close_db(conn)
-
-    tasks = []
-    for task in results:
-        tasks.append({"task": task[0], "is_done": task[1], "id": task[2]})
-    return tasks
-
-
-### --- Display All tasks 
-def fetch_tasks(user_id):
-    conn, cursor = db_helper.open_db()
-    cursor.execute("""SELECT task_name, is_done, id FROM tasks
-                   WHERE user_id = ?""", (user_id,))
-    results = cursor.fetchall()
-    db_helper.close_db(conn)
-
-    tasks = []
-    for task in results:
-        tasks.append({"task": task[0], "is_done": task[1], "task_id": task[2]})
-    return tasks
 
 
 ### ========= TASK UPDATES =========
