@@ -80,6 +80,14 @@ input {
     border: 1px solid #3a3a3a;
 }
 
+@media (max-width: 768px) {
+    input[type="date"] {
+        width: 100%;
+    }
+}
+
+
+
 .title {
     display: inline-flex;
     justify-content: center;
