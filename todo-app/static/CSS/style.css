@@ -145,6 +145,17 @@ input {
 
 }
 
+.empty_state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(78, 44, 44);
+    border-radius: 20px;
+    margin: 10px;
+    color: black;
+}
+
 .crud_btns {
     background-color: rgb(70, 193, 237);
     color: white;

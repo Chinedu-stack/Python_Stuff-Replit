@@ -15,8 +15,11 @@ export async function render_dashboard(current_page) {
 
     if (tasks.length == 0) {
         const li = document.createElement("li");
+        li.classList.add("empty_state");
+
         const text = document.createElement("span");
         text.textContent = "No Tasks"
+        
         li.appendChild(text);
         ol.appendChild(li);
     }
