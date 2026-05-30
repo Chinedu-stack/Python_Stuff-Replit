@@ -2,6 +2,10 @@
 
 This is the first full stack app i have ever made. 
 
+When you open the app you will ahve to create a new account. 
+but if you then close the window and then open the app again your account won't be there because SQlite db is not persistent as a new one is made everytime the app is run.
+I should have use postgre. i will next time
+
 A full-stack task management web application built with Flask, SQLite, and vanilla JavaScript.
 
 ## Features
