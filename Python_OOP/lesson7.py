@@ -24,22 +24,17 @@ class BookingSystem:
         if not found:
             print("You tried to delete a booking that doesn't exist")
 
-
-
-    def reschedule(self, appointment, new_time):
+    def all_barber_cancel(self, barber):
+        to_remove = []
         for booking in self.appointments:
+            if booking.barber == barber:
+                to_remove.append(booking)
+        if to_remove:
+            for booking in to_remove:
+                self.appointments.remove(booking)
 
-            if booking.barber == appointment.barber and booking.time == new_time:
-                print("That time is already taken")
-                return
 
-        if appointment in self.appointments:
-            appointment.time = new_time
-            print("Booking rescheduled")
-
-        else:
-            print("No booking found")
-                    
+                
                 
 
     def details(self):
@@ -70,6 +65,9 @@ class Appointment:
             f"Time: {self.time}\n"
             "________________________________________\n"
         )
+    
+    def change_time(self, new_time):
+        self.time = new_time
 
 customer1 = Customer("Chinedu")
 customer2 = Customer("Daniel")
@@ -80,13 +78,20 @@ barber2 = Barber("Carl")
 
 appointment1 = Appointment(customer1, barber1, "14:00")
 appointment2 = Appointment(customer2, barber2, "14:00")
+app3 = Appointment(customer2, barber2, "17:00")
+app4 = Appointment(customer2, barber2, "19:00")
 system = BookingSystem()
 
 system.book(appointment1)
 system.book(appointment2)
+system.book(app3)
+system.book(app4)
 
-system.reschedule(appointment1, "13:59")
-system.reschedule(appointment2, "4:00")
+system.all_barber_cancel(barber1)
+system.all_barber_cancel(barber2)
+
+
+
 
 
 system.details()
