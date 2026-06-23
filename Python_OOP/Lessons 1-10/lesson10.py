@@ -3,20 +3,28 @@ class BookingSystem:
         self.appointments = []
         self.next_id = 1
 
-    def book(self, appointment):
-        conflict = False
+    def add_booking(self, appointment):
+        appointment.booking_id = self.next_id
+        self.next_id += 1
+        self.appointments.append(appointment)
+
+    def remove_booking(self, booking_id):
         for booking in self.appointments:
-            if booking.barber == appointment.barber and booking.time == appointment.time:
-                print("Can't do this booking. The barber already has a booking.")
-                conflict = True
-                break
+            if booking.booking_id == booking_id:
+                self.appointments.remove(booking)
+                return True
+        return False
 
-        if not conflict:
-            appointment.booking_id = self.next_id
-            self.next_id += 1
-            self.appointments.append(appointment)
-            print("Appointment Booked.")
-
+    def get_booking(self, booking_id):
+        for booking in self.appointments:
+            if booking.booking_id == booking_id:
+                return booking
+            
+        return None
+    
+    def get_all_bookings(self):
+        return self.appointments
+    
     def cancel(self, booking_id):
         found = False
         for booking in self.appointments:
@@ -63,6 +71,33 @@ class BookingSystem:
     def details(self):
         for booking in self.appointments:
             booking.details()
+
+class BookingService:
+    def __init__(self, system):
+        self.system = system
+        
+    def book(self, appointment):
+        bookings = self.system.get_all_bookings()
+        for booking in bookings:
+            if booking.barber == appointment.barber and booking.time == appointment.time:
+                print("Can't do this booking. The barber already has a booking.")
+                return
+
+
+        self.system.add_booking(appointment)
+        print("Appointment Booked.")
+
+    def cancel(self, booking_id):
+        booking = self.system.get_booking(booking_id)
+
+        if not booking:
+            print("Can't cancel booking does not exist.")
+            return
+
+        self.system.remove_booking(booking_id)
+        print("Cancelled")
+
+
 
 
 class Customer:
