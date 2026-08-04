@@ -9,11 +9,11 @@ connection = psycopg.connect(
 cursor = connection.cursor()
 
 cursor.execute(
-    """
-        INSERT INTO customers (name, phone_number)
-        VALUES (%s, %s)
-    """,
-    ("Ahmed Mohammed", "07983412109")
+    """DELETE FROM bookings
+    WHERE booking_id = %s """,
+    (45,)
+
 )
 
 connection.commit()
+print("Success")
