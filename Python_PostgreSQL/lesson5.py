@@ -11,48 +11,49 @@ def get_connection():
     )
     return connection
 
-connection = get_connection()
-cursor = connection.cursor()
 
 
-def execute_query(query, parameters=None):
-    connection = get_connection()
+def execute_query(connection, query, parameters=None, fetch=False, update=False):
     cursor = connection.cursor()
 
     try:
         cursor.execute(query, parameters)
-        connection.commit()
-        result = cursor.fetchone()[0]
-        if result:
+
+        if fetch:
+            result = cursor.fetchone()[0]
             return result
-    except Exception as error:
-        connection.rollback()
-        print(f"Error: {error}")
+
+        if update:
+            row_count = cursor.rowcount
+            return row_count
+        return None
+
     finally:
         cursor.close()
-        connection.close()
+
+        
 
 def create_booking(customer_id, barber_id, booking_time):
+    connection = get_connection()
 
     try:
-        cursor.execute("""
+        booking_id = execute_query(connection, """
 INSERT INTO bookings (customer_id, barber_id, booking_time)
 VALUES (%s, %s, %s)
 RETURNING booking_id""",
-(customer_id, barber_id, booking_time))
+(customer_id, barber_id, booking_time), fetch=True)
 
-        booking_id = cursor.fetchone()[0]
+        
 
-        cursor.execute("""
+        row_count = execute_query(connection, """
 UPDATE barbers
 SET available = false
 WHERE barber_id = %s
 AND available = true
-""",  
-(barber_id,))
+""",  (barber_id,), update=True)
 
-        if cursor.rowcount == 0:
-            raise Exception("Barber does not exist or does not exist")
+        if row_count == 0:
+            raise Exception("Barber does not exist or is unavailable")
 
         
 
@@ -65,3 +66,6 @@ AND available = true
         print(f"There is an error here: {error}")
         connection.rollback()
         return None
+
+    finally:
+        connection.close()
