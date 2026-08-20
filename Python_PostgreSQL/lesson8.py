@@ -1,5 +1,13 @@
 import psycopg
 
+class InvalidQueryOptionsError(Exception):
+    pass
+
+
+class FetchUpdateConflictError(Exception):
+    pass
+
+
 
 def get_connection():
     connection = psycopg.connect(
@@ -12,29 +20,30 @@ def get_connection():
     return connection
 
 
-
 def execute_query(connection, query, parameters=None, fetch=False, update=False):
     cursor = connection.cursor()
 
     try:
         cursor.execute(query, parameters)
         if fetch != "one" and fetch != "all" and fetch != False:
-            raise Exception(f"{fetch} is not a valid option for fetch")
+            raise InvalidQueryOptionsError(f"{fetch} is not a valid option for fetch")
+
+        elif type(update) is not bool:
+            raise InvalidQueryOptionsError("Update has an invalid value")
         
         elif fetch and update:
-            raise Exception("Fetch and update cannot both be True")
+            raise FetchUpdateConflictError(f"Fetch and Update cannot both be true")
         
         elif fetch == "one":
             result = cursor.fetchone()[0]
             return result
  
-
         elif fetch == "all":
             result = cursor.fetchall()
             return result
 
 
-        elif update:
+        elif update is True:
             row_count = cursor.rowcount
             return row_count
 
@@ -42,16 +51,15 @@ def execute_query(connection, query, parameters=None, fetch=False, update=False)
             return None
 
 
-
+    except Exception:
+        raise
 
 
         
 
 
     finally:
-        cursor.close()
-
-        
+        cursor.close()      
 
 def create_booking(customer_id, barber_id, booking_time):
     connection = get_connection()
@@ -90,15 +98,16 @@ AND available = true
     finally:
         connection.close()
 
+def test():
+    connection = get_connection()
+    query = """
+    SELECT *
+    FROM bookings
+    WHERE booking_id = %s
+    """
+    parameters = (67,)
 
-connection = get_connection()
-query = """
-SELECT *
-FROM bookings
-WHERE booking_id = %s
-"""
-parameters = (67,)
+    result = execute_query(connection, query, parameters, fetch="all")
+    print(result)
 
-result = execute_query(connection, query, parameters, fetch="Gih")
-print(result)
-
+test()
