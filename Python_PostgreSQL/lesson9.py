@@ -91,10 +91,17 @@ AND available = true
         return booking_id
         
 
+
+    except psycopg.errors.ForeignKeyViolation:
+        print("Foreign key error. Customer does not exist")
+        connection.rollback()
+        return None
+
+
     except Exception as error:
         print(f"There is an error here: {error}")
         connection.rollback()
-        return None
+        raise 
 
     finally:
         connection.close()
@@ -111,4 +118,4 @@ def test():
     result = execute_query(connection, query, parameters, fetch="all")
     print(result)
 
-test()
+test() 
