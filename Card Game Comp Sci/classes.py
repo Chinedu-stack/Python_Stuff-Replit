@@ -55,11 +55,11 @@ class Player:
         return f"Player name is {self.name} they have won {len(self.won_cards)} cards."
     
 class Game:
-    def __init__(self,  winner, leaderboard):
+    def __init__(self,  leaderboard):
         self.player1 = None
         self.player2 = None
         self.deck = None
-        self.winner = winner
+        self.winner = None
         self.leaderboard = leaderboard
         self.current_index = 1
         self.colour_rules = {
@@ -111,9 +111,37 @@ class Game:
             winner = self.card_comparison()
             if winner != None:
                 winner.won_cards.extend([self.player1.current_card, self.player2.current_card])
+                self.winner = winner
+                print(f"The winner of this round is {winner.name}")
+            else:
+                print("It is a draw.")
 
             ### clear current card of both players
             self.reset_current_cards()
+
+    def save_result(self):
+        if self.winner:
+            with open("results.txt", "a") as file:
+                file.write(f"{self.winner.name},{len(self.winner.won_cards)} \n")
+
+    def show_leaderboard(self):
+        players_list = []
+        with open("results.txt", "r") as file:
+            lines = file.readlines()
+            for line in lines:
+                player_data = line.split(",")
+                player_data[1] = int(player_data[1])
+                players_list.append(player_data)
+
+            players_list.sort(key=lambda player: player[1], reverse=True)
+
+            print("Current Leaderboard: \n\n\n ")
+            for player in players_list[:5]:
+                print(f"Name: {player[0]}   Amount of cards won: {player[1]}")
+            
+
+
+
 
 
 
