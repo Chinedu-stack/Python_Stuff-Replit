@@ -1,4 +1,5 @@
 import random
+import time, os
 
 class Card:
     def __init__(self, colour, number):
@@ -55,18 +56,19 @@ class Player:
         return f"Player name is {self.name} they have won {len(self.won_cards)} cards."
     
 class Game:
-    def __init__(self,  leaderboard):
+    def __init__(self):
         self.player1 = None
         self.player2 = None
         self.deck = None
         self.winner = None
-        self.leaderboard = leaderboard
         self.current_index = 1
         self.colour_rules = {
             "red": "black",
             "yellow": "red",
             "black": "yellow"
         }
+        self.game_round = 1
+        self.overall_winner = None
 
     def set_up_game(self, player1_name, player2_name):
         self.player1 = Player(player1_name)
@@ -97,15 +99,22 @@ class Game:
 
     def play_round(self):
         while self.deck.is_empty == False:
+
+            print("------------------------------")
+            print(f"Round {self.game_round}")
+            print("------------------------------")
+
             ### Player 1 drawing card
-            card = self.deck.draw_card(self.current_index)
+            card1 = self.deck.draw_card(self.current_index)
             self.current_index += 1
-            self.player1.current_card = card
+            self.player1.current_card = card1
+            print(f"Player 1 card:  {self.player1.current_card}")
 
             ### Player 2 drawing card
             card2 = self.deck.draw_card(self.current_index)
             self.current_index += 1
-            self.player2.current_card = card
+            self.player2.current_card = card2
+            print(f"Player 2 card:  {self.player2.current_card}")
 
             ### Card Comparison
             winner = self.card_comparison()
@@ -113,18 +122,59 @@ class Game:
                 winner.won_cards.extend([self.player1.current_card, self.player2.current_card])
                 self.winner = winner
                 print(f"The winner of this round is {winner.name}")
+                time.sleep(1)
+                os.system("cls")
             else:
                 print("It is a draw.")
+                time.sleep(1)
+                os.system("cls")
 
             ### clear current card of both players
             self.reset_current_cards()
+            self.game_round += 1
+            time.sleep(1)
+            os.system("cls")
+
+
+        print("------------------------------")
+        print(f"Round Over")
+        print("------------------------------")
+
+        self.overall_winner = self.determine_overall_winner()
+
+        if self.overall_winner:
+            print("------------------------------")
+            print(f"The winner is {self.overall_winner.name} with {len(self.overall_winner.won_cards)} cards won")
+            print("------------------------------")
+
+            self.save_result()
+            print()
+            print()
+            self.show_leaderboard()
+
+            time.sleep(2)
+            os.system("cls")
+
+        else:
+            print("------------------------------")
+            print(f"It was a draw with both players having won {len(self.player1.won_cards)} cards")
+            print("------------------------------")
+
+            time.sleep(2)
+            os.system("cls")
+
+    def determine_overall_winner(self):
+        if len(self.player1.won_cards) > len(self.player2.won_cards):
+            self.overall_winner = self.player1
+        else:
+            self.overall_winner = self.player2
 
     def save_result(self):
-        if self.winner:
+        if self.overall_winner:
             with open("results.txt", "a") as file:
-                file.write(f"{self.winner.name},{len(self.winner.won_cards)} \n")
+                file.write(f"{self.overall_winner.name},{len(self.overall_winner.won_cards)} \n")
 
-    def show_leaderboard(self):
+    def show_leaderboard():
         players_list = []
         with open("results.txt", "r") as file:
             lines = file.readlines()
@@ -136,8 +186,10 @@ class Game:
             players_list.sort(key=lambda player: player[1], reverse=True)
 
             print("Current Leaderboard: \n\n\n ")
-            for player in players_list[:5]:
-                print(f"Name: {player[0]}   Amount of cards won: {player[1]}")
+            if players_list:
+                for player in players_list[:5]:
+                    print(f"Name: {player[0]}   Amount of cards won: {player[1]}")
+            print("No players in the leaderboard")
             
 
 
