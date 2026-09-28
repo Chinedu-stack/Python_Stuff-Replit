@@ -48,7 +48,7 @@ class Player:
     def get_card_count(self):
         return len(self.won_cards)
     
-    def reset_cards(self):
+    def reset_current_card(self):
         self.current_card = None
 
     def __str__(self):
@@ -59,7 +59,7 @@ class Game:
         self.player1 = None
         self.player2 = None
         self.deck = None
-        self.winner = None
+        self.round_winner = None
         self.colour_rules = {
             "red": "black",
             "yellow": "red",
@@ -92,11 +92,11 @@ class Game:
                 return self.player2
                 
     def reset_current_cards(self):
-        self.player1.reset_cards()
-        self.player2.reset_cards()
+        self.player1.reset_current_card()
+        self.player2.reset_current_card()
 
     def play_game(self):
-        while not self.deck.is_empty():
+        while self.deck.cards_remaining() >= 2:
 
             print("------------------------------")
             print(f"Round {self.game_round}")
@@ -116,13 +116,13 @@ class Game:
             winner = self.card_comparison()
             if winner != None:
                 winner.won_cards.extend([self.player1.current_card, self.player2.current_card])
-                self.winner = winner
+                self.round_winner = winner
                 print(f"The winner of this round is {winner.name}")
-                time.sleep(1)
+                time.sleep(0.25)
                 os.system("cls")
             else:
                 print("It is a draw.")
-                time.sleep(1)
+                time.sleep(0.25)
                 os.system("cls")
 
             ### clear current card of both players
