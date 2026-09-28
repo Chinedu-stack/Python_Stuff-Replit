@@ -18,10 +18,15 @@ while not exit_game:
         p2_check = authorise_player(p2_username, p2_password)
 
         if p1_check and p2_check:
-            print("Success. Both users are authorised")
-            authorised = True
-            time.sleep(2)
-            os.system("cls")
+            if p1_username == p2_username:
+                print("Error. Cannot have both players as the same user. Please try again")
+                time.sleep(1)
+                os.system("cls")
+            else:
+                print("Success. Both users are authorised")
+                authorised = True
+                time.sleep(2)
+                os.system("cls")
         else:
             print("1 or more users not authorised. Please try again")
             time.sleep(1)
@@ -35,7 +40,7 @@ while not exit_game:
 
         game = Game()
         game.set_up_game(p1_username, p2_username)
-        game.play_round()
+        game.play_game()
 
         while True:
             

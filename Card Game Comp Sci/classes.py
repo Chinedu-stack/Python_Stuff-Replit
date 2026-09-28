@@ -10,9 +10,8 @@ class Card:
         return f"The card has the colour {self.colour} and is number of {self.number}"
 
 class Deck:
-    def __init__(self, current_index=None):
+    def __init__(self):
         self.cards = []
-        self.current_index = current_index
         self.colours = ["red", "black", "yellow"]
 
     def create_deck(self):
@@ -24,8 +23,8 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
-    def draw_card(self, current_index):
-        drawn_card = self.cards[current_index]
+    def draw_card(self):
+        drawn_card = self.cards[0]
         self.cards.remove(drawn_card)
         return drawn_card
 
@@ -61,7 +60,6 @@ class Game:
         self.player2 = None
         self.deck = None
         self.winner = None
-        self.current_index = 1
         self.colour_rules = {
             "red": "black",
             "yellow": "red",
@@ -97,22 +95,20 @@ class Game:
         self.player1.reset_cards()
         self.player2.reset_cards()
 
-    def play_round(self):
-        while self.deck.is_empty == False:
+    def play_game(self):
+        while not self.deck.is_empty():
 
             print("------------------------------")
             print(f"Round {self.game_round}")
             print("------------------------------")
 
             ### Player 1 drawing card
-            card1 = self.deck.draw_card(self.current_index)
-            self.current_index += 1
+            card1 = self.deck.draw_card()
             self.player1.current_card = card1
             print(f"Player 1 card:  {self.player1.current_card}")
 
             ### Player 2 drawing card
-            card2 = self.deck.draw_card(self.current_index)
-            self.current_index += 1
+            card2 = self.deck.draw_card()
             self.player2.current_card = card2
             print(f"Player 2 card:  {self.player2.current_card}")
 
@@ -127,7 +123,7 @@ class Game:
             else:
                 print("It is a draw.")
                 time.sleep(1)
-                os.system("cls")
+                os.system("c1ls")
 
             ### clear current card of both players
             self.reset_current_cards()
@@ -165,16 +161,16 @@ class Game:
 
     def determine_overall_winner(self):
         if len(self.player1.won_cards) > len(self.player2.won_cards):
-            self.overall_winner = self.player1
+            return self.player1
         else:
-            self.overall_winner = self.player2
+            return self.player2
 
     def save_result(self):
         if self.overall_winner:
             with open("results.txt", "a") as file:
                 file.write(f"{self.overall_winner.name},{len(self.overall_winner.won_cards)} \n")
 
-    def show_leaderboard():
+    def show_leaderboard(self):
         players_list = []
         with open("results.txt", "r") as file:
             lines = file.readlines()
@@ -189,7 +185,8 @@ class Game:
             if players_list:
                 for player in players_list[:5]:
                     print(f"Name: {player[0]}   Amount of cards won: {player[1]}")
-            print("No players in the leaderboard")
+            else:
+                print("No players in the leaderboard")
             
 
 
