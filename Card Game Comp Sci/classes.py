@@ -123,7 +123,7 @@ class Game:
             else:
                 print("It is a draw.")
                 time.sleep(1)
-                os.system("c1ls")
+                os.system("cls")
 
             ### clear current card of both players
             self.reset_current_cards()
@@ -162,17 +162,19 @@ class Game:
     def determine_overall_winner(self):
         if len(self.player1.won_cards) > len(self.player2.won_cards):
             return self.player1
+        elif len(self.player1.won_cards) == len(self.player2.won_cards):
+            return None
         else:
             return self.player2
 
     def save_result(self):
         if self.overall_winner:
-            with open("results.txt", "a") as file:
+            with open("Card Game Comp Sci/results.txt", "a") as file:
                 file.write(f"{self.overall_winner.name},{len(self.overall_winner.won_cards)} \n")
 
     def show_leaderboard(self):
         players_list = []
-        with open("results.txt", "r") as file:
+        with open("Card Game Comp Sci/results.txt", "r") as file:
             lines = file.readlines()
             for line in lines:
                 player_data = line.split(",")

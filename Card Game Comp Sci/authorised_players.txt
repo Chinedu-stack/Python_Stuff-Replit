@@ -18,5 +18,5 @@ leo17,GreenShark90
 oscar18,FastPanda12
 adam19,BigFox23
 lucas20,CoolTiger34
-u1,password1
-u2,password2
+u1,p1
+u2,p2
