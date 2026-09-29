@@ -42,9 +42,6 @@ class Player:
         self.won_cards = []
         self.current_card = None
 
-    def add_cards(self, card):
-        self.won_cards.append(card)
-
     def get_card_count(self):
         return len(self.won_cards)
     
@@ -85,8 +82,8 @@ class Game:
             else:
                 return None
         else:
-            losing_colour = self.colour_rules[self.player1.current_card.colour]
-            if self.player2.current_card.colour == losing_colour:
+            p1_beats = self.colour_rules[self.player1.current_card.colour]
+            if self.player2.current_card.colour == p1_beats:
                 return self.player1
             else:
                 return self.player2
@@ -118,18 +115,14 @@ class Game:
                 winner.won_cards.extend([self.player1.current_card, self.player2.current_card])
                 self.round_winner = winner
                 print(f"The winner of this round is {winner.name}")
-                time.sleep(0.25)
-                os.system("cls")
+
             else:
                 print("It is a draw.")
-                time.sleep(0.25)
-                os.system("cls")
 
             ### clear current card of both players
             self.reset_current_cards()
             self.game_round += 1
-            time.sleep(1)
-            os.system("cls")
+
 
 
         print("------------------------------")
@@ -148,16 +141,11 @@ class Game:
             print()
             self.show_leaderboard()
 
-            time.sleep(2)
-            os.system("cls")
 
         else:
             print("------------------------------")
             print(f"It was a draw with both players having won {len(self.player1.won_cards)} cards")
             print("------------------------------")
-
-            time.sleep(2)
-            os.system("cls")
 
     def determine_overall_winner(self):
         if len(self.player1.won_cards) > len(self.player2.won_cards):
@@ -183,7 +171,7 @@ class Game:
 
             players_list.sort(key=lambda player: player[1], reverse=True)
 
-            print("Current Leaderboard: \n\n\n ")
+            print("Current Leaderboard: Top 5 players \n\n\n ")
             if players_list:
                 for player in players_list[:5]:
                     print(f"Name: {player[0]}   Amount of cards won: {player[1]}")
