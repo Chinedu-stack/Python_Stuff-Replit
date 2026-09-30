@@ -1,0 +1,25 @@
+ Learning_SQL/Lesson1/app.py                   |  31 [31m--------[m
+ Learning_SQL/Lesson1/lesson_1.db              | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/Lesson2/app.py                   |  37 [31m----------[m
+ Learning_SQL/Lesson2/lesson_2.db              | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/Lesson3/night3.py                |  50 [31m-------------[m
+ Learning_SQL/Lesson3/study_tracker.db         | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/Lesson4/app.py                   |  42 [31m-----------[m
+ Learning_SQL/Lesson4/study_tracker.db         | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/Lesson5/app,py                   |  61 [31m----------------[m
+ Learning_SQL/Lesson5/study_tracker.db         | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/lesson6/app.py                   |  33 [31m---------[m
+ Learning_SQL/lesson6/study_tracker_lesson6.db | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/lesson7/app.py                   |  27 [31m-------[m
+ Learning_SQL/lesson7/study_tracker_lesson7.db | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQL/lesson8/app.py                   |  17 [31m-----[m
+ Learning_SQL/lesson8/study_tracker.db         | Bin [31m12288[m -> [32m0[m bytes
+ Learning_SQLAlchemy/lesson1.py                |  50 [31m-------------[m
+ Learning_SQLAlchemy/lesson2.py                |  51 [31m-------------[m
+ Learning_SQLAlchemy/lesson3.py                |  59 [31m---------------[m
+ Learning_SQLAlchemy/lesson4.py                |  63 [31m----------------[m
+ Learning_SQLAlchemy/lesson5.py                |  64 [31m----------------[m
+ Learning_SQLAlchemy/lesson6.py                |  56 [31m--------------[m
+ Learning_SQLAlchemy/lesson7.py                |  80 [31m--------------------[m
+ Learning_SQLAlchemy/lesson8.py                | 101 [31m--------------------------[m
+ 24 files changed, 822 deletions(-)
