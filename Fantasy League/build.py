@@ -1,55 +1,67 @@
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
+from openpyxl.styles import Font, PatternFill, Border, Side, Alignment, Protection
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.formatting.rule import FormulaRule
 
 # =========================================================
-# DATA
+# CONFIG
+# =========================================================
+PASSWORD = "Legendx24j@"
+SAVE_PATH = r"C:\Users\chine\OneDrive\Python Stuff\Fantasy League\Year_11_Fantasy_League_v2.xlsx"
+TOTAL_WEEKS = 20   # columns of price log / raw results
+
+# =========================================================
+# DATA — Players (base prices)
 # =========================================================
 players = sorted([
-    ("Lia Li", 13.0),
-    ("Chinedu Chile", 11.0),
-    ("Emily Warburton", 11.0),
-    ("Sophie Barker", 13.0),
-    ("Alyza Rai", 10.5),
-    ("David Wu", 10.5),
-    ("Joe Paige", 10.5),
-    ("Azlan Husain", 10.0),
-    ("Nina De Saram", 10.0),
-    ("Alexa Amesimeku", 9.5),
-    ("Daniel Liu", 9.5),
-    ("Rebecca Seymour", 9.5),
-    ("Edwin Mayers", 9.0),
-    ("Melody Zhaeentan", 8.5),
-    ("Esme Beston", 8.0),
-    ("Iona Smith", 8.0),
-    ("Oscar Day-Duran", 8.0),
-    ("Alfie Foley", 7.5),
-    ("Ava Swinfen", 7.0),
-    ("Rory Bowman", 7.0),
-    ("Xander Meijer", 7.0),
+    ("Lia Li", 13.0), ("Chinedu Chile", 11.0), ("Emily Warburton", 11.0),
+    ("Sophie Barker", 13.0), ("Alyza Rai", 10.5), ("David Wu", 10.5),
+    ("Joe Paige", 10.5), ("Azlan Husain", 10.0), ("Nina De Saram", 10.0),
+    ("Alexa Amesimeku", 9.5), ("Daniel Liu", 9.5), ("Rebecca Seymour", 9.5),
+    ("Edwin Mayers", 9.0), ("Melody Zhaeentan", 8.5), ("Esme Beston", 8.0),
+    ("Iona Smith", 8.0), ("Oscar Day-Duran", 8.0), ("Alfie Foley", 7.5),
+    ("Ava Swinfen", 7.0), ("Rory Bowman", 7.0), ("Xander Meijer", 7.0),
 ], key=lambda p: -p[1])
+
 managers = sorted([p[0] for p in players])
+player_names = [p[0] for p in players]
+
+# =========================================================
+# DATA — Pre-loaded teams (from CSV, price suffixes stripped)
+# =========================================================
+teams_data = {
+    "Alfie Foley": {"p": ["Ava Swinfen", "David Wu", "Alyza Rai", "Sophie Barker", "Edwin Mayers"], "c": "Sophie Barker"},
+    "Ava Swinfen": {"p": ["Ava Swinfen", "Melody Zhaeentan", "Lia Li", "Chinedu Chile", "David Wu"], "c": "Lia Li"},
+    "Azlan Husain": {"p": ["Emily Warburton", "Chinedu Chile", "Joe Paige", "Alfie Foley", "Edwin Mayers"], "c": "Emily Warburton"},
+    "Chinedu Chile": {"p": ["Chinedu Chile", "Alexa Amesimeku", "David Wu", "Edwin Mayers", "Azlan Husain"], "c": "Chinedu Chile"},
+    "Daniel Liu": {"p": ["Alyza Rai", "Ava Swinfen", "Emily Warburton", "David Wu", "Chinedu Chile"], "c": "Emily Warburton"},
+    "David Wu": {"p": ["Azlan Husain", "Rebecca Seymour", "Edwin Mayers", "Chinedu Chile", "Joe Paige"], "c": "Edwin Mayers"},
+    "Edwin Mayers": {"p": ["Sophie Barker", "Esme Beston", "Edwin Mayers", "Emily Warburton", "Ava Swinfen"], "c": "Emily Warburton"},
+    "Joe Paige": {"p": ["Chinedu Chile", "Joe Paige", "Alfie Foley", "Lia Li", "Oscar Day-Duran"], "c": "Chinedu Chile"},
+    "Melody Zhaeentan": {"p": ["Lia Li", "Edwin Mayers", "Rebecca Seymour", "Joe Paige", "Xander Meijer"], "c": "Lia Li"},
+    "Oscar Day-Duran": {"p": ["Oscar Day-Duran", "Chinedu Chile", "Nina De Saram", "David Wu", "Joe Paige"], "c": "Joe Paige"},
+    "Rory Bowman": {"p": ["David Wu", "Ava Swinfen", "Alyza Rai", "Edwin Mayers", "Lia Li"], "c": "Lia Li"},
+    "Xander Meijer": {"p": ["Lia Li", "David Wu", "Ava Swinfen", "Joe Paige", "Melody Zhaeentan"], "c": "Lia Li"},
+}
+
+# =========================================================
+# DATA — Pre-loaded Week 1 scores
+# =========================================================
+scores_data = {
+    "Alexa Amesimeku": 73, "Alyza Rai": 70, "Ava Swinfen": 35, "Azlan Husain": 50,
+    "Chinedu Chile": 60, "David Wu": 60, "Emily Warburton": 90, "Esme Beston": 38,
+    "Lia Li": 55, "Melody Zhaeentan": 75, "Nina De Saram": 75, "Rory Bowman": 25,
+    "Sophie Barker": 88, "Xander Meijer": 30,
+}
 
 # =========================================================
 # THEME
 # =========================================================
-NAVY = "0B1F3A"
-BLUE = "1565C0"
-LIGHT_BLUE = "EAF2FF"
-PALE_BLUE = "F5F9FF"
-WHITE = "FFFFFF"
-DARK = "172033"
-GREY = "6B7280"
-LIGHT_GREY = "E5E7EB"
-GREEN = "16A34A"
-LIGHT_GREEN = "DCFCE7"
-RED = "DC2626"
-LIGHT_RED = "FEE2E2"
-GOLD = "F59E0B"
-LIGHT_GOLD = "FEF3C7"
-SLATE = "475569"
-SLATE_DARK = "334155"
+NAVY="0B1F3A"; BLUE="1565C0"; LIGHT_BLUE="EAF2FF"; PALE_BLUE="F5F9FF"
+WHITE="FFFFFF"; DARK="172033"; GREY="6B7280"; LIGHT_GREY="E5E7EB"
+GREEN="16A34A"; LIGHT_GREEN="DCFCE7"; RED="DC2626"; LIGHT_RED="FEE2E2"
+GOLD="F59E0B"; LIGHT_GOLD="FEF3C7"; SLATE="475569"; SLATE_DARK="334155"
+ORANGE="EA580C"; LIGHT_ORANGE="FFF7ED"
 
 thin_grey = Side(style="thin", color=LIGHT_GREY)
 medium_blue = Side(style="medium", color=BLUE)
@@ -79,85 +91,208 @@ def header_row(ws, row, start_col, end_col, fill=NAVY):
         c.border = Border(bottom=medium_blue)
     ws.row_dimensions[row].height = 32
 
-def box(cell, fill=WHITE, bold=False, color=DARK, align="left", size=12, italic=False):
+def box(cell, fill=WHITE, bold=False, color=DARK, align="left", size=12, italic=False, unlocked=False):
     cell.fill = PatternFill("solid", fgColor=fill)
     cell.font = Font(bold=bold, color=color, size=size, italic=italic)
     cell.alignment = Alignment(horizontal=align, vertical="center", wrap_text=False)
     cell.border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
+    if unlocked:
+        cell.protection = Protection(locked=False)
+
+def protect(ws):
+    ws.protection.sheet = True
+    ws.protection.password = PASSWORD
+    ws.protection.formatCells = False
+    ws.protection.formatColumns = False
+    ws.protection.formatRows = False
+    ws.protection.selectLockedCells = False
+    ws.protection.selectUnlockedCells = False
 
 wb = Workbook()
 wb.remove(wb.active)
 
-# ---------------------------------------------------------
+# =========================================================
+# SETTINGS
+# =========================================================
+s = wb.create_sheet("SETTINGS")
+s.sheet_view.showGridLines = False
+for col, w in {"A":4,"B":34,"C":16,"D":44,"E":14,"F":14,"G":14}.items():
+    s.column_dimensions[col].width = w
+
+title(s, "SETTINGS — CONTROL PANEL", 1, 2, 5)
+
+s.merge_cells("B2:E2")
+s["B2"] = "Change the numbers below to update the whole league. Only gold cells are editable."
+s["B2"].font = Font(size=12, italic=True, color=GREY)
+s["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
+s.row_dimensions[2].height = 26
+
+section(s, "GAME RULES", 3, 2, 5)
+
+for c, h in enumerate(["Setting", "Value", "Notes"], start=2):
+    s.cell(4, c, h)
+header_row(s, 4, 2, 5)
+
+rules = [
+    ("Baseline points (at avg)",     5,       "Points for scoring exactly the class average"),
+    ("Dynamic step divisor",          10,      "Class range (max−min) ÷ this = step size"),
+    ("Minimum points",                0,       "Floor"),
+    ("Maximum points",                10,      "Ceiling"),
+    ("Max weekly price change",       0.5,     "Absolute cap per week (£m)"),
+    ("Tier multiplier (low)",         1.0,     "£7.0–8.9m price band multiplier"),
+    ("Tier multiplier (mid)",         0.75,    "£9.0–10.9m price band multiplier"),
+    ("Tier multiplier (high)",        0.5,     "£11.0–13.0m price band multiplier"),
+    ("Price change step",             0.1,     "Ladder increment (£m)"),
+    ("Minimum price",                 7.0,     "Floor (£m)"),
+    ("Maximum price",                 13.0,    "Ceiling (£m)"),
+    ("Price changes start at week",   3,       "First week that price changes apply"),
+]
+for i, (label, val, note) in enumerate(rules):
+    r = 5 + i
+    s.cell(r, 2, label)
+    s.cell(r, 3, val)
+    s.cell(r, 4, note)
+    box(s.cell(r, 2), LIGHT_BLUE, True, DARK, "left")
+    box(s.cell(r, 3), LIGHT_GOLD, True, NAVY, "center", unlocked=True)
+    box(s.cell(r, 4), PALE_BLUE, False, GREY, "left", size=11, italic=True)
+    s.row_dimensions[r].height = 26
+
+# ---- Player Prices ----
+price_start = 20
+section(s, "PLAYER PRICES", price_start, 2, 6)
+for c, h in enumerate(["Player", "Base", "Cumulative", "Override", "Final"], start=2):
+    s.cell(price_start + 1, c, h)
+header_row(s, price_start + 1, 2, 6)
+
+p_rows = {}
+for i, (name, base) in enumerate(players):
+    r = price_start + 2 + i
+    p_rows[name] = r
+    s.cell(r, 2, name)
+    s.cell(r, 3, base)
+    s.cell(r, 4, f"=IF(ROW()=ROW(),SUM(INDEX($J${price_start+2}:$Z${price_start+22},ROW()-{price_start+1},0)),0)")
+    # cumulative from log — simpler: SUM of log row
+    s.cell(r, 4, f"=SUM(J{r}:Z{r})")
+    s.cell(r, 5, None)  # override
+    s.cell(r, 6, f'=IF(E{r}<>"",E{r},MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C{r}+D{r})))')
+    box(s.cell(r, 2), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "left")
+    box(s.cell(r, 3), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "center")
+    box(s.cell(r, 4), WHITE if i % 2 == 0 else PALE_BLUE, False, GREY, "center")
+    box(s.cell(r, 5), LIGHT_GOLD, True, NAVY, "center", unlocked=True)
+    box(s.cell(r, 6), LIGHT_BLUE, True, DARK, "center")
+    s.cell(r, 3).number_format = '£0.0"m"'
+    s.cell(r, 4).number_format = '+£0.0"m";-£0.0"m";—'
+    s.cell(r, 5).number_format = '£0.0"m"'
+    s.cell(r, 6).number_format = '£0.0"m"'
+    s.row_dimensions[r].height = 26
+
+# ---- Price log ----
+log_start = price_start + len(players) + 3
+section(s, "WEEKLY PRICE LOG (auto-written by advance script)", log_start, 2, 2 + TOTAL_WEEKS + 1)
+s.cell(log_start + 1, 2, "Player")
+for w in range(1, TOTAL_WEEKS + 1):
+    s.cell(log_start + 1, 2 + w, f"GW{w}")
+header_row(s, log_start + 1, 2, 2 + TOTAL_WEEKS)
+for i, (name, _) in enumerate(players):
+    r = log_start + 2 + i
+    s.cell(r, 2, name)
+    for w in range(1, TOTAL_WEEKS + 1):
+        c = s.cell(r, 2 + w, None)
+        c.number_format = '+£0.0"m";-£0.0"m";—'
+    box(s.cell(r, 2), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "left")
+    for w in range(1, TOTAL_WEEKS + 1):
+        box(s.cell(r, 2 + w), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "center")
+    s.row_dimensions[r].height = 24
+
+protect(s)
+
+# =========================================================
 # CALCULATIONS
-# ---------------------------------------------------------
+# =========================================================
 calc = wb.create_sheet("CALCULATIONS")
 calc.sheet_state = "hidden"
 
-calc["A1"] = "Player"
-calc["B1"] = "Base Price"
-calc["C1"] = "Current Price"
-calc["D1"] = "Points This Week"
-calc["E1"] = "Last Week Pts"
-calc["F1"] = "Δ"
-calc["W1"] = "Dropdown"
+calc["A1"]="Player"; calc["B1"]="Base"; calc["C1"]="Current"; calc["D1"]="Pts"
+calc["K1"]="Manager"; calc["L1"]="P1"; calc["M1"]="P2"; calc["N1"]="P3"
+calc["O1"]="P4"; calc["P1"]="P5"; calc["Q1"]="Captain"; calc["R1"]="Team Value"
+calc["S1"]="Budget Left"; calc["T1"]="GW Score"; calc["U1"]="Status"
 
-for i, (name, price) in enumerate(players, start=2):
+for i, (name, base) in enumerate(players, start=2):
     calc.cell(i, 1, name)
-    calc.cell(i, 2, price)
-    calc.cell(i, 3, f"=MIN(13,MAX(7,B{i}))")
-    
-    # FIX: Use INDEX/MATCH to find the player by name in TEST RESULTS
+    calc.cell(i, 2, base)
+    # Current price reads from SETTINGS final price column
+    s_row = p_rows[name]
+    calc.cell(i, 3, f"=SETTINGS!F{s_row}")
+    # Points this week — dynamic step from class average
+    sc  = f"INDEX('TEST RESULTS'!$C$5:$C$25,MATCH(A{i},'TEST RESULTS'!$B$5:$B$25,0))"
+    avg = "AVERAGE('TEST RESULTS'!$C$5:$C$25)"
+    step = f"MAX((MAX('TEST RESULTS'!$C$5:$C$25)-MIN('TEST RESULTS'!$C$5:$C$25))/SETTINGS!$C$6,0.1)"
     calc.cell(i, 4,
-        f'=_xlfn.IFERROR(IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))="",0,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=95,10,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=90,9,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=85,8,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=80,7,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=75,6,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=70,5,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=65,4,'
-        f'IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))>=60,3,0))))))))),0)')
-    
-    calc.cell(i, 5, None)
-    
-    # FIX: Use INDEX/MATCH for the delta calculation as well
-    calc.cell(i, 6,
-        f'=IF(INDEX(\'TEST RESULTS\'!$C$5:$C$25,MATCH(A{i},\'TEST RESULTS\'!$B$5:$B$25,0))="",0,'
-        f'IF(E{i}="",0,'
-        f'IF(D{i}>E{i},0.1,'
-        f'IF(D{i}<E{i},-0.1,0))))')
-    
-    calc.cell(i, 23, f'=A{i}&"  —  £"&TEXT(B{i},"0.0")&"m"')
-
-calc["K1"] = "Manager"
-calc["L1"] = "P1"
-calc["M1"] = "P2"
-calc["N1"] = "P3"
-calc["O1"] = "P4"
-calc["P1"] = "P5"
-calc["Q1"] = "Captain"
-calc["R1"] = "Team Value"
-calc["S1"] = "Budget Left"
-calc["T1"] = "GW Score"
-calc["U1"] = "Status"
+        f'=_xlfn.IFERROR(IF({sc}="",0,'
+        f'MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,'
+        f'SETTINGS!$C$5+ROUNDDOWN(({sc}-{avg})/{step},0)))),0)')
 
 for r, name in enumerate(managers, start=2):
     calc.cell(r, 11, name)
-    for c_off, ref in enumerate(["C10", "C11", "C12", "C13", "C14"]):
+    for c_off, ref in enumerate(["C10","C11","C12","C13","C14"]):
         calc.cell(r, 12 + c_off, f"='{name}'!{ref}")
     calc.cell(r, 17, f"='{name}'!C5")
     calc.cell(r, 18, f"='{name}'!C17")
     calc.cell(r, 19, f"='{name}'!C18")
-    calc.cell(r, 20, f"='{name}'!C19")
+    calc.cell(r, 20,
+        f'=IF($U{r}="VALID TEAM",'
+        f'SUMPRODUCT(SUMIF($A$2:$A$22,L{r}:P{r},$D$2:$D$22))'
+        f'+SUMIF($A$2:$A$22,Q{r},$D$2:$D$22),0)')
     calc.cell(r, 21, f"='{name}'!C20")
 
-# ---------------------------------------------------------
+protect(calc)
+
+# =========================================================
+# MASTER DATA (hidden, live mirror)
+# =========================================================
+md = wb.create_sheet("MASTER DATA")
+md.sheet_state = "hidden"
+md["B1"]="Manager"; md["C1"]="P1"; md["D1"]="P2"; md["E1"]="P3"
+md["F1"]="P4"; md["G1"]="P5"; md["H1"]="Captain"
+header_row(md, 1, 2, 8)
+for i, name in enumerate(managers):
+    r = 2 + i
+    md.cell(r, 2, name)
+    for c_off, ref in enumerate(["C10","C11","C12","C13","C14"]):
+        md.cell(r, 3 + c_off, f"='{name}'!{ref}")
+    md.cell(r, 8, f"='{name}'!C5")
+    box(md.cell(r, 2), WHITE, True, DARK, "left")
+    for c in range(3, 9):
+        box(md.cell(r, c), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "left")
+    md.row_dimensions[r].height = 26
+protect(md)
+
+# =========================================================
+# RAW RESULTS (hidden archive)
+# =========================================================
+raw = wb.create_sheet("RAW RESULTS")
+raw.sheet_state = "hidden"
+raw.cell(1, 2, "Manager")
+for w in range(1, TOTAL_WEEKS + 1):
+    raw.cell(1, 2 + w, f"GW{w}")
+header_row(raw, 1, 2, 2 + TOTAL_WEEKS)
+for i, name in enumerate(managers):
+    r = 2 + i
+    raw.cell(r, 2, name)
+    for w in range(1, TOTAL_WEEKS + 1):
+        raw.cell(r, 2 + w, None)
+    box(raw.cell(r, 2), WHITE, True, DARK, "left")
+    for w in range(1, TOTAL_WEEKS + 1):
+        box(raw.cell(r, 2 + w), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "center")
+    raw.row_dimensions[r].height = 26
+protect(raw)
+
+# =========================================================
 # HOME
-# ---------------------------------------------------------
+# =========================================================
 home = wb.create_sheet("HOME")
 home.sheet_view.showGridLines = False
-for col, w in {"A": 4, "B": 28, "C": 26, "D": 26, "E": 26, "F": 26, "G": 26, "H": 4}.items():
+for col, w in {"A":4,"B":28,"C":26,"D":26,"E":26,"F":26,"G":26,"H":4}.items():
     home.column_dimensions[col].width = w
 
 title(home, "YEAR 11 FANTASY LEAGUE", 1, 2, 7)
@@ -168,9 +303,7 @@ home["B2"].font = Font(size=16, bold=True, color=BLUE)
 home["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
 home.row_dimensions[2].height = 32
 
-home.merge_cells("B3:G3")
 home.row_dimensions[3].height = 12
-
 home.merge_cells("B4:G4")
 home["B4"] = "DEADLINE  •  GAMEWEEK 1  •  TBC"
 home["B4"].font = Font(size=13, bold=True, color=DARK)
@@ -185,9 +318,7 @@ home["B5"].fill = PatternFill("solid", fgColor=LIGHT_BLUE)
 home["B5"].alignment = Alignment(horizontal="center", vertical="center")
 home.row_dimensions[5].height = 34
 
-home.merge_cells("B6:G6")
 home.row_dimensions[6].height = 12
-
 home["B7"] = "CURRENT GAMEWEEK:"
 home["B7"].font = Font(size=12, bold=True, color=GREY)
 home["B7"].alignment = Alignment(horizontal="right", vertical="center")
@@ -196,44 +327,44 @@ home["C7"].font = Font(size=14, bold=True, color=NAVY)
 home["C7"].fill = PatternFill("solid", fgColor=LIGHT_GOLD)
 home["C7"].alignment = Alignment(horizontal="center", vertical="center")
 home["C7"].border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
+home["C7"].protection = Protection(locked=False)
 home.row_dimensions[7].height = 30
 
-home.merge_cells("B8:G8")
 home.row_dimensions[8].height = 12
-
 section(home, "HOW TO PLAY", 9, 2, 7)
 steps = [
     "1.  Go to PICK YOUR TEAM and click your name.",
-    "2.  Pick 5 players from the dropdowns (each shows the price).",
-    "3.  Pick 1 captain using the GOLD CAPTAIN BOX at the top.",
+    "2.  Pick 5 players from the dropdowns.",
+    "3.  Pick 1 captain using the GOLD CAPTAIN BOX.",
     "4.  Stay under the £50m budget.",
     "5.  Enter your own test % on TEST RESULTS after each test.",
 ]
 for i, text in enumerate(steps):
     r = 10 + i
     home.merge_cells(start_row=r, start_column=2, end_row=r, end_column=7)
-    c = home.cell(r, 2, text)
-    box(c, PALE_BLUE)
+    c = home.cell(r, 2, text); box(c, PALE_BLUE)
     c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
     home.row_dimensions[r].height = 30
 
-home.merge_cells("B16:G16")
 home.row_dimensions[16].height = 12
-
 section(home, "HOW POINTS WORK", 17, 2, 7)
-points_explainer = [
-    ("95–100%",   "10 points"),
-    ("90–94%",    "9 points"),
-    ("85–89%",    "8 points"),
-    ("80–84%",    "7 points"),
-    ("75–79%",    "6 points"),
-    ("70–74%",    "5 points"),
-    ("65–69%",    "4 points"),
-    ("60–64%",    "3 points"),
-    ("Below 60%", "0 points"),
+home.merge_cells("B18:G19")
+home["B18"] = ("Your score is compared to the CLASS AVERAGE.\n"
+               "Average = 5 points. Every small step above = +1. Every step below = −1.")
+home["B18"].font = Font(size=12, color=DARK)
+home["B18"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True, indent=1)
+box(home["B18"], PALE_BLUE)
+home.row_dimensions[18].height = 24
+home.row_dimensions[19].height = 24
+pts_rows = [
+    ("Well above average",   "High points"),
+    ("Slightly above",        "6–7 points"),
+    ("Exactly average",       "5 points"),
+    ("Slightly below",        "3–4 points"),
+    ("Well below",            "0–1 points"),
 ]
-for i, (label, val) in enumerate(points_explainer):
-    r = 18 + i
+for i, (label, val) in enumerate(pts_rows):
+    r = 20 + i
     home.merge_cells(start_row=r, start_column=2, end_row=r, end_column=3)
     home.cell(r, 2, label).font = Font(bold=True, color=DARK, size=12)
     home.cell(r, 2).fill = PatternFill("solid", fgColor=LIGHT_BLUE)
@@ -245,28 +376,25 @@ for i, (label, val) in enumerate(points_explainer):
     home.cell(r, 4).border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
     home.row_dimensions[r].height = 26
 
-home.merge_cells("B28:G28")
-home.row_dimensions[28].height = 12
-
-section(home, "HOW PRICES WORK", 29, 2, 7)
-home.merge_cells("B30:G31")
-home["B30"] = ("Prices move based on FORM — how each player performs compared to their\n"
-               "OWN previous test. Consistent players don't move.")
-home["B30"].font = Font(size=12, color=DARK)
-home["B30"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True, indent=1)
-box(home["B30"], PALE_BLUE)
-home.row_dimensions[30].height = 22
-home.row_dimensions[31].height = 22
-
-price_explainer = [
-    ("Improved vs last test", "+£0.1m"),
-    ("Same as last test",     "No change"),
-    ("Declined vs last test", "-£0.1m"),
-    ("First gameweek",        "No change"),
-    ("Did not take test",     "No change"),
+home.row_dimensions[26].height = 12
+section(home, "HOW PRICES WORK", 27, 2, 7)
+home.merge_cells("B28:G29")
+home["B28"] = ("Prices move based on your 3-WEEK FORM vs the class average.\n"
+               "Cheap players rise faster. Expensive players rise slower.")
+home["B28"].font = Font(size=12, color=DARK)
+home["B28"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True, indent=1)
+box(home["B28"], PALE_BLUE)
+home.row_dimensions[28].height = 24
+home.row_dimensions[29].height = 24
+price_rows = [
+    ("No changes first 2 weeks",       "Settling in"),
+    ("Week 3 onward",                   "Prices move based on form"),
+    ("Beating average consistently",    "Price rises up to +£0.5m/week"),
+    ("Below average consistently",      "Price falls up to -£0.5m/week"),
+    ("Bounds",                          "£7.0m  to  £13.0m"),
 ]
-for i, (label, val) in enumerate(price_explainer):
-    r = 32 + i
+for i, (label, val) in enumerate(price_rows):
+    r = 30 + i
     home.merge_cells(start_row=r, start_column=2, end_row=r, end_column=4)
     home.cell(r, 2, label).font = Font(bold=True, color=DARK, size=12)
     home.cell(r, 2).fill = PatternFill("solid", fgColor=LIGHT_BLUE)
@@ -278,52 +406,44 @@ for i, (label, val) in enumerate(price_explainer):
     home.cell(r, 5).border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
     home.row_dimensions[r].height = 26
 
-home.merge_cells("B38:G38")
-home["B38"] = ("Prices stay between £7.0m and £13.0m. Small changes each week "
-               "but add up over the season.")
-home["B38"].font = Font(size=11, italic=True, color=GREY)
-home["B38"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
-home.row_dimensions[38].height = 30
+home.merge_cells("B36:G36")
+home["B36"] = "SETTINGS and RULES sheets have more detail. Ask Mr C if anything is unclear."
+home["B36"].font = Font(size=11, italic=True, color=GREY)
+home["B36"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
+home.row_dimensions[36].height = 30
+protect(home)
 
-# ---------------------------------------------------------
+# =========================================================
 # PICK YOUR TEAM
-# ---------------------------------------------------------
+# =========================================================
 menu = wb.create_sheet("PICK YOUR TEAM")
 menu.sheet_view.showGridLines = False
 menu.column_dimensions["A"].width = 6
 menu.column_dimensions["B"].width = 32
 menu.column_dimensions["C"].width = 26
-
 title(menu, "PICK YOUR TEAM", 1, 2, 3)
-
 menu.merge_cells("B2:C2")
 menu["B2"] = "Click your name to jump to your team sheet."
 menu["B2"].font = Font(size=12, italic=True, color=GREY)
 menu["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
 menu.row_dimensions[2].height = 30
-
-menu.merge_cells("B3:C3")
 menu.row_dimensions[3].height = 12
-
-menu["B4"] = "Manager"
-menu["C4"] = "Status"
+menu["B4"]="Manager"; menu["C4"]="Status"
 header_row(menu, 4, 2, 3)
-
 for i, name in enumerate(managers):
     r = 5 + i
     c = menu.cell(r, 2, name)
     c.hyperlink = f"#'{name}'!A1"
     c.font = Font(bold=True, color=BLUE, underline="single", size=12)
-    box(c, WHITE, True, BLUE)
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    calc_row = 2 + i
-    menu.cell(r, 3, f"=CALCULATIONS!U{calc_row}")
+    box(c, WHITE, True, BLUE); c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
+    menu.cell(r, 3, f"=CALCULATIONS!U{2+i}")
     box(menu.cell(r, 3), PALE_BLUE, align="center")
     menu.row_dimensions[r].height = 30
+protect(menu)
 
-# ---------------------------------------------------------
+# =========================================================
 # TEAM SHEETS
-# ---------------------------------------------------------
+# =========================================================
 def build_team_sheet(name):
     ws = wb.create_sheet(name)
     ws.sheet_view.showGridLines = False
@@ -331,10 +451,6 @@ def build_team_sheet(name):
     ws.column_dimensions["B"].width = 32
     ws.column_dimensions["C"].width = 34
     ws.column_dimensions["D"].width = 20
-    ws.column_dimensions["E"].width = 4
-    ws.column_dimensions["F"].width = 4
-    ws.column_dimensions["G"].width = 4
-
     title(ws, f"{name.upper()}'S TEAM", 1, 2, 4)
 
     ws.merge_cells("B2:D2")
@@ -344,22 +460,20 @@ def build_team_sheet(name):
     back.font = Font(size=12, bold=True, color=BLUE, underline="single")
     back.alignment = Alignment(horizontal="left", vertical="center", indent=1)
     ws.row_dimensions[2].height = 30
-
     ws.row_dimensions[3].height = 12
 
     section(ws, "PICK YOUR CAPTAIN  (scores 2× points)", 4, 2, 4)
     ws["C5"] = ""
-    box(ws["C5"], LIGHT_GOLD, True, DARK, "left")
+    box(ws["C5"], LIGHT_GOLD, True, NAVY, "left")
     ws["C5"].font = Font(size=13, bold=True, color=NAVY)
     ws["C5"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
     ws.row_dimensions[5].height = 34
 
     ws.merge_cells("B6:D6")
-    ws["B6"] = "Step 1: Pick your 5 players below.  Step 2: Choose your captain in the GOLD box above."
+    ws["B6"] = "Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above."
     ws["B6"].font = Font(size=11, italic=True, color=GREY)
     ws["B6"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
     ws.row_dimensions[6].height = 24
-
     ws.row_dimensions[7].height = 12
 
     section(ws, "SQUAD", 8, 2, 4)
@@ -367,27 +481,33 @@ def build_team_sheet(name):
         ws.cell(9, c, h)
     header_row(ws, 9, 2, 4)
 
+    # Pre-load picks
+    preload = teams_data.get(name)
     for r in range(10, 15):
         slot = r - 9
         ws.cell(r, 2, slot)
-        ws.cell(r, 3, "")
-        ws.cell(r, 4, f'=IF(C{r}="","",_xlfn.IFERROR(INDEX(\'CALCULATIONS\'!$C$2:$C$22,MATCH(C{r},\'CALCULATIONS\'!$W$2:$W$22,0)),""))')
+        if preload and slot <= len(preload["p"]):
+            ws.cell(r, 3, preload["p"][slot-1])
+        else:
+            ws.cell(r, 3, "")
+        ws.cell(r, 4, f'=IF(C{r}="","",_xlfn.IFERROR(INDEX(\'CALCULATIONS\'!$C$2:$C$22,MATCH(C{r},\'CALCULATIONS\'!$A$2:$A$22,0)),""))')
         box(ws.cell(r, 2), PALE_BLUE, True, DARK, "center")
         box(ws.cell(r, 3), LIGHT_GOLD, False, DARK, "left")
         box(ws.cell(r, 4), WHITE, False, DARK, "center")
         ws.row_dimensions[r].height = 32
-
     ws.row_dimensions[15].height = 12
+
+    if preload and preload.get("c"):
+        ws["C5"] = preload["c"]
 
     section(ws, "TEAM SUMMARY", 16, 2, 4)
     summary = [
-        ("Team Value",   "=SUM(D10:D14)"),
-        ("Budget Left",  "=50-C17"),
-        # FIX: Using SUMPRODUCT to correctly sum the array of 5 players, then adding captain
+        ("Team Value", "=SUM(D10:D14)"),
+        ("Budget Left", "=50-C17"),
         ("GW Score",
          '=IF($C$20="VALID TEAM",'
-         'SUMPRODUCT(SUMIF(\'CALCULATIONS\'!$W$2:$W$22,C10:C14,\'CALCULATIONS\'!$D$2:$D$22))'
-         '+SUMIF(\'CALCULATIONS\'!$W$2:$W$22,C5,\'CALCULATIONS\'!$D$2:$D$22),0)'),
+         'SUMPRODUCT(SUMIF(\'CALCULATIONS\'!$A$2:$A$22,C10:C14,\'CALCULATIONS\'!$D$2:$D$22))'
+         '+SUMIF(\'CALCULATIONS\'!$A$2:$A$22,C5,\'CALCULATIONS\'!$D$2:$D$22),0)'),
         ("Team Status",
          '=IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",'
          'IF(SUM(D10:D14)>50,"OVER BUDGET",'
@@ -415,105 +535,45 @@ def build_team_sheet(name):
         formula=['C20<>"VALID TEAM"'],
         fill=PatternFill("solid", fgColor=LIGHT_RED),
         font=Font(color=RED, bold=True)))
-
     ws.row_dimensions[21].height = 12
 
     ws.merge_cells("B22:D24")
     ws["B22"] = ("INPUT CELLS ARE GOLD.\n"
                  "Only the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\n"
-                 "Do NOT type 'CAPTAIN' anywhere in the squad — use the GOLD box above.")
+                 "Do NOT type 'CAPTAIN' anywhere in the squad.")
     ws["B22"].font = Font(bold=True, color=DARK, size=12)
     ws["B22"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     box(ws["B22"], LIGHT_GOLD)
 
-    ws.row_dimensions[25].height = 12
+    # Data validations
+    dv = DataValidation(type="list", formula1="=CALCULATIONS!$A$2:$A$22", allow_blank=True)
+    dv.error = "Choose a player from the dropdown."
+    dv.errorTitle = "Invalid player"
+    dv.showErrorMessage = True
+    ws.add_data_validation(dv)
+    dv.add("C10:C14")
 
-    section(ws, "EXAMPLE  (do not edit — for reference only)", 26, 2, 4, fill=SLATE)
+    dv_c = DataValidation(type="list", formula1=f"='{name}'!$C$10:$C$14", allow_blank=True)
+    dv_c.error = "Choose one of your 5 players."
+    dv_c.errorTitle = "Invalid captain"
+    dv_c.showErrorMessage = True
+    ws.add_data_validation(dv_c)
+    dv_c.add("C5")
 
-    for c, h in enumerate(["Slot", "Player", "Price"], start=2):
-        ws.cell(27, c, h)
-    header_row(ws, 27, 2, 4, fill=SLATE_DARK)
-
-    example = [
-        (1, "Chinedu Chile  —  £11.0m",   "£11.0m"),
-        (2, "Emily Warburton  —  £11.0m", "£11.0m"),
-        (3, "Joe Paige  —  £10.5m",       "£10.5m"),
-        (4, "Edwin Mayers  —  £9.0m",     "£9.0m"),
-        (5, "Alfie Foley  —  £7.5m",      "£7.5m"),
-    ]
-    for i, (slot, p, price) in enumerate(example):
-        r = 28 + i
-        ws.cell(r, 2, slot)
-        ws.cell(r, 3, p)
-        ws.cell(r, 4, price)
-        box(ws.cell(r, 2), PALE_BLUE, True, DARK, "center")
-        box(ws.cell(r, 3), WHITE, False, DARK, "left")
-        box(ws.cell(r, 4), WHITE, False, DARK, "center")
-        ws.row_dimensions[r].height = 28
-
-    ws.cell(33, 2, "CAPTAIN")
-    box(ws.cell(33, 2), LIGHT_BLUE, True, DARK, "left")
-    ws.merge_cells("C33:D33")
-    ws.cell(33, 3, "Emily Warburton  —  £11.0m")
-    box(ws.cell(33, 3), WHITE, True, DARK, "left")
-    ws.row_dimensions[33].height = 28
-
-    ws.cell(34, 2, "TEAM VALUE")
-    box(ws.cell(34, 2), LIGHT_BLUE, True, DARK, "left")
-    ws.merge_cells("C34:D34")
-    ws.cell(34, 3, "£49.0m     BUDGET LEFT  £1.0m")
-    box(ws.cell(34, 3), WHITE, True, DARK, "left")
-    ws.row_dimensions[34].height = 28
-
-    ws.cell(35, 2, "STATUS")
-    box(ws.cell(35, 2), LIGHT_BLUE, True, DARK, "left")
-    ws.merge_cells("C35:D35")
-    ws.cell(35, 3, "✓ VALID TEAM")
-    box(ws.cell(35, 3), LIGHT_GREEN, True, GREEN, "left")
-    ws.row_dimensions[35].height = 28
-
-    dv_players = DataValidation(
-        type="list",
-        formula1="=CALCULATIONS!$W$2:$W$22",
-        allow_blank=True,
-    )
-    dv_players.error = "Please choose a player from the dropdown list."
-    dv_players.errorTitle = "Invalid player"
-    dv_players.prompt = "Click the arrow to choose a player."
-    dv_players.promptTitle = "Pick a player"
-    dv_players.showErrorMessage = True
-    dv_players.showInputMessage = True
-    ws.add_data_validation(dv_players)
-    dv_players.add("C10:C14")
-
-    dv_captain = DataValidation(
-        type="list",
-        formula1=f"='{name}'!$C$10:$C$14",
-        allow_blank=True,
-    )
-    dv_captain.error = "Choose one of your 5 players."
-    dv_captain.errorTitle = "Invalid captain"
-    dv_captain.prompt = "Pick your captain from your 5 players."
-    dv_captain.promptTitle = "Pick a captain"
-    dv_captain.showErrorMessage = True
-    dv_captain.showInputMessage = True
-    ws.add_data_validation(dv_captain)
-    dv_captain.add("C5")
-
+    # NOT protected — students edit their own teams
     return ws
 
 for name in managers:
     build_team_sheet(name)
 
-# ---------------------------------------------------------
+# =========================================================
 # TEST RESULTS
-# ---------------------------------------------------------
+# =========================================================
 results = wb.create_sheet("TEST RESULTS")
 results.sheet_view.showGridLines = False
 results.column_dimensions["A"].width = 4
 results.column_dimensions["B"].width = 32
 results.column_dimensions["C"].width = 42
-
 title(results, "TEST RESULTS", 1, 2, 3)
 
 results.merge_cells("B2:C2")
@@ -521,33 +581,24 @@ results["B2"] = "GAMEWEEK 1  •  Test on TBC"
 results["B2"].font = Font(size=12, bold=True, color=BLUE)
 results["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
 results.row_dimensions[2].height = 30
-
-results.merge_cells("B3:C3")
 results.row_dimensions[3].height = 12
-
-results["B4"] = "Student"
-results["C4"] = "Test %  —  type 90, not 90%"
+results["B4"]="Student"; results["C4"]='Test %  —  type 90, not 90%'
 header_row(results, 4, 2, 3)
 
 for i, name in enumerate(managers):
     r = 5 + i
     results.cell(r, 2, name)
-    results.cell(r, 3, "")
+    results.cell(r, 3, scores_data.get(name, ""))
     box(results.cell(r, 2), WHITE, False, DARK, "left")
     box(results.cell(r, 3), LIGHT_GOLD, False, DARK, "center")
     results.cell(r, 3).number_format = '0"%"'
     results.row_dimensions[r].height = 30
 
-dv_pct = DataValidation(
-    type="whole", operator="between",
-    formula1="0", formula2="100",
-    allow_blank=True,
-)
+dv_pct = DataValidation(type="whole", operator="between", formula1="0", formula2="100", allow_blank=True)
 dv_pct.error = "Enter a whole number from 0 to 100."
 dv_pct.errorTitle = "Invalid percentage"
 dv_pct.showErrorMessage = True
-results.add_data_validation(dv_pct)
-dv_pct.add("C5:C25")
+results.add_data_validation(dv_pct); dv_pct.add("C5:C25")
 
 results.merge_cells("B28:C30")
 results["B28"] = ("Enter a whole number between 0 and 100.\n"
@@ -555,10 +606,11 @@ results["B28"] = ("Enter a whole number between 0 and 100.\n"
 results["B28"].font = Font(bold=True, color=DARK, size=12)
 results["B28"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
 box(results["B28"], LIGHT_GOLD)
+# NOT protected — students enter scores
 
-# ---------------------------------------------------------
+# =========================================================
 # PLAYER MARKET
-# ---------------------------------------------------------
+# =========================================================
 market = wb.create_sheet("PLAYER MARKET")
 market.sheet_view.showGridLines = False
 market.column_dimensions["A"].width = 4
@@ -566,29 +618,25 @@ market.column_dimensions["B"].width = 34
 market.column_dimensions["C"].width = 14
 market.column_dimensions["D"].width = 14
 market.column_dimensions["E"].width = 20
-
 title(market, "PLAYER MARKET", 1, 2, 5)
-
 market.merge_cells("B2:E2")
 market["B2"] = "Prices  •  This week's change  •  Ownership"
 market["B2"].font = Font(size=12, color=GREY, italic=True)
 market["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
 market.row_dimensions[2].height = 30
-
-market.merge_cells("B3:E3")
 market.row_dimensions[3].height = 12
-
 for c, h in enumerate(["Player", "Price", "Change", "Ownership %"], start=2):
     market.cell(4, c, h)
 header_row(market, 4, 2, 5)
 
-for i, idx in enumerate(range(2, 23)):
+for i in range(21):
     r = 5 + i
+    idx = 2 + i
     market.cell(r, 2, f"=CALCULATIONS!A{idx}")
     market.cell(r, 3, f"=CALCULATIONS!C{idx}")
-    market.cell(r, 4, f"=CALCULATIONS!F{idx}")
+    market.cell(r, 4, f"=IF(SETTINGS!C29=0,0,CALCULATIONS!C{idx}-CALCULATIONS!B{idx})")
     market.cell(r, 5,
-        f"=COUNTIF('CALCULATIONS'!$L$2:$P$22,CALCULATIONS!W{idx})"
+        f"=COUNTIF('CALCULATIONS'!$L$2:$P$22,CALCULATIONS!A{idx})"
         f"/COUNTA('CALCULATIONS'!$K$2:$K$22)")
     box(market.cell(r, 2), WHITE if i % 2 == 0 else PALE_BLUE, False, DARK, "left")
     box(market.cell(r, 3), WHITE if i % 2 == 0 else PALE_BLUE, True, DARK, "center")
@@ -600,88 +648,53 @@ for i, idx in enumerate(range(2, 23)):
     market.row_dimensions[r].height = 28
 
 market.conditional_formatting.add("D5:D25", FormulaRule(
-    formula=['D5>0'],
-    fill=PatternFill("solid", fgColor=LIGHT_GREEN),
+    formula=['D5>0'], fill=PatternFill("solid", fgColor=LIGHT_GREEN),
     font=Font(color=GREEN, bold=True)))
 market.conditional_formatting.add("D5:D25", FormulaRule(
-    formula=['D5<0'],
-    fill=PatternFill("solid", fgColor=LIGHT_RED),
+    formula=['D5<0'], fill=PatternFill("solid", fgColor=LIGHT_RED),
     font=Font(color=RED, bold=True)))
 market.conditional_formatting.add("D5:D25", FormulaRule(
-    formula=['D5=0'],
-    fill=PatternFill("solid", fgColor="F3F4F6"),
+    formula=['D5=0'], fill=PatternFill("solid", fgColor="F3F4F6"),
     font=Font(color=GREY, bold=True)))
 
 market.merge_cells("B28:E30")
 market["B28"] = ("PRICE RULES\n"
-                 "Prices move ±£0.1m based on form vs each player's previous test.\n"
-                 "Minimum £7.0m  •  Maximum £13.0m")
+                 "Prices move based on 3-week form vs class average.\n"
+                 "First 2 gameweeks: no changes.  Min £7.0m  •  Max £13.0m")
 market["B28"].font = Font(bold=True, color=DARK, size=12)
 market["B28"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
 box(market["B28"], LIGHT_BLUE)
+protect(market)
 
-# ---------------------------------------------------------
-# 1. RAW RESULTS (hidden)
-# ---------------------------------------------------------
-raw = wb.create_sheet("1. Raw Results")
-raw.sheet_state = "hidden"
-raw.column_dimensions["A"].width = 4
-raw.column_dimensions["B"].width = 14
-raw.column_dimensions["C"].width = 32
-raw.column_dimensions["D"].width = 14
-
-raw["B1"] = "Gameweek"
-raw["C1"] = "Manager"
-raw["D1"] = "Points"
-header_row(raw, 1, 2, 4)
-
-for i, name in enumerate(managers):
-    r = 2 + i
-    raw.cell(r, 2, "GW1")
-    raw.cell(r, 3, name)
-    raw.cell(r, 4, f"=CALCULATIONS!T{2 + i}")
-    box(raw.cell(r, 2), WHITE, True, DARK, "center")
-    box(raw.cell(r, 3), WHITE, False, DARK, "left")
-    box(raw.cell(r, 4), WHITE, True, DARK, "center")
-    raw.row_dimensions[r].height = 28
-
-# ---------------------------------------------------------
+# =========================================================
 # 2. OVERALL LEADERBOARD
-# ---------------------------------------------------------
+# =========================================================
 overall = wb.create_sheet("2. Overall Leaderboard")
 overall.sheet_view.showGridLines = False
 overall.column_dimensions["A"].width = 4
 overall.column_dimensions["B"].width = 12
 overall.column_dimensions["C"].width = 32
 overall.column_dimensions["D"].width = 18
-
 title(overall, "OVERALL LEADERBOARD", 1, 2, 4)
-
 overall.merge_cells("B2:D2")
-overall["B2"] = "All gameweeks combined  •  Sorted by points (shared rank on ties)"
+overall["B2"] = "All gameweeks combined  •  Sorted by points"
 overall["B2"].font = Font(size=12, color=GREY, italic=True)
 overall["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
 overall.row_dimensions[2].height = 26
 
 overall.merge_cells("B3:D3")
-overall["B3"] = (
-    '=IF(MAX($D$6:$D$26)=0,"🏆  OVERALL LEADER:  No results yet",'
-    '"🏆  OVERALL LEADER:  "&INDEX($C$6:$C$26,MATCH(MAX($D$6:$D$26),$D$6:$D$26,0))'
-    '&"  —  "&MAX($D$6:$D$26)&" pts")'
-)
+# Leader formula — paste this manually
+overall["B3"] = "⚠ PASTE FORMULA HERE (see instructions)"
 overall["B3"].font = Font(size=14, bold=True, color="92400E")
 overall["B3"].fill = PatternFill("solid", fgColor=LIGHT_GOLD)
 overall["B3"].alignment = Alignment(horizontal="center", vertical="center")
 overall["B3"].border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
 overall.row_dimensions[3].height = 38
-
-overall.merge_cells("B4:D4")
 overall.row_dimensions[4].height = 12
 
 for c, h in enumerate(["Rank", "Manager", "Overall Points"], start=2):
     overall.cell(5, c, h)
 header_row(overall, 5, 2, 4)
-
 for i in range(21):
     r = 6 + i
     fill = WHITE if i % 2 == 0 else PALE_BLUE
@@ -689,34 +702,26 @@ for i in range(21):
     box(overall.cell(r, 3), fill, False, DARK, "left")
     box(overall.cell(r, 4), fill, True, DARK, "center")
     overall.row_dimensions[r].height = 30
+overall.conditional_formatting.add("B6:B26", FormulaRule(formula=['$B6=1'],
+    fill=PatternFill("solid", fgColor=LIGHT_GOLD), font=Font(bold=True, color="92400E")))
+overall.conditional_formatting.add("B6:B26", FormulaRule(formula=['$B6=2'],
+    fill=PatternFill("solid", fgColor="E5E7EB"), font=Font(bold=True, color="374151")))
+overall.conditional_formatting.add("B6:B26", FormulaRule(formula=['$B6=3'],
+    fill=PatternFill("solid", fgColor="FED7AA"), font=Font(bold=True, color="9A3412")))
+protect(overall)
 
-overall.conditional_formatting.add("B6:B26", FormulaRule(
-    formula=['$B6=1'],
-    fill=PatternFill("solid", fgColor=LIGHT_GOLD),
-    font=Font(bold=True, color="92400E")))
-overall.conditional_formatting.add("B6:B26", FormulaRule(
-    formula=['$B6=2'],
-    fill=PatternFill("solid", fgColor="E5E7EB"),
-    font=Font(bold=True, color="374151")))
-overall.conditional_formatting.add("B6:B26", FormulaRule(
-    formula=['$B6=3'],
-    fill=PatternFill("solid", fgColor="FED7AA"),
-    font=Font(bold=True, color="9A3412")))
-
-# ---------------------------------------------------------
+# =========================================================
 # 3. GW LEADERBOARD
-# ---------------------------------------------------------
+# =========================================================
 gw = wb.create_sheet("3. GW Leaderboard")
 gw.sheet_view.showGridLines = False
 gw.column_dimensions["A"].width = 4
 gw.column_dimensions["B"].width = 12
 gw.column_dimensions["C"].width = 32
 gw.column_dimensions["D"].width = 18
-
 title(gw, "GAMEWEEK LEADERBOARD", 1, 2, 4)
-
 gw.merge_cells("B2:D2")
-gw["B2"] = "This gameweek only  •  Sorted by points (shared rank on ties)"
+gw["B2"] = "This gameweek only  •  Sorted by points"
 gw["B2"].font = Font(size=12, color=GREY, italic=True)
 gw["B2"].alignment = Alignment(horizontal="left", vertical="center", indent=1)
 gw.row_dimensions[2].height = 26
@@ -724,35 +729,26 @@ gw.row_dimensions[2].height = 26
 gw["B3"] = "CURRENT GAMEWEEK:"
 gw["B3"].font = Font(size=12, bold=True, color=GREY)
 gw["B3"].alignment = Alignment(horizontal="right", vertical="center")
-gw["C3"] = 1
+gw["C3"] = "=HOME!C7"
 gw["C3"].font = Font(size=14, bold=True, color=NAVY)
 gw["C3"].fill = PatternFill("solid", fgColor=LIGHT_GOLD)
 gw["C3"].alignment = Alignment(horizontal="center", vertical="center")
 gw["C3"].border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
 gw.row_dimensions[3].height = 30
-
-gw.merge_cells("B4:D4")
 gw.row_dimensions[4].height = 10
 
 gw.merge_cells("B5:D5")
-gw["B5"] = (
-    '=IF(MAX($D$8:$D$28)=0,"🏆  GW"&$C$3&" WINNER:  No results yet",'
-    '"🏆  GW"&$C$3&" WINNER:  "&INDEX($C$8:$C$28,MATCH(MAX($D$8:$D$28),$D$8:$D$28,0))'
-    '&"  —  "&MAX($D$8:$D$28)&" pts")'
-)
+gw["B5"] = "⚠ PASTE FORMULA HERE (see instructions)"
 gw["B5"].font = Font(size=14, bold=True, color="92400E")
 gw["B5"].fill = PatternFill("solid", fgColor=LIGHT_GOLD)
 gw["B5"].alignment = Alignment(horizontal="center", vertical="center")
 gw["B5"].border = Border(left=thin_grey, right=thin_grey, top=thin_grey, bottom=thin_grey)
 gw.row_dimensions[5].height = 38
-
-gw.merge_cells("B6:D6")
 gw.row_dimensions[6].height = 12
 
 for c, h in enumerate(["Rank", "Manager", "GW Points"], start=2):
     gw.cell(7, c, h)
 header_row(gw, 7, 2, 4)
-
 for i in range(21):
     r = 8 + i
     fill = WHITE if i % 2 == 0 else PALE_BLUE
@@ -760,120 +756,86 @@ for i in range(21):
     box(gw.cell(r, 3), fill, False, DARK, "left")
     box(gw.cell(r, 4), fill, True, DARK, "center")
     gw.row_dimensions[r].height = 30
+gw.conditional_formatting.add("B8:B28", FormulaRule(formula=['$B8=1'],
+    fill=PatternFill("solid", fgColor=LIGHT_GOLD), font=Font(bold=True, color="92400E")))
+gw.conditional_formatting.add("B8:B28", FormulaRule(formula=['$B8=2'],
+    fill=PatternFill("solid", fgColor="E5E7EB"), font=Font(bold=True, color="374151")))
+gw.conditional_formatting.add("B8:B28", FormulaRule(formula=['$B8=3'],
+    fill=PatternFill("solid", fgColor="FED7AA"), font=Font(bold=True, color="9A3412")))
+protect(gw)
 
-gw.conditional_formatting.add("B8:B28", FormulaRule(
-    formula=['$B8=1'],
-    fill=PatternFill("solid", fgColor=LIGHT_GOLD),
-    font=Font(bold=True, color="92400E")))
-gw.conditional_formatting.add("B8:B28", FormulaRule(
-    formula=['$B8=2'],
-    fill=PatternFill("solid", fgColor="E5E7EB"),
-    font=Font(bold=True, color="374151")))
-gw.conditional_formatting.add("B8:B28", FormulaRule(
-    formula=['$B8=3'],
-    fill=PatternFill("solid", fgColor="FED7AA"),
-    font=Font(bold=True, color="9A3412")))
-
-# ---------------------------------------------------------
+# =========================================================
 # RULES
-# ---------------------------------------------------------
+# =========================================================
 rules = wb.create_sheet("RULES")
 rules.sheet_view.showGridLines = False
 rules.column_dimensions["A"].width = 4
 rules.column_dimensions["B"].width = 28
 rules.column_dimensions["C"].width = 72
-
 title(rules, "RULES & HOW TO PLAY", 1, 2, 3)
-
 rule_rows = [
-    ("BUDGET",
-     "£50.0m per manager. Pick exactly 5 players. Squad value cannot exceed £50.0m."),
-    ("CAPTAIN",
-     "Choose 1 captain using the GOLD dropdown at the top of your team sheet. The captain scores 2× their normal Gameweek points."),
-    ("DEADLINE",
-     "Set manually on HOME each gameweek."),
-    ("TEST DATE",
-     "Set manually on HOME each gameweek."),
-    ("RESULT ENTRY",
-     "After the test, each student enters only their own percentage on TEST RESULTS."),
-    ("POINTS",
-     "95–100% = 10 • 90–94% = 9 • 85–89% = 8 • 80–84% = 7 • 75–79% = 6 • 70–74% = 5 • 65–69% = 4 • 60–64% = 3 • Below 60% = 0."),
-    ("PRICE CHANGES",
-     "Prices move based on FORM. If a student improves vs their last test → +£0.1m. If they decline → -£0.1m. Same → no change. First week or blank test → no change."),
-    ("PRICE LIMITS",
-     "Minimum £7.0m. Maximum £13.0m."),
-    ("TRANSFERS",
-     "After every Gameweek: unlimited transfers, free transfers, no penalties, captains can change."),
-    ("TRANSFER DEADLINE",
-     "The transfer window closes at the next Gameweek deadline."),
-    ("GOLDEN RULE",
-     "Users only need to pick 5 players, pick a captain and enter their own test result. Excel handles the rest."),
+    ("BUDGET", "£50.0m per manager. Pick exactly 5 players."),
+    ("CAPTAIN", "Pick 1 captain using the GOLD box on your team sheet. Captain scores 2× points."),
+    ("DEADLINE", "Set on HOME each gameweek."),
+    ("TEST DATE", "Set on HOME each gameweek."),
+    ("RESULT ENTRY", "Each student enters their own test % on TEST RESULTS."),
+    ("POINTS", "Based on class average. Average = 5 pts. Every step above/below = ±1 pt. Step size adjusts to class spread. Capped 0–10."),
+    ("PRICE CHANGES", "Move based on 3-week form vs class average. First 2 weeks: no change. Week 3 onward: max ±£0.5m per week."),
+    ("PRICE SCALING", "Cheap players rise faster (×1.0). Mid-price ×0.75. Expensive ×0.5."),
+    ("PRICE LIMITS", "Minimum £7.0m. Maximum £13.0m."),
+    ("TRANSFERS", "Unlimited free transfers between gameweeks."),
+    ("GOLDEN RULE", "Pick 5 players + captain, enter your test score. Excel does the rest."),
 ]
-
 for i, (topic, explanation) in enumerate(rule_rows):
     r = 4 + (i * 2)
     rules.cell(r, 2, topic)
     rules.cell(r, 3, explanation)
     box(rules.cell(r, 2), LIGHT_BLUE, True, DARK, "left")
     box(rules.cell(r, 3), WHITE, False, DARK, "left")
-    rules.cell(r, 3).alignment = Alignment(
-        horizontal="left", vertical="center", wrap_text=True, indent=1)
+    rules.cell(r, 3).alignment = Alignment(horizontal="left", vertical="center", wrap_text=True, indent=1)
     rules.row_dimensions[r].height = 40
     rules.row_dimensions[r + 1].height = 8
+protect(rules)
 
-# ---------------------------------------------------------
-# TAB COLOURS
-# ---------------------------------------------------------
+# =========================================================
+# TAB COLOURS + ORDER
+# =========================================================
 tab_colours = {
-    "HOME": BLUE,
-    "PICK YOUR TEAM": "1D4ED8",
-    "TEST RESULTS": GOLD,
-    "PLAYER MARKET": "2563EB",
-    "2. Overall Leaderboard": "0F766E",
-    "3. GW Leaderboard": "0D9488",
-    "RULES": SLATE,
-    "CALCULATIONS": "64748B",
-    "1. Raw Results": "94A3B8",
+    "HOME": BLUE, "PICK YOUR TEAM": "1D4ED8", "TEST RESULTS": GOLD,
+    "PLAYER MARKET": "2563EB", "2. Overall Leaderboard": "0F766E",
+    "3. GW Leaderboard": "0D9488", "RULES": SLATE, "SETTINGS": ORANGE,
+    "CALCULATIONS": "64748B", "MASTER DATA": "94A3B8", "RAW RESULTS": "94A3B8",
 }
 for ws in wb.worksheets:
     if ws.title in tab_colours:
         ws.sheet_properties.tabColor = tab_colours[ws.title]
-
 for name in managers:
     wb[name].sheet_properties.tabColor = SLATE
-
 for ws in wb.worksheets:
     ws.sheet_view.zoomScale = 90
 
 main_order = [
-    "HOME",
-    "PICK YOUR TEAM",
-    "TEST RESULTS",
-    "PLAYER MARKET",
-    "2. Overall Leaderboard",
-    "3. GW Leaderboard",
-    "RULES",
-    "1. Raw Results",
-    "CALCULATIONS",
-]
-ordered = main_order + managers
-wb._sheets = [wb[t] for t in ordered]
-
+    "HOME", "PICK YOUR TEAM", "TEST RESULTS", "PLAYER MARKET",
+    "2. Overall Leaderboard", "3. GW Leaderboard", "RULES", "SETTINGS",
+    "MASTER DATA", "RAW RESULTS", "CALCULATIONS",
+] + managers
+wb._sheets = [wb[t] for t in main_order]
 wb.active = wb.index(wb["HOME"])
 
-# ---------------------------------------------------------
+# =========================================================
 # SAVE
-# ---------------------------------------------------------
-path = r"C:\Users\chine\OneDrive\Python Stuff\Fantasy League\Year_11_Fantasy_League.xlsx"
-wb.save(path)
-print(f"Built: {path}")
-print(f"Managers: {len(managers)}")
-print(f"Players: {len(players)}")
+# =========================================================
+wb.save(SAVE_PATH)
+print(f"Built: {SAVE_PATH}")
+print(f"Managers: {len(managers)}  Players: {len(players)}")
 print()
-print("=" * 60)
+print("=" * 62)
 print("NEXT STEPS:")
-print("1. Open the workbook in Excel. Accept the repair.")
-print("2. Paste formulas into: 2. Overall Leaderboard!B3 and B6")
-print("3. Paste formulas into: 3. GW Leaderboard!B5 and B8")
-print("4. Save and close.")
-print("=" * 60)
+print("=" * 62)
+print("1. Open the workbook in Excel. Accept any repair.")
+print("2. Paste the OVERALL LEADER formula into: 2. Overall Leaderboard!B3")
+print("3. Paste the OVERALL ROW formula into cells B6:D6, then drag down to row 26")
+print("4. Paste the GW WINNER formula into: 3. GW Leaderboard!B5")
+print("5. Paste the GW ROW formula into cells B8:D8, then drag down to row 28")
+print("6. Save and close.")
+print("=" * 62)
