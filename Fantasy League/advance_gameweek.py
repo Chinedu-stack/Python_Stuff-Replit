@@ -1,377 +1,541 @@
-import openpyxl
-from openpyxl.styles import Font, PatternFill, Border, Side, Alignment, Protection
-import shutil
+# =========================================================
+# advance_gameweek.py — Advance one gameweek
+# Reads GW from named range CurrentGW, season length from
+# SeasonLength, captain mult from SETTINGS!C18.
+# Clears team sheets + TEST RESULTS inputs.
+# Rewires Overall Leaderboard to use CALCULATIONS!W.
+# Handles price changes (start week from SETTINGS!C16).
+# =========================================================
 import os
+import sys
+import glob
+import shutil
+import logging
 from datetime import datetime
+from contextlib import contextmanager
+
+import openpyxl
+from openpyxl.utils import get_column_letter, coordinate_to_tuple
 
 # =========================================================
 # CONFIG
 # =========================================================
-FILE_PATH = r"C:\Users\chine\OneDrive\Python Stuff\Fantasy League\Year_11_Fantasy_League_v2.xlsx"
-BACKUP_DIR = r"C:\Users\chine\OneDrive\Python Stuff\Fantasy League"
-TOTAL_WEEKS = 20
+FILE_PATH  = r"C:\Users\chine\OneDrive\Copies School Fantasy League for editing\11O Fantasy League.xlsx"
+BACKUP_DIR = r"C:\Users\chine\OneDrive\Copies School Fantasy League for editing"
+PASSWORD   = "Legendx24j@"
+BACKUPS_TO_KEEP = 20
+LOG_PATH   = os.path.join(BACKUP_DIR, "fantasy_patch.log")
+
+AUTO_CONFIRM = "--yes" in sys.argv or "-y" in sys.argv
+
+# Sheet names (exact, including the leading space in Overall)
+TR_SHEET   = "TEST RESULTS"
+RR_SHEET   = "RAW RESULTS"
+MD_SHEET   = "MASTER DATA"
+PH_SHEET   = "POINTS HISTORY"
+CALC_SHEET = "CALCULATIONS"
+OVR_SHEET  = " Overall Leaderboard"   # NOTE: leading space
+SET_SHEET  = "SETTINGS"
+
+# TEST RESULTS layout
+TR_NAME_C     = 2     # B
+TR_SCORE_C    = 8     # H
+TR_FIRST      = 6
+TR_INPUT_COLS = range(3, 8)   # C..G (5 test-input columns)
+
+# RAW RESULTS layout
+RR_NAME_C = 2         # B
+RR_FIRST  = 2
+
+# POINTS HISTORY layout
+PH_NAME_C = 2         # B
+PH_FIRST  = 2
+
+# MASTER DATA layout
+MD_NAME_C = 2         # B
+MD_FIRST  = 2
+
+# CALCULATIONS layout
+CALC_MGR_C = 11       # K  (manager names)
+CALC_GW_C  = 20       # T  (GW score)
+CALC_OVR_C = 23       # W  (overall total)
+CALC_FIRST = 2
+
+# Team sheet layout
+TEAM_CAPTAIN   = "C5"
+TEAM_PICK_ROWS = [10, 11, 12, 13, 14]
+TEAM_PICK_C    = 3    # C
+
+# =========================================================
+# LOGGING
+# =========================================================
+logging.basicConfig(
+    filename=LOG_PATH, level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+)
+log = logging.getLogger("advance")
+_console = logging.StreamHandler(sys.stdout)
+_console.setFormatter(logging.Formatter("%(message)s"))
+log.addHandler(_console)
 
 # =========================================================
 # HELPERS
 # =========================================================
+def last_row(ws, col, start=1):
+    r = start
+    while ws.cell(r, col).value not in (None, ""):
+        r += 1
+    return r - 1
+
+@contextmanager
+def unprotected(ws, password=PASSWORD):
+    was = ws.protection.sheet
+    if was:
+        ws.protection.sheet = False
+    try:
+        yield ws
+    finally:
+        if was:
+            ws.protection.sheet = True
+            ws.protection.password = password
+
+def make_backup():
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    path = os.path.join(BACKUP_DIR, f"11O Fantasy League_backup_{ts}.xlsx")
+    shutil.copy2(FILE_PATH, path)
+    return path
+
+def prune_backups(keep=BACKUPS_TO_KEEP):
+    files = sorted(glob.glob(os.path.join(BACKUP_DIR, "*_backup_*.xlsx")),
+                   key=os.path.getmtime, reverse=True)
+    for f in files[keep:]:
+        try: os.remove(f)
+        except OSError: pass
+
+def named_cell(wb, name):
+    if name not in wb.defined_names:
+        return None
+    ref = wb.defined_names[name].attr_text
+    if "!" not in ref:
+        return None
+    sheet, cell = ref.split("!", 1)
+    sheet = sheet.strip("'")
+    cell = cell.replace("$", "")
+    r, c = coordinate_to_tuple(cell)
+    return sheet, r, c
+
+def read_named(wb, name, default=None):
+    info = named_cell(wb, name)
+    if not info:
+        return default
+    sheet, r, c = info
+    if sheet not in wb.sheetnames:
+        return default
+    v = wb[sheet].cell(r, c).value
+    return v if v not in (None, "") else default
+
+def write_named(wb, name, value):
+    info = named_cell(wb, name)
+    if not info:
+        raise RuntimeError(f"Named range {name} not found")
+    sheet, r, c = info
+    ws = wb[sheet]
+    with unprotected(ws):
+        ws.cell(r, c, value)
+
 def get_delta(gap):
-    if gap >= 10: return 0.5
-    if gap >= 7: return 0.4
-    if gap >= 4: return 0.3
-    if gap >= 1: return 0.2
-    if gap > 0: return 0.1
-    if gap == 0: return 0.0
-    if gap > -1: return -0.1
-    if gap > -4: return -0.2
-    if gap > -7: return -0.3
-    if gap > -10: return -0.4
+    if gap >= 10:  return 0.5
+    if gap >= 7:   return 0.4
+    if gap >= 4:   return 0.3
+    if gap >= 1:   return 0.2
+    if gap > 0:    return 0.1
+    if gap == 0:   return 0.0
+    if gap > -1:   return -0.1
+    if gap > -4:   return -0.2
+    if gap > -7:   return -0.3
+    if gap > -10:  return -0.4
     return -0.5
-
-def get_multiplier(price):
-    if price < 9.0: return 1.0
-    if price < 11.0: return 0.75
-    return 0.5
-
-def round_tenth(x):
-    return round(x * 10) / 10
 
 # =========================================================
 # MAIN
 # =========================================================
 def main():
-    print("=" * 62)
-    print("ADVANCE GAMEWEEK")
-    print("=" * 62)
-    print()
+    log.info("=" * 62)
+    log.info("ADVANCE GAMEWEEK")
+    log.info("=" * 62)
 
-    # ----- Load -----
-    print(f"Opening: {FILE_PATH}")
-    wb = openpyxl.load_workbook(FILE_PATH)
+    if not os.path.exists(FILE_PATH):
+        raise FileNotFoundError(FILE_PATH)
 
-    # ----- Read current gameweek -----
-    home = wb["HOME"]
-    current_gw = home["C7"].value
-    try:
-        current_gw = int(current_gw)
-    except (TypeError, ValueError):
-        print(f"ERROR: HOME!C7 is not a number (got: {current_gw})")
+    # Load twice: data_only for computed values, editable for writing
+    wb_v = openpyxl.load_workbook(FILE_PATH, data_only=True)
+    wb   = openpyxl.load_workbook(FILE_PATH)
+
+    s = wb[SET_SHEET]
+    current_gw   = int(read_named(wb_v, "CurrentGW", 1) or 1)
+    total_weeks  = int(read_named(wb_v, "SeasonLength", 20) or 20)
+    captain_mult = int(s["C18"].value or 2)
+
+    log.info("Current GW: %d / %d   Captain ×%d",
+             current_gw, total_weeks, captain_mult)
+
+    if current_gw >= total_weeks:
+        log.error("Already at final week. Nothing to advance.")
         return
-    print(f"Current gameweek: {current_gw}")
 
-    # ----- Read TEST RESULTS -----
-    results = wb["TEST RESULTS"]
+    # --- Read scores from TEST RESULTS ---
+    tr_v = wb_v[TR_SHEET]
+    tr_last = last_row(tr_v, TR_NAME_C, start=TR_FIRST)
+    if tr_last < TR_FIRST:
+        log.error("No students in TEST RESULTS.")
+        return
+
     scores = {}
-    for r in range(5, 30):
-        name = results.cell(r, 2).value
-        score = results.cell(r, 3).value
-        if name:
-            scores[name.strip()] = score
+    for r in range(TR_FIRST, tr_last + 1):
+        n = tr_v.cell(r, TR_NAME_C).value
+        if not n:
+            continue
+        v = tr_v.cell(r, TR_SCORE_C).value
+        scores[str(n).strip()] = v
 
-    filled = sum(1 for s in scores.values() if s is not None and s != "")
-    print(f"Scores to archive: {filled} of {len(scores)}")
+    filled = sum(1 for v in scores.values() if v not in (None, ""))
+    log.info("Scores: %d filled / %d students", filled, len(scores))
 
-    # ----- Price change eligibility -----
-    do_prices = current_gw >= 3
-    if do_prices:
-        print(f"Price changes: YES (Week {current_gw} → first eligible week)")
-    else:
-        print(f"Price changes: NO (settling in until Week 3)")
-
-    # ----- Confirm -----
-    next_gw = current_gw + 1
-    print()
-    print(f"Advance from Week {current_gw} to Week {next_gw}?")
-    resp = input("Type Y to continue, anything else to cancel: ").strip().upper()
-    if resp != "Y":
-        print("Cancelled.")
+    if filled == 0:
+        log.error("No scores entered in TEST RESULTS!H. Aborting.")
+        log.error("(If you did enter them, open the file in Excel, save,")
+        log.error(" close, then re-run so formula caches are up to date.)")
         return
-    print()
 
-    # ----- Backup -----
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup_name = f"Year_11_Fantasy_League_v2_backup_{timestamp}.xlsx"
-    backup_path = os.path.join(BACKUP_DIR, backup_name)
-    shutil.copy2(FILE_PATH, backup_path)
-    print(f"[OK] Backup saved: {backup_name}")
+    # --- Read manager GW scores from CALCULATIONS!T ---
+    calc_v = wb_v[CALC_SHEET]
+    calc_mgr_last = last_row(calc_v, CALC_MGR_C, start=CALC_FIRST)
+    if calc_mgr_last < CALC_FIRST:
+        log.error("No managers found in CALCULATIONS!K.")
+        return
 
-    # ----- Archive into RAW RESULTS -----
-    raw = wb["RAW RESULTS"]
-    gw_col = 2 + current_gw  # col C=3 is GW1
+    manager_gw = {}
+    for r in range(CALC_FIRST, calc_mgr_last + 1):
+        n = calc_v.cell(r, CALC_MGR_C).value
+        if not n:
+            continue
+        raw = calc_v.cell(r, CALC_GW_C).value
+        try:
+            val = int(round(float(raw)))
+        except (TypeError, ValueError):
+            val = 0
+        manager_gw[str(n).strip()] = val
 
-    # double-run check
-    already = False
-    for r in range(2, 100):
-        if raw.cell(r, 2).value is None:
-            break
-        v = raw.cell(r, gw_col).value
-        if v not in (None, ""):
-            already = True
-            break
+    log.info("Manager GW scores: %d managers", len(manager_gw))
 
-    if already:
-        print(f"WARNING: Week {current_gw} already has data in RAW RESULTS.")
-        resp = input("Overwrite anyway? [Y/N]: ").strip().upper()
+    # --- Confirm ---
+    next_gw = current_gw + 1
+    if not AUTO_CONFIRM:
+        print()
+        print(f"Advance from Week {current_gw} to Week {next_gw}?")
+        resp = input("Type Y to continue: ").strip().upper()
         if resp != "Y":
             print("Cancelled.")
             return
+        print()
 
-    archived = 0
-    for r in range(2, 100):
-        name = raw.cell(r, 2).value
-        if not name:
+    # --- Backup + rollback guard ---
+    backup = make_backup()
+    log.info("[OK] Backup: %s", os.path.basename(backup))
+
+    try:
+        _do_advance(wb, current_gw, next_gw, total_weeks,
+                    scores, manager_gw)
+
+        try:
+            wb.save(FILE_PATH)
+        except PermissionError:
+            log.error("Could not save — is the workbook open in Excel?")
+            raise
+
+        log.info("[OK] Saved: %s", FILE_PATH)
+        prune_backups()
+        log.info("=" * 62)
+        log.info("DONE. Now on GW%d.", next_gw)
+
+    except Exception:
+        log.exception("Advance failed — restoring backup")
+        try:
+            shutil.copy2(backup, FILE_PATH)
+            log.info("[OK] Rolled back from backup")
+        except Exception:
+            log.exception("Rollback ALSO failed — manual recovery required")
+        raise
+
+
+# =========================================================
+# THE ADVANCE
+# =========================================================
+def _do_advance(wb, current_gw, next_gw, total_weeks, scores, manager_gw):
+    s    = wb[SET_SHEET]
+    tr   = wb[TR_SHEET]
+    rr   = wb[RR_SHEET]
+    ph   = wb[PH_SHEET]
+
+    gw_col = 2 + current_gw   # column index: GW1 = C (3), GW2 = D (4), ...
+
+    # ---- 1. Archive scores into RAW RESULTS ----
+    with unprotected(rr):
+        rr_last = last_row(rr, RR_NAME_C, start=RR_FIRST)
+        if rr_last < RR_FIRST:
+            raise RuntimeError("RAW RESULTS has no rows")
+
+        already = any(
+            rr.cell(r, gw_col).value not in (None, "")
+            for r in range(RR_FIRST, rr_last + 1)
+        )
+        if already:
+            log.warning("GW%d already has data in RAW RESULTS.", current_gw)
+            if AUTO_CONFIRM:
+                log.info("--yes flag: overwriting.")
+            else:
+                resp = input("Overwrite? [Y/N]: ").strip().upper()
+                if resp != "Y":
+                    raise RuntimeError("Cancelled by user")
+
+        archived = 0
+        for r in range(RR_FIRST, rr_last + 1):
+            n = rr.cell(r, RR_NAME_C).value
+            if not n:
+                continue
+            v = scores.get(str(n).strip())
+            rr.cell(r, gw_col, v)
+            if v not in (None, ""):
+                archived += 1
+    log.info("[OK] Archived %d scores into RAW RESULTS GW%d",
+             archived, current_gw)
+
+    # ---- 2. Write manager totals to POINTS HISTORY ----
+    with unprotected(ph):
+        ph_last = last_row(ph, PH_NAME_C, start=PH_FIRST)
+        if ph_last < PH_FIRST:
+            raise RuntimeError("POINTS HISTORY has no managers")
+
+        ph_rows = {}
+        for r in range(PH_FIRST, ph_last + 1):
+            n = ph.cell(r, PH_NAME_C).value
+            if n:
+                ph_rows[str(n).strip()] = r
+
+        written = 0
+        for name, pts in manager_gw.items():
+            if name not in ph_rows:
+                log.warning("Manager %s not in POINTS HISTORY, skipping", name)
+                continue
+            ph.cell(ph_rows[name], gw_col, pts)
+            written += 1
+    log.info("[OK] POINTS HISTORY GW%d written (%d managers)",
+             current_gw, written)
+
+    # ---- 3. Rewire Overall Leaderboard to use CALCULATIONS!W ----
+    _rewire_overall(wb)
+
+    # ---- 4. Price changes (if eligible) ----
+    start_week = int(s["C16"].value or 3)
+    if current_gw >= start_week:
+        _do_prices(wb, current_gw, total_weeks)
+    else:
+        log.info("Price changes skipped (start week = %d)", start_week)
+
+    # ---- 5. Clear team sheets ----
+    _clear_team_sheets(wb)
+
+    # ---- 6. Clear TEST RESULTS inputs (C..G) ----
+    with unprotected(tr):
+        tr_last = last_row(tr, TR_NAME_C, start=TR_FIRST)
+        for r in range(TR_FIRST, tr_last + 1):
+            if not tr.cell(r, TR_NAME_C).value:
+                continue
+            for c in TR_INPUT_COLS:
+                tr.cell(r, c, None)
+    log.info("[OK] TEST RESULTS inputs cleared")
+
+    # ---- 7. Bump CurrentGW ----
+    write_named(wb, "CurrentGW", next_gw)
+    log.info("[OK] GW advanced: %d → %d", current_gw, next_gw)
+
+
+# =========================================================
+# OVERALL LEADERBOARD — rewire to use CALCULATIONS!W
+# =========================================================
+def _rewire_overall(wb):
+    if OVR_SHEET not in wb.sheetnames:
+        log.warning("Overall Leaderboard '%s' not found.", OVR_SHEET)
+        return
+    ovr = wb[OVR_SHEET]
+    calc = wb[CALC_SHEET]
+
+    n = last_row(calc, CALC_MGR_C, start=CALC_FIRST) - CALC_FIRST + 1
+    if n <= 0:
+        log.warning("No managers in CALCULATIONS!K.")
+        return
+
+    first, last = CALC_FIRST, CALC_FIRST + n - 1
+    top = 5 + n
+
+    with unprotected(ovr):
+        ovr["B3"] = (
+            f'=IF(MAX($D$6:$D${top})=0,"🏆  OVERALL LEADER:  No results yet",'
+            f'"🏆  OVERALL LEADER:  "&INDEX($C$6:$C${top},'
+            f'MATCH(MAX($D$6:$D${top}),$D$6:$D${top},0))&"  —  "&MAX($D$6:$D${top})&" pts")'
+        )
+        for i in range(n):
+            r = 6 + i
+            ovr.cell(r, 3,
+                f'=IFERROR(INDEX(CALCULATIONS!$K${first}:$K${last},'
+                f'MATCH(LARGE(CALCULATIONS!$W${first}:$W${last},ROW()-5),'
+                f'CALCULATIONS!$W${first}:$W${last},0)),"")')
+            ovr.cell(r, 4,
+                f"=ROUND(LARGE(CALCULATIONS!$W${first}:$W${last},ROW()-5),0)")
+    log.info("[OK] Overall Leaderboard rewired to use CALCULATIONS!W")
+
+
+# =========================================================
+# PRICE CHANGES
+# =========================================================
+def _do_prices(wb, current_gw, total_weeks):
+    s = wb[SET_SHEET]
+
+    max_change = float(s["C9"].value  or 0.5)
+    mult_low   = float(s["C10"].value or 1.0)
+    mult_mid   = float(s["C11"].value or 0.75)
+    mult_high  = float(s["C12"].value or 0.5)
+    min_price  = float(s["C14"].value or 7.0)
+    max_price  = float(s["C15"].value or 13.0)
+
+    # Locate sections (PLAYER PRICES header and WEEKLY PRICE LOG header)
+    pp_hdr = pl_hdr = None
+    for r in range(1, 300):
+        v = s.cell(r, 2).value
+        if v == "PLAYER PRICES":
+            pp_hdr = r
+        if isinstance(v, str) and v.startswith("WEEKLY PRICE LOG"):
+            pl_hdr = r
+
+    if not pp_hdr or not pl_hdr:
+        log.warning("Could not find PLAYER PRICES or WEEKLY PRICE LOG. Skipping prices.")
+        return
+
+    pp_first = pp_hdr + 2   # data row after column headers
+    pl_first = pl_hdr + 2
+
+    # Build player list (name, price_row, log_row)
+    players = []
+    for i, r in enumerate(range(pp_first, pp_first + 200)):
+        n = s.cell(r, 2).value
+        if n is None:
             break
-        name = name.strip()
-        score = scores.get(name, None)
-        raw.cell(r, gw_col, score)
-        if score is not None and score != "":
-            archived += 1
-    print(f"[OK] Archived {archived} scores into GW{current_gw}")
+        players.append((str(n).strip(), r, pl_first + i))
 
-    # ----- Read RAW data for the last 3 weeks (for prices) -----
+    log.info("  Found %d players in price table", len(players))
+
+    # --- Read all raw scores up to this GW ---
+    rr = wb[RR_SHEET]
+    rr_last = last_row(rr, RR_NAME_C, start=RR_FIRST)
     raw_data = {}
-    for r in range(2, 100):
-        name = raw.cell(r, 2).value
-        if not name:
-            break
-        name = name.strip()
-        raw_data[name] = {}
-        for w in range(1, current_gw + 1):
-            raw_data[name][w] = raw.cell(r, 2 + w).value
-
-    # =====================================================
-    # COMPUTE GW POINTS per manager
-    # =====================================================
-    # Get this week's scores only
-    week_scores = {}
-    for name, wdict in raw_data.items():
-        week_scores[name] = wdict.get(current_gw)
-
-    valid = [s for s in week_scores.values() if s is not None and s != ""]
-    if valid:
-        class_avg = sum(valid) / len(valid)
-        class_range = max(valid) - min(valid)
-        step = max(class_range / 10, 0.1)
-    else:
-        class_avg = 0
-        step = 1.0
-
-    player_pts = {}
-    for name, sc in week_scores.items():
-        if sc is None or sc == "":
-            player_pts[name] = 0
+    for r in range(RR_FIRST, rr_last + 1):
+        n = rr.cell(r, RR_NAME_C).value
+        if not n:
             continue
-        raw_pts = 5 + int((sc - class_avg) / step)  # int() = ROUNDDOWN toward zero
-        player_pts[name] = max(0, min(10, raw_pts))
+        n = str(n).strip()
+        raw_data[n] = {w: rr.cell(r, 2 + w).value
+                       for w in range(1, current_gw + 1)}
 
-    # Get manager picks from MASTER DATA
-    md = wb["MASTER DATA"]
-    manager_gw = {}
-    manager_picks = {}
-    for r in range(2, 100):
-        name = md.cell(r, 2).value
-        if not name:
-            break
-        name = name.strip()
-        picks = [md.cell(r, c).value for c in range(3, 8)]  # C-G = P1-P5
-        cap = md.cell(r, 8).value  # H = captain
-        manager_picks[name] = (picks, cap)
-
-        total = 0
-        for p in picks:
-            if p:
-                total += player_pts.get(p.strip() if isinstance(p, str) else p, 0)
-        if cap:
-            cap = cap.strip() if isinstance(cap, str) else cap
-            total += player_pts.get(cap, 0)  # captain bonus (2x → +1x extra)
-        manager_gw[name] = total
-
-    # =====================================================
-    # Write to POINTS HISTORY (create if missing)
-    # =====================================================
-    if "POINTS HISTORY" not in wb.sheetnames:
-        ph = wb.create_sheet("POINTS HISTORY")
-        ph.sheet_state = "hidden"
-        ph.cell(1, 2, "Manager")
-        for w in range(1, TOTAL_WEEKS + 1):
-            ph.cell(1, 2 + w, f"GW{w}")
-        for i, name in enumerate(manager_gw.keys()):
-            ph.cell(2 + i, 2, name)
-        # Format
-        thin = Side(style="thin", color="E5E7EB")
-        for c in range(2, 3 + TOTAL_WEEKS):
-            cell = ph.cell(1, c)
-            cell.font = Font(bold=True, color="FFFFFF", size=12)
-            cell.fill = PatternFill("solid", fgColor="0B1F3A")
-            cell.alignment = Alignment(horizontal="center", vertical="center")
-            cell.border = Border(bottom=Side(style="medium", color="1565C0"))
-        ph.row_dimensions[1].height = 32
-    else:
-        ph = wb["POINTS HISTORY"]
-
-    # Write this week's GW points
-    ph_col = 2 + current_gw
-    for i, name in enumerate(manager_gw.keys()):
-        r = 2 + i
-        ph.cell(r, ph_col, manager_gw[name])
-    print(f"[OK] GW points written to POINTS HISTORY GW{current_gw}")
-
-    # =====================================================
-    # Update CALCULATIONS W (Overall) and X (tiebreak)
-    # =====================================================
-    calc = wb["CALCULATIONS"]
-    calc.cell(1, 23, "Overall")  # W1
-    calc.cell(1, 24, "OverallTB")  # X1
-    for r in range(2, 2 + len(manager_gw)):
-        name = calc.cell(r, 11).value  # K column = Manager
-        # W = sum of this manager's row in POINTS HISTORY
-        calc.cell(r, 23, f"=SUM('POINTS HISTORY'!C{r}:{chr(ord('C')+TOTAL_WEEKS-1)}{r})")
-        # X = W + tiebreak
-        calc.cell(r, 24, f"=W{r}+ROW()/10000")
-    print(f"[OK] CALCULATIONS W/X columns updated")
-
-    # =====================================================
-    # Rewrite OVERALL Leaderboard formulas to use X
-    # =====================================================
-    overall = wb["2. Overall Leaderboard"]
-    overall["B3"] = ('=IF(MAX($D$6:$D$26)=0,"No results yet","OVERALL LEADER: "'
-                     '&INDEX($C$6:$C$26,MATCH(MAX($D$6:$D$26),$D$6:$D$26,0))'
-                     '&" — "&MAX($D$6:$D$26)&" pts")')
-    for i in range(21):
-        r = 6 + i
-        overall.cell(r, 2, f"=SUMPRODUCT((D$6:D$26>D{r})/COUNTIF(D$6:D$26,D$6:D$26))+1")
-        overall.cell(r, 3, f'=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,'
-                           f'MATCH(LARGE(CALCULATIONS!$X$2:$X$22,ROW()-5),'
-                           f'CALCULATIONS!$X$2:$X$22,0)),"")')
-        overall.cell(r, 4, f"=ROUND(LARGE(CALCULATIONS!$X$2:$X$22,ROW()-5),0)")
-    print(f"[OK] Overall Leaderboard rewired to use X (overall points)")
-
-    # =====================================================
-    # Price changes (only GW3+)
-    # =====================================================
-    if do_prices:
-        settings = wb["SETTINGS"]
-
-        # Locate sections in SETTINGS
-        pp_header_row = None
-        pl_header_row = None
-        for r in range(1, 200):
-            v = settings.cell(r, 2).value
-            if v == "PLAYER PRICES":
-                pp_header_row = r + 1
-            if v and isinstance(v, str) and v.startswith("WEEKLY PRICE LOG"):
-                pl_header_row = r + 1
-
-        if not pp_header_row or not pl_header_row:
-            print("ERROR: Could not find SETTINGS sections. Skipping prices.")
+    # --- Current prices (base + cumulative or override) ---
+    current_prices = {}
+    for name, prow, lrow in players:
+        base     = s.cell(prow, 3).value or 0
+        override = s.cell(prow, 5).value
+        cum = 0.0
+        for w in range(1, current_gw + 1):
+            v = s.cell(lrow, 2 + w).value
+            if isinstance(v, (int, float)):
+                cum += v
+        if override not in (None, ""):
+            price = float(override)
         else:
-            pp_data_start = pp_header_row + 1
-            pl_data_start = pl_header_row + 1
+            price = max(min_price, min(max_price, base + cum))
+        current_prices[name] = price
 
-            # Gather player names
-            player_list = []
-            for r in range(pp_data_start, pp_data_start + 100):
-                n = settings.cell(r, 2).value
-                if n is None:
-                    break
-                player_list.append((r, n.strip()))
+    # --- 3-week rolling window ---
+    weeks = [w for w in range(current_gw - 2, current_gw + 1) if w >= 1]
 
-            # Compute current prices
-            current_prices = {}
-            for i, (pp_row, name) in enumerate(player_list):
-                base = settings.cell(pp_row, 3).value or 0
-                override = settings.cell(pp_row, 5).value
-                log_row = pl_data_start + i
-                cum = 0.0
-                for w in range(1, current_gw + 1):
-                    v = settings.cell(log_row, 2 + w).value
-                    if isinstance(v, (int, float)):
-                        cum += v
-                if override not in (None, ""):
-                    price = float(override)
-                else:
-                    price = max(7.0, min(13.0, base + cum))
-                current_prices[name] = price
+    class_vals = []
+    for w in weeks:
+        for name in raw_data:
+            v = raw_data[name].get(w)
+            if v not in (None, ""):
+                class_vals.append(v)
+    class_avg_3w = sum(class_vals) / len(class_vals) if class_vals else 0
+    log.info("  Class 3-week avg: %.2f", class_avg_3w)
 
-            # Weeks for 3-week rolling
-            weeks = [current_gw - 2, current_gw - 1, current_gw]
-            weeks = [w for w in weeks if w >= 1]
+    # --- Compute deltas ---
+    deltas = {}
+    for name, prow, lrow in players:
+        vals = [raw_data.get(name, {}).get(w) for w in weeks]
+        vals = [v for v in vals if v not in (None, "")]
+        if not vals:
+            deltas[name] = 0.0
+            continue
+        gap = (sum(vals) / len(vals)) - class_avg_3w
+        raw_d = get_delta(gap)
+        price = current_prices.get(name, 10.0)
+        if price < 9.0:
+            mult = mult_low
+        elif price < 11.0:
+            mult = mult_mid
+        else:
+            mult = mult_high
+        adj = raw_d * mult
+        adj = max(-max_change, min(max_change, adj))
+        deltas[name] = round(adj * 10) / 10
 
-            # Class 3-week average
-            class_vals = []
-            for w in weeks:
-                for name in raw_data:
-                    s = raw_data[name].get(w)
-                    if s is not None and s != "":
-                        class_vals.append(s)
-            class_avg_3w = sum(class_vals) / len(class_vals) if class_vals else 0
-            print(f"  Class 3-week average: {class_avg_3w:.1f}%")
+    # --- Write deltas into WEEKLY PRICE LOG column for this GW ---
+    gw_col = 2 + current_gw
+    for name, prow, lrow in players:
+        c = s.cell(lrow, gw_col)
+        c.value = deltas[name]
+        c.number_format = '+£0.0"m";-£0.0"m";—'
 
-            # Compute deltas
-            deltas = {}
-            for pp_row, name in player_list:
-                p_scores = []
-                for w in weeks:
-                    s = raw_data.get(name, {}).get(w)
-                    if s is not None and s != "":
-                        p_scores.append(s)
-                if not p_scores:
-                    deltas[name] = 0.0
-                    continue
-                p_avg = sum(p_scores) / len(p_scores)
-                gap = p_avg - class_avg_3w
-                raw_d = get_delta(gap)
-                price = current_prices.get(name, 10.0)
-                mult = get_multiplier(price)
-                adj = raw_d * mult
-                adj = max(-0.5, min(0.5, adj))
-                deltas[name] = round_tenth(adj)
+    # --- Rewrite cumulative formula column D (points to correct log row) ---
+    last_letter = get_column_letter(2 + total_weeks)
+    for name, prow, lrow in players:
+        s.cell(prow, 4, f"=SUM(C{lrow}:{last_letter}{lrow})")
 
-            # Write deltas to log
-            gw_col_log = 2 + current_gw
-            for i, (pp_row, name) in enumerate(player_list):
-                log_row = pl_data_start + i
-                d = deltas[name]
-                c = settings.cell(log_row, gw_col_log)
-                c.value = d
-                c.number_format = '+£0.0"m";-£0.0"m";—'
+    movers = sorted(deltas.items(), key=lambda x: -abs(x[1]))[:5]
+    log.info("[OK] Price deltas written for GW%d", current_gw)
+    for name, d in movers:
+        log.info("    %s: %+0.1f", name, d)
 
-            # Fix Cumulative formula
-            last_col = chr(ord('C') + TOTAL_WEEKS - 1)
-            for i, (pp_row, name) in enumerate(player_list):
-                log_row = pl_data_start + i
-                settings.cell(pp_row, 4, f"=SUM(C{log_row}:{last_col}{log_row})")
 
-            print(f"[OK] Price deltas written to GW{current_gw} log column")
-            movers = sorted(deltas.items(), key=lambda x: -abs(x[1]))[:5]
-            print("  Top movers:")
-            for name, d in movers:
-                sign = "+" if d > 0 else ("-" if d < 0 else " ")
-                print(f"    {name}: {sign}£{abs(d):.1f}m")
+# =========================================================
+# CLEAR TEAM SHEETS (picks + captain)
+# =========================================================
+def _clear_team_sheets(wb):
+    md = wb[MD_SHEET]
+    md_last = last_row(md, MD_NAME_C, start=MD_FIRST)
 
-    # =====================================================
-    # Bump gameweek
-    # =====================================================
-    home["C7"] = next_gw
-    print(f"[OK] Gameweek advanced: {current_gw} -> {next_gw}")
-
-    # =====================================================
-    # Clear TEST RESULTS
-    # =====================================================
-    for r in range(5, 30):
-        if results.cell(r, 2).value is None:
-            break
-        results.cell(r, 3, None)
-    print(f"[OK] TEST RESULTS cleared")
-
-    # =====================================================
-    # Save
-    # =====================================================
-    wb.save(FILE_PATH)
-    print(f"[OK] Saved: {FILE_PATH}")
-    print()
-    print("=" * 62)
-    print("DONE")
-    print("=" * 62)
+    cleared = 0
+    for r in range(MD_FIRST, md_last + 1):
+        n = md.cell(r, MD_NAME_C).value
+        if not n:
+            continue
+        name = str(n).strip()
+        if name not in wb.sheetnames:
+            log.warning("No sheet for manager %s — skipping.", name)
+            continue
+        ws = wb[name]
+        with unprotected(ws):
+            ws[TEAM_CAPTAIN] = None
+            for row in TEAM_PICK_ROWS:
+                ws.cell(row, TEAM_PICK_C, None)
+        cleared += 1
+    log.info("[OK] Cleared picks+captain on %d team sheets", cleared)
 
 
 if __name__ == "__main__":

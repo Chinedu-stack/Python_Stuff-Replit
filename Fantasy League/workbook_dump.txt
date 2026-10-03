@@ -1,0 +1,3864 @@
+==============================================================================
+WORKBOOK DUMP
+==============================================================================
+File: C:\Users\chine\OneDrive\Copies School Fantasy League for editing\11O Fantasy League.xlsx
+
+------------------------------------------------------------------------------
+SHEETS (in order, with visibility state)
+------------------------------------------------------------------------------
+  'HOME'                                         state=visible
+  'RULES'                                        state=visible
+  'PICK YOUR TEAM'                               state=visible
+  'PLAYER MARKET'                                state=visible
+  'TEST RESULTS'                                 state=visible
+  ' Overall Leaderboard'                         state=visible
+  'GW Leaderboard'                               state=visible
+  'SETTINGS'                                     state=visible
+  'RAW RESULTS'                                  state=visible
+  'CALCULATIONS'                                 state=hidden
+  'Alexa Amesimeku'                              state=visible
+  'Alfie Foley'                                  state=visible
+  'Alyza Rai'                                    state=visible
+  'Ava Swinfen'                                  state=visible
+  'Azlan Husain'                                 state=visible
+  'Chinedu Chile'                                state=visible
+  'Daniel Liu'                                   state=visible
+  'David Wu'                                     state=visible
+  'Edwin Mayers'                                 state=visible
+  'Emily Warburton'                              state=visible
+  'Esme Beston'                                  state=visible
+  'Iona Smith'                                   state=visible
+  'Joe Paige'                                    state=visible
+  'Lia Li'                                       state=visible
+  'Melody Zhaeentan'                             state=visible
+  'Nina De Saram'                                state=visible
+  'Oscar Day-Duran'                              state=visible
+  'Rebecca Seymour'                              state=visible
+  'Rory Bowman'                                  state=visible
+  'Sophie Barker'                                state=visible
+  'Xander Meijer'                                state=visible
+  'MASTER DATA'                                  state=visible
+  '_DIAGNOSTICS'                                 state=veryHidden
+  'POINTS HISTORY'                               state=hidden
+
+------------------------------------------------------------------------------
+NAMED RANGES
+------------------------------------------------------------------------------
+  'BasePoints'                    ->  CALCULATIONS!$D$2:$D$22
+  'BaseScore'                     ->  SETTINGS!$C$5
+  'CaptainMultiplier'             ->  SETTINGS!$C$18
+  'CurrentGW'                     ->  SETTINGS!$C$69
+  'PlayerList'                    ->  SETTINGS!$H$22:$H$42
+  'PlayerNames'                   ->  CALCULATIONS!$A$2:$A$22
+  'RawNames'                      ->  'TEST RESULTS'!$B$6:$B$25
+  'RawScores'                     ->  'TEST RESULTS'!$H$6:$H$25
+  'ScoreCap'                      ->  SETTINGS!$C$8
+  'ScoreFloor'                    ->  SETTINGS!$C$7
+  'ScoreStep'                     ->  SETTINGS!$C$6
+  'SeasonLength'                  ->  SETTINGS!$C$70
+
+==============================================================================
+SHEET: 'HOME'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:G36
+  Max row/col: 36 / 7
+  Protected: False
+
+  Merged ranges (35):
+    B2:G2
+    B14:G14
+    B17:G17
+    E31:G31
+    B1:G1
+    D24:G24
+    E34:G34
+    B22:C22
+    B13:G13
+    E30:G30
+    B34:D34
+    D23:G23
+    B21:C21
+    B10:G10
+    D20:G20
+    B9:G9
+    B23:C23
+    B30:D30
+    B18:G19
+    B33:D33
+    E32:G32
+    D22:G22
+    B36:G36
+    B5:G5
+    B32:D32
+    D21:G21
+    B4:G4
+    B24:C24
+    E33:G33
+    B28:G29
+    B31:D31
+    B20:C20
+    B27:G27
+    B12:G12
+    B11:G11
+
+  Column widths: [('A', 4.0), ('B', 28.0), ('C', 26.0), ('H', 4.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'YEAR 11 FANTASY LEAGUE'
+        B2  'GAMEWEEK 1'
+        B4  '  GAMEWEEK 2: Physics '
+        B7  'CURRENT GAMEWEEK:'
+        C7  [FORMULA]  =CurrentGW
+             (cached value: 2)
+        B9  'HOW TO PLAY'
+       B10  '1.  Go to PICK YOUR TEAM and click your name.'
+       B11  '2.  Pick 5 players from the dropdowns.'
+       B12  '3.  Pick 1 captain using the GOLD CAPTAIN BOX.'
+       B13  '4.  Stay under the £50m budget.'
+       B14  '5.  Enter your own test % on TEST RESULTS after each test.'
+       B17  'HOW POINTS WORK'
+       B18  'Your score is compared to the CLASS AVERAGE.\nAverage = 5 points. Every small step above = +1. Every step below = −1.'
+       B20  'Well above average'
+       D20  'High points'
+       B21  'Slightly above'
+       D21  '6–7 points'
+       B22  'Exactly average'
+       D22  '5 points'
+       B23  'Slightly below'
+       D23  '3–4 points'
+       B24  'Well below'
+       D24  '0–1 points'
+       B27  'HOW PRICES WORK'
+       B28  'Prices move based on your 3-WEEK FORM vs the class average.\nCheap players rise faster. Expensive players rise slower.'
+       B30  'No changes first 2 weeks'
+       E30  'Settling in'
+       B31  'Week 3 onward'
+       E31  'Prices move based on form'
+       B32  'Beating average consistently'
+       E32  'Price rises up to +£0.5m/week'
+       B33  'Below average consistently'
+       E33  'Price falls up to -£0.5m/week'
+       B34  'Bounds'
+       E34  '£7.0m  to  £13.0m'
+       B36  'SETTINGS and RULES sheets have more detail. Ask Mr C if anything is unclear.'
+
+==============================================================================
+SHEET: 'RULES'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:C24
+  Max row/col: 24 / 3
+  Protected: True
+
+  Merged ranges (1):
+    B1:C1
+
+  Column widths: [('A', 4.0), ('B', 28.0), ('C', 72.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'RULES & HOW TO PLAY'
+        B4  'BUDGET'
+        C4  '£50.0m per manager. Pick exactly 5 players.'
+        B6  'CAPTAIN'
+        C6  'Pick 1 captain using the GOLD box on your team sheet. Captain scores 2× points.'
+        B8  'DEADLINE'
+        C8  'Set on HOME each gameweek.'
+       B10  'TEST DATE'
+       C10  'Set on HOME each gameweek.'
+       B12  'RESULT ENTRY'
+       C12  'Each student enters their own test % on TEST RESULTS.'
+       B14  'POINTS'
+       C14  'Based on class average. Average = 5 pts. Every step above/below = ±1 pt. Step size adjusts to class spread. Capped 0–10.'
+       B16  'PRICE CHANGES'
+       C16  'Move based on 3-week form vs class average. First 2 weeks: no change. Week 3 onward: max ±£0.5m per week.'
+       B18  'PRICE SCALING'
+       C18  'Cheap players rise faster (×1.0). Mid-price ×0.75. Expensive ×0.5.'
+       B20  'PRICE LIMITS'
+       C20  'Minimum £7.0m. Maximum £13.0m.'
+       B22  'TRANSFERS'
+       C22  'Unlimited free transfers between gameweeks.'
+       B24  'GOLDEN RULE'
+       C24  'Pick 5 players + captain, enter your test score. Excel does the rest.'
+
+==============================================================================
+SHEET: 'PICK YOUR TEAM'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:C25
+  Max row/col: 25 / 3
+  Protected: True
+
+  Merged ranges (2):
+    B1:C1
+    B2:C2
+
+  Column widths: [('A', 6.0), ('B', 32.0), ('C', 26.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'PICK YOUR TEAM'
+        B2  'Click your name to jump to your team sheet.'
+        B4  'Manager'
+        C4  [FORMULA]  ="Status: " & COUNTIF(C6:C26,"VALID TEAM") & "/" & COUNTA(B6:B26)
+             (cached value: 'Status: 11/20')
+        B5  'Alexa Amesimeku'
+        C5  [FORMULA]  =CALCULATIONS!U2
+             (cached value: 'VALID TEAM')
+        B6  'Alfie Foley'
+        C6  [FORMULA]  =CALCULATIONS!U3
+             (cached value: 'VALID TEAM')
+        B7  'Alyza Rai'
+        C7  [FORMULA]  =CALCULATIONS!U4
+             (cached value: 'LESS THAN 5 PLAYERS')
+        B8  'Ava Swinfen'
+        C8  [FORMULA]  =CALCULATIONS!U5
+             (cached value: 'VALID TEAM')
+        B9  'Azlan Husain'
+        C9  [FORMULA]  =CALCULATIONS!U6
+             (cached value: 'VALID TEAM')
+       B10  'Chinedu Chile'
+       C10  [FORMULA]  =CALCULATIONS!U7
+             (cached value: 'VALID TEAM')
+       B11  'Daniel Liu'
+       C11  [FORMULA]  =CALCULATIONS!U8
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B12  'David Wu'
+       C12  [FORMULA]  =CALCULATIONS!U9
+             (cached value: 'VALID TEAM')
+       B13  'Edwin Mayers'
+       C13  [FORMULA]  =CALCULATIONS!U10
+             (cached value: 'VALID TEAM')
+       B14  'Emily Warburton'
+       C14  [FORMULA]  =CALCULATIONS!U11
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B15  'Esme Beston'
+       C15  [FORMULA]  =CALCULATIONS!U12
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B16  'Iona Smith'
+       C16  [FORMULA]  =CALCULATIONS!U13
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B17  'Joe Paige'
+       C17  [FORMULA]  =CALCULATIONS!U14
+             (cached value: 'VALID TEAM')
+       B18  'Lia Li'
+       C18  [FORMULA]  =CALCULATIONS!U15
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B19  'Melody Zhaeentan'
+       C19  [FORMULA]  =CALCULATIONS!U16
+             (cached value: 'VALID TEAM')
+       B20  'Nina De Saram'
+       C20  [FORMULA]  =CALCULATIONS!U17
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B21  'Oscar Day-Duran'
+       C21  [FORMULA]  =CALCULATIONS!U18
+             (cached value: 'VALID TEAM')
+       B22  'Rebecca Seymour'
+       C22  [FORMULA]  =CALCULATIONS!U19
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B23  'Rory Bowman'
+       C23  [FORMULA]  =CALCULATIONS!U20
+             (cached value: 'VALID TEAM')
+       B24  'Sophie Barker'
+       C24  [FORMULA]  =CALCULATIONS!U21
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B25  'Xander Meijer'
+       C25  [FORMULA]  =CALCULATIONS!U22
+             (cached value: 'VALID TEAM')
+
+==============================================================================
+SHEET: 'PLAYER MARKET'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E30
+  Max row/col: 30 / 5
+  Protected: True
+
+  Merged ranges (3):
+    B1:E1
+    B2:E2
+    B28:E30
+
+  Column widths: [('A', 4.0), ('B', 34.0), ('C', 14.0), ('E', 20.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'PLAYER MARKET'
+        B2  "Prices  •  This week's change  •  Ownership"
+        B4  'Player'
+        C4  'Price'
+        D4  'Change'
+        E4  'Ownership %'
+        B5  [FORMULA]  =CALCULATIONS!A2
+             (cached value: 'Lia Li')
+        C5  [FORMULA]  =CALCULATIONS!C2
+             (cached value: 13)
+        D5  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C2-CALCULATIONS!B2)
+             (cached value: 0)
+        E5  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A2)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.23809523809523808)
+        B6  [FORMULA]  =CALCULATIONS!A3
+             (cached value: 'Sophie Barker')
+        C6  [FORMULA]  =CALCULATIONS!C3
+             (cached value: 13)
+        D6  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C3-CALCULATIONS!B3)
+             (cached value: 0)
+        E6  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A3)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.14285714285714285)
+        B7  [FORMULA]  =CALCULATIONS!A4
+             (cached value: 'Chinedu Chile')
+        C7  [FORMULA]  =CALCULATIONS!C4
+             (cached value: 11)
+        D7  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C4-CALCULATIONS!B4)
+             (cached value: 0)
+        E7  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A4)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.3333333333333333)
+        B8  [FORMULA]  =CALCULATIONS!A5
+             (cached value: 'Emily Warburton')
+        C8  [FORMULA]  =CALCULATIONS!C5
+             (cached value: 11)
+        D8  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C5-CALCULATIONS!B5)
+             (cached value: 0)
+        E8  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A5)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+        B9  [FORMULA]  =CALCULATIONS!A6
+             (cached value: 'Alyza Rai')
+        C9  [FORMULA]  =CALCULATIONS!C6
+             (cached value: 10.5)
+        D9  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C6-CALCULATIONS!B6)
+             (cached value: 0)
+        E9  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A6)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.14285714285714285)
+       B10  [FORMULA]  =CALCULATIONS!A7
+             (cached value: 'David Wu')
+       C10  [FORMULA]  =CALCULATIONS!C7
+             (cached value: 10.5)
+       D10  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C7-CALCULATIONS!B7)
+             (cached value: 0)
+       E10  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A7)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.3333333333333333)
+       B11  [FORMULA]  =CALCULATIONS!A8
+             (cached value: 'Joe Paige')
+       C11  [FORMULA]  =CALCULATIONS!C8
+             (cached value: 10.5)
+       D11  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C8-CALCULATIONS!B8)
+             (cached value: 0)
+       E11  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A8)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.3333333333333333)
+       B12  [FORMULA]  =CALCULATIONS!A9
+             (cached value: 'Azlan Husain')
+       C12  [FORMULA]  =CALCULATIONS!C9
+             (cached value: 10)
+       D12  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C9-CALCULATIONS!B9)
+             (cached value: 0)
+       E12  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A9)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B13  [FORMULA]  =CALCULATIONS!A10
+             (cached value: 'Nina De Saram')
+       C13  [FORMULA]  =CALCULATIONS!C10
+             (cached value: 10)
+       D13  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C10-CALCULATIONS!B10)
+             (cached value: 0)
+       E13  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A10)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B14  [FORMULA]  =CALCULATIONS!A11
+             (cached value: 'Alexa Amesimeku')
+       C14  [FORMULA]  =CALCULATIONS!C11
+             (cached value: 9.5)
+       D14  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C11-CALCULATIONS!B11)
+             (cached value: 0)
+       E14  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A11)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B15  [FORMULA]  =CALCULATIONS!A12
+             (cached value: 'Daniel Liu')
+       C15  [FORMULA]  =CALCULATIONS!C12
+             (cached value: 9.5)
+       D15  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C12-CALCULATIONS!B12)
+             (cached value: 0)
+       E15  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A12)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0)
+       B16  [FORMULA]  =CALCULATIONS!A13
+             (cached value: 'Rebecca Seymour')
+       C16  [FORMULA]  =CALCULATIONS!C13
+             (cached value: 9.5)
+       D16  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C13-CALCULATIONS!B13)
+             (cached value: 0)
+       E16  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A13)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B17  [FORMULA]  =CALCULATIONS!A14
+             (cached value: 'Edwin Mayers')
+       C17  [FORMULA]  =CALCULATIONS!C14
+             (cached value: 9)
+       D17  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C14-CALCULATIONS!B14)
+             (cached value: 0)
+       E17  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A14)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.3333333333333333)
+       B18  [FORMULA]  =CALCULATIONS!A15
+             (cached value: 'Melody Zhaeentan')
+       C18  [FORMULA]  =CALCULATIONS!C15
+             (cached value: 8.5)
+       D18  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C15-CALCULATIONS!B15)
+             (cached value: 0)
+       E18  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A15)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B19  [FORMULA]  =CALCULATIONS!A16
+             (cached value: 'Esme Beston')
+       C19  [FORMULA]  =CALCULATIONS!C16
+             (cached value: 8)
+       D19  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C16-CALCULATIONS!B16)
+             (cached value: 0)
+       E19  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A16)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.047619047619047616)
+       B20  [FORMULA]  =CALCULATIONS!A17
+             (cached value: 'Iona Smith')
+       C20  [FORMULA]  =CALCULATIONS!C17
+             (cached value: 8)
+       D20  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C17-CALCULATIONS!B17)
+             (cached value: 0)
+       E20  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A17)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0)
+       B21  [FORMULA]  =CALCULATIONS!A18
+             (cached value: 'Oscar Day-Duran')
+       C21  [FORMULA]  =CALCULATIONS!C18
+             (cached value: 8)
+       D21  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C18-CALCULATIONS!B18)
+             (cached value: 0)
+       E21  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A18)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B22  [FORMULA]  =CALCULATIONS!A19
+             (cached value: 'Alfie Foley')
+       C22  [FORMULA]  =CALCULATIONS!C19
+             (cached value: 7.5)
+       D22  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C19-CALCULATIONS!B19)
+             (cached value: 0)
+       E22  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A19)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B23  [FORMULA]  =CALCULATIONS!A20
+             (cached value: 'Ava Swinfen')
+       C23  [FORMULA]  =CALCULATIONS!C20
+             (cached value: 7)
+       D23  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C20-CALCULATIONS!B20)
+             (cached value: 0)
+       E23  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A20)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.2857142857142857)
+       B24  [FORMULA]  =CALCULATIONS!A21
+             (cached value: 'Rory Bowman')
+       C24  [FORMULA]  =CALCULATIONS!C21
+             (cached value: 7)
+       D24  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C21-CALCULATIONS!B21)
+             (cached value: 0)
+       E24  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A21)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0)
+       B25  [FORMULA]  =CALCULATIONS!A22
+             (cached value: 'Xander Meijer')
+       C25  [FORMULA]  =CALCULATIONS!C22
+             (cached value: 7)
+       D25  [FORMULA]  =IF(SETTINGS!C29=0,0,CALCULATIONS!C22-CALCULATIONS!B22)
+             (cached value: 0)
+       E25  [FORMULA]  =COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A22)/COUNTA(CALCULATIONS!$K$2:$K$22)
+             (cached value: 0.09523809523809523)
+       B28  'PRICE RULES\nPrices move based on 3-week form vs class average.\nFirst 2 gameweeks: no changes.  Min £7.0m  •  Max £13.0m'
+
+==============================================================================
+SHEET: 'TEST RESULTS'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:I34
+  Max row/col: 34 / 9
+  Protected: False
+
+  Merged ranges (4):
+    B1:H1
+    B3:H3
+    B2:H2
+    B27:H29
+
+  Data validations (1):
+    type=whole  formula1=0  range=C6:G25
+
+  Column widths: [('A', 4.0), ('B', 61.6), ('C', 42.3), ('D', 40.0), ('E', 12.0), ('I', 4.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'TEST RESULTS'
+        B2  'Enter your test scores. '
+        B4  'Test name: English and Biology'
+        B5  'Student'
+        C5  [FORMULA]  =IFERROR("English: Average = " & ROUND(AVERAGE(C6:C25), 1) & "%", "English: No results yet")
+             (cached value: 'English: Average = 55.6%')
+        D5  [FORMULA]  =IFERROR("Biology: Average = " & ROUND(AVERAGE(D6:D25), 1) & "%", "Biology: No results yet")
+             (cached value: 'Biology: Average = 80.1%')
+        E5  'N/A'
+        F5  'N/A'
+        G5  'N/A'
+        H5  'Score'
+        B6  'Alexa Amesimeku'
+        C6  73
+        D6  88
+        H6  [FORMULA]  =IFERROR(AVERAGE(C6:INDEX(C6:G6,SETTINGS!$C$17)),"")
+             (cached value: 80.5)
+        B7  'Alfie Foley'
+        C7  40
+        D7  65
+        H7  [FORMULA]  =IFERROR(AVERAGE(C7:INDEX(C7:G7,SETTINGS!$C$17)),"")
+             (cached value: 52.5)
+        B8  'Alyza Rai'
+        C8  70
+        D8  86
+        H8  [FORMULA]  =IFERROR(AVERAGE(C8:INDEX(C8:G8,SETTINGS!$C$17)),"")
+             (cached value: 78)
+        B9  'Ava Swinfen'
+        C9  35
+        D9  74
+        H9  [FORMULA]  =IFERROR(AVERAGE(C9:INDEX(C9:G9,SETTINGS!$C$17)),"")
+             (cached value: 54.5)
+       B10  'Azlan Husain'
+       C10  50
+       D10  86
+       H10  [FORMULA]  =IFERROR(AVERAGE(C10:INDEX(C10:G10,SETTINGS!$C$17)),"")
+             (cached value: 68)
+       B11  'Chinedu Chile'
+       C11  60
+       D11  86
+       H11  [FORMULA]  =IFERROR(AVERAGE(C11:INDEX(C11:G11,SETTINGS!$C$17)),"")
+             (cached value: 73)
+       B12  'Daniel Liu'
+       C12  63
+       D12  74
+       H12  [FORMULA]  =IFERROR(AVERAGE(C12:INDEX(C12:G12,SETTINGS!$C$17)),"")
+             (cached value: 68.5)
+       B13  'David Wu'
+       C13  60
+       D13  86
+       H13  [FORMULA]  =IFERROR(AVERAGE(C13:INDEX(C13:G13,SETTINGS!$C$17)),"")
+             (cached value: 73)
+       B14  'Edwin Mayers'
+       C14  40
+       D14  81
+       H14  [FORMULA]  =IFERROR(AVERAGE(C14:INDEX(C14:G14,SETTINGS!$C$17)),"")
+             (cached value: 60.5)
+       B15  'Esme Beston'
+       C15  38
+       D15  56
+       H15  [FORMULA]  =IFERROR(AVERAGE(C15:INDEX(C15:G15,SETTINGS!$C$17)),"")
+             (cached value: 47)
+       B16  'Iona Smith'
+       H16  [FORMULA]  =IFERROR(AVERAGE(C16:INDEX(C16:G16,SETTINGS!$C$17)),"")
+       B17  'Joe Paige'
+       C17  83
+       D17  91
+       H17  [FORMULA]  =IFERROR(AVERAGE(C17:INDEX(C17:G17,SETTINGS!$C$17)),"")
+             (cached value: 87)
+       B18  'Lia Li'
+       C18  55
+       D18  100
+       H18  [FORMULA]  =IFERROR(AVERAGE(C18:INDEX(C18:G18,SETTINGS!$C$17)),"")
+             (cached value: 77.5)
+       B19  'Melody Zhaeentan'
+       C19  75
+       D19  74
+       H19  [FORMULA]  =IFERROR(AVERAGE(C19:INDEX(C19:G19,SETTINGS!$C$17)),"")
+             (cached value: 74.5)
+       B20  'Nina De Saram'
+       C20  75
+       D20  86
+       H20  [FORMULA]  =IFERROR(AVERAGE(C20:INDEX(C20:G20,SETTINGS!$C$17)),"")
+             (cached value: 80.5)
+       B21  'Oscar Day-Duran'
+       C21  38
+       D21  72
+       H21  [FORMULA]  =IFERROR(AVERAGE(C21:INDEX(C21:G21,SETTINGS!$C$17)),"")
+             (cached value: 55)
+       B22  'Rebecca Seymour'
+       H22  [FORMULA]  =IFERROR(AVERAGE(C22:INDEX(C22:G22,SETTINGS!$C$17)),"")
+       B23  'Rory Bowman'
+       C23  25
+       D23  58
+       H23  [FORMULA]  =IFERROR(AVERAGE(C23:INDEX(C23:G23,SETTINGS!$C$17)),"")
+             (cached value: 41.5)
+       B24  'Sophie Barker'
+       C24  88
+       D24  98
+       H24  [FORMULA]  =IFERROR(AVERAGE(C24:INDEX(C24:G24,SETTINGS!$C$17)),"")
+             (cached value: 93)
+       B25  'Xander Meijer'
+       C25  33
+       D25  81
+       H25  [FORMULA]  =IFERROR(AVERAGE(C25:INDEX(C25:G25,SETTINGS!$C$17)),"")
+             (cached value: 57)
+       B27  'Enter a whole number 0–100 in the gold cells.\n'
+
+==============================================================================
+SHEET: ' Overall Leaderboard'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:D26
+  Max row/col: 26 / 4
+  Protected: True
+
+  Merged ranges (3):
+    B1:D1
+    B2:D2
+    B3:D3
+
+  Column widths: [('A', 4.0), ('B', 12.0), ('C', 32.0), ('D', 18.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'OVERALL LEADERBOARD'
+        B2  'All gameweeks combined  •  Sorted by points'
+        B3  [FORMULA]  =IF(MAX($D$6:$D$26)=0,"🏆  OVERALL LEADER:  No results yet","🏆  OVERALL LEADER:  "&INDEX($C$6:$C$26,MATCH(MAX($D$6:$D$26),$D$6:$D$26,0))&"  —  "&MAX($D$6:$D$26)&" pts")
+             (cached value: '🏆  OVERALL LEADER:  Alexa Amesimeku  —  43 pts')
+        B5  'Rank'
+        C5  'Manager'
+        D5  'Overall Points'
+        B6  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F8EBA0>
+        C6  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Alexa Amesimeku')
+        D6  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 43)
+        B7  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F9FD90>
+        C7  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Oscar Day-Duran')
+        D7  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 36)
+        B8  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1018050>
+        C8  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Alfie Foley')
+        D8  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 36)
+        B9  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F8BBB0>
+        C9  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Xander Meijer')
+        D9  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 34)
+       B10  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F10103E0>
+       C10  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Chinedu Chile')
+       D10  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 31)
+       B11  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0FBD250>
+       C11  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Ava Swinfen')
+       D11  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 31)
+       B12  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F100AF10>
+       C12  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Rory Bowman')
+       D12  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 30)
+       B13  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F100B130>
+       C13  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Joe Paige')
+       D13  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 30)
+       B14  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F3BA50>
+       C14  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Melody Zhaeentan')
+       D14  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 27)
+       B15  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F3BB50>
+       C15  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'David Wu')
+       D15  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 26)
+       B16  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F374D0>
+       C16  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Azlan Husain')
+       D16  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 20)
+       B17  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F375C0>
+       C17  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Edwin Mayers')
+       D17  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 17)
+       B18  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F102CF30>
+       C18  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Sophie Barker')
+       D18  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B19  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F102D0F0>
+       C19  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Rebecca Seymour')
+       D19  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B20  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0FB14A0>
+       C20  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Nina De Saram')
+       D20  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B21  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0C0FDD0>
+       C21  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Lia Li')
+       D21  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B22  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0C0FE90>
+       C22  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Iona Smith')
+       D22  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B23  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F56200>
+       C23  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Esme Beston')
+       D23  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B24  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F56410>
+       C24  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Emily Warburton')
+       D24  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B25  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F722B0>
+       C25  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Daniel Liu')
+       D25  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+       B26  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0F72350>
+       C26  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Alyza Rai')
+       D26  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)
+             (cached value: 0)
+
+==============================================================================
+SHEET: 'GW Leaderboard'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:D28
+  Max row/col: 28 / 4
+  Protected: True
+
+  Merged ranges (3):
+    B1:D1
+    B5:D5
+    B2:D2
+
+  Column widths: [('A', 28.6), ('B', 12.0), ('C', 32.0), ('D', 18.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'GAMEWEEK LEADERBOARD'
+        B2  'This gameweek only  •  Sorted by points'
+        B3  'CURRENT GAMEWEEK:'
+        C3  [FORMULA]  =HOME!C7
+             (cached value: 2)
+        B5  [FORMULA]  =IF(MAX($D$8:$D$28)=0,"🏆  GW"&$C$3&" WINNER:  No results yet","🏆  GW"&$C$3&" WINNER:  "&INDEX($C$8:$C$28,MATCH(MAX($D$8:$D$28),$D$8:$D$28,0))&"  —  "&MAX($D$8:$D$28)&" pts")
+             (cached value: '🏆  GW2 WINNER:  Alexa Amesimeku  —  43 pts')
+        B7  'Rank'
+        C7  'Manager'
+        D7  'GW Points'
+        B8  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F0FABD10>
+        C8  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Alexa Amesimeku')
+        D8  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 43)
+        B9  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F10038D0>
+        C9  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Oscar Day-Duran')
+        D9  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 36)
+       B10  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1003F50>
+       C10  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Alfie Foley')
+       D10  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 36)
+       B11  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F2652EB0>
+       C11  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Xander Meijer')
+       D11  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 34)
+       B12  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F26530E0>
+       C12  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Chinedu Chile')
+       D12  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 31)
+       B13  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028B30>
+       C13  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Ava Swinfen')
+       D13  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 31)
+       B14  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028B90>
+       C14  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Rory Bowman')
+       D14  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 30)
+       B15  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028BF0>
+       C15  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Joe Paige')
+       D15  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 30)
+       B16  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028C50>
+       C16  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Melody Zhaeentan')
+       D16  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 27)
+       B17  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028CB0>
+       C17  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'David Wu')
+       D17  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 26)
+       B18  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028D10>
+       C18  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Azlan Husain')
+       D18  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 20)
+       B19  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028D70>
+       C19  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Edwin Mayers')
+       D19  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 17)
+       B20  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028DD0>
+       C20  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Sophie Barker')
+       D20  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B21  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028E30>
+       C21  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Rebecca Seymour')
+       D21  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B22  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028E90>
+       C22  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Nina De Saram')
+       D22  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B23  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028EF0>
+       C23  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Lia Li')
+       D23  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B24  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028F50>
+       C24  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Iona Smith')
+       D24  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B25  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1028FB0>
+       C25  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Esme Beston')
+       D25  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B26  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1029010>
+       C26  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Emily Warburton')
+       D26  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B27  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F1029070>
+       C27  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Daniel Liu')
+       D27  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+       B28  <openpyxl.worksheet.formula.ArrayFormula object at 0x000001C8F10290D0>
+       C28  [FORMULA]  =IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")
+             (cached value: 'Alyza Rai')
+       D28  [FORMULA]  =ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0)
+             (cached value: 0)
+
+==============================================================================
+SHEET: 'SETTINGS'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:W70
+  Max row/col: 70 / 23
+  Protected: True
+
+  Merged ranges (6):
+    B68:F68
+    B1:E1
+    B20:F20
+    B3:E3
+    B2:E2
+    B44:W44
+
+  Column widths: [('A', 4.0), ('B', 34.0), ('C', 16.0), ('D', 58.4), ('E', 14.0), ('H', 24.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'SETTINGS — CONTROL PANEL'
+        B2  'Change the numbers below to update the whole league. Only gold cells are editable.'
+        B3  'GAME RULES'
+        B4  'Setting'
+        C4  'Value'
+        D4  'Notes'
+        B5  'Baseline points (at avg)'
+        C5  5
+        D5  'Points for scoring exactly the class average'
+        B6  'Dynamic step divisor'
+        C6  10
+        D6  'Class range (max−min) ÷ this = step size'
+        B7  'Minimum points'
+        C7  0
+        D7  'Floor'
+        B8  'Maximum points'
+        C8  10
+        D8  'Ceiling'
+        B9  'Max weekly price change'
+        C9  0.5
+        D9  'Absolute cap per week (£m)'
+       B10  'Tier multiplier (low)'
+       C10  1
+       D10  '£7.0–8.9m price band multiplier'
+       B11  'Tier multiplier (mid)'
+       C11  0.75
+       D11  '£9.0–10.9m price band multiplier'
+       B12  'Tier multiplier (high)'
+       C12  0.5
+       D12  '£11.0–13.0m price band multiplier'
+       B13  'Price change step'
+       C13  0.1
+       D13  'Ladder increment (£m)'
+       B14  'Minimum price'
+       C14  7
+       D14  'Floor (£m)'
+       B15  'Maximum price'
+       C15  13
+       D15  'Ceiling (£m)'
+       B16  'Price changes start at week'
+       C16  3
+       D16  'First week that price changes apply'
+       B17  'Tests per gameweek'
+       C17  2
+       D17  'How many test columns count this week (1-5). Others are greyed out.'
+       B18  'Captain multiplier'
+       C18  2
+       D18  "Multiplier applied to captain's points (2 = double, 3 = triple)"
+       B20  'PLAYER PRICES'
+       B21  'Player'
+       C21  'Base'
+       D21  'Cumulative'
+       E21  'Override'
+       F21  'Final'
+       H21  'Dropdown'
+       B22  'Lia Li'
+       C22  13
+       D22  [FORMULA]  =SUM(J22:Z22)
+             (cached value: 0)
+       F22  [FORMULA]  =IF(E22<>"",E22,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C22+D22)))
+             (cached value: 13)
+       H22  [FORMULA]  =IF(B22="","",B22)
+             (cached value: 'Lia Li')
+       B23  'Sophie Barker'
+       C23  13
+       D23  [FORMULA]  =SUM(J23:Z23)
+             (cached value: 0)
+       F23  [FORMULA]  =IF(E23<>"",E23,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C23+D23)))
+             (cached value: 13)
+       H23  [FORMULA]  =IF(B23="","",B23)
+             (cached value: 'Sophie Barker')
+       B24  'Chinedu Chile'
+       C24  11
+       D24  [FORMULA]  =SUM(J24:Z24)
+             (cached value: 0)
+       F24  [FORMULA]  =IF(E24<>"",E24,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C24+D24)))
+             (cached value: 11)
+       H24  [FORMULA]  =IF(B24="","",B24)
+             (cached value: 'Chinedu Chile')
+       B25  'Emily Warburton'
+       C25  11
+       D25  [FORMULA]  =SUM(J25:Z25)
+             (cached value: 0)
+       F25  [FORMULA]  =IF(E25<>"",E25,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C25+D25)))
+             (cached value: 11)
+       H25  [FORMULA]  =IF(B25="","",B25)
+             (cached value: 'Emily Warburton')
+       B26  'Alyza Rai'
+       C26  10.5
+       D26  [FORMULA]  =SUM(J26:Z26)
+             (cached value: 0)
+       F26  [FORMULA]  =IF(E26<>"",E26,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C26+D26)))
+             (cached value: 10.5)
+       H26  [FORMULA]  =IF(B26="","",B26)
+             (cached value: 'Alyza Rai')
+       B27  'David Wu'
+       C27  10.5
+       D27  [FORMULA]  =SUM(J27:Z27)
+             (cached value: 0)
+       F27  [FORMULA]  =IF(E27<>"",E27,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C27+D27)))
+             (cached value: 10.5)
+       H27  [FORMULA]  =IF(B27="","",B27)
+             (cached value: 'David Wu')
+       B28  'Joe Paige'
+       C28  10.5
+       D28  [FORMULA]  =SUM(J28:Z28)
+             (cached value: 0)
+       F28  [FORMULA]  =IF(E28<>"",E28,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C28+D28)))
+             (cached value: 10.5)
+       H28  [FORMULA]  =IF(B28="","",B28)
+             (cached value: 'Joe Paige')
+       B29  'Azlan Husain'
+       C29  10
+       D29  [FORMULA]  =SUM(J29:Z29)
+             (cached value: 0)
+       F29  [FORMULA]  =IF(E29<>"",E29,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C29+D29)))
+             (cached value: 10)
+       H29  [FORMULA]  =IF(B29="","",B29)
+             (cached value: 'Azlan Husain')
+       B30  'Nina De Saram'
+       C30  10
+       D30  [FORMULA]  =SUM(J30:Z30)
+             (cached value: 0)
+       F30  [FORMULA]  =IF(E30<>"",E30,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C30+D30)))
+             (cached value: 10)
+       H30  [FORMULA]  =IF(B30="","",B30)
+             (cached value: 'Nina De Saram')
+       B31  'Alexa Amesimeku'
+       C31  9.5
+       D31  [FORMULA]  =SUM(J31:Z31)
+             (cached value: 0)
+       F31  [FORMULA]  =IF(E31<>"",E31,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C31+D31)))
+             (cached value: 9.5)
+       H31  [FORMULA]  =IF(B31="","",B31)
+             (cached value: 'Alexa Amesimeku')
+       B32  'Daniel Liu'
+       C32  9.5
+       D32  [FORMULA]  =SUM(J32:Z32)
+             (cached value: 0)
+       F32  [FORMULA]  =IF(E32<>"",E32,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C32+D32)))
+             (cached value: 9.5)
+       H32  [FORMULA]  =IF(B32="","",B32)
+             (cached value: 'Daniel Liu')
+       B33  'Rebecca Seymour'
+       C33  9.5
+       D33  [FORMULA]  =SUM(J33:Z33)
+             (cached value: 0)
+       F33  [FORMULA]  =IF(E33<>"",E33,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C33+D33)))
+             (cached value: 9.5)
+       H33  [FORMULA]  =IF(B33="","",B33)
+             (cached value: 'Rebecca Seymour')
+       B34  'Edwin Mayers'
+       C34  9
+       D34  [FORMULA]  =SUM(J34:Z34)
+             (cached value: 0)
+       F34  [FORMULA]  =IF(E34<>"",E34,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C34+D34)))
+             (cached value: 9)
+       H34  [FORMULA]  =IF(B34="","",B34)
+             (cached value: 'Edwin Mayers')
+       B35  'Melody Zhaeentan'
+       C35  8.5
+       D35  [FORMULA]  =SUM(J35:Z35)
+             (cached value: 0)
+       F35  [FORMULA]  =IF(E35<>"",E35,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C35+D35)))
+             (cached value: 8.5)
+       H35  [FORMULA]  =IF(B35="","",B35)
+             (cached value: 'Melody Zhaeentan')
+       B36  'Esme Beston'
+       C36  8
+       D36  [FORMULA]  =SUM(J36:Z36)
+             (cached value: 0)
+       F36  [FORMULA]  =IF(E36<>"",E36,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C36+D36)))
+             (cached value: 8)
+       H36  [FORMULA]  =IF(B36="","",B36)
+             (cached value: 'Esme Beston')
+       B37  'Iona Smith'
+       C37  8
+       D37  [FORMULA]  =SUM(J37:Z37)
+             (cached value: 0)
+       F37  [FORMULA]  =IF(E37<>"",E37,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C37+D37)))
+             (cached value: 8)
+       H37  [FORMULA]  =IF(B37="","",B37)
+             (cached value: 'Iona Smith')
+       B38  'Oscar Day-Duran'
+       C38  8
+       D38  [FORMULA]  =SUM(J38:Z38)
+             (cached value: 0)
+       F38  [FORMULA]  =IF(E38<>"",E38,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C38+D38)))
+             (cached value: 8)
+       H38  [FORMULA]  =IF(B38="","",B38)
+             (cached value: 'Oscar Day-Duran')
+       B39  'Alfie Foley'
+       C39  7.5
+       D39  [FORMULA]  =SUM(J39:Z39)
+             (cached value: 0)
+       F39  [FORMULA]  =IF(E39<>"",E39,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C39+D39)))
+             (cached value: 7.5)
+       H39  [FORMULA]  =IF(B39="","",B39)
+             (cached value: 'Alfie Foley')
+       B40  'Ava Swinfen'
+       C40  7
+       D40  [FORMULA]  =SUM(J40:Z40)
+             (cached value: 0)
+       F40  [FORMULA]  =IF(E40<>"",E40,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C40+D40)))
+             (cached value: 7)
+       H40  [FORMULA]  =IF(B40="","",B40)
+             (cached value: 'Ava Swinfen')
+       B41  'Rory Bowman'
+       C41  7
+       D41  [FORMULA]  =SUM(J41:Z41)
+             (cached value: 0)
+       F41  [FORMULA]  =IF(E41<>"",E41,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C41+D41)))
+             (cached value: 7)
+       H41  [FORMULA]  =IF(B41="","",B41)
+             (cached value: 'Rory Bowman')
+       B42  'Xander Meijer'
+       C42  7
+       D42  [FORMULA]  =SUM(J42:Z42)
+             (cached value: 0)
+       F42  [FORMULA]  =IF(E42<>"",E42,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C42+D42)))
+             (cached value: 7)
+       H42  [FORMULA]  =IF(B42="","",B42)
+             (cached value: 'Xander Meijer')
+       B44  'WEEKLY PRICE LOG (auto-written by advance script)'
+       B45  'Player'
+       C45  'GW1'
+       D45  'GW2'
+       E45  'GW3'
+       F45  'GW4'
+       G45  'GW5'
+       H45  'GW6'
+       I45  'GW7'
+       J45  'GW8'
+       K45  'GW9'
+       L45  'GW10'
+       M45  'GW11'
+       N45  'GW12'
+       O45  'GW13'
+       P45  'GW14'
+       Q45  'GW15'
+       R45  'GW16'
+       S45  'GW17'
+       T45  'GW18'
+       U45  'GW19'
+       V45  'GW20'
+       B46  'Lia Li'
+       B47  'Sophie Barker'
+       B48  'Chinedu Chile'
+       B49  'Emily Warburton'
+       B50  'Alyza Rai'
+       B51  'David Wu'
+       B52  'Joe Paige'
+       B53  'Azlan Husain'
+       B54  'Nina De Saram'
+       B55  'Alexa Amesimeku'
+       B56  'Daniel Liu'
+       B57  'Rebecca Seymour'
+       B58  'Edwin Mayers'
+       B59  'Melody Zhaeentan'
+       B60  'Esme Beston'
+       B61  'Iona Smith'
+       B62  'Oscar Day-Duran'
+       B63  'Alfie Foley'
+       B64  'Ava Swinfen'
+       B65  'Rory Bowman'
+       B66  'Xander Meijer'
+       B68  'SEASON CONFIG'
+       B69  'Current GW'
+       C69  2
+       D69  'Managed by advance_gameweek.py / undo_advance.py'
+       B70  'Season length (weeks)'
+       C70  20
+       D70  'Total number of gameweeks in the season'
+
+==============================================================================
+SHEET: 'RAW RESULTS'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:V22
+  Max row/col: 22 / 22
+  Protected: True
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'Manager'
+        C1  'GW1'
+        D1  'GW2'
+        E1  'GW3'
+        F1  'GW4'
+        G1  'GW5'
+        H1  'GW6'
+        I1  'GW7'
+        J1  'GW8'
+        K1  'GW9'
+        L1  'GW10'
+        M1  'GW11'
+        N1  'GW12'
+        O1  'GW13'
+        P1  'GW14'
+        Q1  'GW15'
+        R1  'GW16'
+        S1  'GW17'
+        T1  'GW18'
+        U1  'GW19'
+        V1  'GW20'
+        B2  'Alexa Amesimeku'
+        B3  'Alfie Foley'
+        C3  52.5
+        B4  'Alyza Rai'
+        C4  78
+        B5  'Ava Swinfen'
+        C5  54.5
+        B6  'Azlan Husain'
+        C6  68
+        B7  'Chinedu Chile'
+        C7  73
+        B8  'Daniel Liu'
+        C8  68.5
+        B9  'David Wu'
+        C9  73
+       B10  'Edwin Mayers'
+       C10  60.5
+       B11  'Emily Warburton'
+       B12  'Esme Beston'
+       C12  47
+       B13  'Iona Smith'
+       B14  'Joe Paige'
+       C14  87
+       B15  'Lia Li'
+       C15  77.5
+       B16  'Melody Zhaeentan'
+       C16  74.5
+       B17  'Nina De Saram'
+       C17  80.5
+       B18  'Oscar Day-Duran'
+       C18  55
+       B19  'Rebecca Seymour'
+       B20  'Rory Bowman'
+       C20  41.5
+       B21  'Sophie Barker'
+       C21  93
+       B22  'Xander Meijer'
+       C22  57
+
+==============================================================================
+SHEET: 'CALCULATIONS'   (state=hidden)
+==============================================================================
+  Dimensions (used range): A1:X22
+  Max row/col: 22 / 24
+  Protected: True
+
+  Column widths: [('U', 26.7), ('V', 22.4)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        A1  'Player'
+        B1  'Base'
+        C1  'Current'
+        D1  'Pts'
+        K1  'Manager'
+        L1  'P1'
+        M1  'P2'
+        N1  'P3'
+        O1  'P4'
+        P1  'P5'
+        Q1  'Captain'
+        R1  'Team Value'
+        S1  'Budget Left'
+        T1  'GW Score'
+        U1  'Status'
+        V1  'Tiebreak'
+        W1  'Overall'
+        X1  'OverallTB'
+        A2  'Lia Li'
+        B2  13
+        C2  [FORMULA]  =SETTINGS!F22
+             (cached value: 13)
+        D2  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A2,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A2,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 6)
+        K2  'Alexa Amesimeku'
+        L2  [FORMULA]  ='Alexa Amesimeku'!C10
+             (cached value: 'Sophie Barker')
+        M2  [FORMULA]  ='Alexa Amesimeku'!C11
+             (cached value: 'Joe Paige')
+        N2  [FORMULA]  ='Alexa Amesimeku'!C12
+             (cached value: 'Alexa Amesimeku')
+        O2  [FORMULA]  ='Alexa Amesimeku'!C13
+             (cached value: 'Nina De Saram')
+        P2  [FORMULA]  ='Alexa Amesimeku'!C14
+             (cached value: 'Xander Meijer')
+        Q2  [FORMULA]  ='Alexa Amesimeku'!C5
+             (cached value: 'Sophie Barker')
+        R2  [FORMULA]  ='Alexa Amesimeku'!C17
+             (cached value: 50)
+        S2  [FORMULA]  ='Alexa Amesimeku'!C18
+             (cached value: 0)
+        T2  [FORMULA]  =IF($U2="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L2:P2,$D$2:$D$22))+SUMIF($A$2:$A$22,Q2,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 43)
+        U2  [FORMULA]  ='Alexa Amesimeku'!C20
+             (cached value: 'VALID TEAM')
+        V2  [FORMULA]  =T2+ROW()/10000
+             (cached value: 43.0002)
+        W2  [FORMULA]  =SUM('POINTS HISTORY'!C2:V2)
+             (cached value: 0)
+        X2  [FORMULA]  =W2+ROW()/10000
+             (cached value: 0.0002)
+        A3  'Sophie Barker'
+        B3  13
+        C3  [FORMULA]  =SETTINGS!F23
+             (cached value: 13)
+        D3  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A3,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A3,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 9)
+        K3  'Alfie Foley'
+        L3  [FORMULA]  ='Alfie Foley'!C10
+             (cached value: 'Ava Swinfen')
+        M3  [FORMULA]  ='Alfie Foley'!C11
+             (cached value: 'David Wu')
+        N3  [FORMULA]  ='Alfie Foley'!C12
+             (cached value: 'Alyza Rai')
+        O3  [FORMULA]  ='Alfie Foley'!C13
+             (cached value: 'Sophie Barker')
+        P3  [FORMULA]  ='Alfie Foley'!C14
+             (cached value: 'Edwin Mayers')
+        Q3  [FORMULA]  ='Alfie Foley'!C5
+             (cached value: 'Sophie Barker')
+        R3  [FORMULA]  ='Alfie Foley'!C17
+             (cached value: 50)
+        S3  [FORMULA]  ='Alfie Foley'!C18
+             (cached value: 0)
+        T3  [FORMULA]  =IF($U3="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L3:P3,$D$2:$D$22))+SUMIF($A$2:$A$22,Q3,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 36)
+        U3  [FORMULA]  ='Alfie Foley'!C20
+             (cached value: 'VALID TEAM')
+        V3  [FORMULA]  =T3+ROW()/10000
+             (cached value: 36.0003)
+        W3  [FORMULA]  =SUM('POINTS HISTORY'!C3:V3)
+             (cached value: 0)
+        X3  [FORMULA]  =W3+ROW()/10000
+             (cached value: 0.0003)
+        A4  'Chinedu Chile'
+        B4  11
+        C4  [FORMULA]  =SETTINGS!F24
+             (cached value: 11)
+        D4  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A4,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A4,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 5)
+        K4  'Alyza Rai'
+        L4  [FORMULA]  ='Alyza Rai'!C10
+             (cached value: 0)
+        M4  [FORMULA]  ='Alyza Rai'!C11
+             (cached value: 0)
+        N4  [FORMULA]  ='Alyza Rai'!C12
+             (cached value: 0)
+        O4  [FORMULA]  ='Alyza Rai'!C13
+             (cached value: 0)
+        P4  [FORMULA]  ='Alyza Rai'!C14
+             (cached value: 0)
+        Q4  [FORMULA]  ='Alyza Rai'!C5
+             (cached value: 0)
+        R4  [FORMULA]  ='Alyza Rai'!C17
+             (cached value: 0)
+        S4  [FORMULA]  ='Alyza Rai'!C18
+             (cached value: 50)
+        T4  [FORMULA]  =IF($U4="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L4:P4,$D$2:$D$22))+SUMIF($A$2:$A$22,Q4,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+        U4  [FORMULA]  ='Alyza Rai'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+        V4  [FORMULA]  =T4+ROW()/10000
+             (cached value: 0.0004)
+        W4  [FORMULA]  =SUM('POINTS HISTORY'!C4:V4)
+             (cached value: 0)
+        X4  [FORMULA]  =W4+ROW()/10000
+             (cached value: 0.0004)
+        A5  'Emily Warburton'
+        B5  11
+        C5  [FORMULA]  =SETTINGS!F25
+             (cached value: 11)
+        D5  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A5,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A5,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 0)
+        K5  'Ava Swinfen'
+        L5  [FORMULA]  ='Ava Swinfen'!C10
+             (cached value: 'Ava Swinfen')
+        M5  [FORMULA]  ='Ava Swinfen'!C11
+             (cached value: 'Melody Zhaeentan')
+        N5  [FORMULA]  ='Ava Swinfen'!C12
+             (cached value: 'Lia Li')
+        O5  [FORMULA]  ='Ava Swinfen'!C13
+             (cached value: 'Chinedu Chile')
+        P5  [FORMULA]  ='Ava Swinfen'!C14
+             (cached value: 'David Wu')
+        Q5  [FORMULA]  ='Ava Swinfen'!C5
+             (cached value: 'Lia Li')
+        R5  [FORMULA]  ='Ava Swinfen'!C17
+             (cached value: 50)
+        S5  [FORMULA]  ='Ava Swinfen'!C18
+             (cached value: 0)
+        T5  [FORMULA]  =IF($U5="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L5:P5,$D$2:$D$22))+SUMIF($A$2:$A$22,Q5,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 31)
+        U5  [FORMULA]  ='Ava Swinfen'!C20
+             (cached value: 'VALID TEAM')
+        V5  [FORMULA]  =T5+ROW()/10000
+             (cached value: 31.0005)
+        W5  [FORMULA]  =SUM('POINTS HISTORY'!C5:V5)
+             (cached value: 0)
+        X5  [FORMULA]  =W5+ROW()/10000
+             (cached value: 0.0005)
+        A6  'Alyza Rai'
+        B6  10.5
+        C6  [FORMULA]  =SETTINGS!F26
+             (cached value: 10.5)
+        D6  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A6,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A6,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 6)
+        K6  'Azlan Husain'
+        L6  [FORMULA]  ='Azlan Husain'!C10
+             (cached value: 'Emily Warburton')
+        M6  [FORMULA]  ='Azlan Husain'!C11
+             (cached value: 'Chinedu Chile')
+        N6  [FORMULA]  ='Azlan Husain'!C12
+             (cached value: 'Joe Paige')
+        O6  [FORMULA]  ='Azlan Husain'!C13
+             (cached value: 'Alfie Foley')
+        P6  [FORMULA]  ='Azlan Husain'!C14
+             (cached value: 'Edwin Mayers')
+        Q6  [FORMULA]  ='Azlan Husain'!C5
+             (cached value: 'Emily Warburton')
+        R6  [FORMULA]  ='Azlan Husain'!C17
+             (cached value: 49)
+        S6  [FORMULA]  ='Azlan Husain'!C18
+             (cached value: 1)
+        T6  [FORMULA]  =IF($U6="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L6:P6,$D$2:$D$22))+SUMIF($A$2:$A$22,Q6,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 20)
+        U6  [FORMULA]  ='Azlan Husain'!C20
+             (cached value: 'VALID TEAM')
+        V6  [FORMULA]  =T6+ROW()/10000
+             (cached value: 20.0006)
+        W6  [FORMULA]  =SUM('POINTS HISTORY'!C6:V6)
+             (cached value: 0)
+        X6  [FORMULA]  =W6+ROW()/10000
+             (cached value: 0.0006)
+        A7  'David Wu'
+        B7  10.5
+        C7  [FORMULA]  =SETTINGS!F27
+             (cached value: 10.5)
+        D7  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A7,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A7,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 5)
+        K7  'Chinedu Chile'
+        L7  [FORMULA]  ='Chinedu Chile'!C10
+             (cached value: 'Chinedu Chile')
+        M7  [FORMULA]  ='Chinedu Chile'!C11
+             (cached value: 'Alexa Amesimeku')
+        N7  [FORMULA]  ='Chinedu Chile'!C12
+             (cached value: 'David Wu')
+        O7  [FORMULA]  ='Chinedu Chile'!C13
+             (cached value: 'Edwin Mayers')
+        P7  [FORMULA]  ='Chinedu Chile'!C14
+             (cached value: 'Azlan Husain')
+        Q7  [FORMULA]  ='Chinedu Chile'!C5
+             (cached value: 'Chinedu Chile')
+        R7  [FORMULA]  ='Chinedu Chile'!C17
+             (cached value: 50)
+        S7  [FORMULA]  ='Chinedu Chile'!C18
+             (cached value: 0)
+        T7  [FORMULA]  =IF($U7="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L7:P7,$D$2:$D$22))+SUMIF($A$2:$A$22,Q7,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 31)
+        U7  [FORMULA]  ='Chinedu Chile'!C20
+             (cached value: 'VALID TEAM')
+        V7  [FORMULA]  =T7+ROW()/10000
+             (cached value: 31.0007)
+        W7  [FORMULA]  =SUM('POINTS HISTORY'!C7:V7)
+             (cached value: 0)
+        X7  [FORMULA]  =W7+ROW()/10000
+             (cached value: 0.0007)
+        A8  'Joe Paige'
+        B8  10.5
+        C8  [FORMULA]  =SETTINGS!F28
+             (cached value: 10.5)
+        D8  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A8,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A8,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 8)
+        K8  'Daniel Liu'
+        L8  [FORMULA]  ='Daniel Liu'!C10
+             (cached value: 'Alyza Rai')
+        M8  [FORMULA]  ='Daniel Liu'!C11
+             (cached value: 'Ava Swinfen')
+        N8  [FORMULA]  ='Daniel Liu'!C12
+             (cached value: 0)
+        O8  [FORMULA]  ='Daniel Liu'!C13
+             (cached value: 'David Wu')
+        P8  [FORMULA]  ='Daniel Liu'!C14
+             (cached value: 'Chinedu Chile')
+        Q8  [FORMULA]  ='Daniel Liu'!C5
+             (cached value: 0)
+        R8  [FORMULA]  ='Daniel Liu'!C17
+             (cached value: 39)
+        S8  [FORMULA]  ='Daniel Liu'!C18
+             (cached value: 11)
+        T8  [FORMULA]  =IF($U8="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L8:P8,$D$2:$D$22))+SUMIF($A$2:$A$22,Q8,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+        U8  [FORMULA]  ='Daniel Liu'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+        V8  [FORMULA]  =T8+ROW()/10000
+             (cached value: 0.0008)
+        W8  [FORMULA]  =SUM('POINTS HISTORY'!C8:V8)
+             (cached value: 0)
+        X8  [FORMULA]  =W8+ROW()/10000
+             (cached value: 0.0008)
+        A9  'Azlan Husain'
+        B9  10
+        C9  [FORMULA]  =SETTINGS!F29
+             (cached value: 10)
+        D9  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A9,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A9,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 5)
+        K9  'David Wu'
+        L9  [FORMULA]  ='David Wu'!C10
+             (cached value: 'Azlan Husain')
+        M9  [FORMULA]  ='David Wu'!C11
+             (cached value: 'Rebecca Seymour')
+        N9  [FORMULA]  ='David Wu'!C12
+             (cached value: 'Edwin Mayers')
+        O9  [FORMULA]  ='David Wu'!C13
+             (cached value: 'Chinedu Chile')
+        P9  [FORMULA]  ='David Wu'!C14
+             (cached value: 'Joe Paige')
+        Q9  [FORMULA]  ='David Wu'!C5
+             (cached value: 'Edwin Mayers')
+        R9  [FORMULA]  ='David Wu'!C17
+             (cached value: 50)
+        S9  [FORMULA]  ='David Wu'!C18
+             (cached value: 0)
+        T9  [FORMULA]  =IF($U9="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L9:P9,$D$2:$D$22))+SUMIF($A$2:$A$22,Q9,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 26)
+        U9  [FORMULA]  ='David Wu'!C20
+             (cached value: 'VALID TEAM')
+        V9  [FORMULA]  =T9+ROW()/10000
+             (cached value: 26.0009)
+        W9  [FORMULA]  =SUM('POINTS HISTORY'!C9:V9)
+             (cached value: 0)
+        X9  [FORMULA]  =W9+ROW()/10000
+             (cached value: 0.0009)
+       A10  'Nina De Saram'
+       B10  10
+       C10  [FORMULA]  =SETTINGS!F30
+             (cached value: 10)
+       D10  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A10,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A10,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 7)
+       K10  'Edwin Mayers'
+       L10  [FORMULA]  ='Edwin Mayers'!C10
+             (cached value: 'Sophie Barker')
+       M10  [FORMULA]  ='Edwin Mayers'!C11
+             (cached value: 'Esme Beston')
+       N10  [FORMULA]  ='Edwin Mayers'!C12
+             (cached value: 'Edwin Mayers')
+       O10  [FORMULA]  ='Edwin Mayers'!C13
+             (cached value: 'Emily Warburton')
+       P10  [FORMULA]  ='Edwin Mayers'!C14
+             (cached value: 'Ava Swinfen')
+       Q10  [FORMULA]  ='Edwin Mayers'!C5
+             (cached value: 'Emily Warburton')
+       R10  [FORMULA]  ='Edwin Mayers'!C17
+             (cached value: 48)
+       S10  [FORMULA]  ='Edwin Mayers'!C18
+             (cached value: 2)
+       T10  [FORMULA]  =IF($U10="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L10:P10,$D$2:$D$22))+SUMIF($A$2:$A$22,Q10,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 17)
+       U10  [FORMULA]  ='Edwin Mayers'!C20
+             (cached value: 'VALID TEAM')
+       V10  [FORMULA]  =T10+ROW()/10000
+             (cached value: 17.001)
+       W10  [FORMULA]  =SUM('POINTS HISTORY'!C10:V10)
+             (cached value: 0)
+       X10  [FORMULA]  =W10+ROW()/10000
+             (cached value: 0.001)
+       A11  'Alexa Amesimeku'
+       B11  9.5
+       C11  [FORMULA]  =SETTINGS!F31
+             (cached value: 9.5)
+       D11  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A11,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A11,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 7)
+       K11  'Emily Warburton'
+       L11  [FORMULA]  ='Emily Warburton'!C10
+             (cached value: 0)
+       M11  [FORMULA]  ='Emily Warburton'!C11
+             (cached value: 0)
+       N11  [FORMULA]  ='Emily Warburton'!C12
+             (cached value: 0)
+       O11  [FORMULA]  ='Emily Warburton'!C13
+             (cached value: 0)
+       P11  [FORMULA]  ='Emily Warburton'!C14
+             (cached value: 0)
+       Q11  [FORMULA]  ='Emily Warburton'!C5
+             (cached value: 0)
+       R11  [FORMULA]  ='Emily Warburton'!C17
+             (cached value: 0)
+       S11  [FORMULA]  ='Emily Warburton'!C18
+             (cached value: 50)
+       T11  [FORMULA]  =IF($U11="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L11:P11,$D$2:$D$22))+SUMIF($A$2:$A$22,Q11,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U11  [FORMULA]  ='Emily Warburton'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V11  [FORMULA]  =T11+ROW()/10000
+             (cached value: 0.0011)
+       W11  [FORMULA]  =SUM('POINTS HISTORY'!C11:V11)
+             (cached value: 0)
+       X11  [FORMULA]  =W11+ROW()/10000
+             (cached value: 0.0011)
+       A12  'Daniel Liu'
+       B12  9.5
+       C12  [FORMULA]  =SETTINGS!F32
+             (cached value: 9.5)
+       D12  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A12,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A12,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 5)
+       K12  'Esme Beston'
+       L12  [FORMULA]  ='Esme Beston'!C10
+             (cached value: 0)
+       M12  [FORMULA]  ='Esme Beston'!C11
+             (cached value: 0)
+       N12  [FORMULA]  ='Esme Beston'!C12
+             (cached value: 0)
+       O12  [FORMULA]  ='Esme Beston'!C13
+             (cached value: 0)
+       P12  [FORMULA]  ='Esme Beston'!C14
+             (cached value: 0)
+       Q12  [FORMULA]  ='Esme Beston'!C5
+             (cached value: 0)
+       R12  [FORMULA]  ='Esme Beston'!C17
+             (cached value: 0)
+       S12  [FORMULA]  ='Esme Beston'!C18
+             (cached value: 50)
+       T12  [FORMULA]  =IF($U12="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L12:P12,$D$2:$D$22))+SUMIF($A$2:$A$22,Q12,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U12  [FORMULA]  ='Esme Beston'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V12  [FORMULA]  =T12+ROW()/10000
+             (cached value: 0.0012)
+       W12  [FORMULA]  =SUM('POINTS HISTORY'!C12:V12)
+             (cached value: 0)
+       X12  [FORMULA]  =W12+ROW()/10000
+             (cached value: 0.0012)
+       A13  'Rebecca Seymour'
+       B13  9.5
+       C13  [FORMULA]  =SETTINGS!F33
+             (cached value: 9.5)
+       D13  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A13,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A13,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 0)
+       K13  'Iona Smith'
+       L13  [FORMULA]  ='Iona Smith'!C10
+             (cached value: 0)
+       M13  [FORMULA]  ='Iona Smith'!C11
+             (cached value: 0)
+       N13  [FORMULA]  ='Iona Smith'!C12
+             (cached value: 0)
+       O13  [FORMULA]  ='Iona Smith'!C13
+             (cached value: 0)
+       P13  [FORMULA]  ='Iona Smith'!C14
+             (cached value: 0)
+       Q13  [FORMULA]  ='Iona Smith'!C5
+             (cached value: 0)
+       R13  [FORMULA]  ='Iona Smith'!C17
+             (cached value: 0)
+       S13  [FORMULA]  ='Iona Smith'!C18
+             (cached value: 50)
+       T13  [FORMULA]  =IF($U13="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L13:P13,$D$2:$D$22))+SUMIF($A$2:$A$22,Q13,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U13  [FORMULA]  ='Iona Smith'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V13  [FORMULA]  =T13+ROW()/10000
+             (cached value: 0.0013)
+       W13  [FORMULA]  =SUM('POINTS HISTORY'!C13:V13)
+             (cached value: 0)
+       X13  [FORMULA]  =W13+ROW()/10000
+             (cached value: 0.0013)
+       A14  'Edwin Mayers'
+       B14  9
+       C14  [FORMULA]  =SETTINGS!F34
+             (cached value: 9)
+       D14  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A14,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A14,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 4)
+       K14  'Joe Paige'
+       L14  [FORMULA]  ='Joe Paige'!C10
+             (cached value: 'Chinedu Chile')
+       M14  [FORMULA]  ='Joe Paige'!C11
+             (cached value: 'Joe Paige')
+       N14  [FORMULA]  ='Joe Paige'!C12
+             (cached value: 'Alfie Foley')
+       O14  [FORMULA]  ='Joe Paige'!C13
+             (cached value: 'Lia Li')
+       P14  [FORMULA]  ='Joe Paige'!C14
+             (cached value: 'Oscar Day-Duran')
+       Q14  [FORMULA]  ='Joe Paige'!C5
+             (cached value: 'Chinedu Chile')
+       R14  [FORMULA]  ='Joe Paige'!C17
+             (cached value: 50)
+       S14  [FORMULA]  ='Joe Paige'!C18
+             (cached value: 0)
+       T14  [FORMULA]  =IF($U14="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L14:P14,$D$2:$D$22))+SUMIF($A$2:$A$22,Q14,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 30)
+       U14  [FORMULA]  ='Joe Paige'!C20
+             (cached value: 'VALID TEAM')
+       V14  [FORMULA]  =T14+ROW()/10000
+             (cached value: 30.0014)
+       W14  [FORMULA]  =SUM('POINTS HISTORY'!C14:V14)
+             (cached value: 0)
+       X14  [FORMULA]  =W14+ROW()/10000
+             (cached value: 0.0014)
+       A15  'Melody Zhaeentan'
+       B15  8.5
+       C15  [FORMULA]  =SETTINGS!F35
+             (cached value: 8.5)
+       D15  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A15,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A15,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 6)
+       K15  'Lia Li'
+       L15  [FORMULA]  ='Lia Li'!C10
+             (cached value: 0)
+       M15  [FORMULA]  ='Lia Li'!C11
+             (cached value: 0)
+       N15  [FORMULA]  ='Lia Li'!C12
+             (cached value: 0)
+       O15  [FORMULA]  ='Lia Li'!C13
+             (cached value: 0)
+       P15  [FORMULA]  ='Lia Li'!C14
+             (cached value: 0)
+       Q15  [FORMULA]  ='Lia Li'!C5
+             (cached value: 0)
+       R15  [FORMULA]  ='Lia Li'!C17
+             (cached value: 0)
+       S15  [FORMULA]  ='Lia Li'!C18
+             (cached value: 50)
+       T15  [FORMULA]  =IF($U15="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L15:P15,$D$2:$D$22))+SUMIF($A$2:$A$22,Q15,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U15  [FORMULA]  ='Lia Li'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V15  [FORMULA]  =T15+ROW()/10000
+             (cached value: 0.0015)
+       W15  [FORMULA]  =SUM('POINTS HISTORY'!C15:V15)
+             (cached value: 0)
+       X15  [FORMULA]  =W15+ROW()/10000
+             (cached value: 0.0015)
+       A16  'Esme Beston'
+       B16  8
+       C16  [FORMULA]  =SETTINGS!F36
+             (cached value: 8)
+       D16  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A16,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A16,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 1)
+       K16  'Melody Zhaeentan'
+       L16  [FORMULA]  ='Melody Zhaeentan'!C10
+             (cached value: 'Lia Li')
+       M16  [FORMULA]  ='Melody Zhaeentan'!C11
+             (cached value: 'Edwin Mayers')
+       N16  [FORMULA]  ='Melody Zhaeentan'!C12
+             (cached value: 'Rebecca Seymour')
+       O16  [FORMULA]  ='Melody Zhaeentan'!C13
+             (cached value: 'Joe Paige')
+       P16  [FORMULA]  ='Melody Zhaeentan'!C14
+             (cached value: 'Xander Meijer')
+       Q16  [FORMULA]  ='Melody Zhaeentan'!C5
+             (cached value: 'Lia Li')
+       R16  [FORMULA]  ='Melody Zhaeentan'!C17
+             (cached value: 49)
+       S16  [FORMULA]  ='Melody Zhaeentan'!C18
+             (cached value: 1)
+       T16  [FORMULA]  =IF($U16="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L16:P16,$D$2:$D$22))+SUMIF($A$2:$A$22,Q16,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 27)
+       U16  [FORMULA]  ='Melody Zhaeentan'!C20
+             (cached value: 'VALID TEAM')
+       V16  [FORMULA]  =T16+ROW()/10000
+             (cached value: 27.0016)
+       W16  [FORMULA]  =SUM('POINTS HISTORY'!C16:V16)
+             (cached value: 0)
+       X16  [FORMULA]  =W16+ROW()/10000
+             (cached value: 0.0016)
+       A17  'Iona Smith'
+       B17  8
+       C17  [FORMULA]  =SETTINGS!F37
+             (cached value: 8)
+       D17  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A17,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A17,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 0)
+       K17  'Nina De Saram'
+       L17  [FORMULA]  ='Nina De Saram'!C10
+             (cached value: 0)
+       M17  [FORMULA]  ='Nina De Saram'!C11
+             (cached value: 0)
+       N17  [FORMULA]  ='Nina De Saram'!C12
+             (cached value: 0)
+       O17  [FORMULA]  ='Nina De Saram'!C13
+             (cached value: 0)
+       P17  [FORMULA]  ='Nina De Saram'!C14
+             (cached value: 0)
+       Q17  [FORMULA]  ='Nina De Saram'!C5
+             (cached value: 0)
+       R17  [FORMULA]  ='Nina De Saram'!C17
+             (cached value: 0)
+       S17  [FORMULA]  ='Nina De Saram'!C18
+             (cached value: 50)
+       T17  [FORMULA]  =IF($U17="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L17:P17,$D$2:$D$22))+SUMIF($A$2:$A$22,Q17,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U17  [FORMULA]  ='Nina De Saram'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V17  [FORMULA]  =T17+ROW()/10000
+             (cached value: 0.0017)
+       W17  [FORMULA]  =SUM('POINTS HISTORY'!C17:V17)
+             (cached value: 0)
+       X17  [FORMULA]  =W17+ROW()/10000
+             (cached value: 0.0017)
+       A18  'Oscar Day-Duran'
+       B18  8
+       C18  [FORMULA]  =SETTINGS!F38
+             (cached value: 8)
+       D18  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A18,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A18,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 3)
+       K18  'Oscar Day-Duran'
+       L18  [FORMULA]  ='Oscar Day-Duran'!C10
+             (cached value: 'Oscar Day-Duran')
+       M18  [FORMULA]  ='Oscar Day-Duran'!C11
+             (cached value: 'Chinedu Chile')
+       N18  [FORMULA]  ='Oscar Day-Duran'!C12
+             (cached value: 'Nina De Saram')
+       O18  [FORMULA]  ='Oscar Day-Duran'!C13
+             (cached value: 'David Wu')
+       P18  [FORMULA]  ='Oscar Day-Duran'!C14
+             (cached value: 'Joe Paige')
+       Q18  [FORMULA]  ='Oscar Day-Duran'!C5
+             (cached value: 'Joe Paige')
+       R18  [FORMULA]  ='Oscar Day-Duran'!C17
+             (cached value: 50)
+       S18  [FORMULA]  ='Oscar Day-Duran'!C18
+             (cached value: 0)
+       T18  [FORMULA]  =IF($U18="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L18:P18,$D$2:$D$22))+SUMIF($A$2:$A$22,Q18,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 36)
+       U18  [FORMULA]  ='Oscar Day-Duran'!C20
+             (cached value: 'VALID TEAM')
+       V18  [FORMULA]  =T18+ROW()/10000
+             (cached value: 36.0018)
+       W18  [FORMULA]  =SUM('POINTS HISTORY'!C18:V18)
+             (cached value: 0)
+       X18  [FORMULA]  =W18+ROW()/10000
+             (cached value: 0.0018)
+       A19  'Alfie Foley'
+       B19  7.5
+       C19  [FORMULA]  =SETTINGS!F39
+             (cached value: 7.5)
+       D19  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A19,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A19,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 3)
+       K19  'Rebecca Seymour'
+       L19  [FORMULA]  ='Rebecca Seymour'!C10
+             (cached value: 0)
+       M19  [FORMULA]  ='Rebecca Seymour'!C11
+             (cached value: 0)
+       N19  [FORMULA]  ='Rebecca Seymour'!C12
+             (cached value: 0)
+       O19  [FORMULA]  ='Rebecca Seymour'!C13
+             (cached value: 0)
+       P19  [FORMULA]  ='Rebecca Seymour'!C14
+             (cached value: 0)
+       Q19  [FORMULA]  ='Rebecca Seymour'!C5
+             (cached value: 0)
+       R19  [FORMULA]  ='Rebecca Seymour'!C17
+             (cached value: 0)
+       S19  [FORMULA]  ='Rebecca Seymour'!C18
+             (cached value: 50)
+       T19  [FORMULA]  =IF($U19="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L19:P19,$D$2:$D$22))+SUMIF($A$2:$A$22,Q19,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U19  [FORMULA]  ='Rebecca Seymour'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V19  [FORMULA]  =T19+ROW()/10000
+             (cached value: 0.0019)
+       W19  [FORMULA]  =SUM('POINTS HISTORY'!C19:V19)
+             (cached value: 0)
+       X19  [FORMULA]  =W19+ROW()/10000
+             (cached value: 0.0019)
+       A20  'Ava Swinfen'
+       B20  7
+       C20  [FORMULA]  =SETTINGS!F40
+             (cached value: 7)
+       D20  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A20,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A20,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 3)
+       K20  'Rory Bowman'
+       L20  [FORMULA]  ='Rory Bowman'!C10
+             (cached value: 'David Wu')
+       M20  [FORMULA]  ='Rory Bowman'!C11
+             (cached value: 'Ava Swinfen')
+       N20  [FORMULA]  ='Rory Bowman'!C12
+             (cached value: 'Alyza Rai')
+       O20  [FORMULA]  ='Rory Bowman'!C13
+             (cached value: 'Edwin Mayers')
+       P20  [FORMULA]  ='Rory Bowman'!C14
+             (cached value: 'Lia Li')
+       Q20  [FORMULA]  ='Rory Bowman'!C5
+             (cached value: 'Lia Li')
+       R20  [FORMULA]  ='Rory Bowman'!C17
+             (cached value: 50)
+       S20  [FORMULA]  ='Rory Bowman'!C18
+             (cached value: 0)
+       T20  [FORMULA]  =IF($U20="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L20:P20,$D$2:$D$22))+SUMIF($A$2:$A$22,Q20,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 30)
+       U20  [FORMULA]  ='Rory Bowman'!C20
+             (cached value: 'VALID TEAM')
+       V20  [FORMULA]  =T20+ROW()/10000
+             (cached value: 30.002)
+       W20  [FORMULA]  =SUM('POINTS HISTORY'!C20:V20)
+             (cached value: 0)
+       X20  [FORMULA]  =W20+ROW()/10000
+             (cached value: 0.002)
+       A21  'Rory Bowman'
+       B21  7
+       C21  [FORMULA]  =SETTINGS!F41
+             (cached value: 7)
+       D21  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A21,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A21,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 0)
+       K21  'Sophie Barker'
+       L21  [FORMULA]  ='Sophie Barker'!C10
+             (cached value: 0)
+       M21  [FORMULA]  ='Sophie Barker'!C11
+             (cached value: 0)
+       N21  [FORMULA]  ='Sophie Barker'!C12
+             (cached value: 0)
+       O21  [FORMULA]  ='Sophie Barker'!C13
+             (cached value: 0)
+       P21  [FORMULA]  ='Sophie Barker'!C14
+             (cached value: 0)
+       Q21  [FORMULA]  ='Sophie Barker'!C5
+             (cached value: 0)
+       R21  [FORMULA]  ='Sophie Barker'!C17
+             (cached value: 0)
+       S21  [FORMULA]  ='Sophie Barker'!C18
+             (cached value: 50)
+       T21  [FORMULA]  =IF($U21="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L21:P21,$D$2:$D$22))+SUMIF($A$2:$A$22,Q21,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       U21  [FORMULA]  ='Sophie Barker'!C20
+             (cached value: 'LESS THAN 5 PLAYERS')
+       V21  [FORMULA]  =T21+ROW()/10000
+             (cached value: 0.0021)
+       W21  [FORMULA]  =SUM('POINTS HISTORY'!C21:V21)
+             (cached value: 0)
+       X21  [FORMULA]  =W21+ROW()/10000
+             (cached value: 0.0021)
+       A22  'Xander Meijer'
+       B22  7
+       C22  [FORMULA]  =SETTINGS!F42
+             (cached value: 7)
+       D22  [FORMULA]  =IFERROR(IF(INDEX(RawScores,MATCH(A22,RawNames,0))="",0,MAX(ScoreFloor,MIN(ScoreCap,BaseScore+ROUNDDOWN((INDEX(RawScores,MATCH(A22,RawNames,0))-AVERAGE(RawScores))/MAX((MAX(RawScores)-MIN(RawScores))/ScoreStep,0.1),0)))),0)
+             (cached value: 3)
+       K22  'Xander Meijer'
+       L22  [FORMULA]  ='Xander Meijer'!C10
+             (cached value: 'Lia Li')
+       M22  [FORMULA]  ='Xander Meijer'!C11
+             (cached value: 'David Wu')
+       N22  [FORMULA]  ='Xander Meijer'!C12
+             (cached value: 'Ava Swinfen')
+       O22  [FORMULA]  ='Xander Meijer'!C13
+             (cached value: 'Joe Paige')
+       P22  [FORMULA]  ='Xander Meijer'!C14
+             (cached value: 'Melody Zhaeentan')
+       Q22  [FORMULA]  ='Xander Meijer'!C5
+             (cached value: 'Lia Li')
+       R22  [FORMULA]  ='Xander Meijer'!C17
+             (cached value: 49.5)
+       S22  [FORMULA]  ='Xander Meijer'!C18
+             (cached value: 0.5)
+       T22  [FORMULA]  =IF($U22="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L22:P22,$D$2:$D$22))+SUMIF($A$2:$A$22,Q22,$D$2:$D$22)*(CaptainMultiplier-1),0)
+             (cached value: 34)
+       U22  [FORMULA]  ='Xander Meijer'!C20
+             (cached value: 'VALID TEAM')
+       V22  [FORMULA]  =T22+ROW()/10000
+             (cached value: 34.0022)
+       W22  [FORMULA]  =SUM('POINTS HISTORY'!C22:V22)
+             (cached value: 0)
+       X22  [FORMULA]  =W22+ROW()/10000
+             (cached value: 0.0022)
+
+==============================================================================
+SHEET: 'Alexa Amesimeku'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "ALEXA AMESIMEKU'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Sophie Barker'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Sophie Barker'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '18 (×2)')
+       B11  2
+       C11  'Joe Paige'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '8')
+       B12  3
+       C12  'Alexa Amesimeku'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '7')
+       B13  4
+       C13  'Nina De Saram'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '7')
+       B14  5
+       C14  'Xander Meijer'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 43)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Alfie Foley'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "ALFIE FOLEY'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Sophie Barker'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Ava Swinfen'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B11  2
+       C11  'David Wu'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B12  3
+       C12  'Alyza Rai'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '6')
+       B13  4
+       C13  'Sophie Barker'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '18 (×2)')
+       B14  5
+       C14  'Edwin Mayers'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '4')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 36)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Alyza Rai'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "ALYZA RAI'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Ava Swinfen'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "AVA SWINFEN'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Lia Li'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Ava Swinfen'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B11  2
+       C11  'Melody Zhaeentan'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 8.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '6')
+       B12  3
+       C12  'Lia Li'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '12 (×2)')
+       B13  4
+       C13  'Chinedu Chile'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B14  5
+       C14  'David Wu'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 31)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Azlan Husain'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "AZLAN HUSAIN'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Emily Warburton'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Emily Warburton'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '0 (×2)')
+       B11  2
+       C11  'Chinedu Chile'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B12  3
+       C12  'Joe Paige'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '8')
+       B13  4
+       C13  'Alfie Foley'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7.5)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B14  5
+       C14  'Edwin Mayers'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '4')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 49)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 1)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 20)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Chinedu Chile'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "CHINEDU CHILE'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Chinedu Chile'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Chinedu Chile'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '10 (×2)')
+       B11  2
+       C11  'Alexa Amesimeku'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '7')
+       B12  3
+       C12  'David Wu'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B13  4
+       C13  'Edwin Mayers'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '4')
+       B14  5
+       C14  'Azlan Husain'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 31)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Daniel Liu'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "DANIEL LIU'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Alyza Rai'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '6')
+       B11  2
+       C11  'Ava Swinfen'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       C13  'David Wu'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B14  5
+       C14  'Chinedu Chile'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 39)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 11)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'David Wu'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "DAVID WU'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Edwin Mayers'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Azlan Husain'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B11  2
+       C11  'Rebecca Seymour'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '0')
+       B12  3
+       C12  'Edwin Mayers'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '8 (×2)')
+       B13  4
+       C13  'Chinedu Chile'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B14  5
+       C14  'Joe Paige'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '8')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 26)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Edwin Mayers'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "EDWIN MAYERS'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Emily Warburton'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Sophie Barker'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '9')
+       B11  2
+       C11  'Esme Beston'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 8)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '1')
+       B12  3
+       C12  'Edwin Mayers'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '4')
+       B13  4
+       C13  'Emily Warburton'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '0 (×2)')
+       B14  5
+       C14  'Ava Swinfen'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 48)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 2)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 17)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Emily Warburton'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "EMILY WARBURTON'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Esme Beston'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "ESME BESTON'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Iona Smith'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "IONA SMITH'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Joe Paige'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "JOE PAIGE'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Chinedu Chile'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Chinedu Chile'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '10 (×2)')
+       B11  2
+       C11  'Joe Paige'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '8')
+       B12  3
+       C12  'Alfie Foley'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B13  4
+       C13  'Lia Li'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '6')
+       B14  5
+       C14  'Oscar Day-Duran'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 8)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 30)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Lia Li'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "LIA LI'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Melody Zhaeentan'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "MELODY ZHAEENTAN'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Lia Li'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Lia Li'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '12 (×2)')
+       B11  2
+       C11  'Edwin Mayers'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '4')
+       B12  3
+       C12  'Rebecca Seymour'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '0')
+       B13  4
+       C13  'Joe Paige'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '8')
+       B14  5
+       C14  'Xander Meijer'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 49)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 1)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 27)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Nina De Saram'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "NINA DE SARAM'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Oscar Day-Duran'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "OSCAR DAY-DURAN'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Joe Paige'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Oscar Day-Duran'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 8)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B11  2
+       C11  'Chinedu Chile'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 11)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B12  3
+       C12  'Nina De Saram'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '7')
+       B13  4
+       C13  'David Wu'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B14  5
+       C14  'Joe Paige'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '16 (×2)')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 36)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Rebecca Seymour'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "REBECCA SEYMOUR'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Rory Bowman'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "RORY BOWMAN'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Lia Li'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'David Wu'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B11  2
+       C11  'Ava Swinfen'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B12  3
+       C12  'Alyza Rai'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '6')
+       B13  4
+       C13  'Edwin Mayers'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 9)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '4')
+       B14  5
+       C14  'Lia Li'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '12 (×2)')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 50)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 30)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Sophie Barker'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "SOPHIE BARKER'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+       B11  2
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+       B12  3
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+       B13  4
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+       B14  5
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 0)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 50)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 0)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'LESS THAN 5 PLAYERS')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'Xander Meijer'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:E24
+  Max row/col: 24 / 5
+  Protected: False
+
+  Merged ranges (7):
+    B8:E8
+    B22:D24
+    B1:D1
+    B4:D4
+    B16:D16
+    B6:D6
+    B2:D2
+
+  Data validations (2):
+    type=list  formula1=PlayerList  range=C10:C14
+    type=list  formula1=$C$10:$C$14  range=C5
+
+  Column widths: [('A', 4.0), ('B', 32.0), ('C', 34.0), ('D', 20.0), ('E', 12.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  "XANDER MEIJER'S TEAM"
+        B2  '← Back to PICK YOUR TEAM'
+        B4  'PICK YOUR CAPTAIN  (scores 2× points)'
+        C5  'Lia Li'
+        B6  'Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.'
+        B8  'SQUAD'
+        B9  'Slot'
+        C9  'Player'
+        D9  'Price'
+        E9  'Points'
+       B10  1
+       C10  'Lia Li'
+       D10  [FORMULA]  =IF(C10="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 13)
+       E10  [FORMULA]  =IF(C10="","",IF(C10=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C10,PlayerNames,0)),0),"0")))
+             (cached value: '12 (×2)')
+       B11  2
+       C11  'David Wu'
+       D11  [FORMULA]  =IF(C11="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E11  [FORMULA]  =IF(C11="","",IF(C11=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C11,PlayerNames,0)),0),"0")))
+             (cached value: '5')
+       B12  3
+       C12  'Ava Swinfen'
+       D12  [FORMULA]  =IF(C12="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 7)
+       E12  [FORMULA]  =IF(C12="","",IF(C12=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C12,PlayerNames,0)),0),"0")))
+             (cached value: '3')
+       B13  4
+       C13  'Joe Paige'
+       D13  [FORMULA]  =IF(C13="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 10.5)
+       E13  [FORMULA]  =IF(C13="","",IF(C13=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C13,PlayerNames,0)),0),"0")))
+             (cached value: '8')
+       B14  5
+       C14  'Melody Zhaeentan'
+       D14  [FORMULA]  =IF(C14="","",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),""))
+             (cached value: 8.5)
+       E14  [FORMULA]  =IF(C14="","",IF(C14=$C$5,TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0)*CaptainMultiplier,"0")&" (×"&CaptainMultiplier&")",TEXT(IFERROR(INDEX(BasePoints,MATCH(C14,PlayerNames,0)),0),"0")))
+             (cached value: '6')
+       B16  'TEAM SUMMARY'
+       B17  'Team Value'
+       C17  [FORMULA]  =SUM(D10:D14)
+             (cached value: 49.5)
+       B18  'Budget Left'
+       C18  [FORMULA]  =50-C17
+             (cached value: 0.5)
+       B19  'GW Score'
+       C19  [FORMULA]  =IF($C20="VALID TEAM",SUMPRODUCT(SUMIF(PlayerNames,C10:C14,BasePoints))+SUMIF(PlayerNames,$C$5,BasePoints)*(CaptainMultiplier-1),0)
+             (cached value: 34)
+       B20  'Team Status'
+       C20  [FORMULA]  =IF(COUNTBLANK(C10:C14)>0,"LESS THAN 5 PLAYERS",IF(SUM(D10:D14)>50,"OVER BUDGET",IF(C5="","NO CAPTAIN",IF(COUNTIF(C10:C14,C5)=0,"CAPTAIN NOT IN SQUAD",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,"DUPLICATE PLAYER","VALID TEAM")))))
+             (cached value: 'VALID TEAM')
+       B22  "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad."
+
+==============================================================================
+SHEET: 'MASTER DATA'   (state=visible)
+==============================================================================
+  Dimensions (used range): B1:H22
+  Max row/col: 22 / 8
+  Protected: True
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'Manager'
+        C1  'P1'
+        D1  'P2'
+        E1  'P3'
+        F1  'P4'
+        G1  'P5'
+        H1  'Captain'
+        B2  'Alexa Amesimeku'
+        C2  [FORMULA]  ='Alexa Amesimeku'!C10
+             (cached value: 'Sophie Barker')
+        D2  [FORMULA]  ='Alexa Amesimeku'!C11
+             (cached value: 'Joe Paige')
+        E2  [FORMULA]  ='Alexa Amesimeku'!C12
+             (cached value: 'Alexa Amesimeku')
+        F2  [FORMULA]  ='Alexa Amesimeku'!C13
+             (cached value: 'Nina De Saram')
+        G2  [FORMULA]  ='Alexa Amesimeku'!C14
+             (cached value: 'Xander Meijer')
+        H2  [FORMULA]  ='Alexa Amesimeku'!C5
+             (cached value: 'Sophie Barker')
+        B3  'Alfie Foley'
+        C3  [FORMULA]  ='Alfie Foley'!C10
+             (cached value: 'Ava Swinfen')
+        D3  [FORMULA]  ='Alfie Foley'!C11
+             (cached value: 'David Wu')
+        E3  [FORMULA]  ='Alfie Foley'!C12
+             (cached value: 'Alyza Rai')
+        F3  [FORMULA]  ='Alfie Foley'!C13
+             (cached value: 'Sophie Barker')
+        G3  [FORMULA]  ='Alfie Foley'!C14
+             (cached value: 'Edwin Mayers')
+        H3  [FORMULA]  ='Alfie Foley'!C5
+             (cached value: 'Sophie Barker')
+        B4  'Alyza Rai'
+        C4  [FORMULA]  ='Alyza Rai'!C10
+             (cached value: 0)
+        D4  [FORMULA]  ='Alyza Rai'!C11
+             (cached value: 0)
+        E4  [FORMULA]  ='Alyza Rai'!C12
+             (cached value: 0)
+        F4  [FORMULA]  ='Alyza Rai'!C13
+             (cached value: 0)
+        G4  [FORMULA]  ='Alyza Rai'!C14
+             (cached value: 0)
+        H4  [FORMULA]  ='Alyza Rai'!C5
+             (cached value: 0)
+        B5  'Ava Swinfen'
+        C5  [FORMULA]  ='Ava Swinfen'!C10
+             (cached value: 'Ava Swinfen')
+        D5  [FORMULA]  ='Ava Swinfen'!C11
+             (cached value: 'Melody Zhaeentan')
+        E5  [FORMULA]  ='Ava Swinfen'!C12
+             (cached value: 'Lia Li')
+        F5  [FORMULA]  ='Ava Swinfen'!C13
+             (cached value: 'Chinedu Chile')
+        G5  [FORMULA]  ='Ava Swinfen'!C14
+             (cached value: 'David Wu')
+        H5  [FORMULA]  ='Ava Swinfen'!C5
+             (cached value: 'Lia Li')
+        B6  'Azlan Husain'
+        C6  [FORMULA]  ='Azlan Husain'!C10
+             (cached value: 'Emily Warburton')
+        D6  [FORMULA]  ='Azlan Husain'!C11
+             (cached value: 'Chinedu Chile')
+        E6  [FORMULA]  ='Azlan Husain'!C12
+             (cached value: 'Joe Paige')
+        F6  [FORMULA]  ='Azlan Husain'!C13
+             (cached value: 'Alfie Foley')
+        G6  [FORMULA]  ='Azlan Husain'!C14
+             (cached value: 'Edwin Mayers')
+        H6  [FORMULA]  ='Azlan Husain'!C5
+             (cached value: 'Emily Warburton')
+        B7  'Chinedu Chile'
+        C7  [FORMULA]  ='Chinedu Chile'!C10
+             (cached value: 'Chinedu Chile')
+        D7  [FORMULA]  ='Chinedu Chile'!C11
+             (cached value: 'Alexa Amesimeku')
+        E7  [FORMULA]  ='Chinedu Chile'!C12
+             (cached value: 'David Wu')
+        F7  [FORMULA]  ='Chinedu Chile'!C13
+             (cached value: 'Edwin Mayers')
+        G7  [FORMULA]  ='Chinedu Chile'!C14
+             (cached value: 'Azlan Husain')
+        H7  [FORMULA]  ='Chinedu Chile'!C5
+             (cached value: 'Chinedu Chile')
+        B8  'Daniel Liu'
+        C8  [FORMULA]  ='Daniel Liu'!C10
+             (cached value: 'Alyza Rai')
+        D8  [FORMULA]  ='Daniel Liu'!C11
+             (cached value: 'Ava Swinfen')
+        E8  [FORMULA]  ='Daniel Liu'!C12
+             (cached value: 0)
+        F8  [FORMULA]  ='Daniel Liu'!C13
+             (cached value: 'David Wu')
+        G8  [FORMULA]  ='Daniel Liu'!C14
+             (cached value: 'Chinedu Chile')
+        H8  [FORMULA]  ='Daniel Liu'!C5
+             (cached value: 0)
+        B9  'David Wu'
+        C9  [FORMULA]  ='David Wu'!C10
+             (cached value: 'Azlan Husain')
+        D9  [FORMULA]  ='David Wu'!C11
+             (cached value: 'Rebecca Seymour')
+        E9  [FORMULA]  ='David Wu'!C12
+             (cached value: 'Edwin Mayers')
+        F9  [FORMULA]  ='David Wu'!C13
+             (cached value: 'Chinedu Chile')
+        G9  [FORMULA]  ='David Wu'!C14
+             (cached value: 'Joe Paige')
+        H9  [FORMULA]  ='David Wu'!C5
+             (cached value: 'Edwin Mayers')
+       B10  'Edwin Mayers'
+       C10  [FORMULA]  ='Edwin Mayers'!C10
+             (cached value: 'Sophie Barker')
+       D10  [FORMULA]  ='Edwin Mayers'!C11
+             (cached value: 'Esme Beston')
+       E10  [FORMULA]  ='Edwin Mayers'!C12
+             (cached value: 'Edwin Mayers')
+       F10  [FORMULA]  ='Edwin Mayers'!C13
+             (cached value: 'Emily Warburton')
+       G10  [FORMULA]  ='Edwin Mayers'!C14
+             (cached value: 'Ava Swinfen')
+       H10  [FORMULA]  ='Edwin Mayers'!C5
+             (cached value: 'Emily Warburton')
+       B11  'Emily Warburton'
+       C11  [FORMULA]  ='Emily Warburton'!C10
+             (cached value: 0)
+       D11  [FORMULA]  ='Emily Warburton'!C11
+             (cached value: 0)
+       E11  [FORMULA]  ='Emily Warburton'!C12
+             (cached value: 0)
+       F11  [FORMULA]  ='Emily Warburton'!C13
+             (cached value: 0)
+       G11  [FORMULA]  ='Emily Warburton'!C14
+             (cached value: 0)
+       H11  [FORMULA]  ='Emily Warburton'!C5
+             (cached value: 0)
+       B12  'Esme Beston'
+       C12  [FORMULA]  ='Esme Beston'!C10
+             (cached value: 0)
+       D12  [FORMULA]  ='Esme Beston'!C11
+             (cached value: 0)
+       E12  [FORMULA]  ='Esme Beston'!C12
+             (cached value: 0)
+       F12  [FORMULA]  ='Esme Beston'!C13
+             (cached value: 0)
+       G12  [FORMULA]  ='Esme Beston'!C14
+             (cached value: 0)
+       H12  [FORMULA]  ='Esme Beston'!C5
+             (cached value: 0)
+       B13  'Iona Smith'
+       C13  [FORMULA]  ='Iona Smith'!C10
+             (cached value: 0)
+       D13  [FORMULA]  ='Iona Smith'!C11
+             (cached value: 0)
+       E13  [FORMULA]  ='Iona Smith'!C12
+             (cached value: 0)
+       F13  [FORMULA]  ='Iona Smith'!C13
+             (cached value: 0)
+       G13  [FORMULA]  ='Iona Smith'!C14
+             (cached value: 0)
+       H13  [FORMULA]  ='Iona Smith'!C5
+             (cached value: 0)
+       B14  'Joe Paige'
+       C14  [FORMULA]  ='Joe Paige'!C10
+             (cached value: 'Chinedu Chile')
+       D14  [FORMULA]  ='Joe Paige'!C11
+             (cached value: 'Joe Paige')
+       E14  [FORMULA]  ='Joe Paige'!C12
+             (cached value: 'Alfie Foley')
+       F14  [FORMULA]  ='Joe Paige'!C13
+             (cached value: 'Lia Li')
+       G14  [FORMULA]  ='Joe Paige'!C14
+             (cached value: 'Oscar Day-Duran')
+       H14  [FORMULA]  ='Joe Paige'!C5
+             (cached value: 'Chinedu Chile')
+       B15  'Lia Li'
+       C15  [FORMULA]  ='Lia Li'!C10
+             (cached value: 0)
+       D15  [FORMULA]  ='Lia Li'!C11
+             (cached value: 0)
+       E15  [FORMULA]  ='Lia Li'!C12
+             (cached value: 0)
+       F15  [FORMULA]  ='Lia Li'!C13
+             (cached value: 0)
+       G15  [FORMULA]  ='Lia Li'!C14
+             (cached value: 0)
+       H15  [FORMULA]  ='Lia Li'!C5
+             (cached value: 0)
+       B16  'Melody Zhaeentan'
+       C16  [FORMULA]  ='Melody Zhaeentan'!C10
+             (cached value: 'Lia Li')
+       D16  [FORMULA]  ='Melody Zhaeentan'!C11
+             (cached value: 'Edwin Mayers')
+       E16  [FORMULA]  ='Melody Zhaeentan'!C12
+             (cached value: 'Rebecca Seymour')
+       F16  [FORMULA]  ='Melody Zhaeentan'!C13
+             (cached value: 'Joe Paige')
+       G16  [FORMULA]  ='Melody Zhaeentan'!C14
+             (cached value: 'Xander Meijer')
+       H16  [FORMULA]  ='Melody Zhaeentan'!C5
+             (cached value: 'Lia Li')
+       B17  'Nina De Saram'
+       C17  [FORMULA]  ='Nina De Saram'!C10
+             (cached value: 0)
+       D17  [FORMULA]  ='Nina De Saram'!C11
+             (cached value: 0)
+       E17  [FORMULA]  ='Nina De Saram'!C12
+             (cached value: 0)
+       F17  [FORMULA]  ='Nina De Saram'!C13
+             (cached value: 0)
+       G17  [FORMULA]  ='Nina De Saram'!C14
+             (cached value: 0)
+       H17  [FORMULA]  ='Nina De Saram'!C5
+             (cached value: 0)
+       B18  'Oscar Day-Duran'
+       C18  [FORMULA]  ='Oscar Day-Duran'!C10
+             (cached value: 'Oscar Day-Duran')
+       D18  [FORMULA]  ='Oscar Day-Duran'!C11
+             (cached value: 'Chinedu Chile')
+       E18  [FORMULA]  ='Oscar Day-Duran'!C12
+             (cached value: 'Nina De Saram')
+       F18  [FORMULA]  ='Oscar Day-Duran'!C13
+             (cached value: 'David Wu')
+       G18  [FORMULA]  ='Oscar Day-Duran'!C14
+             (cached value: 'Joe Paige')
+       H18  [FORMULA]  ='Oscar Day-Duran'!C5
+             (cached value: 'Joe Paige')
+       B19  'Rebecca Seymour'
+       C19  [FORMULA]  ='Rebecca Seymour'!C10
+             (cached value: 0)
+       D19  [FORMULA]  ='Rebecca Seymour'!C11
+             (cached value: 0)
+       E19  [FORMULA]  ='Rebecca Seymour'!C12
+             (cached value: 0)
+       F19  [FORMULA]  ='Rebecca Seymour'!C13
+             (cached value: 0)
+       G19  [FORMULA]  ='Rebecca Seymour'!C14
+             (cached value: 0)
+       H19  [FORMULA]  ='Rebecca Seymour'!C5
+             (cached value: 0)
+       B20  'Rory Bowman'
+       C20  [FORMULA]  ='Rory Bowman'!C10
+             (cached value: 'David Wu')
+       D20  [FORMULA]  ='Rory Bowman'!C11
+             (cached value: 'Ava Swinfen')
+       E20  [FORMULA]  ='Rory Bowman'!C12
+             (cached value: 'Alyza Rai')
+       F20  [FORMULA]  ='Rory Bowman'!C13
+             (cached value: 'Edwin Mayers')
+       G20  [FORMULA]  ='Rory Bowman'!C14
+             (cached value: 'Lia Li')
+       H20  [FORMULA]  ='Rory Bowman'!C5
+             (cached value: 'Lia Li')
+       B21  'Sophie Barker'
+       C21  [FORMULA]  ='Sophie Barker'!C10
+             (cached value: 0)
+       D21  [FORMULA]  ='Sophie Barker'!C11
+             (cached value: 0)
+       E21  [FORMULA]  ='Sophie Barker'!C12
+             (cached value: 0)
+       F21  [FORMULA]  ='Sophie Barker'!C13
+             (cached value: 0)
+       G21  [FORMULA]  ='Sophie Barker'!C14
+             (cached value: 0)
+       H21  [FORMULA]  ='Sophie Barker'!C5
+             (cached value: 0)
+       B22  'Xander Meijer'
+       C22  [FORMULA]  ='Xander Meijer'!C10
+             (cached value: 'Lia Li')
+       D22  [FORMULA]  ='Xander Meijer'!C11
+             (cached value: 'David Wu')
+       E22  [FORMULA]  ='Xander Meijer'!C12
+             (cached value: 'Ava Swinfen')
+       F22  [FORMULA]  ='Xander Meijer'!C13
+             (cached value: 'Joe Paige')
+       G22  [FORMULA]  ='Xander Meijer'!C14
+             (cached value: 'Melody Zhaeentan')
+       H22  [FORMULA]  ='Xander Meijer'!C5
+             (cached value: 'Lia Li')
+
+==============================================================================
+SHEET: '_DIAGNOSTICS'   (state=veryHidden)
+==============================================================================
+  Dimensions (used range): A1:B17
+  Max row/col: 17 / 2
+  Protected: False
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        A1  'Script version'
+        B1  '2.0.0'
+        A2  'Schema version'
+        B2  3
+        A3  'Generated'
+        B3  '2026-10-03T06:12:14.156703'
+        A4  'Managers'
+        B4  21
+        A5  'Player rows'
+        B5  '22–42'
+        A6  'Result rows'
+        B6  '6–25'
+        A7  'Calc rows'
+        B7  '2–22'
+       A10  'Drift checks'
+       A11  'In CALCULATIONS but not TEST RESULTS'
+       B11  'Emily Warburton'
+       A12  'Sheet exists but not in menu'
+       B12  ' Overall Leaderboard'
+       A13  'Sheet exists but not in menu'
+       B13  'GW Leaderboard'
+       A14  'Sheet exists but not in menu'
+       B14  'HOME'
+       A15  'Sheet exists but not in menu'
+       B15  'PLAYER MARKET'
+       A16  'Sheet exists but not in menu'
+       B16  'RAW RESULTS'
+       A17  'Sheet exists but not in menu'
+       B17  'RULES'
+
+==============================================================================
+SHEET: 'POINTS HISTORY'   (state=hidden)
+==============================================================================
+  Dimensions (used range): B1:V22
+  Max row/col: 22 / 22
+  Protected: False
+
+  Column widths: [('B', 24.0)]
+
+  CELLS (non-empty only)
+  --------------------------------------------------------------------------
+        B1  'Manager'
+        C1  'GW1'
+        D1  'GW2'
+        E1  'GW3'
+        F1  'GW4'
+        G1  'GW5'
+        H1  'GW6'
+        I1  'GW7'
+        J1  'GW8'
+        K1  'GW9'
+        L1  'GW10'
+        M1  'GW11'
+        N1  'GW12'
+        O1  'GW13'
+        P1  'GW14'
+        Q1  'GW15'
+        R1  'GW16'
+        S1  'GW17'
+        T1  'GW18'
+        U1  'GW19'
+        V1  'GW20'
+        B2  'Alexa Amesimeku'
+        C2  0
+        B3  'Alfie Foley'
+        C3  0
+        B4  'Alyza Rai'
+        C4  0
+        B5  'Ava Swinfen'
+        C5  0
+        B6  'Azlan Husain'
+        C6  0
+        B7  'Chinedu Chile'
+        C7  0
+        B8  'Daniel Liu'
+        C8  0
+        B9  'David Wu'
+        C9  0
+       B10  'Edwin Mayers'
+       C10  0
+       B11  'Emily Warburton'
+       C11  0
+       B12  'Esme Beston'
+       C12  0
+       B13  'Iona Smith'
+       C13  0
+       B14  'Joe Paige'
+       C14  0
+       B15  'Lia Li'
+       C15  0
+       B16  'Melody Zhaeentan'
+       C16  0
+       B17  'Nina De Saram'
+       C17  0
+       B18  'Oscar Day-Duran'
+       C18  0
+       B19  'Rebecca Seymour'
+       C19  0
+       B20  'Rory Bowman'
+       C20  0
+       B21  'Sophie Barker'
+       C21  0
+       B22  'Xander Meijer'
+       C22  0
+
