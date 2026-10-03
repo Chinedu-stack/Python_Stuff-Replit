@@ -1,0 +1,345 @@
+{
+  "state": "visible",
+  "merged": [
+    "B8:E8",
+    "B22:D24",
+    "B1:D1",
+    "B4:D4",
+    "B16:D16",
+    "B6:D6",
+    "B2:D2"
+  ],
+  "data_validations": [
+    {
+      "type": "list",
+      "formula1": "$C$10:$C$14",
+      "formula2": null,
+      "allow_blank": true,
+      "sqref": "C5"
+    }
+  ],
+  "key_cells": {
+    "B1": {
+      "v": "DAVID WU'S TEAM",
+      "f": null
+    },
+    "B2": {
+      "v": "\u2190 Back to PICK YOUR TEAM",
+      "f": null
+    },
+    "B4": {
+      "v": "PICK YOUR CAPTAIN  (scores 2\u00d7 points)",
+      "f": null
+    },
+    "C5": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B6": {
+      "v": "Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.",
+      "f": null
+    },
+    "B8": {
+      "v": "SQUAD",
+      "f": null
+    },
+    "B9": {
+      "v": "Slot",
+      "f": null
+    },
+    "C9": {
+      "v": "Player",
+      "f": null
+    },
+    "D9": {
+      "v": "Price",
+      "f": null
+    },
+    "E9": {
+      "v": "Points",
+      "f": null
+    },
+    "B10": {
+      "v": 1,
+      "f": null
+    },
+    "C10": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "D10": {
+      "v": 10,
+      "f": "=IF(C10=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E10": {
+      "v": "5",
+      "f": "=IF(C10=\"\",\"\",IF(C10=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B11": {
+      "v": 2,
+      "f": null
+    },
+    "C11": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "D11": {
+      "v": 9.5,
+      "f": "=IF(C11=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E11": {
+      "v": "0",
+      "f": "=IF(C11=\"\",\"\",IF(C11=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B12": {
+      "v": 3,
+      "f": null
+    },
+    "C12": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "D12": {
+      "v": 9,
+      "f": "=IF(C12=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E12": {
+      "v": "8 (\u00d72)",
+      "f": "=IF(C12=\"\",\"\",IF(C12=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B13": {
+      "v": 4,
+      "f": null
+    },
+    "C13": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "D13": {
+      "v": 11,
+      "f": "=IF(C13=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E13": {
+      "v": "5",
+      "f": "=IF(C13=\"\",\"\",IF(C13=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B14": {
+      "v": 5,
+      "f": null
+    },
+    "C14": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "D14": {
+      "v": 10.5,
+      "f": "=IF(C14=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E14": {
+      "v": "8",
+      "f": "=IF(C14=\"\",\"\",IF(C14=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B16": {
+      "v": "TEAM SUMMARY",
+      "f": null
+    },
+    "B17": {
+      "v": "Team Value",
+      "f": null
+    },
+    "C17": {
+      "v": 50,
+      "f": "=SUM(D10:D14)"
+    },
+    "B18": {
+      "v": "Budget Left",
+      "f": null
+    },
+    "C18": {
+      "v": 0,
+      "f": "=50-C17"
+    },
+    "B19": {
+      "v": "GW Score",
+      "f": null
+    },
+    "C19": {
+      "v": 26,
+      "f": "=IF($C$20=\"VALID TEAM\",SUMPRODUCT(SUMIF(CALCULATIONS!$A$2:$A$22,C10:C14,CALCULATIONS!$D$2:$D$22))+SUMIF(CALCULATIONS!$A$2:$A$22,C5,CALCULATIONS!$D$2:$D$22),0)"
+    },
+    "B20": {
+      "v": "Team Status",
+      "f": null
+    },
+    "C20": {
+      "v": "VALID TEAM",
+      "f": "=IF(COUNTBLANK(C10:C14)>0,\"LESS THAN 5 PLAYERS\",IF(SUM(D10:D14)>50,\"OVER BUDGET\",IF(C5=\"\",\"NO CAPTAIN\",IF(COUNTIF(C10:C14,C5)=0,\"CAPTAIN NOT IN SQUAD\",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,\"DUPLICATE PLAYER\",\"VALID TEAM\")))))"
+    },
+    "B22": {
+      "v": "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad.",
+      "f": null
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "DAVID WU'S TEAM",
+      "f": null
+    },
+    "B2": {
+      "v": "\u2190 Back to PICK YOUR TEAM",
+      "f": null
+    },
+    "B4": {
+      "v": "PICK YOUR CAPTAIN  (scores 2\u00d7 points)",
+      "f": null
+    },
+    "C5": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B6": {
+      "v": "Step 1: Pick 5 players.  Step 2: Choose your captain in the GOLD box above.",
+      "f": null
+    },
+    "B8": {
+      "v": "SQUAD",
+      "f": null
+    },
+    "B9": {
+      "v": "Slot",
+      "f": null
+    },
+    "C9": {
+      "v": "Player",
+      "f": null
+    },
+    "D9": {
+      "v": "Price",
+      "f": null
+    },
+    "E9": {
+      "v": "Points",
+      "f": null
+    },
+    "B10": {
+      "v": 1,
+      "f": null
+    },
+    "C10": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "D10": {
+      "v": 10,
+      "f": "=IF(C10=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E10": {
+      "v": "5",
+      "f": "=IF(C10=\"\",\"\",IF(C10=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C10,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B11": {
+      "v": 2,
+      "f": null
+    },
+    "C11": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "D11": {
+      "v": 9.5,
+      "f": "=IF(C11=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E11": {
+      "v": "0",
+      "f": "=IF(C11=\"\",\"\",IF(C11=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C11,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B12": {
+      "v": 3,
+      "f": null
+    },
+    "C12": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "D12": {
+      "v": 9,
+      "f": "=IF(C12=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E12": {
+      "v": "8 (\u00d72)",
+      "f": "=IF(C12=\"\",\"\",IF(C12=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C12,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B13": {
+      "v": 4,
+      "f": null
+    },
+    "C13": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "D13": {
+      "v": 11,
+      "f": "=IF(C13=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E13": {
+      "v": "5",
+      "f": "=IF(C13=\"\",\"\",IF(C13=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C13,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B14": {
+      "v": 5,
+      "f": null
+    },
+    "C14": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "D14": {
+      "v": 10.5,
+      "f": "=IF(C14=\"\",\"\",IFERROR(INDEX(CALCULATIONS!$C$2:$C$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),\"\"))"
+    },
+    "E14": {
+      "v": "8",
+      "f": "=IF(C14=\"\",\"\",IF(C14=$C$5,TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),0)*2,\"0\")&\" (\u00d72)\",TEXT(IFERROR(INDEX(CALCULATIONS!$D$2:$D$22,MATCH(C14,CALCULATIONS!$A$2:$A$22,0)),0),\"0\")))"
+    },
+    "B16": {
+      "v": "TEAM SUMMARY",
+      "f": null
+    },
+    "B17": {
+      "v": "Team Value",
+      "f": null
+    },
+    "C17": {
+      "v": 50,
+      "f": "=SUM(D10:D14)"
+    },
+    "B18": {
+      "v": "Budget Left",
+      "f": null
+    },
+    "C18": {
+      "v": 0,
+      "f": "=50-C17"
+    },
+    "B19": {
+      "v": "GW Score",
+      "f": null
+    },
+    "C19": {
+      "v": 26,
+      "f": "=IF($C$20=\"VALID TEAM\",SUMPRODUCT(SUMIF(CALCULATIONS!$A$2:$A$22,C10:C14,CALCULATIONS!$D$2:$D$22))+SUMIF(CALCULATIONS!$A$2:$A$22,C5,CALCULATIONS!$D$2:$D$22),0)"
+    },
+    "B20": {
+      "v": "Team Status",
+      "f": null
+    },
+    "C20": {
+      "v": "VALID TEAM",
+      "f": "=IF(COUNTBLANK(C10:C14)>0,\"LESS THAN 5 PLAYERS\",IF(SUM(D10:D14)>50,\"OVER BUDGET\",IF(C5=\"\",\"NO CAPTAIN\",IF(COUNTIF(C10:C14,C5)=0,\"CAPTAIN NOT IN SQUAD\",IF(SUMPRODUCT(COUNTIF(C10:C14,C10:C14))>5,\"DUPLICATE PLAYER\",\"VALID TEAM\")))))"
+    },
+    "B22": {
+      "v": "INPUT CELLS ARE GOLD.\nOnly the captain cell (C5) and the 5 player cells (C10:C14) should be edited.\nDo NOT type 'CAPTAIN' anywhere in the squad.",
+      "f": null
+    }
+  }
+}

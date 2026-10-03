@@ -1,0 +1,195 @@
+{
+  "state": "visible",
+  "merged": [
+    "B1:C1",
+    "B2:C2"
+  ],
+  "data_validations": [],
+  "key_cells": {},
+  "used_range": {
+    "B1": {
+      "v": "PICK YOUR TEAM",
+      "f": null
+    },
+    "B2": {
+      "v": "Click your name to jump to your team sheet.",
+      "f": null
+    },
+    "B4": {
+      "v": "Manager",
+      "f": null
+    },
+    "C4": {
+      "v": "Status: 11/20",
+      "f": "=\"Status: \" & COUNTIF(C6:C26,\"VALID TEAM\") & \"/\" & COUNTA(B6:B26)"
+    },
+    "B5": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "C5": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U2"
+    },
+    "B6": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "C6": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U3"
+    },
+    "B7": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "C7": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U4"
+    },
+    "B8": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "C8": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U5"
+    },
+    "B9": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "C9": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U6"
+    },
+    "B10": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "C10": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U7"
+    },
+    "B11": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "C11": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U8"
+    },
+    "B12": {
+      "v": "David Wu",
+      "f": null
+    },
+    "C12": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U9"
+    },
+    "B13": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "C13": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U10"
+    },
+    "B14": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "C14": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U11"
+    },
+    "B15": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "C15": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U12"
+    },
+    "B16": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "C16": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U13"
+    },
+    "B17": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "C17": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U14"
+    },
+    "B18": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "C18": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U15"
+    },
+    "B19": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "C19": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U16"
+    },
+    "B20": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "C20": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U17"
+    },
+    "B21": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "C21": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U18"
+    },
+    "B22": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "C22": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U19"
+    },
+    "B23": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "C23": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U20"
+    },
+    "B24": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "C24": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "=CALCULATIONS!U21"
+    },
+    "B25": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "C25": {
+      "v": "VALID TEAM",
+      "f": "=CALCULATIONS!U22"
+    }
+  }
+}

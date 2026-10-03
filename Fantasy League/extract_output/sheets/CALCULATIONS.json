@@ -1,0 +1,2825 @@
+{
+  "state": "hidden",
+  "merged": [],
+  "data_validations": [],
+  "key_cells": {
+    "A1": {
+      "v": "Player",
+      "f": null
+    },
+    "B1": {
+      "v": "Base",
+      "f": null
+    },
+    "C1": {
+      "v": "Current",
+      "f": null
+    },
+    "D1": {
+      "v": "Pts",
+      "f": null
+    },
+    "K1": {
+      "v": "Manager",
+      "f": null
+    },
+    "L1": {
+      "v": "P1",
+      "f": null
+    },
+    "M1": {
+      "v": "P2",
+      "f": null
+    },
+    "N1": {
+      "v": "P3",
+      "f": null
+    },
+    "O1": {
+      "v": "P4",
+      "f": null
+    },
+    "P1": {
+      "v": "P5",
+      "f": null
+    },
+    "Q1": {
+      "v": "Captain",
+      "f": null
+    },
+    "R1": {
+      "v": "Team Value",
+      "f": null
+    },
+    "S1": {
+      "v": "Budget Left",
+      "f": null
+    },
+    "T1": {
+      "v": "GW Score",
+      "f": null
+    },
+    "U1": {
+      "v": "Status",
+      "f": null
+    },
+    "V1": {
+      "v": "Tiebreak",
+      "f": null
+    },
+    "A2": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "B2": {
+      "v": 13,
+      "f": null
+    },
+    "C2": {
+      "v": 13,
+      "f": "=SETTINGS!F22"
+    },
+    "D2": {
+      "v": 6,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A2,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A2,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K2": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "L2": {
+      "v": "Sophie Barker",
+      "f": "='Alexa Amesimeku'!C10"
+    },
+    "M2": {
+      "v": "Joe Paige",
+      "f": "='Alexa Amesimeku'!C11"
+    },
+    "N2": {
+      "v": "Alexa Amesimeku",
+      "f": "='Alexa Amesimeku'!C12"
+    },
+    "O2": {
+      "v": "Nina De Saram",
+      "f": "='Alexa Amesimeku'!C13"
+    },
+    "P2": {
+      "v": "Xander Meijer",
+      "f": "='Alexa Amesimeku'!C14"
+    },
+    "Q2": {
+      "v": "Sophie Barker",
+      "f": "='Alexa Amesimeku'!C5"
+    },
+    "R2": {
+      "v": 50,
+      "f": "='Alexa Amesimeku'!C17"
+    },
+    "S2": {
+      "v": 0,
+      "f": "='Alexa Amesimeku'!C18"
+    },
+    "T2": {
+      "v": 43,
+      "f": "=IF($U2=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L2:P2,$D$2:$D$22))+SUMIF($A$2:$A$22,Q2,$D$2:$D$22),0)"
+    },
+    "U2": {
+      "v": "VALID TEAM",
+      "f": "='Alexa Amesimeku'!C20"
+    },
+    "V2": {
+      "v": 43.0002,
+      "f": "=T2+ROW()/10000"
+    },
+    "A3": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "B3": {
+      "v": 13,
+      "f": null
+    },
+    "C3": {
+      "v": 13,
+      "f": "=SETTINGS!F23"
+    },
+    "D3": {
+      "v": 9,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A3,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A3,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K3": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "L3": {
+      "v": "Ava Swinfen",
+      "f": "='Alfie Foley'!C10"
+    },
+    "M3": {
+      "v": "David Wu",
+      "f": "='Alfie Foley'!C11"
+    },
+    "N3": {
+      "v": "Alyza Rai",
+      "f": "='Alfie Foley'!C12"
+    },
+    "O3": {
+      "v": "Sophie Barker",
+      "f": "='Alfie Foley'!C13"
+    },
+    "P3": {
+      "v": "Edwin Mayers",
+      "f": "='Alfie Foley'!C14"
+    },
+    "Q3": {
+      "v": "Sophie Barker",
+      "f": "='Alfie Foley'!C5"
+    },
+    "R3": {
+      "v": 50,
+      "f": "='Alfie Foley'!C17"
+    },
+    "S3": {
+      "v": 0,
+      "f": "='Alfie Foley'!C18"
+    },
+    "T3": {
+      "v": 36,
+      "f": "=IF($U3=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L3:P3,$D$2:$D$22))+SUMIF($A$2:$A$22,Q3,$D$2:$D$22),0)"
+    },
+    "U3": {
+      "v": "VALID TEAM",
+      "f": "='Alfie Foley'!C20"
+    },
+    "V3": {
+      "v": 36.0003,
+      "f": "=T3+ROW()/10000"
+    },
+    "A4": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "B4": {
+      "v": 11,
+      "f": null
+    },
+    "C4": {
+      "v": 11,
+      "f": "=SETTINGS!F24"
+    },
+    "D4": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A4,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A4,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K4": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "L4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C10"
+    },
+    "M4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C11"
+    },
+    "N4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C12"
+    },
+    "O4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C13"
+    },
+    "P4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C14"
+    },
+    "Q4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C5"
+    },
+    "R4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C17"
+    },
+    "S4": {
+      "v": 50,
+      "f": "='Alyza Rai'!C18"
+    },
+    "T4": {
+      "v": 0,
+      "f": "=IF($U4=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L4:P4,$D$2:$D$22))+SUMIF($A$2:$A$22,Q4,$D$2:$D$22),0)"
+    },
+    "U4": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Alyza Rai'!C20"
+    },
+    "V4": {
+      "v": 0.0004,
+      "f": "=T4+ROW()/10000"
+    },
+    "A5": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "B5": {
+      "v": 11,
+      "f": null
+    },
+    "C5": {
+      "v": 11,
+      "f": "=SETTINGS!F25"
+    },
+    "D5": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A5,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A5,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K5": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "L5": {
+      "v": "Ava Swinfen",
+      "f": "='Ava Swinfen'!C10"
+    },
+    "M5": {
+      "v": "Melody Zhaeentan",
+      "f": "='Ava Swinfen'!C11"
+    },
+    "N5": {
+      "v": "Lia Li",
+      "f": "='Ava Swinfen'!C12"
+    },
+    "O5": {
+      "v": "Chinedu Chile",
+      "f": "='Ava Swinfen'!C13"
+    },
+    "P5": {
+      "v": "David Wu",
+      "f": "='Ava Swinfen'!C14"
+    },
+    "Q5": {
+      "v": "Lia Li",
+      "f": "='Ava Swinfen'!C5"
+    },
+    "R5": {
+      "v": 50,
+      "f": "='Ava Swinfen'!C17"
+    },
+    "S5": {
+      "v": 0,
+      "f": "='Ava Swinfen'!C18"
+    },
+    "T5": {
+      "v": 31,
+      "f": "=IF($U5=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L5:P5,$D$2:$D$22))+SUMIF($A$2:$A$22,Q5,$D$2:$D$22),0)"
+    },
+    "U5": {
+      "v": "VALID TEAM",
+      "f": "='Ava Swinfen'!C20"
+    },
+    "V5": {
+      "v": 31.0005,
+      "f": "=T5+ROW()/10000"
+    },
+    "A6": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "B6": {
+      "v": 10.5,
+      "f": null
+    },
+    "C6": {
+      "v": 10.5,
+      "f": "=SETTINGS!F26"
+    },
+    "D6": {
+      "v": 6,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A6,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A6,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K6": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "L6": {
+      "v": "Emily Warburton",
+      "f": "='Azlan Husain'!C10"
+    },
+    "M6": {
+      "v": "Chinedu Chile",
+      "f": "='Azlan Husain'!C11"
+    },
+    "N6": {
+      "v": "Joe Paige",
+      "f": "='Azlan Husain'!C12"
+    },
+    "O6": {
+      "v": "Alfie Foley",
+      "f": "='Azlan Husain'!C13"
+    },
+    "P6": {
+      "v": "Edwin Mayers",
+      "f": "='Azlan Husain'!C14"
+    },
+    "Q6": {
+      "v": "Emily Warburton",
+      "f": "='Azlan Husain'!C5"
+    },
+    "R6": {
+      "v": 49,
+      "f": "='Azlan Husain'!C17"
+    },
+    "S6": {
+      "v": 1,
+      "f": "='Azlan Husain'!C18"
+    },
+    "T6": {
+      "v": 20,
+      "f": "=IF($U6=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L6:P6,$D$2:$D$22))+SUMIF($A$2:$A$22,Q6,$D$2:$D$22),0)"
+    },
+    "U6": {
+      "v": "VALID TEAM",
+      "f": "='Azlan Husain'!C20"
+    },
+    "V6": {
+      "v": 20.0006,
+      "f": "=T6+ROW()/10000"
+    },
+    "A7": {
+      "v": "David Wu",
+      "f": null
+    },
+    "B7": {
+      "v": 10.5,
+      "f": null
+    },
+    "C7": {
+      "v": 10.5,
+      "f": "=SETTINGS!F27"
+    },
+    "D7": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A7,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A7,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K7": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "L7": {
+      "v": "Chinedu Chile",
+      "f": "='Chinedu Chile'!C10"
+    },
+    "M7": {
+      "v": "Alexa Amesimeku",
+      "f": "='Chinedu Chile'!C11"
+    },
+    "N7": {
+      "v": "David Wu",
+      "f": "='Chinedu Chile'!C12"
+    },
+    "O7": {
+      "v": "Edwin Mayers",
+      "f": "='Chinedu Chile'!C13"
+    },
+    "P7": {
+      "v": "Azlan Husain",
+      "f": "='Chinedu Chile'!C14"
+    },
+    "Q7": {
+      "v": "Chinedu Chile",
+      "f": "='Chinedu Chile'!C5"
+    },
+    "R7": {
+      "v": 50,
+      "f": "='Chinedu Chile'!C17"
+    },
+    "S7": {
+      "v": 0,
+      "f": "='Chinedu Chile'!C18"
+    },
+    "T7": {
+      "v": 31,
+      "f": "=IF($U7=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L7:P7,$D$2:$D$22))+SUMIF($A$2:$A$22,Q7,$D$2:$D$22),0)"
+    },
+    "U7": {
+      "v": "VALID TEAM",
+      "f": "='Chinedu Chile'!C20"
+    },
+    "V7": {
+      "v": 31.0007,
+      "f": "=T7+ROW()/10000"
+    },
+    "A8": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "B8": {
+      "v": 10.5,
+      "f": null
+    },
+    "C8": {
+      "v": 10.5,
+      "f": "=SETTINGS!F28"
+    },
+    "D8": {
+      "v": 8,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A8,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A8,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K8": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "L8": {
+      "v": "Alyza Rai",
+      "f": "='Daniel Liu'!C10"
+    },
+    "M8": {
+      "v": "Ava Swinfen",
+      "f": "='Daniel Liu'!C11"
+    },
+    "N8": {
+      "v": 0,
+      "f": "='Daniel Liu'!C12"
+    },
+    "O8": {
+      "v": "David Wu",
+      "f": "='Daniel Liu'!C13"
+    },
+    "P8": {
+      "v": "Chinedu Chile",
+      "f": "='Daniel Liu'!C14"
+    },
+    "Q8": {
+      "v": 0,
+      "f": "='Daniel Liu'!C5"
+    },
+    "R8": {
+      "v": 39,
+      "f": "='Daniel Liu'!C17"
+    },
+    "S8": {
+      "v": 11,
+      "f": "='Daniel Liu'!C18"
+    },
+    "T8": {
+      "v": 0,
+      "f": "=IF($U8=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L8:P8,$D$2:$D$22))+SUMIF($A$2:$A$22,Q8,$D$2:$D$22),0)"
+    },
+    "U8": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Daniel Liu'!C20"
+    },
+    "V8": {
+      "v": 0.0008,
+      "f": "=T8+ROW()/10000"
+    },
+    "A9": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "B9": {
+      "v": 10,
+      "f": null
+    },
+    "C9": {
+      "v": 10,
+      "f": "=SETTINGS!F29"
+    },
+    "D9": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A9,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A9,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K9": {
+      "v": "David Wu",
+      "f": null
+    },
+    "L9": {
+      "v": "Azlan Husain",
+      "f": "='David Wu'!C10"
+    },
+    "M9": {
+      "v": "Rebecca Seymour",
+      "f": "='David Wu'!C11"
+    },
+    "N9": {
+      "v": "Edwin Mayers",
+      "f": "='David Wu'!C12"
+    },
+    "O9": {
+      "v": "Chinedu Chile",
+      "f": "='David Wu'!C13"
+    },
+    "P9": {
+      "v": "Joe Paige",
+      "f": "='David Wu'!C14"
+    },
+    "Q9": {
+      "v": "Edwin Mayers",
+      "f": "='David Wu'!C5"
+    },
+    "R9": {
+      "v": 50,
+      "f": "='David Wu'!C17"
+    },
+    "S9": {
+      "v": 0,
+      "f": "='David Wu'!C18"
+    },
+    "T9": {
+      "v": 26,
+      "f": "=IF($U9=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L9:P9,$D$2:$D$22))+SUMIF($A$2:$A$22,Q9,$D$2:$D$22),0)"
+    },
+    "U9": {
+      "v": "VALID TEAM",
+      "f": "='David Wu'!C20"
+    },
+    "V9": {
+      "v": 26.0009,
+      "f": "=T9+ROW()/10000"
+    },
+    "A10": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "B10": {
+      "v": 10,
+      "f": null
+    },
+    "C10": {
+      "v": 10,
+      "f": "=SETTINGS!F30"
+    },
+    "D10": {
+      "v": 7,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A10,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A10,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K10": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "L10": {
+      "v": "Sophie Barker",
+      "f": "='Edwin Mayers'!C10"
+    },
+    "M10": {
+      "v": "Esme Beston",
+      "f": "='Edwin Mayers'!C11"
+    },
+    "N10": {
+      "v": "Edwin Mayers",
+      "f": "='Edwin Mayers'!C12"
+    },
+    "O10": {
+      "v": "Emily Warburton",
+      "f": "='Edwin Mayers'!C13"
+    },
+    "P10": {
+      "v": "Ava Swinfen",
+      "f": "='Edwin Mayers'!C14"
+    },
+    "Q10": {
+      "v": "Emily Warburton",
+      "f": "='Edwin Mayers'!C5"
+    },
+    "R10": {
+      "v": 48,
+      "f": "='Edwin Mayers'!C17"
+    },
+    "S10": {
+      "v": 2,
+      "f": "='Edwin Mayers'!C18"
+    },
+    "T10": {
+      "v": 17,
+      "f": "=IF($U10=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L10:P10,$D$2:$D$22))+SUMIF($A$2:$A$22,Q10,$D$2:$D$22),0)"
+    },
+    "U10": {
+      "v": "VALID TEAM",
+      "f": "='Edwin Mayers'!C20"
+    },
+    "V10": {
+      "v": 17.001,
+      "f": "=T10+ROW()/10000"
+    },
+    "A11": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "B11": {
+      "v": 9.5,
+      "f": null
+    },
+    "C11": {
+      "v": 9.5,
+      "f": "=SETTINGS!F31"
+    },
+    "D11": {
+      "v": 7,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A11,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A11,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K11": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "L11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C10"
+    },
+    "M11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C11"
+    },
+    "N11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C12"
+    },
+    "O11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C13"
+    },
+    "P11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C14"
+    },
+    "Q11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C5"
+    },
+    "R11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C17"
+    },
+    "S11": {
+      "v": 50,
+      "f": "='Emily Warburton'!C18"
+    },
+    "T11": {
+      "v": 0,
+      "f": "=IF($U11=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L11:P11,$D$2:$D$22))+SUMIF($A$2:$A$22,Q11,$D$2:$D$22),0)"
+    },
+    "U11": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Emily Warburton'!C20"
+    },
+    "V11": {
+      "v": 0.0011,
+      "f": "=T11+ROW()/10000"
+    },
+    "A12": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "B12": {
+      "v": 9.5,
+      "f": null
+    },
+    "C12": {
+      "v": 9.5,
+      "f": "=SETTINGS!F32"
+    },
+    "D12": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A12,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A12,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K12": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "L12": {
+      "v": 0,
+      "f": "='Esme Beston'!C10"
+    },
+    "M12": {
+      "v": 0,
+      "f": "='Esme Beston'!C11"
+    },
+    "N12": {
+      "v": 0,
+      "f": "='Esme Beston'!C12"
+    },
+    "O12": {
+      "v": 0,
+      "f": "='Esme Beston'!C13"
+    },
+    "P12": {
+      "v": 0,
+      "f": "='Esme Beston'!C14"
+    },
+    "Q12": {
+      "v": 0,
+      "f": "='Esme Beston'!C5"
+    },
+    "R12": {
+      "v": 0,
+      "f": "='Esme Beston'!C17"
+    },
+    "S12": {
+      "v": 50,
+      "f": "='Esme Beston'!C18"
+    },
+    "T12": {
+      "v": 0,
+      "f": "=IF($U12=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L12:P12,$D$2:$D$22))+SUMIF($A$2:$A$22,Q12,$D$2:$D$22),0)"
+    },
+    "U12": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Esme Beston'!C20"
+    },
+    "V12": {
+      "v": 0.0012,
+      "f": "=T12+ROW()/10000"
+    },
+    "A13": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "B13": {
+      "v": 9.5,
+      "f": null
+    },
+    "C13": {
+      "v": 9.5,
+      "f": "=SETTINGS!F33"
+    },
+    "D13": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A13,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A13,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K13": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "L13": {
+      "v": 0,
+      "f": "='Iona Smith'!C10"
+    },
+    "M13": {
+      "v": 0,
+      "f": "='Iona Smith'!C11"
+    },
+    "N13": {
+      "v": 0,
+      "f": "='Iona Smith'!C12"
+    },
+    "O13": {
+      "v": 0,
+      "f": "='Iona Smith'!C13"
+    },
+    "P13": {
+      "v": 0,
+      "f": "='Iona Smith'!C14"
+    },
+    "Q13": {
+      "v": 0,
+      "f": "='Iona Smith'!C5"
+    },
+    "R13": {
+      "v": 0,
+      "f": "='Iona Smith'!C17"
+    },
+    "S13": {
+      "v": 50,
+      "f": "='Iona Smith'!C18"
+    },
+    "T13": {
+      "v": 0,
+      "f": "=IF($U13=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L13:P13,$D$2:$D$22))+SUMIF($A$2:$A$22,Q13,$D$2:$D$22),0)"
+    },
+    "U13": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Iona Smith'!C20"
+    },
+    "V13": {
+      "v": 0.0013,
+      "f": "=T13+ROW()/10000"
+    },
+    "A14": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B14": {
+      "v": 9,
+      "f": null
+    },
+    "C14": {
+      "v": 9,
+      "f": "=SETTINGS!F34"
+    },
+    "D14": {
+      "v": 4,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A14,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A14,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K14": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "L14": {
+      "v": "Chinedu Chile",
+      "f": "='Joe Paige'!C10"
+    },
+    "M14": {
+      "v": "Joe Paige",
+      "f": "='Joe Paige'!C11"
+    },
+    "N14": {
+      "v": "Alfie Foley",
+      "f": "='Joe Paige'!C12"
+    },
+    "O14": {
+      "v": "Lia Li",
+      "f": "='Joe Paige'!C13"
+    },
+    "P14": {
+      "v": "Oscar Day-Duran",
+      "f": "='Joe Paige'!C14"
+    },
+    "Q14": {
+      "v": "Chinedu Chile",
+      "f": "='Joe Paige'!C5"
+    },
+    "R14": {
+      "v": 50,
+      "f": "='Joe Paige'!C17"
+    },
+    "S14": {
+      "v": 0,
+      "f": "='Joe Paige'!C18"
+    },
+    "T14": {
+      "v": 30,
+      "f": "=IF($U14=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L14:P14,$D$2:$D$22))+SUMIF($A$2:$A$22,Q14,$D$2:$D$22),0)"
+    },
+    "U14": {
+      "v": "VALID TEAM",
+      "f": "='Joe Paige'!C20"
+    },
+    "V14": {
+      "v": 30.0014,
+      "f": "=T14+ROW()/10000"
+    },
+    "A15": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "B15": {
+      "v": 8.5,
+      "f": null
+    },
+    "C15": {
+      "v": 8.5,
+      "f": "=SETTINGS!F35"
+    },
+    "D15": {
+      "v": 6,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A15,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A15,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K15": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "L15": {
+      "v": 0,
+      "f": "='Lia Li'!C10"
+    },
+    "M15": {
+      "v": 0,
+      "f": "='Lia Li'!C11"
+    },
+    "N15": {
+      "v": 0,
+      "f": "='Lia Li'!C12"
+    },
+    "O15": {
+      "v": 0,
+      "f": "='Lia Li'!C13"
+    },
+    "P15": {
+      "v": 0,
+      "f": "='Lia Li'!C14"
+    },
+    "Q15": {
+      "v": 0,
+      "f": "='Lia Li'!C5"
+    },
+    "R15": {
+      "v": 0,
+      "f": "='Lia Li'!C17"
+    },
+    "S15": {
+      "v": 50,
+      "f": "='Lia Li'!C18"
+    },
+    "T15": {
+      "v": 0,
+      "f": "=IF($U15=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L15:P15,$D$2:$D$22))+SUMIF($A$2:$A$22,Q15,$D$2:$D$22),0)"
+    },
+    "U15": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Lia Li'!C20"
+    },
+    "V15": {
+      "v": 0.0015,
+      "f": "=T15+ROW()/10000"
+    },
+    "A16": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "B16": {
+      "v": 8,
+      "f": null
+    },
+    "C16": {
+      "v": 8,
+      "f": "=SETTINGS!F36"
+    },
+    "D16": {
+      "v": 1,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A16,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A16,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K16": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "L16": {
+      "v": "Lia Li",
+      "f": "='Melody Zhaeentan'!C10"
+    },
+    "M16": {
+      "v": "Edwin Mayers",
+      "f": "='Melody Zhaeentan'!C11"
+    },
+    "N16": {
+      "v": "Rebecca Seymour",
+      "f": "='Melody Zhaeentan'!C12"
+    },
+    "O16": {
+      "v": "Joe Paige",
+      "f": "='Melody Zhaeentan'!C13"
+    },
+    "P16": {
+      "v": "Xander Meijer",
+      "f": "='Melody Zhaeentan'!C14"
+    },
+    "Q16": {
+      "v": "Lia Li",
+      "f": "='Melody Zhaeentan'!C5"
+    },
+    "R16": {
+      "v": 49,
+      "f": "='Melody Zhaeentan'!C17"
+    },
+    "S16": {
+      "v": 1,
+      "f": "='Melody Zhaeentan'!C18"
+    },
+    "T16": {
+      "v": 27,
+      "f": "=IF($U16=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L16:P16,$D$2:$D$22))+SUMIF($A$2:$A$22,Q16,$D$2:$D$22),0)"
+    },
+    "U16": {
+      "v": "VALID TEAM",
+      "f": "='Melody Zhaeentan'!C20"
+    },
+    "V16": {
+      "v": 27.0016,
+      "f": "=T16+ROW()/10000"
+    },
+    "A17": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "B17": {
+      "v": 8,
+      "f": null
+    },
+    "C17": {
+      "v": 8,
+      "f": "=SETTINGS!F37"
+    },
+    "D17": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A17,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A17,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K17": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "L17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C10"
+    },
+    "M17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C11"
+    },
+    "N17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C12"
+    },
+    "O17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C13"
+    },
+    "P17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C14"
+    },
+    "Q17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C5"
+    },
+    "R17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C17"
+    },
+    "S17": {
+      "v": 50,
+      "f": "='Nina De Saram'!C18"
+    },
+    "T17": {
+      "v": 0,
+      "f": "=IF($U17=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L17:P17,$D$2:$D$22))+SUMIF($A$2:$A$22,Q17,$D$2:$D$22),0)"
+    },
+    "U17": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Nina De Saram'!C20"
+    },
+    "V17": {
+      "v": 0.0017,
+      "f": "=T17+ROW()/10000"
+    },
+    "A18": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "B18": {
+      "v": 8,
+      "f": null
+    },
+    "C18": {
+      "v": 8,
+      "f": "=SETTINGS!F38"
+    },
+    "D18": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A18,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A18,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K18": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "L18": {
+      "v": "Oscar Day-Duran",
+      "f": "='Oscar Day-Duran'!C10"
+    },
+    "M18": {
+      "v": "Chinedu Chile",
+      "f": "='Oscar Day-Duran'!C11"
+    },
+    "N18": {
+      "v": "Nina De Saram",
+      "f": "='Oscar Day-Duran'!C12"
+    },
+    "O18": {
+      "v": "David Wu",
+      "f": "='Oscar Day-Duran'!C13"
+    },
+    "P18": {
+      "v": "Joe Paige",
+      "f": "='Oscar Day-Duran'!C14"
+    },
+    "Q18": {
+      "v": "Joe Paige",
+      "f": "='Oscar Day-Duran'!C5"
+    },
+    "R18": {
+      "v": 50,
+      "f": "='Oscar Day-Duran'!C17"
+    },
+    "S18": {
+      "v": 0,
+      "f": "='Oscar Day-Duran'!C18"
+    },
+    "T18": {
+      "v": 36,
+      "f": "=IF($U18=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L18:P18,$D$2:$D$22))+SUMIF($A$2:$A$22,Q18,$D$2:$D$22),0)"
+    },
+    "U18": {
+      "v": "VALID TEAM",
+      "f": "='Oscar Day-Duran'!C20"
+    },
+    "V18": {
+      "v": 36.0018,
+      "f": "=T18+ROW()/10000"
+    },
+    "A19": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "B19": {
+      "v": 7.5,
+      "f": null
+    },
+    "C19": {
+      "v": 7.5,
+      "f": "=SETTINGS!F39"
+    },
+    "D19": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A19,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A19,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K19": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "L19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C10"
+    },
+    "M19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C11"
+    },
+    "N19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C12"
+    },
+    "O19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C13"
+    },
+    "P19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C14"
+    },
+    "Q19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C5"
+    },
+    "R19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C17"
+    },
+    "S19": {
+      "v": 50,
+      "f": "='Rebecca Seymour'!C18"
+    },
+    "T19": {
+      "v": 0,
+      "f": "=IF($U19=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L19:P19,$D$2:$D$22))+SUMIF($A$2:$A$22,Q19,$D$2:$D$22),0)"
+    },
+    "U19": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Rebecca Seymour'!C20"
+    },
+    "V19": {
+      "v": 0.0019,
+      "f": "=T19+ROW()/10000"
+    },
+    "A20": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "B20": {
+      "v": 7,
+      "f": null
+    },
+    "C20": {
+      "v": 7,
+      "f": "=SETTINGS!F40"
+    },
+    "D20": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A20,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A20,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K20": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "L20": {
+      "v": "David Wu",
+      "f": "='Rory Bowman'!C10"
+    },
+    "M20": {
+      "v": "Ava Swinfen",
+      "f": "='Rory Bowman'!C11"
+    },
+    "N20": {
+      "v": "Alyza Rai",
+      "f": "='Rory Bowman'!C12"
+    },
+    "O20": {
+      "v": "Edwin Mayers",
+      "f": "='Rory Bowman'!C13"
+    },
+    "P20": {
+      "v": "Lia Li",
+      "f": "='Rory Bowman'!C14"
+    },
+    "Q20": {
+      "v": "Lia Li",
+      "f": "='Rory Bowman'!C5"
+    },
+    "R20": {
+      "v": 50,
+      "f": "='Rory Bowman'!C17"
+    },
+    "S20": {
+      "v": 0,
+      "f": "='Rory Bowman'!C18"
+    },
+    "T20": {
+      "v": 30,
+      "f": "=IF($U20=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L20:P20,$D$2:$D$22))+SUMIF($A$2:$A$22,Q20,$D$2:$D$22),0)"
+    },
+    "U20": {
+      "v": "VALID TEAM",
+      "f": "='Rory Bowman'!C20"
+    },
+    "V20": {
+      "v": 30.002,
+      "f": "=T20+ROW()/10000"
+    },
+    "A21": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "B21": {
+      "v": 7,
+      "f": null
+    },
+    "C21": {
+      "v": 7,
+      "f": "=SETTINGS!F41"
+    },
+    "D21": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A21,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A21,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K21": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "L21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C10"
+    },
+    "M21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C11"
+    },
+    "N21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C12"
+    },
+    "O21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C13"
+    },
+    "P21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C14"
+    },
+    "Q21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C5"
+    },
+    "R21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C17"
+    },
+    "S21": {
+      "v": 50,
+      "f": "='Sophie Barker'!C18"
+    },
+    "T21": {
+      "v": 0,
+      "f": "=IF($U21=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L21:P21,$D$2:$D$22))+SUMIF($A$2:$A$22,Q21,$D$2:$D$22),0)"
+    },
+    "U21": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Sophie Barker'!C20"
+    },
+    "V21": {
+      "v": 0.0021,
+      "f": "=T21+ROW()/10000"
+    },
+    "A22": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "B22": {
+      "v": 7,
+      "f": null
+    },
+    "C22": {
+      "v": 7,
+      "f": "=SETTINGS!F42"
+    },
+    "D22": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A22,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A22,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K22": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "L22": {
+      "v": "Lia Li",
+      "f": "='Xander Meijer'!C10"
+    },
+    "M22": {
+      "v": "David Wu",
+      "f": "='Xander Meijer'!C11"
+    },
+    "N22": {
+      "v": "Ava Swinfen",
+      "f": "='Xander Meijer'!C12"
+    },
+    "O22": {
+      "v": "Joe Paige",
+      "f": "='Xander Meijer'!C13"
+    },
+    "P22": {
+      "v": "Melody Zhaeentan",
+      "f": "='Xander Meijer'!C14"
+    },
+    "Q22": {
+      "v": "Lia Li",
+      "f": "='Xander Meijer'!C5"
+    },
+    "R22": {
+      "v": 49.5,
+      "f": "='Xander Meijer'!C17"
+    },
+    "S22": {
+      "v": 0.5,
+      "f": "='Xander Meijer'!C18"
+    },
+    "T22": {
+      "v": 34,
+      "f": "=IF($U22=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L22:P22,$D$2:$D$22))+SUMIF($A$2:$A$22,Q22,$D$2:$D$22),0)"
+    },
+    "U22": {
+      "v": "VALID TEAM",
+      "f": "='Xander Meijer'!C20"
+    },
+    "V22": {
+      "v": 34.0022,
+      "f": "=T22+ROW()/10000"
+    }
+  },
+  "used_range": {
+    "A1": {
+      "v": "Player",
+      "f": null
+    },
+    "B1": {
+      "v": "Base",
+      "f": null
+    },
+    "C1": {
+      "v": "Current",
+      "f": null
+    },
+    "D1": {
+      "v": "Pts",
+      "f": null
+    },
+    "K1": {
+      "v": "Manager",
+      "f": null
+    },
+    "L1": {
+      "v": "P1",
+      "f": null
+    },
+    "M1": {
+      "v": "P2",
+      "f": null
+    },
+    "N1": {
+      "v": "P3",
+      "f": null
+    },
+    "O1": {
+      "v": "P4",
+      "f": null
+    },
+    "P1": {
+      "v": "P5",
+      "f": null
+    },
+    "Q1": {
+      "v": "Captain",
+      "f": null
+    },
+    "R1": {
+      "v": "Team Value",
+      "f": null
+    },
+    "S1": {
+      "v": "Budget Left",
+      "f": null
+    },
+    "T1": {
+      "v": "GW Score",
+      "f": null
+    },
+    "U1": {
+      "v": "Status",
+      "f": null
+    },
+    "V1": {
+      "v": "Tiebreak",
+      "f": null
+    },
+    "A2": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "B2": {
+      "v": 13,
+      "f": null
+    },
+    "C2": {
+      "v": 13,
+      "f": "=SETTINGS!F22"
+    },
+    "D2": {
+      "v": 6,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A2,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A2,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K2": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "L2": {
+      "v": "Sophie Barker",
+      "f": "='Alexa Amesimeku'!C10"
+    },
+    "M2": {
+      "v": "Joe Paige",
+      "f": "='Alexa Amesimeku'!C11"
+    },
+    "N2": {
+      "v": "Alexa Amesimeku",
+      "f": "='Alexa Amesimeku'!C12"
+    },
+    "O2": {
+      "v": "Nina De Saram",
+      "f": "='Alexa Amesimeku'!C13"
+    },
+    "P2": {
+      "v": "Xander Meijer",
+      "f": "='Alexa Amesimeku'!C14"
+    },
+    "Q2": {
+      "v": "Sophie Barker",
+      "f": "='Alexa Amesimeku'!C5"
+    },
+    "R2": {
+      "v": 50,
+      "f": "='Alexa Amesimeku'!C17"
+    },
+    "S2": {
+      "v": 0,
+      "f": "='Alexa Amesimeku'!C18"
+    },
+    "T2": {
+      "v": 43,
+      "f": "=IF($U2=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L2:P2,$D$2:$D$22))+SUMIF($A$2:$A$22,Q2,$D$2:$D$22),0)"
+    },
+    "U2": {
+      "v": "VALID TEAM",
+      "f": "='Alexa Amesimeku'!C20"
+    },
+    "V2": {
+      "v": 43.0002,
+      "f": "=T2+ROW()/10000"
+    },
+    "A3": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "B3": {
+      "v": 13,
+      "f": null
+    },
+    "C3": {
+      "v": 13,
+      "f": "=SETTINGS!F23"
+    },
+    "D3": {
+      "v": 9,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A3,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A3,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K3": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "L3": {
+      "v": "Ava Swinfen",
+      "f": "='Alfie Foley'!C10"
+    },
+    "M3": {
+      "v": "David Wu",
+      "f": "='Alfie Foley'!C11"
+    },
+    "N3": {
+      "v": "Alyza Rai",
+      "f": "='Alfie Foley'!C12"
+    },
+    "O3": {
+      "v": "Sophie Barker",
+      "f": "='Alfie Foley'!C13"
+    },
+    "P3": {
+      "v": "Edwin Mayers",
+      "f": "='Alfie Foley'!C14"
+    },
+    "Q3": {
+      "v": "Sophie Barker",
+      "f": "='Alfie Foley'!C5"
+    },
+    "R3": {
+      "v": 50,
+      "f": "='Alfie Foley'!C17"
+    },
+    "S3": {
+      "v": 0,
+      "f": "='Alfie Foley'!C18"
+    },
+    "T3": {
+      "v": 36,
+      "f": "=IF($U3=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L3:P3,$D$2:$D$22))+SUMIF($A$2:$A$22,Q3,$D$2:$D$22),0)"
+    },
+    "U3": {
+      "v": "VALID TEAM",
+      "f": "='Alfie Foley'!C20"
+    },
+    "V3": {
+      "v": 36.0003,
+      "f": "=T3+ROW()/10000"
+    },
+    "A4": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "B4": {
+      "v": 11,
+      "f": null
+    },
+    "C4": {
+      "v": 11,
+      "f": "=SETTINGS!F24"
+    },
+    "D4": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A4,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A4,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K4": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "L4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C10"
+    },
+    "M4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C11"
+    },
+    "N4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C12"
+    },
+    "O4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C13"
+    },
+    "P4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C14"
+    },
+    "Q4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C5"
+    },
+    "R4": {
+      "v": 0,
+      "f": "='Alyza Rai'!C17"
+    },
+    "S4": {
+      "v": 50,
+      "f": "='Alyza Rai'!C18"
+    },
+    "T4": {
+      "v": 0,
+      "f": "=IF($U4=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L4:P4,$D$2:$D$22))+SUMIF($A$2:$A$22,Q4,$D$2:$D$22),0)"
+    },
+    "U4": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Alyza Rai'!C20"
+    },
+    "V4": {
+      "v": 0.0004,
+      "f": "=T4+ROW()/10000"
+    },
+    "A5": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "B5": {
+      "v": 11,
+      "f": null
+    },
+    "C5": {
+      "v": 11,
+      "f": "=SETTINGS!F25"
+    },
+    "D5": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A5,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A5,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K5": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "L5": {
+      "v": "Ava Swinfen",
+      "f": "='Ava Swinfen'!C10"
+    },
+    "M5": {
+      "v": "Melody Zhaeentan",
+      "f": "='Ava Swinfen'!C11"
+    },
+    "N5": {
+      "v": "Lia Li",
+      "f": "='Ava Swinfen'!C12"
+    },
+    "O5": {
+      "v": "Chinedu Chile",
+      "f": "='Ava Swinfen'!C13"
+    },
+    "P5": {
+      "v": "David Wu",
+      "f": "='Ava Swinfen'!C14"
+    },
+    "Q5": {
+      "v": "Lia Li",
+      "f": "='Ava Swinfen'!C5"
+    },
+    "R5": {
+      "v": 50,
+      "f": "='Ava Swinfen'!C17"
+    },
+    "S5": {
+      "v": 0,
+      "f": "='Ava Swinfen'!C18"
+    },
+    "T5": {
+      "v": 31,
+      "f": "=IF($U5=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L5:P5,$D$2:$D$22))+SUMIF($A$2:$A$22,Q5,$D$2:$D$22),0)"
+    },
+    "U5": {
+      "v": "VALID TEAM",
+      "f": "='Ava Swinfen'!C20"
+    },
+    "V5": {
+      "v": 31.0005,
+      "f": "=T5+ROW()/10000"
+    },
+    "A6": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "B6": {
+      "v": 10.5,
+      "f": null
+    },
+    "C6": {
+      "v": 10.5,
+      "f": "=SETTINGS!F26"
+    },
+    "D6": {
+      "v": 6,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A6,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A6,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K6": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "L6": {
+      "v": "Emily Warburton",
+      "f": "='Azlan Husain'!C10"
+    },
+    "M6": {
+      "v": "Chinedu Chile",
+      "f": "='Azlan Husain'!C11"
+    },
+    "N6": {
+      "v": "Joe Paige",
+      "f": "='Azlan Husain'!C12"
+    },
+    "O6": {
+      "v": "Alfie Foley",
+      "f": "='Azlan Husain'!C13"
+    },
+    "P6": {
+      "v": "Edwin Mayers",
+      "f": "='Azlan Husain'!C14"
+    },
+    "Q6": {
+      "v": "Emily Warburton",
+      "f": "='Azlan Husain'!C5"
+    },
+    "R6": {
+      "v": 49,
+      "f": "='Azlan Husain'!C17"
+    },
+    "S6": {
+      "v": 1,
+      "f": "='Azlan Husain'!C18"
+    },
+    "T6": {
+      "v": 20,
+      "f": "=IF($U6=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L6:P6,$D$2:$D$22))+SUMIF($A$2:$A$22,Q6,$D$2:$D$22),0)"
+    },
+    "U6": {
+      "v": "VALID TEAM",
+      "f": "='Azlan Husain'!C20"
+    },
+    "V6": {
+      "v": 20.0006,
+      "f": "=T6+ROW()/10000"
+    },
+    "A7": {
+      "v": "David Wu",
+      "f": null
+    },
+    "B7": {
+      "v": 10.5,
+      "f": null
+    },
+    "C7": {
+      "v": 10.5,
+      "f": "=SETTINGS!F27"
+    },
+    "D7": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A7,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A7,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K7": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "L7": {
+      "v": "Chinedu Chile",
+      "f": "='Chinedu Chile'!C10"
+    },
+    "M7": {
+      "v": "Alexa Amesimeku",
+      "f": "='Chinedu Chile'!C11"
+    },
+    "N7": {
+      "v": "David Wu",
+      "f": "='Chinedu Chile'!C12"
+    },
+    "O7": {
+      "v": "Edwin Mayers",
+      "f": "='Chinedu Chile'!C13"
+    },
+    "P7": {
+      "v": "Azlan Husain",
+      "f": "='Chinedu Chile'!C14"
+    },
+    "Q7": {
+      "v": "Chinedu Chile",
+      "f": "='Chinedu Chile'!C5"
+    },
+    "R7": {
+      "v": 50,
+      "f": "='Chinedu Chile'!C17"
+    },
+    "S7": {
+      "v": 0,
+      "f": "='Chinedu Chile'!C18"
+    },
+    "T7": {
+      "v": 31,
+      "f": "=IF($U7=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L7:P7,$D$2:$D$22))+SUMIF($A$2:$A$22,Q7,$D$2:$D$22),0)"
+    },
+    "U7": {
+      "v": "VALID TEAM",
+      "f": "='Chinedu Chile'!C20"
+    },
+    "V7": {
+      "v": 31.0007,
+      "f": "=T7+ROW()/10000"
+    },
+    "A8": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "B8": {
+      "v": 10.5,
+      "f": null
+    },
+    "C8": {
+      "v": 10.5,
+      "f": "=SETTINGS!F28"
+    },
+    "D8": {
+      "v": 8,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A8,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A8,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K8": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "L8": {
+      "v": "Alyza Rai",
+      "f": "='Daniel Liu'!C10"
+    },
+    "M8": {
+      "v": "Ava Swinfen",
+      "f": "='Daniel Liu'!C11"
+    },
+    "N8": {
+      "v": 0,
+      "f": "='Daniel Liu'!C12"
+    },
+    "O8": {
+      "v": "David Wu",
+      "f": "='Daniel Liu'!C13"
+    },
+    "P8": {
+      "v": "Chinedu Chile",
+      "f": "='Daniel Liu'!C14"
+    },
+    "Q8": {
+      "v": 0,
+      "f": "='Daniel Liu'!C5"
+    },
+    "R8": {
+      "v": 39,
+      "f": "='Daniel Liu'!C17"
+    },
+    "S8": {
+      "v": 11,
+      "f": "='Daniel Liu'!C18"
+    },
+    "T8": {
+      "v": 0,
+      "f": "=IF($U8=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L8:P8,$D$2:$D$22))+SUMIF($A$2:$A$22,Q8,$D$2:$D$22),0)"
+    },
+    "U8": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Daniel Liu'!C20"
+    },
+    "V8": {
+      "v": 0.0008,
+      "f": "=T8+ROW()/10000"
+    },
+    "A9": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "B9": {
+      "v": 10,
+      "f": null
+    },
+    "C9": {
+      "v": 10,
+      "f": "=SETTINGS!F29"
+    },
+    "D9": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A9,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A9,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K9": {
+      "v": "David Wu",
+      "f": null
+    },
+    "L9": {
+      "v": "Azlan Husain",
+      "f": "='David Wu'!C10"
+    },
+    "M9": {
+      "v": "Rebecca Seymour",
+      "f": "='David Wu'!C11"
+    },
+    "N9": {
+      "v": "Edwin Mayers",
+      "f": "='David Wu'!C12"
+    },
+    "O9": {
+      "v": "Chinedu Chile",
+      "f": "='David Wu'!C13"
+    },
+    "P9": {
+      "v": "Joe Paige",
+      "f": "='David Wu'!C14"
+    },
+    "Q9": {
+      "v": "Edwin Mayers",
+      "f": "='David Wu'!C5"
+    },
+    "R9": {
+      "v": 50,
+      "f": "='David Wu'!C17"
+    },
+    "S9": {
+      "v": 0,
+      "f": "='David Wu'!C18"
+    },
+    "T9": {
+      "v": 26,
+      "f": "=IF($U9=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L9:P9,$D$2:$D$22))+SUMIF($A$2:$A$22,Q9,$D$2:$D$22),0)"
+    },
+    "U9": {
+      "v": "VALID TEAM",
+      "f": "='David Wu'!C20"
+    },
+    "V9": {
+      "v": 26.0009,
+      "f": "=T9+ROW()/10000"
+    },
+    "A10": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "B10": {
+      "v": 10,
+      "f": null
+    },
+    "C10": {
+      "v": 10,
+      "f": "=SETTINGS!F30"
+    },
+    "D10": {
+      "v": 7,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A10,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A10,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K10": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "L10": {
+      "v": "Sophie Barker",
+      "f": "='Edwin Mayers'!C10"
+    },
+    "M10": {
+      "v": "Esme Beston",
+      "f": "='Edwin Mayers'!C11"
+    },
+    "N10": {
+      "v": "Edwin Mayers",
+      "f": "='Edwin Mayers'!C12"
+    },
+    "O10": {
+      "v": "Emily Warburton",
+      "f": "='Edwin Mayers'!C13"
+    },
+    "P10": {
+      "v": "Ava Swinfen",
+      "f": "='Edwin Mayers'!C14"
+    },
+    "Q10": {
+      "v": "Emily Warburton",
+      "f": "='Edwin Mayers'!C5"
+    },
+    "R10": {
+      "v": 48,
+      "f": "='Edwin Mayers'!C17"
+    },
+    "S10": {
+      "v": 2,
+      "f": "='Edwin Mayers'!C18"
+    },
+    "T10": {
+      "v": 17,
+      "f": "=IF($U10=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L10:P10,$D$2:$D$22))+SUMIF($A$2:$A$22,Q10,$D$2:$D$22),0)"
+    },
+    "U10": {
+      "v": "VALID TEAM",
+      "f": "='Edwin Mayers'!C20"
+    },
+    "V10": {
+      "v": 17.001,
+      "f": "=T10+ROW()/10000"
+    },
+    "A11": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "B11": {
+      "v": 9.5,
+      "f": null
+    },
+    "C11": {
+      "v": 9.5,
+      "f": "=SETTINGS!F31"
+    },
+    "D11": {
+      "v": 7,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A11,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A11,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K11": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "L11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C10"
+    },
+    "M11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C11"
+    },
+    "N11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C12"
+    },
+    "O11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C13"
+    },
+    "P11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C14"
+    },
+    "Q11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C5"
+    },
+    "R11": {
+      "v": 0,
+      "f": "='Emily Warburton'!C17"
+    },
+    "S11": {
+      "v": 50,
+      "f": "='Emily Warburton'!C18"
+    },
+    "T11": {
+      "v": 0,
+      "f": "=IF($U11=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L11:P11,$D$2:$D$22))+SUMIF($A$2:$A$22,Q11,$D$2:$D$22),0)"
+    },
+    "U11": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Emily Warburton'!C20"
+    },
+    "V11": {
+      "v": 0.0011,
+      "f": "=T11+ROW()/10000"
+    },
+    "A12": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "B12": {
+      "v": 9.5,
+      "f": null
+    },
+    "C12": {
+      "v": 9.5,
+      "f": "=SETTINGS!F32"
+    },
+    "D12": {
+      "v": 5,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A12,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A12,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K12": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "L12": {
+      "v": 0,
+      "f": "='Esme Beston'!C10"
+    },
+    "M12": {
+      "v": 0,
+      "f": "='Esme Beston'!C11"
+    },
+    "N12": {
+      "v": 0,
+      "f": "='Esme Beston'!C12"
+    },
+    "O12": {
+      "v": 0,
+      "f": "='Esme Beston'!C13"
+    },
+    "P12": {
+      "v": 0,
+      "f": "='Esme Beston'!C14"
+    },
+    "Q12": {
+      "v": 0,
+      "f": "='Esme Beston'!C5"
+    },
+    "R12": {
+      "v": 0,
+      "f": "='Esme Beston'!C17"
+    },
+    "S12": {
+      "v": 50,
+      "f": "='Esme Beston'!C18"
+    },
+    "T12": {
+      "v": 0,
+      "f": "=IF($U12=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L12:P12,$D$2:$D$22))+SUMIF($A$2:$A$22,Q12,$D$2:$D$22),0)"
+    },
+    "U12": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Esme Beston'!C20"
+    },
+    "V12": {
+      "v": 0.0012,
+      "f": "=T12+ROW()/10000"
+    },
+    "A13": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "B13": {
+      "v": 9.5,
+      "f": null
+    },
+    "C13": {
+      "v": 9.5,
+      "f": "=SETTINGS!F33"
+    },
+    "D13": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A13,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A13,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K13": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "L13": {
+      "v": 0,
+      "f": "='Iona Smith'!C10"
+    },
+    "M13": {
+      "v": 0,
+      "f": "='Iona Smith'!C11"
+    },
+    "N13": {
+      "v": 0,
+      "f": "='Iona Smith'!C12"
+    },
+    "O13": {
+      "v": 0,
+      "f": "='Iona Smith'!C13"
+    },
+    "P13": {
+      "v": 0,
+      "f": "='Iona Smith'!C14"
+    },
+    "Q13": {
+      "v": 0,
+      "f": "='Iona Smith'!C5"
+    },
+    "R13": {
+      "v": 0,
+      "f": "='Iona Smith'!C17"
+    },
+    "S13": {
+      "v": 50,
+      "f": "='Iona Smith'!C18"
+    },
+    "T13": {
+      "v": 0,
+      "f": "=IF($U13=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L13:P13,$D$2:$D$22))+SUMIF($A$2:$A$22,Q13,$D$2:$D$22),0)"
+    },
+    "U13": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Iona Smith'!C20"
+    },
+    "V13": {
+      "v": 0.0013,
+      "f": "=T13+ROW()/10000"
+    },
+    "A14": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B14": {
+      "v": 9,
+      "f": null
+    },
+    "C14": {
+      "v": 9,
+      "f": "=SETTINGS!F34"
+    },
+    "D14": {
+      "v": 4,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A14,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A14,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K14": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "L14": {
+      "v": "Chinedu Chile",
+      "f": "='Joe Paige'!C10"
+    },
+    "M14": {
+      "v": "Joe Paige",
+      "f": "='Joe Paige'!C11"
+    },
+    "N14": {
+      "v": "Alfie Foley",
+      "f": "='Joe Paige'!C12"
+    },
+    "O14": {
+      "v": "Lia Li",
+      "f": "='Joe Paige'!C13"
+    },
+    "P14": {
+      "v": "Oscar Day-Duran",
+      "f": "='Joe Paige'!C14"
+    },
+    "Q14": {
+      "v": "Chinedu Chile",
+      "f": "='Joe Paige'!C5"
+    },
+    "R14": {
+      "v": 50,
+      "f": "='Joe Paige'!C17"
+    },
+    "S14": {
+      "v": 0,
+      "f": "='Joe Paige'!C18"
+    },
+    "T14": {
+      "v": 30,
+      "f": "=IF($U14=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L14:P14,$D$2:$D$22))+SUMIF($A$2:$A$22,Q14,$D$2:$D$22),0)"
+    },
+    "U14": {
+      "v": "VALID TEAM",
+      "f": "='Joe Paige'!C20"
+    },
+    "V14": {
+      "v": 30.0014,
+      "f": "=T14+ROW()/10000"
+    },
+    "A15": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "B15": {
+      "v": 8.5,
+      "f": null
+    },
+    "C15": {
+      "v": 8.5,
+      "f": "=SETTINGS!F35"
+    },
+    "D15": {
+      "v": 6,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A15,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A15,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K15": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "L15": {
+      "v": 0,
+      "f": "='Lia Li'!C10"
+    },
+    "M15": {
+      "v": 0,
+      "f": "='Lia Li'!C11"
+    },
+    "N15": {
+      "v": 0,
+      "f": "='Lia Li'!C12"
+    },
+    "O15": {
+      "v": 0,
+      "f": "='Lia Li'!C13"
+    },
+    "P15": {
+      "v": 0,
+      "f": "='Lia Li'!C14"
+    },
+    "Q15": {
+      "v": 0,
+      "f": "='Lia Li'!C5"
+    },
+    "R15": {
+      "v": 0,
+      "f": "='Lia Li'!C17"
+    },
+    "S15": {
+      "v": 50,
+      "f": "='Lia Li'!C18"
+    },
+    "T15": {
+      "v": 0,
+      "f": "=IF($U15=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L15:P15,$D$2:$D$22))+SUMIF($A$2:$A$22,Q15,$D$2:$D$22),0)"
+    },
+    "U15": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Lia Li'!C20"
+    },
+    "V15": {
+      "v": 0.0015,
+      "f": "=T15+ROW()/10000"
+    },
+    "A16": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "B16": {
+      "v": 8,
+      "f": null
+    },
+    "C16": {
+      "v": 8,
+      "f": "=SETTINGS!F36"
+    },
+    "D16": {
+      "v": 1,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A16,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A16,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K16": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "L16": {
+      "v": "Lia Li",
+      "f": "='Melody Zhaeentan'!C10"
+    },
+    "M16": {
+      "v": "Edwin Mayers",
+      "f": "='Melody Zhaeentan'!C11"
+    },
+    "N16": {
+      "v": "Rebecca Seymour",
+      "f": "='Melody Zhaeentan'!C12"
+    },
+    "O16": {
+      "v": "Joe Paige",
+      "f": "='Melody Zhaeentan'!C13"
+    },
+    "P16": {
+      "v": "Xander Meijer",
+      "f": "='Melody Zhaeentan'!C14"
+    },
+    "Q16": {
+      "v": "Lia Li",
+      "f": "='Melody Zhaeentan'!C5"
+    },
+    "R16": {
+      "v": 49,
+      "f": "='Melody Zhaeentan'!C17"
+    },
+    "S16": {
+      "v": 1,
+      "f": "='Melody Zhaeentan'!C18"
+    },
+    "T16": {
+      "v": 27,
+      "f": "=IF($U16=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L16:P16,$D$2:$D$22))+SUMIF($A$2:$A$22,Q16,$D$2:$D$22),0)"
+    },
+    "U16": {
+      "v": "VALID TEAM",
+      "f": "='Melody Zhaeentan'!C20"
+    },
+    "V16": {
+      "v": 27.0016,
+      "f": "=T16+ROW()/10000"
+    },
+    "A17": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "B17": {
+      "v": 8,
+      "f": null
+    },
+    "C17": {
+      "v": 8,
+      "f": "=SETTINGS!F37"
+    },
+    "D17": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A17,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A17,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K17": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "L17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C10"
+    },
+    "M17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C11"
+    },
+    "N17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C12"
+    },
+    "O17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C13"
+    },
+    "P17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C14"
+    },
+    "Q17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C5"
+    },
+    "R17": {
+      "v": 0,
+      "f": "='Nina De Saram'!C17"
+    },
+    "S17": {
+      "v": 50,
+      "f": "='Nina De Saram'!C18"
+    },
+    "T17": {
+      "v": 0,
+      "f": "=IF($U17=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L17:P17,$D$2:$D$22))+SUMIF($A$2:$A$22,Q17,$D$2:$D$22),0)"
+    },
+    "U17": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Nina De Saram'!C20"
+    },
+    "V17": {
+      "v": 0.0017,
+      "f": "=T17+ROW()/10000"
+    },
+    "A18": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "B18": {
+      "v": 8,
+      "f": null
+    },
+    "C18": {
+      "v": 8,
+      "f": "=SETTINGS!F38"
+    },
+    "D18": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A18,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A18,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K18": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "L18": {
+      "v": "Oscar Day-Duran",
+      "f": "='Oscar Day-Duran'!C10"
+    },
+    "M18": {
+      "v": "Chinedu Chile",
+      "f": "='Oscar Day-Duran'!C11"
+    },
+    "N18": {
+      "v": "Nina De Saram",
+      "f": "='Oscar Day-Duran'!C12"
+    },
+    "O18": {
+      "v": "David Wu",
+      "f": "='Oscar Day-Duran'!C13"
+    },
+    "P18": {
+      "v": "Joe Paige",
+      "f": "='Oscar Day-Duran'!C14"
+    },
+    "Q18": {
+      "v": "Joe Paige",
+      "f": "='Oscar Day-Duran'!C5"
+    },
+    "R18": {
+      "v": 50,
+      "f": "='Oscar Day-Duran'!C17"
+    },
+    "S18": {
+      "v": 0,
+      "f": "='Oscar Day-Duran'!C18"
+    },
+    "T18": {
+      "v": 36,
+      "f": "=IF($U18=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L18:P18,$D$2:$D$22))+SUMIF($A$2:$A$22,Q18,$D$2:$D$22),0)"
+    },
+    "U18": {
+      "v": "VALID TEAM",
+      "f": "='Oscar Day-Duran'!C20"
+    },
+    "V18": {
+      "v": 36.0018,
+      "f": "=T18+ROW()/10000"
+    },
+    "A19": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "B19": {
+      "v": 7.5,
+      "f": null
+    },
+    "C19": {
+      "v": 7.5,
+      "f": "=SETTINGS!F39"
+    },
+    "D19": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A19,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A19,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K19": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "L19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C10"
+    },
+    "M19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C11"
+    },
+    "N19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C12"
+    },
+    "O19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C13"
+    },
+    "P19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C14"
+    },
+    "Q19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C5"
+    },
+    "R19": {
+      "v": 0,
+      "f": "='Rebecca Seymour'!C17"
+    },
+    "S19": {
+      "v": 50,
+      "f": "='Rebecca Seymour'!C18"
+    },
+    "T19": {
+      "v": 0,
+      "f": "=IF($U19=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L19:P19,$D$2:$D$22))+SUMIF($A$2:$A$22,Q19,$D$2:$D$22),0)"
+    },
+    "U19": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Rebecca Seymour'!C20"
+    },
+    "V19": {
+      "v": 0.0019,
+      "f": "=T19+ROW()/10000"
+    },
+    "A20": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "B20": {
+      "v": 7,
+      "f": null
+    },
+    "C20": {
+      "v": 7,
+      "f": "=SETTINGS!F40"
+    },
+    "D20": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A20,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A20,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K20": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "L20": {
+      "v": "David Wu",
+      "f": "='Rory Bowman'!C10"
+    },
+    "M20": {
+      "v": "Ava Swinfen",
+      "f": "='Rory Bowman'!C11"
+    },
+    "N20": {
+      "v": "Alyza Rai",
+      "f": "='Rory Bowman'!C12"
+    },
+    "O20": {
+      "v": "Edwin Mayers",
+      "f": "='Rory Bowman'!C13"
+    },
+    "P20": {
+      "v": "Lia Li",
+      "f": "='Rory Bowman'!C14"
+    },
+    "Q20": {
+      "v": "Lia Li",
+      "f": "='Rory Bowman'!C5"
+    },
+    "R20": {
+      "v": 50,
+      "f": "='Rory Bowman'!C17"
+    },
+    "S20": {
+      "v": 0,
+      "f": "='Rory Bowman'!C18"
+    },
+    "T20": {
+      "v": 30,
+      "f": "=IF($U20=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L20:P20,$D$2:$D$22))+SUMIF($A$2:$A$22,Q20,$D$2:$D$22),0)"
+    },
+    "U20": {
+      "v": "VALID TEAM",
+      "f": "='Rory Bowman'!C20"
+    },
+    "V20": {
+      "v": 30.002,
+      "f": "=T20+ROW()/10000"
+    },
+    "A21": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "B21": {
+      "v": 7,
+      "f": null
+    },
+    "C21": {
+      "v": 7,
+      "f": "=SETTINGS!F41"
+    },
+    "D21": {
+      "v": 0,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A21,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A21,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K21": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "L21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C10"
+    },
+    "M21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C11"
+    },
+    "N21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C12"
+    },
+    "O21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C13"
+    },
+    "P21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C14"
+    },
+    "Q21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C5"
+    },
+    "R21": {
+      "v": 0,
+      "f": "='Sophie Barker'!C17"
+    },
+    "S21": {
+      "v": 50,
+      "f": "='Sophie Barker'!C18"
+    },
+    "T21": {
+      "v": 0,
+      "f": "=IF($U21=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L21:P21,$D$2:$D$22))+SUMIF($A$2:$A$22,Q21,$D$2:$D$22),0)"
+    },
+    "U21": {
+      "v": "LESS THAN 5 PLAYERS",
+      "f": "='Sophie Barker'!C20"
+    },
+    "V21": {
+      "v": 0.0021,
+      "f": "=T21+ROW()/10000"
+    },
+    "A22": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "B22": {
+      "v": 7,
+      "f": null
+    },
+    "C22": {
+      "v": 7,
+      "f": "=SETTINGS!F42"
+    },
+    "D22": {
+      "v": 3,
+      "f": "=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A22,'TEST RESULTS'!$B$6:$B$25,0))=\"\",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A22,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)"
+    },
+    "K22": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "L22": {
+      "v": "Lia Li",
+      "f": "='Xander Meijer'!C10"
+    },
+    "M22": {
+      "v": "David Wu",
+      "f": "='Xander Meijer'!C11"
+    },
+    "N22": {
+      "v": "Ava Swinfen",
+      "f": "='Xander Meijer'!C12"
+    },
+    "O22": {
+      "v": "Joe Paige",
+      "f": "='Xander Meijer'!C13"
+    },
+    "P22": {
+      "v": "Melody Zhaeentan",
+      "f": "='Xander Meijer'!C14"
+    },
+    "Q22": {
+      "v": "Lia Li",
+      "f": "='Xander Meijer'!C5"
+    },
+    "R22": {
+      "v": 49.5,
+      "f": "='Xander Meijer'!C17"
+    },
+    "S22": {
+      "v": 0.5,
+      "f": "='Xander Meijer'!C18"
+    },
+    "T22": {
+      "v": 34,
+      "f": "=IF($U22=\"VALID TEAM\",SUMPRODUCT(SUMIF($A$2:$A$22,L22:P22,$D$2:$D$22))+SUMIF($A$2:$A$22,Q22,$D$2:$D$22),0)"
+    },
+    "U22": {
+      "v": "VALID TEAM",
+      "f": "='Xander Meijer'!C20"
+    },
+    "V22": {
+      "v": 34.0022,
+      "f": "=T22+ROW()/10000"
+    }
+  }
+}

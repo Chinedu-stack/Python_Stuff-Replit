@@ -1,0 +1,565 @@
+{
+  "state": "visible",
+  "merged": [
+    "B1:D1",
+    "B2:D2",
+    "B3:D3"
+  ],
+  "data_validations": [],
+  "key_cells": {
+    "B1": {
+      "v": "OVERALL LEADERBOARD",
+      "f": null
+    },
+    "B2": {
+      "v": "All gameweeks combined  \u2022  Sorted by points",
+      "f": null
+    },
+    "B3": {
+      "v": "\ud83c\udfc6  OVERALL LEADER:  Alexa Amesimeku  \u2014  43 pts",
+      "f": "=IF(MAX($D$6:$D$26)=0,\"\ud83c\udfc6  OVERALL LEADER:  No results yet\",\"\ud83c\udfc6  OVERALL LEADER:  \"&INDEX($C$6:$C$26,MATCH(MAX($D$6:$D$26),$D$6:$D$26,0))&\"  \u2014  \"&MAX($D$6:$D$26)&\" pts\")"
+    },
+    "B5": {
+      "v": "Rank",
+      "f": null
+    },
+    "C5": {
+      "v": "Manager",
+      "f": null
+    },
+    "D5": {
+      "v": "Overall Points",
+      "f": null
+    },
+    "B6": {
+      "v": 1,
+      "f": null
+    },
+    "C6": {
+      "v": "Alexa Amesimeku",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D6": {
+      "v": 43,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B7": {
+      "v": 2,
+      "f": null
+    },
+    "C7": {
+      "v": "Oscar Day-Duran",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D7": {
+      "v": 36,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B8": {
+      "v": 2,
+      "f": null
+    },
+    "C8": {
+      "v": "Alfie Foley",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D8": {
+      "v": 36,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B9": {
+      "v": 3,
+      "f": null
+    },
+    "C9": {
+      "v": "Xander Meijer",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D9": {
+      "v": 34,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B10": {
+      "v": 4,
+      "f": null
+    },
+    "C10": {
+      "v": "Chinedu Chile",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D10": {
+      "v": 31,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B11": {
+      "v": 4,
+      "f": null
+    },
+    "C11": {
+      "v": "Ava Swinfen",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D11": {
+      "v": 31,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B12": {
+      "v": 5,
+      "f": null
+    },
+    "C12": {
+      "v": "Rory Bowman",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D12": {
+      "v": 30,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B13": {
+      "v": 5,
+      "f": null
+    },
+    "C13": {
+      "v": "Joe Paige",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D13": {
+      "v": 30,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B14": {
+      "v": 6,
+      "f": null
+    },
+    "C14": {
+      "v": "Melody Zhaeentan",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D14": {
+      "v": 27,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B15": {
+      "v": 7,
+      "f": null
+    },
+    "C15": {
+      "v": "David Wu",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D15": {
+      "v": 26,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B16": {
+      "v": 8,
+      "f": null
+    },
+    "C16": {
+      "v": "Azlan Husain",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D16": {
+      "v": 20,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B17": {
+      "v": 9,
+      "f": null
+    },
+    "C17": {
+      "v": "Edwin Mayers",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D17": {
+      "v": 17,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B18": {
+      "v": 10,
+      "f": null
+    },
+    "C18": {
+      "v": "Sophie Barker",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D18": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B19": {
+      "v": 10,
+      "f": null
+    },
+    "C19": {
+      "v": "Rebecca Seymour",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D19": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B20": {
+      "v": 10,
+      "f": null
+    },
+    "C20": {
+      "v": "Nina De Saram",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D20": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B21": {
+      "v": 10,
+      "f": null
+    },
+    "C21": {
+      "v": "Lia Li",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D21": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B22": {
+      "v": 10,
+      "f": null
+    },
+    "C22": {
+      "v": "Iona Smith",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D22": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B23": {
+      "v": 10,
+      "f": null
+    },
+    "C23": {
+      "v": "Esme Beston",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D23": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B24": {
+      "v": 10,
+      "f": null
+    },
+    "C24": {
+      "v": "Emily Warburton",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D24": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B25": {
+      "v": 10,
+      "f": null
+    },
+    "C25": {
+      "v": "Daniel Liu",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D25": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B26": {
+      "v": 10,
+      "f": null
+    },
+    "C26": {
+      "v": "Alyza Rai",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D26": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "OVERALL LEADERBOARD",
+      "f": null
+    },
+    "B2": {
+      "v": "All gameweeks combined  \u2022  Sorted by points",
+      "f": null
+    },
+    "B3": {
+      "v": "\ud83c\udfc6  OVERALL LEADER:  Alexa Amesimeku  \u2014  43 pts",
+      "f": "=IF(MAX($D$6:$D$26)=0,\"\ud83c\udfc6  OVERALL LEADER:  No results yet\",\"\ud83c\udfc6  OVERALL LEADER:  \"&INDEX($C$6:$C$26,MATCH(MAX($D$6:$D$26),$D$6:$D$26,0))&\"  \u2014  \"&MAX($D$6:$D$26)&\" pts\")"
+    },
+    "B5": {
+      "v": "Rank",
+      "f": null
+    },
+    "C5": {
+      "v": "Manager",
+      "f": null
+    },
+    "D5": {
+      "v": "Overall Points",
+      "f": null
+    },
+    "B6": {
+      "v": 1,
+      "f": null
+    },
+    "C6": {
+      "v": "Alexa Amesimeku",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D6": {
+      "v": 43,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B7": {
+      "v": 2,
+      "f": null
+    },
+    "C7": {
+      "v": "Oscar Day-Duran",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D7": {
+      "v": 36,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B8": {
+      "v": 2,
+      "f": null
+    },
+    "C8": {
+      "v": "Alfie Foley",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D8": {
+      "v": 36,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B9": {
+      "v": 3,
+      "f": null
+    },
+    "C9": {
+      "v": "Xander Meijer",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D9": {
+      "v": 34,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B10": {
+      "v": 4,
+      "f": null
+    },
+    "C10": {
+      "v": "Chinedu Chile",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D10": {
+      "v": 31,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B11": {
+      "v": 4,
+      "f": null
+    },
+    "C11": {
+      "v": "Ava Swinfen",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D11": {
+      "v": 31,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B12": {
+      "v": 5,
+      "f": null
+    },
+    "C12": {
+      "v": "Rory Bowman",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D12": {
+      "v": 30,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B13": {
+      "v": 5,
+      "f": null
+    },
+    "C13": {
+      "v": "Joe Paige",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D13": {
+      "v": 30,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B14": {
+      "v": 6,
+      "f": null
+    },
+    "C14": {
+      "v": "Melody Zhaeentan",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D14": {
+      "v": 27,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B15": {
+      "v": 7,
+      "f": null
+    },
+    "C15": {
+      "v": "David Wu",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D15": {
+      "v": 26,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B16": {
+      "v": 8,
+      "f": null
+    },
+    "C16": {
+      "v": "Azlan Husain",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D16": {
+      "v": 20,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B17": {
+      "v": 9,
+      "f": null
+    },
+    "C17": {
+      "v": "Edwin Mayers",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D17": {
+      "v": 17,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B18": {
+      "v": 10,
+      "f": null
+    },
+    "C18": {
+      "v": "Sophie Barker",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D18": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B19": {
+      "v": 10,
+      "f": null
+    },
+    "C19": {
+      "v": "Rebecca Seymour",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D19": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B20": {
+      "v": 10,
+      "f": null
+    },
+    "C20": {
+      "v": "Nina De Saram",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D20": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B21": {
+      "v": 10,
+      "f": null
+    },
+    "C21": {
+      "v": "Lia Li",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D21": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B22": {
+      "v": 10,
+      "f": null
+    },
+    "C22": {
+      "v": "Iona Smith",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D22": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B23": {
+      "v": 10,
+      "f": null
+    },
+    "C23": {
+      "v": "Esme Beston",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D23": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B24": {
+      "v": 10,
+      "f": null
+    },
+    "C24": {
+      "v": "Emily Warburton",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D24": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B25": {
+      "v": 10,
+      "f": null
+    },
+    "C25": {
+      "v": "Daniel Liu",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D25": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    },
+    "B26": {
+      "v": 10,
+      "f": null
+    },
+    "C26": {
+      "v": "Alyza Rai",
+      "f": "=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),\"\")"
+    },
+    "D26": {
+      "v": 0,
+      "f": "=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0)"
+    }
+  }
+}

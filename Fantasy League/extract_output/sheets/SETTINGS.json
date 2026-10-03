@@ -1,0 +1,1439 @@
+{
+  "state": "visible",
+  "merged": [
+    "B1:E1",
+    "B20:F20",
+    "B3:E3",
+    "B2:E2",
+    "B44:W44"
+  ],
+  "data_validations": [],
+  "key_cells": {
+    "B1": {
+      "v": "SETTINGS \u2014 CONTROL PANEL",
+      "f": null
+    },
+    "B2": {
+      "v": "Change the numbers below to update the whole league. Only gold cells are editable.",
+      "f": null
+    },
+    "B3": {
+      "v": "GAME RULES",
+      "f": null
+    },
+    "B4": {
+      "v": "Setting",
+      "f": null
+    },
+    "C4": {
+      "v": "Value",
+      "f": null
+    },
+    "D4": {
+      "v": "Notes",
+      "f": null
+    },
+    "B5": {
+      "v": "Baseline points (at avg)",
+      "f": null
+    },
+    "C5": {
+      "v": 5,
+      "f": null
+    },
+    "D5": {
+      "v": "Points for scoring exactly the class average",
+      "f": null
+    },
+    "B6": {
+      "v": "Dynamic step divisor",
+      "f": null
+    },
+    "C6": {
+      "v": 10,
+      "f": null
+    },
+    "D6": {
+      "v": "Class range (max\u2212min) \u00f7 this = step size",
+      "f": null
+    },
+    "B7": {
+      "v": "Minimum points",
+      "f": null
+    },
+    "C7": {
+      "v": 0,
+      "f": null
+    },
+    "D7": {
+      "v": "Floor",
+      "f": null
+    },
+    "B8": {
+      "v": "Maximum points",
+      "f": null
+    },
+    "C8": {
+      "v": 10,
+      "f": null
+    },
+    "D8": {
+      "v": "Ceiling",
+      "f": null
+    },
+    "B9": {
+      "v": "Max weekly price change",
+      "f": null
+    },
+    "C9": {
+      "v": 0.5,
+      "f": null
+    },
+    "D9": {
+      "v": "Absolute cap per week (\u00a3m)",
+      "f": null
+    },
+    "B10": {
+      "v": "Tier multiplier (low)",
+      "f": null
+    },
+    "C10": {
+      "v": 1,
+      "f": null
+    },
+    "D10": {
+      "v": "\u00a37.0\u20138.9m price band multiplier",
+      "f": null
+    },
+    "B11": {
+      "v": "Tier multiplier (mid)",
+      "f": null
+    },
+    "C11": {
+      "v": 0.75,
+      "f": null
+    },
+    "D11": {
+      "v": "\u00a39.0\u201310.9m price band multiplier",
+      "f": null
+    },
+    "B12": {
+      "v": "Tier multiplier (high)",
+      "f": null
+    },
+    "C12": {
+      "v": 0.5,
+      "f": null
+    },
+    "D12": {
+      "v": "\u00a311.0\u201313.0m price band multiplier",
+      "f": null
+    },
+    "B13": {
+      "v": "Price change step",
+      "f": null
+    },
+    "C13": {
+      "v": 0.1,
+      "f": null
+    },
+    "D13": {
+      "v": "Ladder increment (\u00a3m)",
+      "f": null
+    },
+    "B14": {
+      "v": "Minimum price",
+      "f": null
+    },
+    "C14": {
+      "v": 7,
+      "f": null
+    },
+    "D14": {
+      "v": "Floor (\u00a3m)",
+      "f": null
+    },
+    "B15": {
+      "v": "Maximum price",
+      "f": null
+    },
+    "C15": {
+      "v": 13,
+      "f": null
+    },
+    "D15": {
+      "v": "Ceiling (\u00a3m)",
+      "f": null
+    },
+    "B16": {
+      "v": "Price changes start at week",
+      "f": null
+    },
+    "C16": {
+      "v": 3,
+      "f": null
+    },
+    "D16": {
+      "v": "First week that price changes apply",
+      "f": null
+    },
+    "B17": {
+      "v": "Tests per gameweek",
+      "f": null
+    },
+    "C17": {
+      "v": 2,
+      "f": null
+    },
+    "D17": {
+      "v": "How many test columns count this week (1-5). Others are greyed out.",
+      "f": null
+    },
+    "B20": {
+      "v": "PLAYER PRICES",
+      "f": null
+    },
+    "B21": {
+      "v": "Player",
+      "f": null
+    },
+    "C21": {
+      "v": "Base",
+      "f": null
+    },
+    "D21": {
+      "v": "Cumulative",
+      "f": null
+    },
+    "E21": {
+      "v": "Override",
+      "f": null
+    },
+    "F21": {
+      "v": "Final",
+      "f": null
+    },
+    "B22": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "C22": {
+      "v": 13,
+      "f": null
+    },
+    "D22": {
+      "v": 0,
+      "f": "=SUM(J22:Z22)"
+    },
+    "F22": {
+      "v": 13,
+      "f": "=IF(E22<>\"\",E22,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C22+D22)))"
+    },
+    "B23": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "C23": {
+      "v": 13,
+      "f": null
+    },
+    "D23": {
+      "v": 0,
+      "f": "=SUM(J23:Z23)"
+    },
+    "F23": {
+      "v": 13,
+      "f": "=IF(E23<>\"\",E23,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C23+D23)))"
+    },
+    "B24": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "C24": {
+      "v": 11,
+      "f": null
+    },
+    "D24": {
+      "v": 0,
+      "f": "=SUM(J24:Z24)"
+    },
+    "F24": {
+      "v": 11,
+      "f": "=IF(E24<>\"\",E24,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C24+D24)))"
+    },
+    "B25": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "C25": {
+      "v": 11,
+      "f": null
+    },
+    "D25": {
+      "v": 0,
+      "f": "=SUM(J25:Z25)"
+    },
+    "F25": {
+      "v": 11,
+      "f": "=IF(E25<>\"\",E25,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C25+D25)))"
+    },
+    "B26": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "C26": {
+      "v": 10.5,
+      "f": null
+    },
+    "D26": {
+      "v": 0,
+      "f": "=SUM(J26:Z26)"
+    },
+    "F26": {
+      "v": 10.5,
+      "f": "=IF(E26<>\"\",E26,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C26+D26)))"
+    },
+    "B27": {
+      "v": "David Wu",
+      "f": null
+    },
+    "C27": {
+      "v": 10.5,
+      "f": null
+    },
+    "D27": {
+      "v": 0,
+      "f": "=SUM(J27:Z27)"
+    },
+    "F27": {
+      "v": 10.5,
+      "f": "=IF(E27<>\"\",E27,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C27+D27)))"
+    },
+    "B28": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "C28": {
+      "v": 10.5,
+      "f": null
+    },
+    "D28": {
+      "v": 0,
+      "f": "=SUM(J28:Z28)"
+    },
+    "F28": {
+      "v": 10.5,
+      "f": "=IF(E28<>\"\",E28,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C28+D28)))"
+    },
+    "B29": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "C29": {
+      "v": 10,
+      "f": null
+    },
+    "D29": {
+      "v": 0,
+      "f": "=SUM(J29:Z29)"
+    },
+    "F29": {
+      "v": 10,
+      "f": "=IF(E29<>\"\",E29,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C29+D29)))"
+    },
+    "B30": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "C30": {
+      "v": 10,
+      "f": null
+    },
+    "D30": {
+      "v": 0,
+      "f": "=SUM(J30:Z30)"
+    },
+    "F30": {
+      "v": 10,
+      "f": "=IF(E30<>\"\",E30,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C30+D30)))"
+    },
+    "B31": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "C31": {
+      "v": 9.5,
+      "f": null
+    },
+    "D31": {
+      "v": 0,
+      "f": "=SUM(J31:Z31)"
+    },
+    "F31": {
+      "v": 9.5,
+      "f": "=IF(E31<>\"\",E31,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C31+D31)))"
+    },
+    "B32": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "C32": {
+      "v": 9.5,
+      "f": null
+    },
+    "D32": {
+      "v": 0,
+      "f": "=SUM(J32:Z32)"
+    },
+    "F32": {
+      "v": 9.5,
+      "f": "=IF(E32<>\"\",E32,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C32+D32)))"
+    },
+    "B33": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "C33": {
+      "v": 9.5,
+      "f": null
+    },
+    "D33": {
+      "v": 0,
+      "f": "=SUM(J33:Z33)"
+    },
+    "F33": {
+      "v": 9.5,
+      "f": "=IF(E33<>\"\",E33,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C33+D33)))"
+    },
+    "B34": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "C34": {
+      "v": 9,
+      "f": null
+    },
+    "D34": {
+      "v": 0,
+      "f": "=SUM(J34:Z34)"
+    },
+    "F34": {
+      "v": 9,
+      "f": "=IF(E34<>\"\",E34,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C34+D34)))"
+    },
+    "B35": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "C35": {
+      "v": 8.5,
+      "f": null
+    },
+    "D35": {
+      "v": 0,
+      "f": "=SUM(J35:Z35)"
+    },
+    "F35": {
+      "v": 8.5,
+      "f": "=IF(E35<>\"\",E35,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C35+D35)))"
+    },
+    "B36": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "C36": {
+      "v": 8,
+      "f": null
+    },
+    "D36": {
+      "v": 0,
+      "f": "=SUM(J36:Z36)"
+    },
+    "F36": {
+      "v": 8,
+      "f": "=IF(E36<>\"\",E36,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C36+D36)))"
+    },
+    "B37": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "C37": {
+      "v": 8,
+      "f": null
+    },
+    "D37": {
+      "v": 0,
+      "f": "=SUM(J37:Z37)"
+    },
+    "F37": {
+      "v": 8,
+      "f": "=IF(E37<>\"\",E37,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C37+D37)))"
+    },
+    "B38": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "C38": {
+      "v": 8,
+      "f": null
+    },
+    "D38": {
+      "v": 0,
+      "f": "=SUM(J38:Z38)"
+    },
+    "F38": {
+      "v": 8,
+      "f": "=IF(E38<>\"\",E38,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C38+D38)))"
+    },
+    "B39": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "C39": {
+      "v": 7.5,
+      "f": null
+    },
+    "D39": {
+      "v": 0,
+      "f": "=SUM(J39:Z39)"
+    },
+    "F39": {
+      "v": 7.5,
+      "f": "=IF(E39<>\"\",E39,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C39+D39)))"
+    },
+    "B40": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "C40": {
+      "v": 7,
+      "f": null
+    },
+    "D40": {
+      "v": 0,
+      "f": "=SUM(J40:Z40)"
+    },
+    "F40": {
+      "v": 7,
+      "f": "=IF(E40<>\"\",E40,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C40+D40)))"
+    },
+    "B41": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "C41": {
+      "v": 7,
+      "f": null
+    },
+    "D41": {
+      "v": 0,
+      "f": "=SUM(J41:Z41)"
+    },
+    "F41": {
+      "v": 7,
+      "f": "=IF(E41<>\"\",E41,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C41+D41)))"
+    },
+    "B42": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "C42": {
+      "v": 7,
+      "f": null
+    },
+    "D42": {
+      "v": 0,
+      "f": "=SUM(J42:Z42)"
+    },
+    "F42": {
+      "v": 7,
+      "f": "=IF(E42<>\"\",E42,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C42+D42)))"
+    },
+    "B44": {
+      "v": "WEEKLY PRICE LOG (auto-written by advance script)",
+      "f": null
+    },
+    "B45": {
+      "v": "Player",
+      "f": null
+    },
+    "C45": {
+      "v": "GW1",
+      "f": null
+    },
+    "D45": {
+      "v": "GW2",
+      "f": null
+    },
+    "E45": {
+      "v": "GW3",
+      "f": null
+    },
+    "F45": {
+      "v": "GW4",
+      "f": null
+    },
+    "G45": {
+      "v": "GW5",
+      "f": null
+    },
+    "H45": {
+      "v": "GW6",
+      "f": null
+    },
+    "I45": {
+      "v": "GW7",
+      "f": null
+    },
+    "J45": {
+      "v": "GW8",
+      "f": null
+    },
+    "K45": {
+      "v": "GW9",
+      "f": null
+    },
+    "L45": {
+      "v": "GW10",
+      "f": null
+    },
+    "M45": {
+      "v": "GW11",
+      "f": null
+    },
+    "N45": {
+      "v": "GW12",
+      "f": null
+    },
+    "O45": {
+      "v": "GW13",
+      "f": null
+    },
+    "P45": {
+      "v": "GW14",
+      "f": null
+    },
+    "Q45": {
+      "v": "GW15",
+      "f": null
+    },
+    "R45": {
+      "v": "GW16",
+      "f": null
+    },
+    "S45": {
+      "v": "GW17",
+      "f": null
+    },
+    "T45": {
+      "v": "GW18",
+      "f": null
+    },
+    "U45": {
+      "v": "GW19",
+      "f": null
+    },
+    "V45": {
+      "v": "GW20",
+      "f": null
+    },
+    "B46": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "B47": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "B48": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "B49": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "B50": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "B51": {
+      "v": "David Wu",
+      "f": null
+    },
+    "B52": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "B53": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "B54": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "B55": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "B56": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "B57": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "B58": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B59": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "B60": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "B61": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "B62": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "B63": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "B64": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "B65": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "B66": {
+      "v": "Xander Meijer",
+      "f": null
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "SETTINGS \u2014 CONTROL PANEL",
+      "f": null
+    },
+    "B2": {
+      "v": "Change the numbers below to update the whole league. Only gold cells are editable.",
+      "f": null
+    },
+    "B3": {
+      "v": "GAME RULES",
+      "f": null
+    },
+    "B4": {
+      "v": "Setting",
+      "f": null
+    },
+    "C4": {
+      "v": "Value",
+      "f": null
+    },
+    "D4": {
+      "v": "Notes",
+      "f": null
+    },
+    "B5": {
+      "v": "Baseline points (at avg)",
+      "f": null
+    },
+    "C5": {
+      "v": 5,
+      "f": null
+    },
+    "D5": {
+      "v": "Points for scoring exactly the class average",
+      "f": null
+    },
+    "B6": {
+      "v": "Dynamic step divisor",
+      "f": null
+    },
+    "C6": {
+      "v": 10,
+      "f": null
+    },
+    "D6": {
+      "v": "Class range (max\u2212min) \u00f7 this = step size",
+      "f": null
+    },
+    "B7": {
+      "v": "Minimum points",
+      "f": null
+    },
+    "C7": {
+      "v": 0,
+      "f": null
+    },
+    "D7": {
+      "v": "Floor",
+      "f": null
+    },
+    "B8": {
+      "v": "Maximum points",
+      "f": null
+    },
+    "C8": {
+      "v": 10,
+      "f": null
+    },
+    "D8": {
+      "v": "Ceiling",
+      "f": null
+    },
+    "B9": {
+      "v": "Max weekly price change",
+      "f": null
+    },
+    "C9": {
+      "v": 0.5,
+      "f": null
+    },
+    "D9": {
+      "v": "Absolute cap per week (\u00a3m)",
+      "f": null
+    },
+    "B10": {
+      "v": "Tier multiplier (low)",
+      "f": null
+    },
+    "C10": {
+      "v": 1,
+      "f": null
+    },
+    "D10": {
+      "v": "\u00a37.0\u20138.9m price band multiplier",
+      "f": null
+    },
+    "B11": {
+      "v": "Tier multiplier (mid)",
+      "f": null
+    },
+    "C11": {
+      "v": 0.75,
+      "f": null
+    },
+    "D11": {
+      "v": "\u00a39.0\u201310.9m price band multiplier",
+      "f": null
+    },
+    "B12": {
+      "v": "Tier multiplier (high)",
+      "f": null
+    },
+    "C12": {
+      "v": 0.5,
+      "f": null
+    },
+    "D12": {
+      "v": "\u00a311.0\u201313.0m price band multiplier",
+      "f": null
+    },
+    "B13": {
+      "v": "Price change step",
+      "f": null
+    },
+    "C13": {
+      "v": 0.1,
+      "f": null
+    },
+    "D13": {
+      "v": "Ladder increment (\u00a3m)",
+      "f": null
+    },
+    "B14": {
+      "v": "Minimum price",
+      "f": null
+    },
+    "C14": {
+      "v": 7,
+      "f": null
+    },
+    "D14": {
+      "v": "Floor (\u00a3m)",
+      "f": null
+    },
+    "B15": {
+      "v": "Maximum price",
+      "f": null
+    },
+    "C15": {
+      "v": 13,
+      "f": null
+    },
+    "D15": {
+      "v": "Ceiling (\u00a3m)",
+      "f": null
+    },
+    "B16": {
+      "v": "Price changes start at week",
+      "f": null
+    },
+    "C16": {
+      "v": 3,
+      "f": null
+    },
+    "D16": {
+      "v": "First week that price changes apply",
+      "f": null
+    },
+    "B17": {
+      "v": "Tests per gameweek",
+      "f": null
+    },
+    "C17": {
+      "v": 2,
+      "f": null
+    },
+    "D17": {
+      "v": "How many test columns count this week (1-5). Others are greyed out.",
+      "f": null
+    },
+    "B20": {
+      "v": "PLAYER PRICES",
+      "f": null
+    },
+    "B21": {
+      "v": "Player",
+      "f": null
+    },
+    "C21": {
+      "v": "Base",
+      "f": null
+    },
+    "D21": {
+      "v": "Cumulative",
+      "f": null
+    },
+    "E21": {
+      "v": "Override",
+      "f": null
+    },
+    "F21": {
+      "v": "Final",
+      "f": null
+    },
+    "B22": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "C22": {
+      "v": 13,
+      "f": null
+    },
+    "D22": {
+      "v": 0,
+      "f": "=SUM(J22:Z22)"
+    },
+    "F22": {
+      "v": 13,
+      "f": "=IF(E22<>\"\",E22,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C22+D22)))"
+    },
+    "B23": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "C23": {
+      "v": 13,
+      "f": null
+    },
+    "D23": {
+      "v": 0,
+      "f": "=SUM(J23:Z23)"
+    },
+    "F23": {
+      "v": 13,
+      "f": "=IF(E23<>\"\",E23,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C23+D23)))"
+    },
+    "B24": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "C24": {
+      "v": 11,
+      "f": null
+    },
+    "D24": {
+      "v": 0,
+      "f": "=SUM(J24:Z24)"
+    },
+    "F24": {
+      "v": 11,
+      "f": "=IF(E24<>\"\",E24,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C24+D24)))"
+    },
+    "B25": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "C25": {
+      "v": 11,
+      "f": null
+    },
+    "D25": {
+      "v": 0,
+      "f": "=SUM(J25:Z25)"
+    },
+    "F25": {
+      "v": 11,
+      "f": "=IF(E25<>\"\",E25,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C25+D25)))"
+    },
+    "B26": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "C26": {
+      "v": 10.5,
+      "f": null
+    },
+    "D26": {
+      "v": 0,
+      "f": "=SUM(J26:Z26)"
+    },
+    "F26": {
+      "v": 10.5,
+      "f": "=IF(E26<>\"\",E26,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C26+D26)))"
+    },
+    "B27": {
+      "v": "David Wu",
+      "f": null
+    },
+    "C27": {
+      "v": 10.5,
+      "f": null
+    },
+    "D27": {
+      "v": 0,
+      "f": "=SUM(J27:Z27)"
+    },
+    "F27": {
+      "v": 10.5,
+      "f": "=IF(E27<>\"\",E27,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C27+D27)))"
+    },
+    "B28": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "C28": {
+      "v": 10.5,
+      "f": null
+    },
+    "D28": {
+      "v": 0,
+      "f": "=SUM(J28:Z28)"
+    },
+    "F28": {
+      "v": 10.5,
+      "f": "=IF(E28<>\"\",E28,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C28+D28)))"
+    },
+    "B29": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "C29": {
+      "v": 10,
+      "f": null
+    },
+    "D29": {
+      "v": 0,
+      "f": "=SUM(J29:Z29)"
+    },
+    "F29": {
+      "v": 10,
+      "f": "=IF(E29<>\"\",E29,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C29+D29)))"
+    },
+    "B30": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "C30": {
+      "v": 10,
+      "f": null
+    },
+    "D30": {
+      "v": 0,
+      "f": "=SUM(J30:Z30)"
+    },
+    "F30": {
+      "v": 10,
+      "f": "=IF(E30<>\"\",E30,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C30+D30)))"
+    },
+    "B31": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "C31": {
+      "v": 9.5,
+      "f": null
+    },
+    "D31": {
+      "v": 0,
+      "f": "=SUM(J31:Z31)"
+    },
+    "F31": {
+      "v": 9.5,
+      "f": "=IF(E31<>\"\",E31,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C31+D31)))"
+    },
+    "B32": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "C32": {
+      "v": 9.5,
+      "f": null
+    },
+    "D32": {
+      "v": 0,
+      "f": "=SUM(J32:Z32)"
+    },
+    "F32": {
+      "v": 9.5,
+      "f": "=IF(E32<>\"\",E32,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C32+D32)))"
+    },
+    "B33": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "C33": {
+      "v": 9.5,
+      "f": null
+    },
+    "D33": {
+      "v": 0,
+      "f": "=SUM(J33:Z33)"
+    },
+    "F33": {
+      "v": 9.5,
+      "f": "=IF(E33<>\"\",E33,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C33+D33)))"
+    },
+    "B34": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "C34": {
+      "v": 9,
+      "f": null
+    },
+    "D34": {
+      "v": 0,
+      "f": "=SUM(J34:Z34)"
+    },
+    "F34": {
+      "v": 9,
+      "f": "=IF(E34<>\"\",E34,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C34+D34)))"
+    },
+    "B35": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "C35": {
+      "v": 8.5,
+      "f": null
+    },
+    "D35": {
+      "v": 0,
+      "f": "=SUM(J35:Z35)"
+    },
+    "F35": {
+      "v": 8.5,
+      "f": "=IF(E35<>\"\",E35,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C35+D35)))"
+    },
+    "B36": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "C36": {
+      "v": 8,
+      "f": null
+    },
+    "D36": {
+      "v": 0,
+      "f": "=SUM(J36:Z36)"
+    },
+    "F36": {
+      "v": 8,
+      "f": "=IF(E36<>\"\",E36,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C36+D36)))"
+    },
+    "B37": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "C37": {
+      "v": 8,
+      "f": null
+    },
+    "D37": {
+      "v": 0,
+      "f": "=SUM(J37:Z37)"
+    },
+    "F37": {
+      "v": 8,
+      "f": "=IF(E37<>\"\",E37,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C37+D37)))"
+    },
+    "B38": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "C38": {
+      "v": 8,
+      "f": null
+    },
+    "D38": {
+      "v": 0,
+      "f": "=SUM(J38:Z38)"
+    },
+    "F38": {
+      "v": 8,
+      "f": "=IF(E38<>\"\",E38,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C38+D38)))"
+    },
+    "B39": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "C39": {
+      "v": 7.5,
+      "f": null
+    },
+    "D39": {
+      "v": 0,
+      "f": "=SUM(J39:Z39)"
+    },
+    "F39": {
+      "v": 7.5,
+      "f": "=IF(E39<>\"\",E39,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C39+D39)))"
+    },
+    "B40": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "C40": {
+      "v": 7,
+      "f": null
+    },
+    "D40": {
+      "v": 0,
+      "f": "=SUM(J40:Z40)"
+    },
+    "F40": {
+      "v": 7,
+      "f": "=IF(E40<>\"\",E40,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C40+D40)))"
+    },
+    "B41": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "C41": {
+      "v": 7,
+      "f": null
+    },
+    "D41": {
+      "v": 0,
+      "f": "=SUM(J41:Z41)"
+    },
+    "F41": {
+      "v": 7,
+      "f": "=IF(E41<>\"\",E41,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C41+D41)))"
+    },
+    "B42": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "C42": {
+      "v": 7,
+      "f": null
+    },
+    "D42": {
+      "v": 0,
+      "f": "=SUM(J42:Z42)"
+    },
+    "F42": {
+      "v": 7,
+      "f": "=IF(E42<>\"\",E42,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C42+D42)))"
+    },
+    "B44": {
+      "v": "WEEKLY PRICE LOG (auto-written by advance script)",
+      "f": null
+    },
+    "B45": {
+      "v": "Player",
+      "f": null
+    },
+    "C45": {
+      "v": "GW1",
+      "f": null
+    },
+    "D45": {
+      "v": "GW2",
+      "f": null
+    },
+    "E45": {
+      "v": "GW3",
+      "f": null
+    },
+    "F45": {
+      "v": "GW4",
+      "f": null
+    },
+    "G45": {
+      "v": "GW5",
+      "f": null
+    },
+    "H45": {
+      "v": "GW6",
+      "f": null
+    },
+    "I45": {
+      "v": "GW7",
+      "f": null
+    },
+    "J45": {
+      "v": "GW8",
+      "f": null
+    },
+    "K45": {
+      "v": "GW9",
+      "f": null
+    },
+    "L45": {
+      "v": "GW10",
+      "f": null
+    },
+    "M45": {
+      "v": "GW11",
+      "f": null
+    },
+    "N45": {
+      "v": "GW12",
+      "f": null
+    },
+    "O45": {
+      "v": "GW13",
+      "f": null
+    },
+    "P45": {
+      "v": "GW14",
+      "f": null
+    },
+    "Q45": {
+      "v": "GW15",
+      "f": null
+    },
+    "R45": {
+      "v": "GW16",
+      "f": null
+    },
+    "S45": {
+      "v": "GW17",
+      "f": null
+    },
+    "T45": {
+      "v": "GW18",
+      "f": null
+    },
+    "U45": {
+      "v": "GW19",
+      "f": null
+    },
+    "V45": {
+      "v": "GW20",
+      "f": null
+    },
+    "B46": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "B47": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "B48": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "B49": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "B50": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "B51": {
+      "v": "David Wu",
+      "f": null
+    },
+    "B52": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "B53": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "B54": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "B55": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "B56": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "B57": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "B58": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B59": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "B60": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "B61": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "B62": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "B63": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "B64": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "B65": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "B66": {
+      "v": "Xander Meijer",
+      "f": null
+    }
+  }
+}

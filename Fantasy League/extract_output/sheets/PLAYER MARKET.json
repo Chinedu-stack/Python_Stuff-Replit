@@ -1,0 +1,741 @@
+{
+  "state": "visible",
+  "merged": [
+    "B1:E1",
+    "B2:E2",
+    "B28:E30"
+  ],
+  "data_validations": [],
+  "key_cells": {
+    "B1": {
+      "v": "PLAYER MARKET",
+      "f": null
+    },
+    "B2": {
+      "v": "Prices  \u2022  This week's change  \u2022  Ownership",
+      "f": null
+    },
+    "B4": {
+      "v": "Player",
+      "f": null
+    },
+    "C4": {
+      "v": "Price",
+      "f": null
+    },
+    "D4": {
+      "v": "Change",
+      "f": null
+    },
+    "E4": {
+      "v": "Ownership %",
+      "f": null
+    },
+    "B5": {
+      "v": "Lia Li",
+      "f": "=CALCULATIONS!A2"
+    },
+    "C5": {
+      "v": 13,
+      "f": "=CALCULATIONS!C2"
+    },
+    "D5": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C2-CALCULATIONS!B2)"
+    },
+    "E5": {
+      "v": 0.23809523809523808,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A2)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B6": {
+      "v": "Sophie Barker",
+      "f": "=CALCULATIONS!A3"
+    },
+    "C6": {
+      "v": 13,
+      "f": "=CALCULATIONS!C3"
+    },
+    "D6": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C3-CALCULATIONS!B3)"
+    },
+    "E6": {
+      "v": 0.14285714285714285,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A3)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B7": {
+      "v": "Chinedu Chile",
+      "f": "=CALCULATIONS!A4"
+    },
+    "C7": {
+      "v": 11,
+      "f": "=CALCULATIONS!C4"
+    },
+    "D7": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C4-CALCULATIONS!B4)"
+    },
+    "E7": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A4)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B8": {
+      "v": "Emily Warburton",
+      "f": "=CALCULATIONS!A5"
+    },
+    "C8": {
+      "v": 11,
+      "f": "=CALCULATIONS!C5"
+    },
+    "D8": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C5-CALCULATIONS!B5)"
+    },
+    "E8": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A5)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B9": {
+      "v": "Alyza Rai",
+      "f": "=CALCULATIONS!A6"
+    },
+    "C9": {
+      "v": 10.5,
+      "f": "=CALCULATIONS!C6"
+    },
+    "D9": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C6-CALCULATIONS!B6)"
+    },
+    "E9": {
+      "v": 0.14285714285714285,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A6)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B10": {
+      "v": "David Wu",
+      "f": "=CALCULATIONS!A7"
+    },
+    "C10": {
+      "v": 10.5,
+      "f": "=CALCULATIONS!C7"
+    },
+    "D10": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C7-CALCULATIONS!B7)"
+    },
+    "E10": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A7)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B11": {
+      "v": "Joe Paige",
+      "f": "=CALCULATIONS!A8"
+    },
+    "C11": {
+      "v": 10.5,
+      "f": "=CALCULATIONS!C8"
+    },
+    "D11": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C8-CALCULATIONS!B8)"
+    },
+    "E11": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A8)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B12": {
+      "v": "Azlan Husain",
+      "f": "=CALCULATIONS!A9"
+    },
+    "C12": {
+      "v": 10,
+      "f": "=CALCULATIONS!C9"
+    },
+    "D12": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C9-CALCULATIONS!B9)"
+    },
+    "E12": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A9)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B13": {
+      "v": "Nina De Saram",
+      "f": "=CALCULATIONS!A10"
+    },
+    "C13": {
+      "v": 10,
+      "f": "=CALCULATIONS!C10"
+    },
+    "D13": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C10-CALCULATIONS!B10)"
+    },
+    "E13": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A10)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B14": {
+      "v": "Alexa Amesimeku",
+      "f": "=CALCULATIONS!A11"
+    },
+    "C14": {
+      "v": 9.5,
+      "f": "=CALCULATIONS!C11"
+    },
+    "D14": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C11-CALCULATIONS!B11)"
+    },
+    "E14": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A11)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B15": {
+      "v": "Daniel Liu",
+      "f": "=CALCULATIONS!A12"
+    },
+    "C15": {
+      "v": 9.5,
+      "f": "=CALCULATIONS!C12"
+    },
+    "D15": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C12-CALCULATIONS!B12)"
+    },
+    "E15": {
+      "v": 0,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A12)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B16": {
+      "v": "Rebecca Seymour",
+      "f": "=CALCULATIONS!A13"
+    },
+    "C16": {
+      "v": 9.5,
+      "f": "=CALCULATIONS!C13"
+    },
+    "D16": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C13-CALCULATIONS!B13)"
+    },
+    "E16": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A13)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B17": {
+      "v": "Edwin Mayers",
+      "f": "=CALCULATIONS!A14"
+    },
+    "C17": {
+      "v": 9,
+      "f": "=CALCULATIONS!C14"
+    },
+    "D17": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C14-CALCULATIONS!B14)"
+    },
+    "E17": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A14)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B18": {
+      "v": "Melody Zhaeentan",
+      "f": "=CALCULATIONS!A15"
+    },
+    "C18": {
+      "v": 8.5,
+      "f": "=CALCULATIONS!C15"
+    },
+    "D18": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C15-CALCULATIONS!B15)"
+    },
+    "E18": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A15)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B19": {
+      "v": "Esme Beston",
+      "f": "=CALCULATIONS!A16"
+    },
+    "C19": {
+      "v": 8,
+      "f": "=CALCULATIONS!C16"
+    },
+    "D19": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C16-CALCULATIONS!B16)"
+    },
+    "E19": {
+      "v": 0.047619047619047616,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A16)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B20": {
+      "v": "Iona Smith",
+      "f": "=CALCULATIONS!A17"
+    },
+    "C20": {
+      "v": 8,
+      "f": "=CALCULATIONS!C17"
+    },
+    "D20": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C17-CALCULATIONS!B17)"
+    },
+    "E20": {
+      "v": 0,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A17)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B21": {
+      "v": "Oscar Day-Duran",
+      "f": "=CALCULATIONS!A18"
+    },
+    "C21": {
+      "v": 8,
+      "f": "=CALCULATIONS!C18"
+    },
+    "D21": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C18-CALCULATIONS!B18)"
+    },
+    "E21": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A18)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B22": {
+      "v": "Alfie Foley",
+      "f": "=CALCULATIONS!A19"
+    },
+    "C22": {
+      "v": 7.5,
+      "f": "=CALCULATIONS!C19"
+    },
+    "D22": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C19-CALCULATIONS!B19)"
+    },
+    "E22": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A19)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B23": {
+      "v": "Ava Swinfen",
+      "f": "=CALCULATIONS!A20"
+    },
+    "C23": {
+      "v": 7,
+      "f": "=CALCULATIONS!C20"
+    },
+    "D23": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C20-CALCULATIONS!B20)"
+    },
+    "E23": {
+      "v": 0.2857142857142857,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A20)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B24": {
+      "v": "Rory Bowman",
+      "f": "=CALCULATIONS!A21"
+    },
+    "C24": {
+      "v": 7,
+      "f": "=CALCULATIONS!C21"
+    },
+    "D24": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C21-CALCULATIONS!B21)"
+    },
+    "E24": {
+      "v": 0,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A21)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B25": {
+      "v": "Xander Meijer",
+      "f": "=CALCULATIONS!A22"
+    },
+    "C25": {
+      "v": 7,
+      "f": "=CALCULATIONS!C22"
+    },
+    "D25": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C22-CALCULATIONS!B22)"
+    },
+    "E25": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A22)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B28": {
+      "v": "PRICE RULES\nPrices move based on 3-week form vs class average.\nFirst 2 gameweeks: no changes.  Min \u00a37.0m  \u2022  Max \u00a313.0m",
+      "f": null
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "PLAYER MARKET",
+      "f": null
+    },
+    "B2": {
+      "v": "Prices  \u2022  This week's change  \u2022  Ownership",
+      "f": null
+    },
+    "B4": {
+      "v": "Player",
+      "f": null
+    },
+    "C4": {
+      "v": "Price",
+      "f": null
+    },
+    "D4": {
+      "v": "Change",
+      "f": null
+    },
+    "E4": {
+      "v": "Ownership %",
+      "f": null
+    },
+    "B5": {
+      "v": "Lia Li",
+      "f": "=CALCULATIONS!A2"
+    },
+    "C5": {
+      "v": 13,
+      "f": "=CALCULATIONS!C2"
+    },
+    "D5": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C2-CALCULATIONS!B2)"
+    },
+    "E5": {
+      "v": 0.23809523809523808,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A2)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B6": {
+      "v": "Sophie Barker",
+      "f": "=CALCULATIONS!A3"
+    },
+    "C6": {
+      "v": 13,
+      "f": "=CALCULATIONS!C3"
+    },
+    "D6": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C3-CALCULATIONS!B3)"
+    },
+    "E6": {
+      "v": 0.14285714285714285,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A3)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B7": {
+      "v": "Chinedu Chile",
+      "f": "=CALCULATIONS!A4"
+    },
+    "C7": {
+      "v": 11,
+      "f": "=CALCULATIONS!C4"
+    },
+    "D7": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C4-CALCULATIONS!B4)"
+    },
+    "E7": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A4)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B8": {
+      "v": "Emily Warburton",
+      "f": "=CALCULATIONS!A5"
+    },
+    "C8": {
+      "v": 11,
+      "f": "=CALCULATIONS!C5"
+    },
+    "D8": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C5-CALCULATIONS!B5)"
+    },
+    "E8": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A5)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B9": {
+      "v": "Alyza Rai",
+      "f": "=CALCULATIONS!A6"
+    },
+    "C9": {
+      "v": 10.5,
+      "f": "=CALCULATIONS!C6"
+    },
+    "D9": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C6-CALCULATIONS!B6)"
+    },
+    "E9": {
+      "v": 0.14285714285714285,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A6)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B10": {
+      "v": "David Wu",
+      "f": "=CALCULATIONS!A7"
+    },
+    "C10": {
+      "v": 10.5,
+      "f": "=CALCULATIONS!C7"
+    },
+    "D10": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C7-CALCULATIONS!B7)"
+    },
+    "E10": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A7)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B11": {
+      "v": "Joe Paige",
+      "f": "=CALCULATIONS!A8"
+    },
+    "C11": {
+      "v": 10.5,
+      "f": "=CALCULATIONS!C8"
+    },
+    "D11": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C8-CALCULATIONS!B8)"
+    },
+    "E11": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A8)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B12": {
+      "v": "Azlan Husain",
+      "f": "=CALCULATIONS!A9"
+    },
+    "C12": {
+      "v": 10,
+      "f": "=CALCULATIONS!C9"
+    },
+    "D12": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C9-CALCULATIONS!B9)"
+    },
+    "E12": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A9)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B13": {
+      "v": "Nina De Saram",
+      "f": "=CALCULATIONS!A10"
+    },
+    "C13": {
+      "v": 10,
+      "f": "=CALCULATIONS!C10"
+    },
+    "D13": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C10-CALCULATIONS!B10)"
+    },
+    "E13": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A10)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B14": {
+      "v": "Alexa Amesimeku",
+      "f": "=CALCULATIONS!A11"
+    },
+    "C14": {
+      "v": 9.5,
+      "f": "=CALCULATIONS!C11"
+    },
+    "D14": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C11-CALCULATIONS!B11)"
+    },
+    "E14": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A11)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B15": {
+      "v": "Daniel Liu",
+      "f": "=CALCULATIONS!A12"
+    },
+    "C15": {
+      "v": 9.5,
+      "f": "=CALCULATIONS!C12"
+    },
+    "D15": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C12-CALCULATIONS!B12)"
+    },
+    "E15": {
+      "v": 0,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A12)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B16": {
+      "v": "Rebecca Seymour",
+      "f": "=CALCULATIONS!A13"
+    },
+    "C16": {
+      "v": 9.5,
+      "f": "=CALCULATIONS!C13"
+    },
+    "D16": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C13-CALCULATIONS!B13)"
+    },
+    "E16": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A13)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B17": {
+      "v": "Edwin Mayers",
+      "f": "=CALCULATIONS!A14"
+    },
+    "C17": {
+      "v": 9,
+      "f": "=CALCULATIONS!C14"
+    },
+    "D17": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C14-CALCULATIONS!B14)"
+    },
+    "E17": {
+      "v": 0.3333333333333333,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A14)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B18": {
+      "v": "Melody Zhaeentan",
+      "f": "=CALCULATIONS!A15"
+    },
+    "C18": {
+      "v": 8.5,
+      "f": "=CALCULATIONS!C15"
+    },
+    "D18": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C15-CALCULATIONS!B15)"
+    },
+    "E18": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A15)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B19": {
+      "v": "Esme Beston",
+      "f": "=CALCULATIONS!A16"
+    },
+    "C19": {
+      "v": 8,
+      "f": "=CALCULATIONS!C16"
+    },
+    "D19": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C16-CALCULATIONS!B16)"
+    },
+    "E19": {
+      "v": 0.047619047619047616,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A16)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B20": {
+      "v": "Iona Smith",
+      "f": "=CALCULATIONS!A17"
+    },
+    "C20": {
+      "v": 8,
+      "f": "=CALCULATIONS!C17"
+    },
+    "D20": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C17-CALCULATIONS!B17)"
+    },
+    "E20": {
+      "v": 0,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A17)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B21": {
+      "v": "Oscar Day-Duran",
+      "f": "=CALCULATIONS!A18"
+    },
+    "C21": {
+      "v": 8,
+      "f": "=CALCULATIONS!C18"
+    },
+    "D21": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C18-CALCULATIONS!B18)"
+    },
+    "E21": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A18)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B22": {
+      "v": "Alfie Foley",
+      "f": "=CALCULATIONS!A19"
+    },
+    "C22": {
+      "v": 7.5,
+      "f": "=CALCULATIONS!C19"
+    },
+    "D22": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C19-CALCULATIONS!B19)"
+    },
+    "E22": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A19)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B23": {
+      "v": "Ava Swinfen",
+      "f": "=CALCULATIONS!A20"
+    },
+    "C23": {
+      "v": 7,
+      "f": "=CALCULATIONS!C20"
+    },
+    "D23": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C20-CALCULATIONS!B20)"
+    },
+    "E23": {
+      "v": 0.2857142857142857,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A20)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B24": {
+      "v": "Rory Bowman",
+      "f": "=CALCULATIONS!A21"
+    },
+    "C24": {
+      "v": 7,
+      "f": "=CALCULATIONS!C21"
+    },
+    "D24": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C21-CALCULATIONS!B21)"
+    },
+    "E24": {
+      "v": 0,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A21)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B25": {
+      "v": "Xander Meijer",
+      "f": "=CALCULATIONS!A22"
+    },
+    "C25": {
+      "v": 7,
+      "f": "=CALCULATIONS!C22"
+    },
+    "D25": {
+      "v": 0,
+      "f": "=IF(SETTINGS!C29=0,0,CALCULATIONS!C22-CALCULATIONS!B22)"
+    },
+    "E25": {
+      "v": 0.09523809523809523,
+      "f": "=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A22)/COUNTA(CALCULATIONS!$K$2:$K$22)"
+    },
+    "B28": {
+      "v": "PRICE RULES\nPrices move based on 3-week form vs class average.\nFirst 2 gameweeks: no changes.  Min \u00a37.0m  \u2022  Max \u00a313.0m",
+      "f": null
+    }
+  }
+}

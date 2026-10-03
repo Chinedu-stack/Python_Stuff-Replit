@@ -1,0 +1,37 @@
+Extracted: 2026-10-03T18:25:18.770662
+Workbook:  C:\Users\chine\OneDrive\Copies School Fantasy League for editing\11O Fantasy League.xlsx
+
+#   State        Tab     Sheet Name
+----------------------------------------------------------------------
+0   visible      FF1565C0 HOME
+1   visible      FF475569 RULES
+2   visible      FF1D4ED8 PICK YOUR TEAM
+3   visible      FF2563EB PLAYER MARKET
+4   visible      FFF59E0B TEST RESULTS
+5   visible      FF0F766E  Overall Leaderboard
+6   visible      FF0D9488 GW Leaderboard
+7   visible      FFEA580C SETTINGS
+8   hidden       FF94A3B8 MASTER DATA
+9   hidden       FF94A3B8 RAW RESULTS
+10  hidden       FF64748B CALCULATIONS
+11  visible      FF475569 Alexa Amesimeku
+12  visible      FF475569 Alfie Foley
+13  visible      FF475569 Alyza Rai
+14  visible      FF475569 Ava Swinfen
+15  visible      FF475569 Azlan Husain
+16  visible      FF475569 Chinedu Chile
+17  visible      FF475569 Daniel Liu
+18  visible      FF475569 David Wu
+19  visible      FF475569 Edwin Mayers
+20  visible      FF475569 Emily Warburton
+21  visible      FF475569 Esme Beston
+22  visible      FF475569 Iona Smith
+23  visible      FF475569 Joe Paige
+24  visible      FF475569 Lia Li
+25  visible      FF475569 Melody Zhaeentan
+26  visible      FF475569 Nina De Saram
+27  visible      FF475569 Oscar Day-Duran
+28  visible      FF475569 Rebecca Seymour
+29  visible      FF475569 Rory Bowman
+30  visible      FF475569 Sophie Barker
+31  visible      FF475569 Xander Meijer

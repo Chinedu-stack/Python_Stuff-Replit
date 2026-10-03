@@ -1,0 +1,341 @@
+{
+  "state": "visible",
+  "merged": [
+    "B2:G2",
+    "B14:G14",
+    "B17:G17",
+    "E31:G31",
+    "B1:G1",
+    "D24:G24",
+    "E34:G34",
+    "B22:C22",
+    "B13:G13",
+    "E30:G30",
+    "B34:D34",
+    "D23:G23",
+    "B21:C21",
+    "B10:G10",
+    "D20:G20",
+    "B9:G9",
+    "B23:C23",
+    "B30:D30",
+    "B18:G19",
+    "B33:D33",
+    "E32:G32",
+    "D22:G22",
+    "B36:G36",
+    "B5:G5",
+    "B32:D32",
+    "D21:G21",
+    "B4:G4",
+    "B24:C24",
+    "E33:G33",
+    "B28:G29",
+    "B31:D31",
+    "B20:C20",
+    "B27:G27",
+    "B12:G12",
+    "B11:G11"
+  ],
+  "data_validations": [],
+  "key_cells": {
+    "B1": {
+      "v": "YEAR 11 FANTASY LEAGUE",
+      "f": null
+    },
+    "B2": {
+      "v": "GAMEWEEK 1",
+      "f": null
+    },
+    "B4": {
+      "v": "  GAMEWEEK 1: Biology and English  ",
+      "f": null
+    },
+    "B5": {
+      "v": " GAMEWEEK 1",
+      "f": null
+    },
+    "B7": {
+      "v": "CURRENT GAMEWEEK:",
+      "f": null
+    },
+    "C7": {
+      "v": 1,
+      "f": null
+    },
+    "B9": {
+      "v": "HOW TO PLAY",
+      "f": null
+    },
+    "B10": {
+      "v": "1.  Go to PICK YOUR TEAM and click your name.",
+      "f": null
+    },
+    "B11": {
+      "v": "2.  Pick 5 players from the dropdowns.",
+      "f": null
+    },
+    "B12": {
+      "v": "3.  Pick 1 captain using the GOLD CAPTAIN BOX.",
+      "f": null
+    },
+    "B13": {
+      "v": "4.  Stay under the \u00a350m budget.",
+      "f": null
+    },
+    "B14": {
+      "v": "5.  Enter your own test % on TEST RESULTS after each test.",
+      "f": null
+    },
+    "B17": {
+      "v": "HOW POINTS WORK",
+      "f": null
+    },
+    "B18": {
+      "v": "Your score is compared to the CLASS AVERAGE.\nAverage = 5 points. Every small step above = +1. Every step below = \u22121.",
+      "f": null
+    },
+    "B20": {
+      "v": "Well above average",
+      "f": null
+    },
+    "D20": {
+      "v": "High points",
+      "f": null
+    },
+    "B21": {
+      "v": "Slightly above",
+      "f": null
+    },
+    "D21": {
+      "v": "6\u20137 points",
+      "f": null
+    },
+    "B22": {
+      "v": "Exactly average",
+      "f": null
+    },
+    "D22": {
+      "v": "5 points",
+      "f": null
+    },
+    "B23": {
+      "v": "Slightly below",
+      "f": null
+    },
+    "D23": {
+      "v": "3\u20134 points",
+      "f": null
+    },
+    "B24": {
+      "v": "Well below",
+      "f": null
+    },
+    "D24": {
+      "v": "0\u20131 points",
+      "f": null
+    },
+    "B27": {
+      "v": "HOW PRICES WORK",
+      "f": null
+    },
+    "B28": {
+      "v": "Prices move based on your 3-WEEK FORM vs the class average.\nCheap players rise faster. Expensive players rise slower.",
+      "f": null
+    },
+    "B30": {
+      "v": "No changes first 2 weeks",
+      "f": null
+    },
+    "E30": {
+      "v": "Settling in",
+      "f": null
+    },
+    "B31": {
+      "v": "Week 3 onward",
+      "f": null
+    },
+    "E31": {
+      "v": "Prices move based on form",
+      "f": null
+    },
+    "B32": {
+      "v": "Beating average consistently",
+      "f": null
+    },
+    "E32": {
+      "v": "Price rises up to +\u00a30.5m/week",
+      "f": null
+    },
+    "B33": {
+      "v": "Below average consistently",
+      "f": null
+    },
+    "E33": {
+      "v": "Price falls up to -\u00a30.5m/week",
+      "f": null
+    },
+    "B34": {
+      "v": "Bounds",
+      "f": null
+    },
+    "E34": {
+      "v": "\u00a37.0m  to  \u00a313.0m",
+      "f": null
+    },
+    "B36": {
+      "v": "SETTINGS and RULES sheets have more detail. Ask Mr C if anything is unclear.",
+      "f": null
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "YEAR 11 FANTASY LEAGUE",
+      "f": null
+    },
+    "B2": {
+      "v": "GAMEWEEK 1",
+      "f": null
+    },
+    "B4": {
+      "v": "  GAMEWEEK 1: Biology and English  ",
+      "f": null
+    },
+    "B5": {
+      "v": " GAMEWEEK 1",
+      "f": null
+    },
+    "B7": {
+      "v": "CURRENT GAMEWEEK:",
+      "f": null
+    },
+    "C7": {
+      "v": 1,
+      "f": null
+    },
+    "B9": {
+      "v": "HOW TO PLAY",
+      "f": null
+    },
+    "B10": {
+      "v": "1.  Go to PICK YOUR TEAM and click your name.",
+      "f": null
+    },
+    "B11": {
+      "v": "2.  Pick 5 players from the dropdowns.",
+      "f": null
+    },
+    "B12": {
+      "v": "3.  Pick 1 captain using the GOLD CAPTAIN BOX.",
+      "f": null
+    },
+    "B13": {
+      "v": "4.  Stay under the \u00a350m budget.",
+      "f": null
+    },
+    "B14": {
+      "v": "5.  Enter your own test % on TEST RESULTS after each test.",
+      "f": null
+    },
+    "B17": {
+      "v": "HOW POINTS WORK",
+      "f": null
+    },
+    "B18": {
+      "v": "Your score is compared to the CLASS AVERAGE.\nAverage = 5 points. Every small step above = +1. Every step below = \u22121.",
+      "f": null
+    },
+    "B20": {
+      "v": "Well above average",
+      "f": null
+    },
+    "D20": {
+      "v": "High points",
+      "f": null
+    },
+    "B21": {
+      "v": "Slightly above",
+      "f": null
+    },
+    "D21": {
+      "v": "6\u20137 points",
+      "f": null
+    },
+    "B22": {
+      "v": "Exactly average",
+      "f": null
+    },
+    "D22": {
+      "v": "5 points",
+      "f": null
+    },
+    "B23": {
+      "v": "Slightly below",
+      "f": null
+    },
+    "D23": {
+      "v": "3\u20134 points",
+      "f": null
+    },
+    "B24": {
+      "v": "Well below",
+      "f": null
+    },
+    "D24": {
+      "v": "0\u20131 points",
+      "f": null
+    },
+    "B27": {
+      "v": "HOW PRICES WORK",
+      "f": null
+    },
+    "B28": {
+      "v": "Prices move based on your 3-WEEK FORM vs the class average.\nCheap players rise faster. Expensive players rise slower.",
+      "f": null
+    },
+    "B30": {
+      "v": "No changes first 2 weeks",
+      "f": null
+    },
+    "E30": {
+      "v": "Settling in",
+      "f": null
+    },
+    "B31": {
+      "v": "Week 3 onward",
+      "f": null
+    },
+    "E31": {
+      "v": "Prices move based on form",
+      "f": null
+    },
+    "B32": {
+      "v": "Beating average consistently",
+      "f": null
+    },
+    "E32": {
+      "v": "Price rises up to +\u00a30.5m/week",
+      "f": null
+    },
+    "B33": {
+      "v": "Below average consistently",
+      "f": null
+    },
+    "E33": {
+      "v": "Price falls up to -\u00a30.5m/week",
+      "f": null
+    },
+    "B34": {
+      "v": "Bounds",
+      "f": null
+    },
+    "E34": {
+      "v": "\u00a37.0m  to  \u00a313.0m",
+      "f": null
+    },
+    "B36": {
+      "v": "SETTINGS and RULES sheets have more detail. Ask Mr C if anything is unclear.",
+      "f": null
+    }
+  }
+}
