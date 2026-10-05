@@ -8,6 +8,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import or_
 from datetime import datetime
 from decimal import Decimal
+from sqlalchemy import DateTime
 
 connection_url = URL.create(
     "postgresql+psycopg",
@@ -40,22 +41,20 @@ class Booking(Base):
     customer_id: Mapped[int] = mapped_column(
         ForeignKey("customers.customer_id")
     )
+    customer = relationship("Customer", back_populates="bookings")
 
-    customer: Mapped["Customer"] = relationship()
 
     barber_id: Mapped[int] = mapped_column(
        ForeignKey("barbers.barber_id") 
     )
 
-    barber: Mapped["Barber"] = relationship()
+    barber = relationship("Barber", back_populates="bookings")
 
-    booking_time: Mapped[datetime] = mapped_column()
+    booking_time: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
     completed: Mapped[bool] = mapped_column()
     
     price: Mapped[Decimal] = mapped_column()
-
-    customer = relationship("Customer", back_populates="bookings")
 
     barber = relationship("Barber", back_populates="bookings")
 
@@ -99,3 +98,5 @@ customers = get_customers_by_name_prefix(session, "A")
 if customers:
     for customer in customers:
         print(customer.name)
+
+print(customer.bookings[0].appointment_time)
