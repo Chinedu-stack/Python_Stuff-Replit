@@ -1,0 +1,102 @@
+{
+  "state": "visible",
+  "merged": [
+    "B1:C1"
+  ],
+  "data_validations": [],
+  "key_cells": {},
+  "used_range": {
+    "B1": {
+      "v": "RULES & HOW TO PLAY",
+      "f": null
+    },
+    "B4": {
+      "v": "BUDGET",
+      "f": null
+    },
+    "C4": {
+      "v": "\u00a350.0m per manager. Pick exactly 5 players.",
+      "f": null
+    },
+    "B6": {
+      "v": "CAPTAIN",
+      "f": null
+    },
+    "C6": {
+      "v": "Pick 1 captain using the GOLD box on your team sheet. Captain scores 2\u00d7 points.",
+      "f": null
+    },
+    "B8": {
+      "v": "DEADLINE",
+      "f": null
+    },
+    "C8": {
+      "v": "Set on HOME each gameweek.",
+      "f": null
+    },
+    "B10": {
+      "v": "TEST DATE",
+      "f": null
+    },
+    "C10": {
+      "v": "Set on HOME each gameweek.",
+      "f": null
+    },
+    "B12": {
+      "v": "RESULT ENTRY",
+      "f": null
+    },
+    "C12": {
+      "v": "Each student enters their own test % on TEST RESULTS.",
+      "f": null
+    },
+    "B14": {
+      "v": "POINTS",
+      "f": null
+    },
+    "C14": {
+      "v": "Based on class average. Average = 5 pts. Every step above/below = \u00b11 pt. Step size adjusts to class spread. Capped 0\u201310.",
+      "f": null
+    },
+    "B16": {
+      "v": "PRICE CHANGES",
+      "f": null
+    },
+    "C16": {
+      "v": "Move based on 3-week form vs class average. First 2 weeks: no change. Week 3 onward: max \u00b1\u00a30.5m per week.",
+      "f": null
+    },
+    "B18": {
+      "v": "PRICE SCALING",
+      "f": null
+    },
+    "C18": {
+      "v": "Cheap players rise faster (\u00d71.0). Mid-price \u00d70.75. Expensive \u00d70.5.",
+      "f": null
+    },
+    "B20": {
+      "v": "PRICE LIMITS",
+      "f": null
+    },
+    "C20": {
+      "v": "Minimum \u00a37.0m. Maximum \u00a313.0m.",
+      "f": null
+    },
+    "B22": {
+      "v": "TRANSFERS",
+      "f": null
+    },
+    "C22": {
+      "v": "Unlimited free transfers between gameweeks.",
+      "f": null
+    },
+    "B24": {
+      "v": "GOLDEN RULE",
+      "f": null
+    },
+    "C24": {
+      "v": "Pick 5 players + captain, enter your test score. Excel does the rest.",
+      "f": null
+    }
+  }
+}

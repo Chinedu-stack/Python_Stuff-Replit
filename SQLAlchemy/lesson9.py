@@ -64,7 +64,7 @@ class Barber(Base):
     barber_id : Mapped[int] = mapped_column(Integer, primary_key = True)
     name: Mapped[str] = mapped_column()
     speciality: Mapped[str] = mapped_column()
-    years_of_experiance: Mapped[int] = mapped_column()
+    years_of_experience: Mapped[int] = mapped_column()
     available: Mapped[bool] = mapped_column()
 
     bookings = relationship("Booking", back_populates="barber")
@@ -94,9 +94,18 @@ def get_customers_by_name_prefix(session, search):
     customers = result.scalars().all()
     return customers
 
-customers = get_customers_by_name_prefix(session, "A")
-if customers:
-    for customer in customers:
-        print(customer.name)
 
-print(customer.bookings[0].appointment_time)
+
+statement = (select(Booking)
+.where(
+    Booking.barber_id == 1,
+    Booking.completed == False
+    )
+.order_by(Booking.booking_time.asc())
+)
+result = session.execute(statement)
+bookings = result.scalars().all()
+
+for booking in bookings:
+    print(f"{booking.booking_id}, {booking.barber.name}, {booking.booking_time}")
+

@@ -1,0 +1,345 @@
+{
+  "state": "hidden",
+  "merged": [],
+  "data_validations": [],
+  "key_cells": {
+    "B1": {
+      "v": "Manager",
+      "f": null
+    },
+    "C1": {
+      "v": "GW1",
+      "f": null
+    },
+    "D1": {
+      "v": "GW2",
+      "f": null
+    },
+    "E1": {
+      "v": "GW3",
+      "f": null
+    },
+    "F1": {
+      "v": "GW4",
+      "f": null
+    },
+    "G1": {
+      "v": "GW5",
+      "f": null
+    },
+    "H1": {
+      "v": "GW6",
+      "f": null
+    },
+    "I1": {
+      "v": "GW7",
+      "f": null
+    },
+    "J1": {
+      "v": "GW8",
+      "f": null
+    },
+    "K1": {
+      "v": "GW9",
+      "f": null
+    },
+    "L1": {
+      "v": "GW10",
+      "f": null
+    },
+    "M1": {
+      "v": "GW11",
+      "f": null
+    },
+    "N1": {
+      "v": "GW12",
+      "f": null
+    },
+    "O1": {
+      "v": "GW13",
+      "f": null
+    },
+    "P1": {
+      "v": "GW14",
+      "f": null
+    },
+    "Q1": {
+      "v": "GW15",
+      "f": null
+    },
+    "R1": {
+      "v": "GW16",
+      "f": null
+    },
+    "S1": {
+      "v": "GW17",
+      "f": null
+    },
+    "T1": {
+      "v": "GW18",
+      "f": null
+    },
+    "U1": {
+      "v": "GW19",
+      "f": null
+    },
+    "V1": {
+      "v": "GW20",
+      "f": null
+    },
+    "B2": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "B3": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "B4": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "B5": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "B6": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "B7": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "B8": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "B9": {
+      "v": "David Wu",
+      "f": null
+    },
+    "B10": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B11": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "B12": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "B13": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "B14": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "B15": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "B16": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "B17": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "B18": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "B19": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "B20": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "B21": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "B22": {
+      "v": "Xander Meijer",
+      "f": null
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "Manager",
+      "f": null
+    },
+    "C1": {
+      "v": "GW1",
+      "f": null
+    },
+    "D1": {
+      "v": "GW2",
+      "f": null
+    },
+    "E1": {
+      "v": "GW3",
+      "f": null
+    },
+    "F1": {
+      "v": "GW4",
+      "f": null
+    },
+    "G1": {
+      "v": "GW5",
+      "f": null
+    },
+    "H1": {
+      "v": "GW6",
+      "f": null
+    },
+    "I1": {
+      "v": "GW7",
+      "f": null
+    },
+    "J1": {
+      "v": "GW8",
+      "f": null
+    },
+    "K1": {
+      "v": "GW9",
+      "f": null
+    },
+    "L1": {
+      "v": "GW10",
+      "f": null
+    },
+    "M1": {
+      "v": "GW11",
+      "f": null
+    },
+    "N1": {
+      "v": "GW12",
+      "f": null
+    },
+    "O1": {
+      "v": "GW13",
+      "f": null
+    },
+    "P1": {
+      "v": "GW14",
+      "f": null
+    },
+    "Q1": {
+      "v": "GW15",
+      "f": null
+    },
+    "R1": {
+      "v": "GW16",
+      "f": null
+    },
+    "S1": {
+      "v": "GW17",
+      "f": null
+    },
+    "T1": {
+      "v": "GW18",
+      "f": null
+    },
+    "U1": {
+      "v": "GW19",
+      "f": null
+    },
+    "V1": {
+      "v": "GW20",
+      "f": null
+    },
+    "B2": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "B3": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "B4": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "B5": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "B6": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "B7": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "B8": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "B9": {
+      "v": "David Wu",
+      "f": null
+    },
+    "B10": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "B11": {
+      "v": "Emily Warburton",
+      "f": null
+    },
+    "B12": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "B13": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "B14": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "B15": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "B16": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "B17": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "B18": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "B19": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "B20": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "B21": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "B22": {
+      "v": "Xander Meijer",
+      "f": null
+    }
+  }
+}

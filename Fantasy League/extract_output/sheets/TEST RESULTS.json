@@ -1,0 +1,718 @@
+{
+  "state": "visible",
+  "merged": [
+    "B1:H1",
+    "B3:H3",
+    "B2:H2",
+    "B27:H29"
+  ],
+  "data_validations": [
+    {
+      "type": "whole",
+      "formula1": "0",
+      "formula2": "100",
+      "allow_blank": true,
+      "sqref": "C6:G25"
+    }
+  ],
+  "key_cells": {
+    "B1": {
+      "v": "TEST RESULTS",
+      "f": null
+    },
+    "B2": {
+      "v": "Enter your test scores. ",
+      "f": null
+    },
+    "B4": {
+      "v": "Test name: English and Biology",
+      "f": null
+    },
+    "B5": {
+      "v": "Student",
+      "f": null
+    },
+    "C5": {
+      "v": "English: Average = 55.6%",
+      "f": "=IFERROR(\"English: Average = \" & ROUND(AVERAGE(C6:C25), 1) & \"%\", \"English: No results yet\")"
+    },
+    "D5": {
+      "v": "Biology: Average = 80.1%",
+      "f": "=IFERROR(\"Biology: Average = \" & ROUND(AVERAGE(D6:D25), 1) & \"%\", \"Biology: No results yet\")"
+    },
+    "E5": {
+      "v": "N/A",
+      "f": null
+    },
+    "F5": {
+      "v": "N/A",
+      "f": null
+    },
+    "G5": {
+      "v": "N/A",
+      "f": null
+    },
+    "H5": {
+      "v": "Score",
+      "f": null
+    },
+    "B6": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "C6": {
+      "v": 73,
+      "f": null
+    },
+    "D6": {
+      "v": 88,
+      "f": null
+    },
+    "H6": {
+      "v": 80.5,
+      "f": "=IFERROR(AVERAGE(C6:INDEX(C6:G6,SETTINGS!$C$17)),\"\")"
+    },
+    "B7": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "C7": {
+      "v": 40,
+      "f": null
+    },
+    "D7": {
+      "v": 65,
+      "f": null
+    },
+    "H7": {
+      "v": 52.5,
+      "f": "=IFERROR(AVERAGE(C7:INDEX(C7:G7,SETTINGS!$C$17)),\"\")"
+    },
+    "B8": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "C8": {
+      "v": 70,
+      "f": null
+    },
+    "D8": {
+      "v": 86,
+      "f": null
+    },
+    "H8": {
+      "v": 78,
+      "f": "=IFERROR(AVERAGE(C8:INDEX(C8:G8,SETTINGS!$C$17)),\"\")"
+    },
+    "B9": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "C9": {
+      "v": 35,
+      "f": null
+    },
+    "D9": {
+      "v": 74,
+      "f": null
+    },
+    "H9": {
+      "v": 54.5,
+      "f": "=IFERROR(AVERAGE(C9:INDEX(C9:G9,SETTINGS!$C$17)),\"\")"
+    },
+    "B10": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "C10": {
+      "v": 50,
+      "f": null
+    },
+    "D10": {
+      "v": 86,
+      "f": null
+    },
+    "H10": {
+      "v": 68,
+      "f": "=IFERROR(AVERAGE(C10:INDEX(C10:G10,SETTINGS!$C$17)),\"\")"
+    },
+    "B11": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "C11": {
+      "v": 60,
+      "f": null
+    },
+    "D11": {
+      "v": 86,
+      "f": null
+    },
+    "H11": {
+      "v": 73,
+      "f": "=IFERROR(AVERAGE(C11:INDEX(C11:G11,SETTINGS!$C$17)),\"\")"
+    },
+    "B12": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "C12": {
+      "v": 63,
+      "f": null
+    },
+    "D12": {
+      "v": 74,
+      "f": null
+    },
+    "H12": {
+      "v": 68.5,
+      "f": "=IFERROR(AVERAGE(C12:INDEX(C12:G12,SETTINGS!$C$17)),\"\")"
+    },
+    "B13": {
+      "v": "David Wu",
+      "f": null
+    },
+    "C13": {
+      "v": 60,
+      "f": null
+    },
+    "D13": {
+      "v": 86,
+      "f": null
+    },
+    "H13": {
+      "v": 73,
+      "f": "=IFERROR(AVERAGE(C13:INDEX(C13:G13,SETTINGS!$C$17)),\"\")"
+    },
+    "B14": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "C14": {
+      "v": 40,
+      "f": null
+    },
+    "D14": {
+      "v": 81,
+      "f": null
+    },
+    "H14": {
+      "v": 60.5,
+      "f": "=IFERROR(AVERAGE(C14:INDEX(C14:G14,SETTINGS!$C$17)),\"\")"
+    },
+    "B15": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "C15": {
+      "v": 38,
+      "f": null
+    },
+    "D15": {
+      "v": 56,
+      "f": null
+    },
+    "H15": {
+      "v": 47,
+      "f": "=IFERROR(AVERAGE(C15:INDEX(C15:G15,SETTINGS!$C$17)),\"\")"
+    },
+    "B16": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "H16": {
+      "v": null,
+      "f": "=IFERROR(AVERAGE(C16:INDEX(C16:G16,SETTINGS!$C$17)),\"\")"
+    },
+    "B17": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "C17": {
+      "v": 83,
+      "f": null
+    },
+    "D17": {
+      "v": 91,
+      "f": null
+    },
+    "H17": {
+      "v": 87,
+      "f": "=IFERROR(AVERAGE(C17:INDEX(C17:G17,SETTINGS!$C$17)),\"\")"
+    },
+    "B18": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "C18": {
+      "v": 55,
+      "f": null
+    },
+    "D18": {
+      "v": 100,
+      "f": null
+    },
+    "H18": {
+      "v": 77.5,
+      "f": "=IFERROR(AVERAGE(C18:INDEX(C18:G18,SETTINGS!$C$17)),\"\")"
+    },
+    "B19": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "C19": {
+      "v": 75,
+      "f": null
+    },
+    "D19": {
+      "v": 74,
+      "f": null
+    },
+    "H19": {
+      "v": 74.5,
+      "f": "=IFERROR(AVERAGE(C19:INDEX(C19:G19,SETTINGS!$C$17)),\"\")"
+    },
+    "B20": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "C20": {
+      "v": 75,
+      "f": null
+    },
+    "D20": {
+      "v": 86,
+      "f": null
+    },
+    "H20": {
+      "v": 80.5,
+      "f": "=IFERROR(AVERAGE(C20:INDEX(C20:G20,SETTINGS!$C$17)),\"\")"
+    },
+    "B21": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "C21": {
+      "v": 38,
+      "f": null
+    },
+    "D21": {
+      "v": 72,
+      "f": null
+    },
+    "H21": {
+      "v": 55,
+      "f": "=IFERROR(AVERAGE(C21:INDEX(C21:G21,SETTINGS!$C$17)),\"\")"
+    },
+    "B22": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "H22": {
+      "v": null,
+      "f": "=IFERROR(AVERAGE(C22:INDEX(C22:G22,SETTINGS!$C$17)),\"\")"
+    },
+    "B23": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "C23": {
+      "v": 25,
+      "f": null
+    },
+    "D23": {
+      "v": 58,
+      "f": null
+    },
+    "H23": {
+      "v": 41.5,
+      "f": "=IFERROR(AVERAGE(C23:INDEX(C23:G23,SETTINGS!$C$17)),\"\")"
+    },
+    "B24": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "C24": {
+      "v": 88,
+      "f": null
+    },
+    "D24": {
+      "v": 98,
+      "f": null
+    },
+    "H24": {
+      "v": 93,
+      "f": "=IFERROR(AVERAGE(C24:INDEX(C24:G24,SETTINGS!$C$17)),\"\")"
+    },
+    "B25": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "C25": {
+      "v": 33,
+      "f": null
+    },
+    "D25": {
+      "v": 81,
+      "f": null
+    },
+    "H25": {
+      "v": 57,
+      "f": "=IFERROR(AVERAGE(C25:INDEX(C25:G25,SETTINGS!$C$17)),\"\")"
+    },
+    "B27": {
+      "v": "Enter a whole number 0\u2013100 in the gold cells.\n",
+      "f": null
+    }
+  },
+  "used_range": {
+    "B1": {
+      "v": "TEST RESULTS",
+      "f": null
+    },
+    "B2": {
+      "v": "Enter your test scores. ",
+      "f": null
+    },
+    "B4": {
+      "v": "Test name: English and Biology",
+      "f": null
+    },
+    "B5": {
+      "v": "Student",
+      "f": null
+    },
+    "C5": {
+      "v": "English: Average = 55.6%",
+      "f": "=IFERROR(\"English: Average = \" & ROUND(AVERAGE(C6:C25), 1) & \"%\", \"English: No results yet\")"
+    },
+    "D5": {
+      "v": "Biology: Average = 80.1%",
+      "f": "=IFERROR(\"Biology: Average = \" & ROUND(AVERAGE(D6:D25), 1) & \"%\", \"Biology: No results yet\")"
+    },
+    "E5": {
+      "v": "N/A",
+      "f": null
+    },
+    "F5": {
+      "v": "N/A",
+      "f": null
+    },
+    "G5": {
+      "v": "N/A",
+      "f": null
+    },
+    "H5": {
+      "v": "Score",
+      "f": null
+    },
+    "B6": {
+      "v": "Alexa Amesimeku",
+      "f": null
+    },
+    "C6": {
+      "v": 73,
+      "f": null
+    },
+    "D6": {
+      "v": 88,
+      "f": null
+    },
+    "H6": {
+      "v": 80.5,
+      "f": "=IFERROR(AVERAGE(C6:INDEX(C6:G6,SETTINGS!$C$17)),\"\")"
+    },
+    "B7": {
+      "v": "Alfie Foley",
+      "f": null
+    },
+    "C7": {
+      "v": 40,
+      "f": null
+    },
+    "D7": {
+      "v": 65,
+      "f": null
+    },
+    "H7": {
+      "v": 52.5,
+      "f": "=IFERROR(AVERAGE(C7:INDEX(C7:G7,SETTINGS!$C$17)),\"\")"
+    },
+    "B8": {
+      "v": "Alyza Rai",
+      "f": null
+    },
+    "C8": {
+      "v": 70,
+      "f": null
+    },
+    "D8": {
+      "v": 86,
+      "f": null
+    },
+    "H8": {
+      "v": 78,
+      "f": "=IFERROR(AVERAGE(C8:INDEX(C8:G8,SETTINGS!$C$17)),\"\")"
+    },
+    "B9": {
+      "v": "Ava Swinfen",
+      "f": null
+    },
+    "C9": {
+      "v": 35,
+      "f": null
+    },
+    "D9": {
+      "v": 74,
+      "f": null
+    },
+    "H9": {
+      "v": 54.5,
+      "f": "=IFERROR(AVERAGE(C9:INDEX(C9:G9,SETTINGS!$C$17)),\"\")"
+    },
+    "B10": {
+      "v": "Azlan Husain",
+      "f": null
+    },
+    "C10": {
+      "v": 50,
+      "f": null
+    },
+    "D10": {
+      "v": 86,
+      "f": null
+    },
+    "H10": {
+      "v": 68,
+      "f": "=IFERROR(AVERAGE(C10:INDEX(C10:G10,SETTINGS!$C$17)),\"\")"
+    },
+    "B11": {
+      "v": "Chinedu Chile",
+      "f": null
+    },
+    "C11": {
+      "v": 60,
+      "f": null
+    },
+    "D11": {
+      "v": 86,
+      "f": null
+    },
+    "H11": {
+      "v": 73,
+      "f": "=IFERROR(AVERAGE(C11:INDEX(C11:G11,SETTINGS!$C$17)),\"\")"
+    },
+    "B12": {
+      "v": "Daniel Liu",
+      "f": null
+    },
+    "C12": {
+      "v": 63,
+      "f": null
+    },
+    "D12": {
+      "v": 74,
+      "f": null
+    },
+    "H12": {
+      "v": 68.5,
+      "f": "=IFERROR(AVERAGE(C12:INDEX(C12:G12,SETTINGS!$C$17)),\"\")"
+    },
+    "B13": {
+      "v": "David Wu",
+      "f": null
+    },
+    "C13": {
+      "v": 60,
+      "f": null
+    },
+    "D13": {
+      "v": 86,
+      "f": null
+    },
+    "H13": {
+      "v": 73,
+      "f": "=IFERROR(AVERAGE(C13:INDEX(C13:G13,SETTINGS!$C$17)),\"\")"
+    },
+    "B14": {
+      "v": "Edwin Mayers",
+      "f": null
+    },
+    "C14": {
+      "v": 40,
+      "f": null
+    },
+    "D14": {
+      "v": 81,
+      "f": null
+    },
+    "H14": {
+      "v": 60.5,
+      "f": "=IFERROR(AVERAGE(C14:INDEX(C14:G14,SETTINGS!$C$17)),\"\")"
+    },
+    "B15": {
+      "v": "Esme Beston",
+      "f": null
+    },
+    "C15": {
+      "v": 38,
+      "f": null
+    },
+    "D15": {
+      "v": 56,
+      "f": null
+    },
+    "H15": {
+      "v": 47,
+      "f": "=IFERROR(AVERAGE(C15:INDEX(C15:G15,SETTINGS!$C$17)),\"\")"
+    },
+    "B16": {
+      "v": "Iona Smith",
+      "f": null
+    },
+    "H16": {
+      "v": null,
+      "f": "=IFERROR(AVERAGE(C16:INDEX(C16:G16,SETTINGS!$C$17)),\"\")"
+    },
+    "B17": {
+      "v": "Joe Paige",
+      "f": null
+    },
+    "C17": {
+      "v": 83,
+      "f": null
+    },
+    "D17": {
+      "v": 91,
+      "f": null
+    },
+    "H17": {
+      "v": 87,
+      "f": "=IFERROR(AVERAGE(C17:INDEX(C17:G17,SETTINGS!$C$17)),\"\")"
+    },
+    "B18": {
+      "v": "Lia Li",
+      "f": null
+    },
+    "C18": {
+      "v": 55,
+      "f": null
+    },
+    "D18": {
+      "v": 100,
+      "f": null
+    },
+    "H18": {
+      "v": 77.5,
+      "f": "=IFERROR(AVERAGE(C18:INDEX(C18:G18,SETTINGS!$C$17)),\"\")"
+    },
+    "B19": {
+      "v": "Melody Zhaeentan",
+      "f": null
+    },
+    "C19": {
+      "v": 75,
+      "f": null
+    },
+    "D19": {
+      "v": 74,
+      "f": null
+    },
+    "H19": {
+      "v": 74.5,
+      "f": "=IFERROR(AVERAGE(C19:INDEX(C19:G19,SETTINGS!$C$17)),\"\")"
+    },
+    "B20": {
+      "v": "Nina De Saram",
+      "f": null
+    },
+    "C20": {
+      "v": 75,
+      "f": null
+    },
+    "D20": {
+      "v": 86,
+      "f": null
+    },
+    "H20": {
+      "v": 80.5,
+      "f": "=IFERROR(AVERAGE(C20:INDEX(C20:G20,SETTINGS!$C$17)),\"\")"
+    },
+    "B21": {
+      "v": "Oscar Day-Duran",
+      "f": null
+    },
+    "C21": {
+      "v": 38,
+      "f": null
+    },
+    "D21": {
+      "v": 72,
+      "f": null
+    },
+    "H21": {
+      "v": 55,
+      "f": "=IFERROR(AVERAGE(C21:INDEX(C21:G21,SETTINGS!$C$17)),\"\")"
+    },
+    "B22": {
+      "v": "Rebecca Seymour",
+      "f": null
+    },
+    "H22": {
+      "v": null,
+      "f": "=IFERROR(AVERAGE(C22:INDEX(C22:G22,SETTINGS!$C$17)),\"\")"
+    },
+    "B23": {
+      "v": "Rory Bowman",
+      "f": null
+    },
+    "C23": {
+      "v": 25,
+      "f": null
+    },
+    "D23": {
+      "v": 58,
+      "f": null
+    },
+    "H23": {
+      "v": 41.5,
+      "f": "=IFERROR(AVERAGE(C23:INDEX(C23:G23,SETTINGS!$C$17)),\"\")"
+    },
+    "B24": {
+      "v": "Sophie Barker",
+      "f": null
+    },
+    "C24": {
+      "v": 88,
+      "f": null
+    },
+    "D24": {
+      "v": 98,
+      "f": null
+    },
+    "H24": {
+      "v": 93,
+      "f": "=IFERROR(AVERAGE(C24:INDEX(C24:G24,SETTINGS!$C$17)),\"\")"
+    },
+    "B25": {
+      "v": "Xander Meijer",
+      "f": null
+    },
+    "C25": {
+      "v": 33,
+      "f": null
+    },
+    "D25": {
+      "v": 81,
+      "f": null
+    },
+    "H25": {
+      "v": 57,
+      "f": "=IFERROR(AVERAGE(C25:INDEX(C25:G25,SETTINGS!$C$17)),\"\")"
+    },
+    "B27": {
+      "v": "Enter a whole number 0\u2013100 in the gold cells.\n",
+      "f": null
+    }
+  }
+}

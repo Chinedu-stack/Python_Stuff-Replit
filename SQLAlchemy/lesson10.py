@@ -56,20 +56,21 @@ class Booking(Base):
     
     price: Mapped[Decimal] = mapped_column()
 
-    barber = relationship("Barber", back_populates="bookings")
 
 class Barber(Base):
     __tablename__ = "barbers"
 
     barber_id : Mapped[int] = mapped_column(Integer, primary_key = True)
-    name: Mapped[str] = mapped_column()
+    name: Mapped[str] = mapped_column(nullable=False)
     speciality: Mapped[str] = mapped_column()
-    years_of_experiance: Mapped[int] = mapped_column()
+    years_of_experience: Mapped[int] = mapped_column()
     available: Mapped[bool] = mapped_column()
+    phone_number: Mapped[str] = mapped_column(nullable=False, unique=True)
 
-    bookings = relationship("Booking", back_populates="barber")
-
-
+    bookings: Mapped[list["Booking"]] = relationship(
+        "Booking",
+        back_populates="barber"
+    )
 
 
     
@@ -94,9 +95,26 @@ def get_customers_by_name_prefix(session, search):
     customers = result.scalars().all()
     return customers
 
-customers = get_customers_by_name_prefix(session, "A")
-if customers:
-    for customer in customers:
-        print(customer.name)
 
-print(customer.bookings[0].appointment_time)
+
+# statement = (select(Booking)
+# .where(
+#     Booking.barber_id == 1,
+#     Booking.completed == False
+#     )
+# .order_by(Booking.booking_time.asc())
+# )
+# result = session.execute(statement)
+# bookings = result.scalars().all()
+
+statement = (select(Booking).join(Barber)
+             .where(Barber.speciality == "Afro Hair")
+             .order_by(Booking.booking_time.asc()))
+result = session.execute(statement)
+bookings = result.scalars().all()
+
+for booking in bookings:
+    print(f"Booking id:{booking.booking_id}\nBooking Time: {booking.booking_time}")
+
+
+

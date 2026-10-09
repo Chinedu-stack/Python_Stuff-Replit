@@ -1,0 +1,327 @@
+======================================================================
+FANTASY LEAGUE — EXTRACTION SUMMARY
+======================================================================
+Extracted: 2026-10-03T18:25:19.425333
+Workbook:  C:\Users\chine\OneDrive\Copies School Fantasy League for editing\11O Fantasy League.xlsx
+
+SHEETS (in order)
+----------------------------------------------------------------------
+   0. [visible   ] HOME
+   1. [visible   ] RULES
+   2. [visible   ] PICK YOUR TEAM
+   3. [visible   ] PLAYER MARKET
+   4. [visible   ] TEST RESULTS
+   5. [visible   ]  Overall Leaderboard
+   6. [visible   ] GW Leaderboard
+   7. [visible   ] SETTINGS
+   8. [hidden    ] MASTER DATA
+   9. [hidden    ] RAW RESULTS
+  10. [hidden    ] CALCULATIONS
+  11. [visible   ] Alexa Amesimeku
+  12. [visible   ] Alfie Foley
+  13. [visible   ] Alyza Rai
+  14. [visible   ] Ava Swinfen
+  15. [visible   ] Azlan Husain
+  16. [visible   ] Chinedu Chile
+  17. [visible   ] Daniel Liu
+  18. [visible   ] David Wu
+  19. [visible   ] Edwin Mayers
+  20. [visible   ] Emily Warburton
+  21. [visible   ] Esme Beston
+  22. [visible   ] Iona Smith
+  23. [visible   ] Joe Paige
+  24. [visible   ] Lia Li
+  25. [visible   ] Melody Zhaeentan
+  26. [visible   ] Nina De Saram
+  27. [visible   ] Oscar Day-Duran
+  28. [visible   ] Rebecca Seymour
+  29. [visible   ] Rory Bowman
+  30. [visible   ] Sophie Barker
+  31. [visible   ] Xander Meijer
+
+NAMED RANGES
+----------------------------------------------------------------------
+
+SETTINGS — key cells
+----------------------------------------------------------------------
+  R1: B1='SETTINGS — CONTROL PANEL'
+  R2: B2='Change the numbers below to update the whole league. Only gold cells are editable.'
+  R3: B3='GAME RULES'
+  R4: B4='Setting' | C4='Value' | D4='Notes'
+  R5: B5='Baseline points (at avg)' | C5=5 | D5='Points for scoring exactly the class average'
+  R6: B6='Dynamic step divisor' | C6=10 | D6='Class range (max−min) ÷ this = step size'
+  R7: B7='Minimum points' | C7=0 | D7='Floor'
+  R8: B8='Maximum points' | C8=10 | D8='Ceiling'
+  R9: B9='Max weekly price change' | C9=0.5 | D9='Absolute cap per week (£m)'
+  R10: B10='Tier multiplier (low)' | C10=1 | D10='£7.0–8.9m price band multiplier'
+  R11: B11='Tier multiplier (mid)' | C11=0.75 | D11='£9.0–10.9m price band multiplier'
+  R12: B12='Tier multiplier (high)' | C12=0.5 | D12='£11.0–13.0m price band multiplier'
+  R13: B13='Price change step' | C13=0.1 | D13='Ladder increment (£m)'
+  R14: B14='Minimum price' | C14=7 | D14='Floor (£m)'
+  R15: B15='Maximum price' | C15=13 | D15='Ceiling (£m)'
+  R16: B16='Price changes start at week' | C16=3 | D16='First week that price changes apply'
+  R17: B17='Tests per gameweek' | C17=2 | D17='How many test columns count this week (1-5). Others are greyed out.'
+  R20: B20='PLAYER PRICES'
+  R21: B21='Player' | C21='Base' | D21='Cumulative' | E21='Override' | F21='Final'
+  R22: B22='Lia Li' | C22=13 | D22=0 (=SUM(J22:Z22)) | F22=13 (=IF(E22<>"",E22,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C22+D22))))
+  R23: B23='Sophie Barker' | C23=13 | D23=0 (=SUM(J23:Z23)) | F23=13 (=IF(E23<>"",E23,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C23+D23))))
+  R24: B24='Chinedu Chile' | C24=11 | D24=0 (=SUM(J24:Z24)) | F24=11 (=IF(E24<>"",E24,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C24+D24))))
+  R25: B25='Emily Warburton' | C25=11 | D25=0 (=SUM(J25:Z25)) | F25=11 (=IF(E25<>"",E25,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C25+D25))))
+  R26: B26='Alyza Rai' | C26=10.5 | D26=0 (=SUM(J26:Z26)) | F26=10.5 (=IF(E26<>"",E26,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C26+D26))))
+  R27: B27='David Wu' | C27=10.5 | D27=0 (=SUM(J27:Z27)) | F27=10.5 (=IF(E27<>"",E27,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C27+D27))))
+  R28: B28='Joe Paige' | C28=10.5 | D28=0 (=SUM(J28:Z28)) | F28=10.5 (=IF(E28<>"",E28,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C28+D28))))
+  R29: B29='Azlan Husain' | C29=10 | D29=0 (=SUM(J29:Z29)) | F29=10 (=IF(E29<>"",E29,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C29+D29))))
+  R30: B30='Nina De Saram' | C30=10 | D30=0 (=SUM(J30:Z30)) | F30=10 (=IF(E30<>"",E30,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C30+D30))))
+  R31: B31='Alexa Amesimeku' | C31=9.5 | D31=0 (=SUM(J31:Z31)) | F31=9.5 (=IF(E31<>"",E31,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C31+D31))))
+  R32: B32='Daniel Liu' | C32=9.5 | D32=0 (=SUM(J32:Z32)) | F32=9.5 (=IF(E32<>"",E32,MIN(SETTINGS!$C$15,MAX(SETTINGS!$C$14,C32+D32))))
+
+MASTER DATA — key cells
+----------------------------------------------------------------------
+  R1: B1='Manager' | C1='P1' | D1='P2' | E1='P3' | F1='P4' | G1='P5' | H1='Captain'
+  R2: B2='Alexa Amesimeku' | C2='Sophie Barker' (='Alexa Amesimeku'!C10) | D2='Joe Paige' (='Alexa Amesimeku'!C11) | E2='Alexa Amesimeku' (='Alexa Amesimeku'!C12) | F2='Nina De Saram' (='Alexa Amesimeku'!C13) | G2='Xander Meijer' (='Alexa Amesimeku'!C14) | H2='Sophie Barker' (='Alexa Amesimeku'!C5)
+  R3: B3='Alfie Foley' | C3='Ava Swinfen' (='Alfie Foley'!C10) | D3='David Wu' (='Alfie Foley'!C11) | E3='Alyza Rai' (='Alfie Foley'!C12) | F3='Sophie Barker' (='Alfie Foley'!C13) | G3='Edwin Mayers' (='Alfie Foley'!C14) | H3='Sophie Barker' (='Alfie Foley'!C5)
+  R4: B4='Alyza Rai' | C4=0 (='Alyza Rai'!C10) | D4=0 (='Alyza Rai'!C11) | E4=0 (='Alyza Rai'!C12) | F4=0 (='Alyza Rai'!C13) | G4=0 (='Alyza Rai'!C14) | H4=0 (='Alyza Rai'!C5)
+  R5: B5='Ava Swinfen' | C5='Ava Swinfen' (='Ava Swinfen'!C10) | D5='Melody Zhaeentan' (='Ava Swinfen'!C11) | E5='Lia Li' (='Ava Swinfen'!C12) | F5='Chinedu Chile' (='Ava Swinfen'!C13) | G5='David Wu' (='Ava Swinfen'!C14) | H5='Lia Li' (='Ava Swinfen'!C5)
+  R6: B6='Azlan Husain' | C6='Emily Warburton' (='Azlan Husain'!C10) | D6='Chinedu Chile' (='Azlan Husain'!C11) | E6='Joe Paige' (='Azlan Husain'!C12) | F6='Alfie Foley' (='Azlan Husain'!C13) | G6='Edwin Mayers' (='Azlan Husain'!C14) | H6='Emily Warburton' (='Azlan Husain'!C5)
+  R7: B7='Chinedu Chile' | C7='Chinedu Chile' (='Chinedu Chile'!C10) | D7='Alexa Amesimeku' (='Chinedu Chile'!C11) | E7='David Wu' (='Chinedu Chile'!C12) | F7='Edwin Mayers' (='Chinedu Chile'!C13) | G7='Azlan Husain' (='Chinedu Chile'!C14) | H7='Chinedu Chile' (='Chinedu Chile'!C5)
+  R8: B8='Daniel Liu' | C8='Alyza Rai' (='Daniel Liu'!C10) | D8='Ava Swinfen' (='Daniel Liu'!C11) | E8=0 (='Daniel Liu'!C12) | F8='David Wu' (='Daniel Liu'!C13) | G8='Chinedu Chile' (='Daniel Liu'!C14) | H8=0 (='Daniel Liu'!C5)
+  R9: B9='David Wu' | C9='Azlan Husain' (='David Wu'!C10) | D9='Rebecca Seymour' (='David Wu'!C11) | E9='Edwin Mayers' (='David Wu'!C12) | F9='Chinedu Chile' (='David Wu'!C13) | G9='Joe Paige' (='David Wu'!C14) | H9='Edwin Mayers' (='David Wu'!C5)
+  R10: B10='Edwin Mayers' | C10='Sophie Barker' (='Edwin Mayers'!C10) | D10='Esme Beston' (='Edwin Mayers'!C11) | E10='Edwin Mayers' (='Edwin Mayers'!C12) | F10='Emily Warburton' (='Edwin Mayers'!C13) | G10='Ava Swinfen' (='Edwin Mayers'!C14) | H10='Emily Warburton' (='Edwin Mayers'!C5)
+  R11: B11='Emily Warburton' | C11=0 (='Emily Warburton'!C10) | D11=0 (='Emily Warburton'!C11) | E11=0 (='Emily Warburton'!C12) | F11=0 (='Emily Warburton'!C13) | G11=0 (='Emily Warburton'!C14) | H11=0 (='Emily Warburton'!C5)
+  R12: B12='Esme Beston' | C12=0 (='Esme Beston'!C10) | D12=0 (='Esme Beston'!C11) | E12=0 (='Esme Beston'!C12) | F12=0 (='Esme Beston'!C13) | G12=0 (='Esme Beston'!C14) | H12=0 (='Esme Beston'!C5)
+  R13: B13='Iona Smith' | C13=0 (='Iona Smith'!C10) | D13=0 (='Iona Smith'!C11) | E13=0 (='Iona Smith'!C12) | F13=0 (='Iona Smith'!C13) | G13=0 (='Iona Smith'!C14) | H13=0 (='Iona Smith'!C5)
+  R14: B14='Joe Paige' | C14='Chinedu Chile' (='Joe Paige'!C10) | D14='Joe Paige' (='Joe Paige'!C11) | E14='Alfie Foley' (='Joe Paige'!C12) | F14='Lia Li' (='Joe Paige'!C13) | G14='Oscar Day-Duran' (='Joe Paige'!C14) | H14='Chinedu Chile' (='Joe Paige'!C5)
+  R15: B15='Lia Li' | C15=0 (='Lia Li'!C10) | D15=0 (='Lia Li'!C11) | E15=0 (='Lia Li'!C12) | F15=0 (='Lia Li'!C13) | G15=0 (='Lia Li'!C14) | H15=0 (='Lia Li'!C5)
+  R16: B16='Melody Zhaeentan' | C16='Lia Li' (='Melody Zhaeentan'!C10) | D16='Edwin Mayers' (='Melody Zhaeentan'!C11) | E16='Rebecca Seymour' (='Melody Zhaeentan'!C12) | F16='Joe Paige' (='Melody Zhaeentan'!C13) | G16='Xander Meijer' (='Melody Zhaeentan'!C14) | H16='Lia Li' (='Melody Zhaeentan'!C5)
+  R17: B17='Nina De Saram' | C17=0 (='Nina De Saram'!C10) | D17=0 (='Nina De Saram'!C11) | E17=0 (='Nina De Saram'!C12) | F17=0 (='Nina De Saram'!C13) | G17=0 (='Nina De Saram'!C14) | H17=0 (='Nina De Saram'!C5)
+  R18: B18='Oscar Day-Duran' | C18='Oscar Day-Duran' (='Oscar Day-Duran'!C10) | D18='Chinedu Chile' (='Oscar Day-Duran'!C11) | E18='Nina De Saram' (='Oscar Day-Duran'!C12) | F18='David Wu' (='Oscar Day-Duran'!C13) | G18='Joe Paige' (='Oscar Day-Duran'!C14) | H18='Joe Paige' (='Oscar Day-Duran'!C5)
+  R19: B19='Rebecca Seymour' | C19=0 (='Rebecca Seymour'!C10) | D19=0 (='Rebecca Seymour'!C11) | E19=0 (='Rebecca Seymour'!C12) | F19=0 (='Rebecca Seymour'!C13) | G19=0 (='Rebecca Seymour'!C14) | H19=0 (='Rebecca Seymour'!C5)
+  R20: B20='Rory Bowman' | C20='David Wu' (='Rory Bowman'!C10) | D20='Ava Swinfen' (='Rory Bowman'!C11) | E20='Alyza Rai' (='Rory Bowman'!C12) | F20='Edwin Mayers' (='Rory Bowman'!C13) | G20='Lia Li' (='Rory Bowman'!C14) | H20='Lia Li' (='Rory Bowman'!C5)
+  R21: B21='Sophie Barker' | C21=0 (='Sophie Barker'!C10) | D21=0 (='Sophie Barker'!C11) | E21=0 (='Sophie Barker'!C12) | F21=0 (='Sophie Barker'!C13) | G21=0 (='Sophie Barker'!C14) | H21=0 (='Sophie Barker'!C5)
+  R22: B22='Xander Meijer' | C22='Lia Li' (='Xander Meijer'!C10) | D22='David Wu' (='Xander Meijer'!C11) | E22='Ava Swinfen' (='Xander Meijer'!C12) | F22='Joe Paige' (='Xander Meijer'!C13) | G22='Melody Zhaeentan' (='Xander Meijer'!C14) | H22='Lia Li' (='Xander Meijer'!C5)
+
+TEST RESULTS — key cells
+----------------------------------------------------------------------
+  R1: B1='TEST RESULTS'
+  R2: B2='Enter your test scores. '
+  R4: B4='Test name: English and Biology'
+  R5: B5='Student' | C5='English: Average = 55.6%' (=IFERROR("English: Average = " & ROUND(AVERAGE(C6:C25), 1) & "%", "English: No results yet")) | D5='Biology: Average = 80.1%' (=IFERROR("Biology: Average = " & ROUND(AVERAGE(D6:D25), 1) & "%", "Biology: No results yet")) | E5='N/A' | F5='N/A' | G5='N/A' | H5='Score'
+  R6: B6='Alexa Amesimeku' | C6=73 | D6=88 | H6=80.5 (=IFERROR(AVERAGE(C6:INDEX(C6:G6,SETTINGS!$C$17)),""))
+  R7: B7='Alfie Foley' | C7=40 | D7=65 | H7=52.5 (=IFERROR(AVERAGE(C7:INDEX(C7:G7,SETTINGS!$C$17)),""))
+  R8: B8='Alyza Rai' | C8=70 | D8=86 | H8=78 (=IFERROR(AVERAGE(C8:INDEX(C8:G8,SETTINGS!$C$17)),""))
+  R9: B9='Ava Swinfen' | C9=35 | D9=74 | H9=54.5 (=IFERROR(AVERAGE(C9:INDEX(C9:G9,SETTINGS!$C$17)),""))
+  R10: B10='Azlan Husain' | C10=50 | D10=86 | H10=68 (=IFERROR(AVERAGE(C10:INDEX(C10:G10,SETTINGS!$C$17)),""))
+  R11: B11='Chinedu Chile' | C11=60 | D11=86 | H11=73 (=IFERROR(AVERAGE(C11:INDEX(C11:G11,SETTINGS!$C$17)),""))
+  R12: B12='Daniel Liu' | C12=63 | D12=74 | H12=68.5 (=IFERROR(AVERAGE(C12:INDEX(C12:G12,SETTINGS!$C$17)),""))
+  R13: B13='David Wu' | C13=60 | D13=86 | H13=73 (=IFERROR(AVERAGE(C13:INDEX(C13:G13,SETTINGS!$C$17)),""))
+  R14: B14='Edwin Mayers' | C14=40 | D14=81 | H14=60.5 (=IFERROR(AVERAGE(C14:INDEX(C14:G14,SETTINGS!$C$17)),""))
+  R15: B15='Esme Beston' | C15=38 | D15=56 | H15=47 (=IFERROR(AVERAGE(C15:INDEX(C15:G15,SETTINGS!$C$17)),""))
+  R16: B16='Iona Smith' | H16==IFERROR(AVERAGE(C16:INDEX(C16:G16,SETTINGS!$C$17)),"")
+  R17: B17='Joe Paige' | C17=83 | D17=91 | H17=87 (=IFERROR(AVERAGE(C17:INDEX(C17:G17,SETTINGS!$C$17)),""))
+  R18: B18='Lia Li' | C18=55 | D18=100 | H18=77.5 (=IFERROR(AVERAGE(C18:INDEX(C18:G18,SETTINGS!$C$17)),""))
+  R19: B19='Melody Zhaeentan' | C19=75 | D19=74 | H19=74.5 (=IFERROR(AVERAGE(C19:INDEX(C19:G19,SETTINGS!$C$17)),""))
+  R20: B20='Nina De Saram' | C20=75 | D20=86 | H20=80.5 (=IFERROR(AVERAGE(C20:INDEX(C20:G20,SETTINGS!$C$17)),""))
+  R21: B21='Oscar Day-Duran' | C21=38 | D21=72 | H21=55 (=IFERROR(AVERAGE(C21:INDEX(C21:G21,SETTINGS!$C$17)),""))
+  R22: B22='Rebecca Seymour' | H22==IFERROR(AVERAGE(C22:INDEX(C22:G22,SETTINGS!$C$17)),"")
+  R23: B23='Rory Bowman' | C23=25 | D23=58 | H23=41.5 (=IFERROR(AVERAGE(C23:INDEX(C23:G23,SETTINGS!$C$17)),""))
+  R24: B24='Sophie Barker' | C24=88 | D24=98 | H24=93 (=IFERROR(AVERAGE(C24:INDEX(C24:G24,SETTINGS!$C$17)),""))
+  R25: B25='Xander Meijer' | C25=33 | D25=81 | H25=57 (=IFERROR(AVERAGE(C25:INDEX(C25:G25,SETTINGS!$C$17)),""))
+  R27: B27='Enter a whole number 0–100 in the gold cells.\n'
+
+CALCULATIONS — key cells (hidden)
+----------------------------------------------------------------------
+  R1: A1='Player' | B1='Base' | C1='Current' | D1='Pts' | K1='Manager' | L1='P1' | M1='P2' | N1='P3' | O1='P4' | P1='P5' | Q1='Captain' | R1='Team Value' | S1='Budget Left' | T1='GW Score' | U1='Status' | V1='Tiebreak'
+  R2: A2='Lia Li' | B2=13 | C2=13 (=SETTINGS!F22) | D2=6 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A2,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A2,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K2='Alexa Amesimeku' | L2='Sophie Barker' (='Alexa Amesimeku'!C10) | M2='Joe Paige' (='Alexa Amesimeku'!C11) | N2='Alexa Amesimeku' (='Alexa Amesimeku'!C12) | O2='Nina De Saram' (='Alexa Amesimeku'!C13) | P2='Xander Meijer' (='Alexa Amesimeku'!C14) | Q2='Sophie Barker' (='Alexa Amesimeku'!C5) | R2=50 (='Alexa Amesimeku'!C17) | S2=0 (='Alexa Amesimeku'!C18) | T2=43 (=IF($U2="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L2:P2,$D$2:$D$22))+SUMIF($A$2:$A$22,Q2,$D$2:$D$22),0)) | U2='VALID TEAM' (='Alexa Amesimeku'!C20) | V2=43.0002 (=T2+ROW()/10000)
+  R3: A3='Sophie Barker' | B3=13 | C3=13 (=SETTINGS!F23) | D3=9 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A3,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A3,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K3='Alfie Foley' | L3='Ava Swinfen' (='Alfie Foley'!C10) | M3='David Wu' (='Alfie Foley'!C11) | N3='Alyza Rai' (='Alfie Foley'!C12) | O3='Sophie Barker' (='Alfie Foley'!C13) | P3='Edwin Mayers' (='Alfie Foley'!C14) | Q3='Sophie Barker' (='Alfie Foley'!C5) | R3=50 (='Alfie Foley'!C17) | S3=0 (='Alfie Foley'!C18) | T3=36 (=IF($U3="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L3:P3,$D$2:$D$22))+SUMIF($A$2:$A$22,Q3,$D$2:$D$22),0)) | U3='VALID TEAM' (='Alfie Foley'!C20) | V3=36.0003 (=T3+ROW()/10000)
+  R4: A4='Chinedu Chile' | B4=11 | C4=11 (=SETTINGS!F24) | D4=5 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A4,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A4,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K4='Alyza Rai' | L4=0 (='Alyza Rai'!C10) | M4=0 (='Alyza Rai'!C11) | N4=0 (='Alyza Rai'!C12) | O4=0 (='Alyza Rai'!C13) | P4=0 (='Alyza Rai'!C14) | Q4=0 (='Alyza Rai'!C5) | R4=0 (='Alyza Rai'!C17) | S4=50 (='Alyza Rai'!C18) | T4=0 (=IF($U4="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L4:P4,$D$2:$D$22))+SUMIF($A$2:$A$22,Q4,$D$2:$D$22),0)) | U4='LESS THAN 5 PLAYERS' (='Alyza Rai'!C20) | V4=0.0004 (=T4+ROW()/10000)
+  R5: A5='Emily Warburton' | B5=11 | C5=11 (=SETTINGS!F25) | D5=0 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A5,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A5,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K5='Ava Swinfen' | L5='Ava Swinfen' (='Ava Swinfen'!C10) | M5='Melody Zhaeentan' (='Ava Swinfen'!C11) | N5='Lia Li' (='Ava Swinfen'!C12) | O5='Chinedu Chile' (='Ava Swinfen'!C13) | P5='David Wu' (='Ava Swinfen'!C14) | Q5='Lia Li' (='Ava Swinfen'!C5) | R5=50 (='Ava Swinfen'!C17) | S5=0 (='Ava Swinfen'!C18) | T5=31 (=IF($U5="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L5:P5,$D$2:$D$22))+SUMIF($A$2:$A$22,Q5,$D$2:$D$22),0)) | U5='VALID TEAM' (='Ava Swinfen'!C20) | V5=31.0005 (=T5+ROW()/10000)
+  R6: A6='Alyza Rai' | B6=10.5 | C6=10.5 (=SETTINGS!F26) | D6=6 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A6,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A6,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K6='Azlan Husain' | L6='Emily Warburton' (='Azlan Husain'!C10) | M6='Chinedu Chile' (='Azlan Husain'!C11) | N6='Joe Paige' (='Azlan Husain'!C12) | O6='Alfie Foley' (='Azlan Husain'!C13) | P6='Edwin Mayers' (='Azlan Husain'!C14) | Q6='Emily Warburton' (='Azlan Husain'!C5) | R6=49 (='Azlan Husain'!C17) | S6=1 (='Azlan Husain'!C18) | T6=20 (=IF($U6="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L6:P6,$D$2:$D$22))+SUMIF($A$2:$A$22,Q6,$D$2:$D$22),0)) | U6='VALID TEAM' (='Azlan Husain'!C20) | V6=20.0006 (=T6+ROW()/10000)
+  R7: A7='David Wu' | B7=10.5 | C7=10.5 (=SETTINGS!F27) | D7=5 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A7,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A7,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K7='Chinedu Chile' | L7='Chinedu Chile' (='Chinedu Chile'!C10) | M7='Alexa Amesimeku' (='Chinedu Chile'!C11) | N7='David Wu' (='Chinedu Chile'!C12) | O7='Edwin Mayers' (='Chinedu Chile'!C13) | P7='Azlan Husain' (='Chinedu Chile'!C14) | Q7='Chinedu Chile' (='Chinedu Chile'!C5) | R7=50 (='Chinedu Chile'!C17) | S7=0 (='Chinedu Chile'!C18) | T7=31 (=IF($U7="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L7:P7,$D$2:$D$22))+SUMIF($A$2:$A$22,Q7,$D$2:$D$22),0)) | U7='VALID TEAM' (='Chinedu Chile'!C20) | V7=31.0007 (=T7+ROW()/10000)
+  R8: A8='Joe Paige' | B8=10.5 | C8=10.5 (=SETTINGS!F28) | D8=8 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A8,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A8,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K8='Daniel Liu' | L8='Alyza Rai' (='Daniel Liu'!C10) | M8='Ava Swinfen' (='Daniel Liu'!C11) | N8=0 (='Daniel Liu'!C12) | O8='David Wu' (='Daniel Liu'!C13) | P8='Chinedu Chile' (='Daniel Liu'!C14) | Q8=0 (='Daniel Liu'!C5) | R8=39 (='Daniel Liu'!C17) | S8=11 (='Daniel Liu'!C18) | T8=0 (=IF($U8="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L8:P8,$D$2:$D$22))+SUMIF($A$2:$A$22,Q8,$D$2:$D$22),0)) | U8='LESS THAN 5 PLAYERS' (='Daniel Liu'!C20) | V8=0.0008 (=T8+ROW()/10000)
+  R9: A9='Azlan Husain' | B9=10 | C9=10 (=SETTINGS!F29) | D9=5 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A9,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A9,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K9='David Wu' | L9='Azlan Husain' (='David Wu'!C10) | M9='Rebecca Seymour' (='David Wu'!C11) | N9='Edwin Mayers' (='David Wu'!C12) | O9='Chinedu Chile' (='David Wu'!C13) | P9='Joe Paige' (='David Wu'!C14) | Q9='Edwin Mayers' (='David Wu'!C5) | R9=50 (='David Wu'!C17) | S9=0 (='David Wu'!C18) | T9=26 (=IF($U9="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L9:P9,$D$2:$D$22))+SUMIF($A$2:$A$22,Q9,$D$2:$D$22),0)) | U9='VALID TEAM' (='David Wu'!C20) | V9=26.0009 (=T9+ROW()/10000)
+  R10: A10='Nina De Saram' | B10=10 | C10=10 (=SETTINGS!F30) | D10=7 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A10,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A10,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K10='Edwin Mayers' | L10='Sophie Barker' (='Edwin Mayers'!C10) | M10='Esme Beston' (='Edwin Mayers'!C11) | N10='Edwin Mayers' (='Edwin Mayers'!C12) | O10='Emily Warburton' (='Edwin Mayers'!C13) | P10='Ava Swinfen' (='Edwin Mayers'!C14) | Q10='Emily Warburton' (='Edwin Mayers'!C5) | R10=48 (='Edwin Mayers'!C17) | S10=2 (='Edwin Mayers'!C18) | T10=17 (=IF($U10="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L10:P10,$D$2:$D$22))+SUMIF($A$2:$A$22,Q10,$D$2:$D$22),0)) | U10='VALID TEAM' (='Edwin Mayers'!C20) | V10=17.001 (=T10+ROW()/10000)
+  R11: A11='Alexa Amesimeku' | B11=9.5 | C11=9.5 (=SETTINGS!F31) | D11=7 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A11,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A11,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K11='Emily Warburton' | L11=0 (='Emily Warburton'!C10) | M11=0 (='Emily Warburton'!C11) | N11=0 (='Emily Warburton'!C12) | O11=0 (='Emily Warburton'!C13) | P11=0 (='Emily Warburton'!C14) | Q11=0 (='Emily Warburton'!C5) | R11=0 (='Emily Warburton'!C17) | S11=50 (='Emily Warburton'!C18) | T11=0 (=IF($U11="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L11:P11,$D$2:$D$22))+SUMIF($A$2:$A$22,Q11,$D$2:$D$22),0)) | U11='LESS THAN 5 PLAYERS' (='Emily Warburton'!C20) | V11=0.0011 (=T11+ROW()/10000)
+  R12: A12='Daniel Liu' | B12=9.5 | C12=9.5 (=SETTINGS!F32) | D12=5 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A12,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A12,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K12='Esme Beston' | L12=0 (='Esme Beston'!C10) | M12=0 (='Esme Beston'!C11) | N12=0 (='Esme Beston'!C12) | O12=0 (='Esme Beston'!C13) | P12=0 (='Esme Beston'!C14) | Q12=0 (='Esme Beston'!C5) | R12=0 (='Esme Beston'!C17) | S12=50 (='Esme Beston'!C18) | T12=0 (=IF($U12="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L12:P12,$D$2:$D$22))+SUMIF($A$2:$A$22,Q12,$D$2:$D$22),0)) | U12='LESS THAN 5 PLAYERS' (='Esme Beston'!C20) | V12=0.0012 (=T12+ROW()/10000)
+  R13: A13='Rebecca Seymour' | B13=9.5 | C13=9.5 (=SETTINGS!F33) | D13=0 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A13,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A13,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K13='Iona Smith' | L13=0 (='Iona Smith'!C10) | M13=0 (='Iona Smith'!C11) | N13=0 (='Iona Smith'!C12) | O13=0 (='Iona Smith'!C13) | P13=0 (='Iona Smith'!C14) | Q13=0 (='Iona Smith'!C5) | R13=0 (='Iona Smith'!C17) | S13=50 (='Iona Smith'!C18) | T13=0 (=IF($U13="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L13:P13,$D$2:$D$22))+SUMIF($A$2:$A$22,Q13,$D$2:$D$22),0)) | U13='LESS THAN 5 PLAYERS' (='Iona Smith'!C20) | V13=0.0013 (=T13+ROW()/10000)
+  R14: A14='Edwin Mayers' | B14=9 | C14=9 (=SETTINGS!F34) | D14=4 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A14,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A14,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K14='Joe Paige' | L14='Chinedu Chile' (='Joe Paige'!C10) | M14='Joe Paige' (='Joe Paige'!C11) | N14='Alfie Foley' (='Joe Paige'!C12) | O14='Lia Li' (='Joe Paige'!C13) | P14='Oscar Day-Duran' (='Joe Paige'!C14) | Q14='Chinedu Chile' (='Joe Paige'!C5) | R14=50 (='Joe Paige'!C17) | S14=0 (='Joe Paige'!C18) | T14=30 (=IF($U14="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L14:P14,$D$2:$D$22))+SUMIF($A$2:$A$22,Q14,$D$2:$D$22),0)) | U14='VALID TEAM' (='Joe Paige'!C20) | V14=30.0014 (=T14+ROW()/10000)
+  R15: A15='Melody Zhaeentan' | B15=8.5 | C15=8.5 (=SETTINGS!F35) | D15=6 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A15,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A15,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K15='Lia Li' | L15=0 (='Lia Li'!C10) | M15=0 (='Lia Li'!C11) | N15=0 (='Lia Li'!C12) | O15=0 (='Lia Li'!C13) | P15=0 (='Lia Li'!C14) | Q15=0 (='Lia Li'!C5) | R15=0 (='Lia Li'!C17) | S15=50 (='Lia Li'!C18) | T15=0 (=IF($U15="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L15:P15,$D$2:$D$22))+SUMIF($A$2:$A$22,Q15,$D$2:$D$22),0)) | U15='LESS THAN 5 PLAYERS' (='Lia Li'!C20) | V15=0.0015 (=T15+ROW()/10000)
+  R16: A16='Esme Beston' | B16=8 | C16=8 (=SETTINGS!F36) | D16=1 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A16,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A16,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K16='Melody Zhaeentan' | L16='Lia Li' (='Melody Zhaeentan'!C10) | M16='Edwin Mayers' (='Melody Zhaeentan'!C11) | N16='Rebecca Seymour' (='Melody Zhaeentan'!C12) | O16='Joe Paige' (='Melody Zhaeentan'!C13) | P16='Xander Meijer' (='Melody Zhaeentan'!C14) | Q16='Lia Li' (='Melody Zhaeentan'!C5) | R16=49 (='Melody Zhaeentan'!C17) | S16=1 (='Melody Zhaeentan'!C18) | T16=27 (=IF($U16="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L16:P16,$D$2:$D$22))+SUMIF($A$2:$A$22,Q16,$D$2:$D$22),0)) | U16='VALID TEAM' (='Melody Zhaeentan'!C20) | V16=27.0016 (=T16+ROW()/10000)
+  R17: A17='Iona Smith' | B17=8 | C17=8 (=SETTINGS!F37) | D17=0 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A17,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A17,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K17='Nina De Saram' | L17=0 (='Nina De Saram'!C10) | M17=0 (='Nina De Saram'!C11) | N17=0 (='Nina De Saram'!C12) | O17=0 (='Nina De Saram'!C13) | P17=0 (='Nina De Saram'!C14) | Q17=0 (='Nina De Saram'!C5) | R17=0 (='Nina De Saram'!C17) | S17=50 (='Nina De Saram'!C18) | T17=0 (=IF($U17="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L17:P17,$D$2:$D$22))+SUMIF($A$2:$A$22,Q17,$D$2:$D$22),0)) | U17='LESS THAN 5 PLAYERS' (='Nina De Saram'!C20) | V17=0.0017 (=T17+ROW()/10000)
+  R18: A18='Oscar Day-Duran' | B18=8 | C18=8 (=SETTINGS!F38) | D18=3 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A18,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A18,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K18='Oscar Day-Duran' | L18='Oscar Day-Duran' (='Oscar Day-Duran'!C10) | M18='Chinedu Chile' (='Oscar Day-Duran'!C11) | N18='Nina De Saram' (='Oscar Day-Duran'!C12) | O18='David Wu' (='Oscar Day-Duran'!C13) | P18='Joe Paige' (='Oscar Day-Duran'!C14) | Q18='Joe Paige' (='Oscar Day-Duran'!C5) | R18=50 (='Oscar Day-Duran'!C17) | S18=0 (='Oscar Day-Duran'!C18) | T18=36 (=IF($U18="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L18:P18,$D$2:$D$22))+SUMIF($A$2:$A$22,Q18,$D$2:$D$22),0)) | U18='VALID TEAM' (='Oscar Day-Duran'!C20) | V18=36.0018 (=T18+ROW()/10000)
+  R19: A19='Alfie Foley' | B19=7.5 | C19=7.5 (=SETTINGS!F39) | D19=3 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A19,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A19,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K19='Rebecca Seymour' | L19=0 (='Rebecca Seymour'!C10) | M19=0 (='Rebecca Seymour'!C11) | N19=0 (='Rebecca Seymour'!C12) | O19=0 (='Rebecca Seymour'!C13) | P19=0 (='Rebecca Seymour'!C14) | Q19=0 (='Rebecca Seymour'!C5) | R19=0 (='Rebecca Seymour'!C17) | S19=50 (='Rebecca Seymour'!C18) | T19=0 (=IF($U19="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L19:P19,$D$2:$D$22))+SUMIF($A$2:$A$22,Q19,$D$2:$D$22),0)) | U19='LESS THAN 5 PLAYERS' (='Rebecca Seymour'!C20) | V19=0.0019 (=T19+ROW()/10000)
+  R20: A20='Ava Swinfen' | B20=7 | C20=7 (=SETTINGS!F40) | D20=3 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A20,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A20,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K20='Rory Bowman' | L20='David Wu' (='Rory Bowman'!C10) | M20='Ava Swinfen' (='Rory Bowman'!C11) | N20='Alyza Rai' (='Rory Bowman'!C12) | O20='Edwin Mayers' (='Rory Bowman'!C13) | P20='Lia Li' (='Rory Bowman'!C14) | Q20='Lia Li' (='Rory Bowman'!C5) | R20=50 (='Rory Bowman'!C17) | S20=0 (='Rory Bowman'!C18) | T20=30 (=IF($U20="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L20:P20,$D$2:$D$22))+SUMIF($A$2:$A$22,Q20,$D$2:$D$22),0)) | U20='VALID TEAM' (='Rory Bowman'!C20) | V20=30.002 (=T20+ROW()/10000)
+  R21: A21='Rory Bowman' | B21=7 | C21=7 (=SETTINGS!F41) | D21=0 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A21,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A21,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K21='Sophie Barker' | L21=0 (='Sophie Barker'!C10) | M21=0 (='Sophie Barker'!C11) | N21=0 (='Sophie Barker'!C12) | O21=0 (='Sophie Barker'!C13) | P21=0 (='Sophie Barker'!C14) | Q21=0 (='Sophie Barker'!C5) | R21=0 (='Sophie Barker'!C17) | S21=50 (='Sophie Barker'!C18) | T21=0 (=IF($U21="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L21:P21,$D$2:$D$22))+SUMIF($A$2:$A$22,Q21,$D$2:$D$22),0)) | U21='LESS THAN 5 PLAYERS' (='Sophie Barker'!C20) | V21=0.0021 (=T21+ROW()/10000)
+  R22: A22='Xander Meijer' | B22=7 | C22=7 (=SETTINGS!F42) | D22=3 (=IFERROR(IF(INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A22,'TEST RESULTS'!$B$6:$B$25,0))="",0,MAX(SETTINGS!$C$7,MIN(SETTINGS!$C$8,SETTINGS!$C$5+ROUNDDOWN((INDEX('TEST RESULTS'!$H$6:$H$25,MATCH(A22,'TEST RESULTS'!$B$6:$B$25,0))-AVERAGE('TEST RESULTS'!$H$6:$H$25))/MAX((MAX('TEST RESULTS'!$H$6:$H$25)-MIN('TEST RESULTS'!$H$6:$H$25))/SETTINGS!$C$6,0.1),0)))),0)) | K22='Xander Meijer' | L22='Lia Li' (='Xander Meijer'!C10) | M22='David Wu' (='Xander Meijer'!C11) | N22='Ava Swinfen' (='Xander Meijer'!C12) | O22='Joe Paige' (='Xander Meijer'!C13) | P22='Melody Zhaeentan' (='Xander Meijer'!C14) | Q22='Lia Li' (='Xander Meijer'!C5) | R22=49.5 (='Xander Meijer'!C17) | S22=0.5 (='Xander Meijer'!C18) | T22=34 (=IF($U22="VALID TEAM",SUMPRODUCT(SUMIF($A$2:$A$22,L22:P22,$D$2:$D$22))+SUMIF($A$2:$A$22,Q22,$D$2:$D$22),0)) | U22='VALID TEAM' (='Xander Meijer'!C20) | V22=34.0022 (=T22+ROW()/10000)
+
+RAW RESULTS — key cells (hidden)
+----------------------------------------------------------------------
+  R1: B1='Manager' | C1='GW1' | D1='GW2' | E1='GW3' | F1='GW4' | G1='GW5' | H1='GW6' | I1='GW7' | J1='GW8' | K1='GW9' | L1='GW10' | M1='GW11' | N1='GW12' | O1='GW13' | P1='GW14' | Q1='GW15' | R1='GW16' | S1='GW17' | T1='GW18' | U1='GW19' | V1='GW20'
+  R2: B2='Alexa Amesimeku'
+  R3: B3='Alfie Foley'
+  R4: B4='Alyza Rai'
+  R5: B5='Ava Swinfen'
+  R6: B6='Azlan Husain'
+  R7: B7='Chinedu Chile'
+  R8: B8='Daniel Liu'
+  R9: B9='David Wu'
+  R10: B10='Edwin Mayers'
+  R11: B11='Emily Warburton'
+  R12: B12='Esme Beston'
+  R13: B13='Iona Smith'
+  R14: B14='Joe Paige'
+  R15: B15='Lia Li'
+  R16: B16='Melody Zhaeentan'
+  R17: B17='Nina De Saram'
+  R18: B18='Oscar Day-Duran'
+  R19: B19='Rebecca Seymour'
+  R20: B20='Rory Bowman'
+  R21: B21='Sophie Barker'
+  R22: B22='Xander Meijer'
+
+POINTS HISTORY — key cells (hidden): NOT FOUND
+
+ Overall Leaderboard — key cells
+----------------------------------------------------------------------
+  R1: B1='OVERALL LEADERBOARD'
+  R2: B2='All gameweeks combined  •  Sorted by points'
+  R3: B3='🏆  OVERALL LEADER:  Alexa Amesimeku  —  43 pts' (=IF(MAX($D$6:$D$26)=0,"🏆  OVERALL LEADER:  No results yet","🏆  OVERALL LEADER:  "&INDEX($C$6:$C$26,MATCH(MAX($D$6:$D$26),$D$6:$D$26,0))&"  —  "&MAX($D$6:$D$26)&" pts"))
+  R5: B5='Rank' | C5='Manager' | D5='Overall Points'
+  R6: B6=1 | C6='Alexa Amesimeku' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D6=43 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R7: B7=2 | C7='Oscar Day-Duran' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D7=36 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R8: B8=2 | C8='Alfie Foley' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D8=36 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R9: B9=3 | C9='Xander Meijer' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D9=34 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R10: B10=4 | C10='Chinedu Chile' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D10=31 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R11: B11=4 | C11='Ava Swinfen' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D11=31 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R12: B12=5 | C12='Rory Bowman' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D12=30 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R13: B13=5 | C13='Joe Paige' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D13=30 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R14: B14=6 | C14='Melody Zhaeentan' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D14=27 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R15: B15=7 | C15='David Wu' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D15=26 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R16: B16=8 | C16='Azlan Husain' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D16=20 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R17: B17=9 | C17='Edwin Mayers' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D17=17 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R18: B18=10 | C18='Sophie Barker' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D18=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R19: B19=10 | C19='Rebecca Seymour' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D19=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R20: B20=10 | C20='Nina De Saram' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D20=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R21: B21=10 | C21='Lia Li' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D21=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R22: B22=10 | C22='Iona Smith' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D22=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R23: B23=10 | C23='Esme Beston' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D23=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R24: B24=10 | C24='Emily Warburton' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D24=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R25: B25=10 | C25='Daniel Liu' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D25=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+  R26: B26=10 | C26='Alyza Rai' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),CALCULATIONS!$V$2:$V$22,0)),"")) | D26=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-5),0))
+
+GW Leaderboard — key cells
+----------------------------------------------------------------------
+  R1: B1='GAMEWEEK LEADERBOARD'
+  R2: B2='This gameweek only  •  Sorted by points'
+  R3: B3='CURRENT GAMEWEEK:' | C3=1 (=HOME!C7)
+  R5: B5='🏆  GW1 WINNER:  Alexa Amesimeku  —  43 pts' (=IF(MAX($D$8:$D$28)=0,"🏆  GW"&$C$3&" WINNER:  No results yet","🏆  GW"&$C$3&" WINNER:  "&INDEX($C$8:$C$28,MATCH(MAX($D$8:$D$28),$D$8:$D$28,0))&"  —  "&MAX($D$8:$D$28)&" pts"))
+  R7: B7='Rank' | C7='Manager' | D7='GW Points'
+  R8: B8=1 | C8='Alexa Amesimeku' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D8=43 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R9: B9=2 | C9='Oscar Day-Duran' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D9=36 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R10: B10=2 | C10='Alfie Foley' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D10=36 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R11: B11=3 | C11='Xander Meijer' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D11=34 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R12: B12=4 | C12='Chinedu Chile' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D12=31 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R13: B13=4 | C13='Ava Swinfen' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D13=31 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R14: B14=5 | C14='Rory Bowman' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D14=30 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R15: B15=5 | C15='Joe Paige' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D15=30 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R16: B16=6 | C16='Melody Zhaeentan' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D16=27 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R17: B17=7 | C17='David Wu' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D17=26 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R18: B18=8 | C18='Azlan Husain' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D18=20 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R19: B19=9 | C19='Edwin Mayers' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D19=17 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R20: B20=10 | C20='Sophie Barker' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D20=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R21: B21=10 | C21='Rebecca Seymour' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D21=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R22: B22=10 | C22='Nina De Saram' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D22=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R23: B23=10 | C23='Lia Li' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D23=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R24: B24=10 | C24='Iona Smith' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D24=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R25: B25=10 | C25='Esme Beston' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D25=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R26: B26=10 | C26='Emily Warburton' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D26=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R27: B27=10 | C27='Daniel Liu' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D27=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+  R28: B28=10 | C28='Alyza Rai' (=IFERROR(INDEX(CALCULATIONS!$K$2:$K$22,MATCH(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),CALCULATIONS!$V$2:$V$22,0)),"")) | D28=0 (=ROUND(LARGE(CALCULATIONS!$V$2:$V$22,ROW()-7),0))
+
+HOME — key cells
+----------------------------------------------------------------------
+  R1: B1='YEAR 11 FANTASY LEAGUE'
+  R2: B2='GAMEWEEK 1'
+  R4: B4='  GAMEWEEK 1: Biology and English  '
+  R5: B5=' GAMEWEEK 1'
+  R7: B7='CURRENT GAMEWEEK:' | C7=1
+  R9: B9='HOW TO PLAY'
+  R10: B10='1.  Go to PICK YOUR TEAM and click your name.'
+  R11: B11='2.  Pick 5 players from the dropdowns.'
+  R12: B12='3.  Pick 1 captain using the GOLD CAPTAIN BOX.'
+  R13: B13='4.  Stay under the £50m budget.'
+  R14: B14='5.  Enter your own test % on TEST RESULTS after each test.'
+  R17: B17='HOW POINTS WORK'
+  R18: B18='Your score is compared to the CLASS AVERAGE.\nAverage = 5 points. Every small step above = +1. Every step below = −1.'
+  R20: B20='Well above average' | D20='High points'
+  R21: B21='Slightly above' | D21='6–7 points'
+  R22: B22='Exactly average' | D22='5 points'
+  R23: B23='Slightly below' | D23='3–4 points'
+  R24: B24='Well below' | D24='0–1 points'
+  R27: B27='HOW PRICES WORK'
+  R28: B28='Prices move based on your 3-WEEK FORM vs the class average.\nCheap players rise faster. Expensive players rise slower.'
+  R30: B30='No changes first 2 weeks' | E30='Settling in'
+  R31: B31='Week 3 onward' | E31='Prices move based on form'
+  R32: B32='Beating average consistently' | E32='Price rises up to +£0.5m/week'
+  R33: B33='Below average consistently' | E33='Price falls up to -£0.5m/week'
+  R34: B34='Bounds' | E34='£7.0m  to  £13.0m'
+  R36: B36='SETTINGS and RULES sheets have more detail. Ask Mr C if anything is unclear.'
+
+PLAYER MARKET — key cells
+----------------------------------------------------------------------
+  R1: B1='PLAYER MARKET'
+  R2: B2="Prices  •  This week's change  •  Ownership"
+  R4: B4='Player' | C4='Price' | D4='Change' | E4='Ownership %'
+  R5: B5='Lia Li' (=CALCULATIONS!A2) | C5=13 (=CALCULATIONS!C2) | D5=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C2-CALCULATIONS!B2)) | E5=0.23809523809523808 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A2)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R6: B6='Sophie Barker' (=CALCULATIONS!A3) | C6=13 (=CALCULATIONS!C3) | D6=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C3-CALCULATIONS!B3)) | E6=0.14285714285714285 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A3)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R7: B7='Chinedu Chile' (=CALCULATIONS!A4) | C7=11 (=CALCULATIONS!C4) | D7=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C4-CALCULATIONS!B4)) | E7=0.3333333333333333 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A4)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R8: B8='Emily Warburton' (=CALCULATIONS!A5) | C8=11 (=CALCULATIONS!C5) | D8=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C5-CALCULATIONS!B5)) | E8=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A5)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R9: B9='Alyza Rai' (=CALCULATIONS!A6) | C9=10.5 (=CALCULATIONS!C6) | D9=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C6-CALCULATIONS!B6)) | E9=0.14285714285714285 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A6)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R10: B10='David Wu' (=CALCULATIONS!A7) | C10=10.5 (=CALCULATIONS!C7) | D10=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C7-CALCULATIONS!B7)) | E10=0.3333333333333333 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A7)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R11: B11='Joe Paige' (=CALCULATIONS!A8) | C11=10.5 (=CALCULATIONS!C8) | D11=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C8-CALCULATIONS!B8)) | E11=0.3333333333333333 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A8)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R12: B12='Azlan Husain' (=CALCULATIONS!A9) | C12=10 (=CALCULATIONS!C9) | D12=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C9-CALCULATIONS!B9)) | E12=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A9)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R13: B13='Nina De Saram' (=CALCULATIONS!A10) | C13=10 (=CALCULATIONS!C10) | D13=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C10-CALCULATIONS!B10)) | E13=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A10)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R14: B14='Alexa Amesimeku' (=CALCULATIONS!A11) | C14=9.5 (=CALCULATIONS!C11) | D14=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C11-CALCULATIONS!B11)) | E14=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A11)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R15: B15='Daniel Liu' (=CALCULATIONS!A12) | C15=9.5 (=CALCULATIONS!C12) | D15=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C12-CALCULATIONS!B12)) | E15=0 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A12)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R16: B16='Rebecca Seymour' (=CALCULATIONS!A13) | C16=9.5 (=CALCULATIONS!C13) | D16=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C13-CALCULATIONS!B13)) | E16=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A13)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R17: B17='Edwin Mayers' (=CALCULATIONS!A14) | C17=9 (=CALCULATIONS!C14) | D17=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C14-CALCULATIONS!B14)) | E17=0.3333333333333333 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A14)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R18: B18='Melody Zhaeentan' (=CALCULATIONS!A15) | C18=8.5 (=CALCULATIONS!C15) | D18=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C15-CALCULATIONS!B15)) | E18=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A15)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R19: B19='Esme Beston' (=CALCULATIONS!A16) | C19=8 (=CALCULATIONS!C16) | D19=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C16-CALCULATIONS!B16)) | E19=0.047619047619047616 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A16)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R20: B20='Iona Smith' (=CALCULATIONS!A17) | C20=8 (=CALCULATIONS!C17) | D20=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C17-CALCULATIONS!B17)) | E20=0 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A17)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R21: B21='Oscar Day-Duran' (=CALCULATIONS!A18) | C21=8 (=CALCULATIONS!C18) | D21=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C18-CALCULATIONS!B18)) | E21=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A18)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R22: B22='Alfie Foley' (=CALCULATIONS!A19) | C22=7.5 (=CALCULATIONS!C19) | D22=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C19-CALCULATIONS!B19)) | E22=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A19)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R23: B23='Ava Swinfen' (=CALCULATIONS!A20) | C23=7 (=CALCULATIONS!C20) | D23=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C20-CALCULATIONS!B20)) | E23=0.2857142857142857 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A20)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R24: B24='Rory Bowman' (=CALCULATIONS!A21) | C24=7 (=CALCULATIONS!C21) | D24=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C21-CALCULATIONS!B21)) | E24=0 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A21)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R25: B25='Xander Meijer' (=CALCULATIONS!A22) | C25=7 (=CALCULATIONS!C22) | D25=0 (=IF(SETTINGS!C29=0,0,CALCULATIONS!C22-CALCULATIONS!B22)) | E25=0.09523809523809523 (=COUNTIF(CALCULATIONS!$L$2:$P$22,CALCULATIONS!A22)/COUNTA(CALCULATIONS!$K$2:$K$22))
+  R28: B28='PRICE RULES\nPrices move based on 3-week form vs class average.\nFirst 2 gameweeks: no changes.  Min £7.0m  •  Max £13.0m'
+
+TEAM SHEETS
+----------------------------------------------------------------------
+  Alexa Amesimeku        captain='Sophie Barker'  picks=['Sophie Barker', 'Joe Paige', 'Alexa Amesimeku', 'Nina De Saram', 'Xander Meijer']
+  Alfie Foley            captain='Sophie Barker'  picks=['Ava Swinfen', 'David Wu', 'Alyza Rai', 'Sophie Barker', 'Edwin Mayers']
+  Alyza Rai              captain=None  picks=[]
+  Ava Swinfen            captain='Lia Li'  picks=['Ava Swinfen', 'Melody Zhaeentan', 'Lia Li', 'Chinedu Chile', 'David Wu']
+  Azlan Husain           captain='Emily Warburton'  picks=['Emily Warburton', 'Chinedu Chile', 'Joe Paige', 'Alfie Foley', 'Edwin Mayers']
+  Chinedu Chile          captain='Chinedu Chile'  picks=['Chinedu Chile', 'Alexa Amesimeku', 'David Wu', 'Edwin Mayers', 'Azlan Husain']
+  Daniel Liu             captain=None  picks=['Alyza Rai', 'Ava Swinfen', 'David Wu', 'Chinedu Chile']
+  David Wu               captain='Edwin Mayers'  picks=['Azlan Husain', 'Rebecca Seymour', 'Edwin Mayers', 'Chinedu Chile', 'Joe Paige']
+  Edwin Mayers           captain='Emily Warburton'  picks=['Sophie Barker', 'Esme Beston', 'Edwin Mayers', 'Emily Warburton', 'Ava Swinfen']
+  Emily Warburton        captain=None  picks=[]
+  Esme Beston            captain=None  picks=[]
+  Iona Smith             captain=None  picks=[]
+  Joe Paige              captain='Chinedu Chile'  picks=['Chinedu Chile', 'Joe Paige', 'Alfie Foley', 'Lia Li', 'Oscar Day-Duran']
+  Lia Li                 captain=None  picks=[]
+  Melody Zhaeentan       captain='Lia Li'  picks=['Lia Li', 'Edwin Mayers', 'Rebecca Seymour', 'Joe Paige', 'Xander Meijer']
+  Nina De Saram          captain=None  picks=[]
+  Oscar Day-Duran        captain='Joe Paige'  picks=['Oscar Day-Duran', 'Chinedu Chile', 'Nina De Saram', 'David Wu', 'Joe Paige']
+  Rebecca Seymour        captain=None  picks=[]
+  Rory Bowman            captain='Lia Li'  picks=['David Wu', 'Ava Swinfen', 'Alyza Rai', 'Edwin Mayers', 'Lia Li']
+  Sophie Barker          captain=None  picks=[]
+  Xander Meijer          captain='Lia Li'  picks=['Lia Li', 'David Wu', 'Ava Swinfen', 'Joe Paige', 'Melody Zhaeentan']
+
+NOTES
+----------------------------------------------------------------------
+  - Values shown may be 'None' if Excel hadn't recalculated the file before saving.
+  - Formula strings (starting with '=') appear after the value in brackets.
+  - Full data: extracted_data.json
+  - Per-sheet dumps: sheets/ subdirectory
+
