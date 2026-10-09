@@ -1,29 +1,3 @@
-# Function to authenticate two players
-def authentication():
-
-    # Prompt and read player 1's username, removing any surrounding whitespace
-    p1_username = input("Enter your username").strip()
-    # Prompt and read player 1's password, removing any surrounding whitespace
-    p1_password = input("Enter your password").strip()
-    # Print two blank lines for spacing
-    print()
-    print()
-    # Prompt and read player 2's username, removing any surrounding whitespace
-    p2_username = input("Enter your username").strip()
-    # Prompt and read player 2's password, removing any surrounding whitespace
-    p2_password = input("Enter your password").strip()
-
-    # Check player 1's credentials against the authorised players file
-    p1_check = authorise_player(p1_username, p1_password)
-    # Check player 2's credentials against the authorised players file
-    p2_check = authorise_player(p2_username, p2_password)
-
-    # If both players are successfully authenticated, return True
-    if p1_check and p2_check:
-        return True
-    # Otherwise, return False (authentication failed for at least one player)
-    return False
-
 # Function to verify a single player's username and password
 def authorise_player(username, password):
     # Remove any surrounding whitespace from the username
