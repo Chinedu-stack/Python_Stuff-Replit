@@ -1,7 +1,7 @@
 # Import time and os modules for delays and clearing the screen
 import time, os 
 # Import authentication functions from the authentication module
-from authentication import authentication, authorise_player 
+from authentication import authorise_player 
 # Import game-related classes from the classes module
 from classes import Card, Deck, Player, Game 
  
