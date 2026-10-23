@@ -2,10 +2,6 @@ import xlwings as xw
 import shutil
 
 PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
-BACKUP_PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker_BACKUP_FINAL_COLORS.xlsx"
-
-print("Creating backup...")
-shutil.copy2(PATH, BACKUP_PATH)
 
 print("Opening Excel...")
 app = xw.App(visible=False, add_book=False)
@@ -19,63 +15,80 @@ try:
     wb = app.books.open(PATH)
     ws = wb.sheets["Dashboard"]
     
-    print("Fixing box structure and applying bulletproof colors...")
+    print("Finding the exact table location...")
+    table_row = None
+    last_rev_col = None
     
-    c_dark_green = rgb(134, 188, 113) # Strong green
-    c_red = rgb(244, 204, 204)        # Soft red
-    c_border = rgb(220, 220, 220)     # Border grey
-    
-    # We target the actual subject cells (A27, C27, E27, G27)
-    # and their immediate neighbors so it looks like one big box
-    boxes = [
-        {"main": "A27", "neighbor": "B27", "hidden": "A28"},
-        {"main": "C27", "neighbor": "D27", "hidden": "C28"},
-        {"main": "E27", "neighbor": "F27", "hidden": "E28"},
-        {"main": "G27", "neighbor": "H27", "hidden": "G28"}
-    ]
-    
-    for box in boxes:
-        main = box["main"]
-        neighbor = box["neighbor"]
-        hidden = box["hidden"]
+    # Find the header row
+    for r in range(1, 50):
+        for c in range(1, 15):
+            val = ws.range((r, c)).value
+            if val and "Last Revised" in str(val):
+                table_row = r
+                last_rev_col = c
+                break
+        if table_row:
+            break
+            
+    if not table_row:
+        print("Could not find the 'Last Revised' column. Exiting.")
+    else:
+        print(f"Found table at Row {table_row}, Last Revised is Column {last_rev_col}")
         
-        # 1. UNMERGE the cells so Conditional Formatting actually works
-        try:
-            ws.range(f"{main}:{neighbor}").api.UnMerge()
-        except:
-            pass
-            
-        # 2. Write the hidden helper formula in Row 28
-        formula = f'=IF(COUNTIFS($A$13:$A$23, {main}, $I$13:$I$23, "Today")>0, "DONE", "NOT DONE")'
-        ws.range(hidden).formula = formula
-        ws.range(hidden).api.Font.Color = rgb(255, 255, 255) # Invisible text
-        ws.range(hidden).api.Font.Size = 1
+        # 1. Insert the new column right before 'Last Revised'
+        ws.range((table_row, last_rev_col)).api.EntireColumn.Insert(Shift=-4161)
         
-        # 3. Apply Conditional Formatting to BOTH the main and neighbor cells
-        for cell_addr in [main, neighbor]:
-            rng = ws.range(cell_addr)
-            rng.api.FormatConditions.Delete() # Clear old rules
+        # 2. Set up the Header
+        header_cell = ws.range((table_row, last_rev_col))
+        header_cell.value = "% Complete"
+        
+        # Colours matching the rest of the table
+        c_header = rgb(207, 226, 243)
+        c_zebra = rgb(249, 249, 249)
+        c_white = rgb(255, 255, 255)
+        c_border = rgb(220, 220, 220)
+        
+        # 3. Style the Header
+        header_cell.api.Interior.Color = c_header
+        header_cell.api.Font.Bold = True
+        header_cell.api.Font.Name = "Segoe UI"
+        header_cell.api.HorizontalAlignment = -4108 # Center
+        
+        for b_idx in [7, 8, 9, 10]:
+            header_cell.api.Borders(b_idx).LineStyle = 1
+            header_cell.api.Borders(b_idx).Color = c_border
             
-            # Red rule
-            rule_red = rng.api.FormatConditions.Add(1, 3, '"NOT DONE"')
-            rule_red.Interior.Color = c_red
-            rule_red.Font.Color = rgb(150, 0, 0)
+        # 4. Add formulas and styling to the rows
+        for r in range(table_row + 1, table_row + 11): # 10 subjects
+            cell = ws.range((r, last_rev_col))
             
-            # Green rule
-            rule_green = rng.api.FormatConditions.Add(1, 3, '"DONE"')
-            rule_green.Interior.Color = c_dark_green
-            rule_green.Font.Color = rgb(255, 255, 255)
-            rule_green.Font.Bold = True
+            # Formula: Completed (Col E) / Total Topics (Col B)
+            cell.formula = f"=IFERROR(E{r}/B{r}, 0)"
+            cell.number_format = "0%"
             
-            # Draw the borders so it looks like a single box
-            for border_idx in [7, 8, 9, 10]:
-                rng.api.Borders(border_idx).LineStyle = 1
-                rng.api.Borders(border_idx).Color = c_border
+            # Formatting
+            cell.api.Font.Name = "Segoe UI"
+            cell.api.HorizontalAlignment = -4108 # Center
+            cell.api.Font.Color = rgb(59, 59, 59)
+            
+            for b_idx in [7, 8, 9, 10]:
+                cell.api.Borders(b_idx).LineStyle = 1
+                cell.api.Borders(b_idx).Color = c_border
+                
+            # Zebra stripes
+            if r % 2 == 0:
+                cell.api.Interior.Color = c_zebra
+            else:
+                cell.api.Interior.Color = c_white
+                
+        # 5. Adjust width
+        ws.range((table_row, last_rev_col)).api.EntireColumn.ColumnWidth = 14
 
-    app.calculate()
-    wb.save()
+        app.calculate()
+        wb.save()
+        print("Success! Percentage column added cleanly without breaking anything.")
+        
     wb.close()
-    print("Success! The Focus boxes are unmerged, color-coded, and bulletproof.")
 
 except Exception as e:
     print(f"An error occurred: {e}")
