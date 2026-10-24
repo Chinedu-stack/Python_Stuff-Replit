@@ -1,96 +1,104 @@
 import xlwings as xw
-import shutil
+import shutil, os
+from datetime import date, datetime
 
-PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
+# ---------- CONFIG ----------
+WB_PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
+DASHBOARD = "Dashboard"
 
-print("Opening Excel...")
-app = xw.App(visible=False, add_book=False)
-app.display_alerts = False
-app.screen_updating = False
+# Today's Focus Layout
+FOCUS_SUBJECT_ROW = 27          
+FOCUS_BOX_ROWS    = [27, 28]    
+SESSION_COLS      = ["A", "C", "E", "G"]   
 
-def rgb(r, g, b):
-    return b * 65536 + g * 256 + r
+# Colors
+GREEN = (217, 234, 211)
+RED   = (244, 204, 204)
+WHITE = (255, 255, 255)
+# ----------------------------
 
-try:
-    wb = app.books.open(PATH)
-    ws = wb.sheets["Dashboard"]
+def backup(path):
+    folder, name = os.path.split(path)
+    stem, ext = os.path.splitext(name)
+    stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    dst = os.path.join(folder, f"{stem}_BACKUP_{stamp}{ext}")
+    shutil.copy2(path, dst)
+    print(f"✅ Backup written: {dst}\n")
+
+def last_revised_date(wb, subject):
+    """Look at the subject tab and return the max date in Column D."""
+    try:
+        sheet = wb.sheets[subject]
+    except Exception:
+        return None
+
+    last_row = sheet.range("A" + str(sheet.cells.last_cell.row)).end("up").row
+    if last_row < 4:
+        return None
+
+    dates = sheet.range(f"D4:D{last_row}").value
+    if not isinstance(dates, list):
+        dates = [dates]
+
+    real_dates = []
+    for d in dates:
+        if isinstance(d, datetime):
+            real_dates.append(d.date())
+        elif isinstance(d, date):
+            real_dates.append(d)
+        elif isinstance(d, str) and d.strip():
+            for fmt in ("%d/%m/%y", "%d/%m/%Y", "%Y-%m-%d"):
+                try:
+                    real_dates.append(datetime.strptime(d.strip(), fmt).date())
+                    break
+                except ValueError:
+                    pass
+                    
+    return max(real_dates) if real_dates else None
+
+def paint_box(sheet, rows, col_letter, color):
+    """Color the 2x2 grid solidly without messing up borders."""
+    right_col = chr(ord(col_letter) + 1)
+    top = rows[0]
+    bot = rows[-1]
     
-    print("Finding the exact table location...")
-    table_row = None
-    last_rev_col = None
+    # Color every cell in the 2x2 block solidly
+    for r in rows:
+        for c in (col_letter, right_col):
+            sheet.range(f"{c}{r}").color = color
+
+def main():
+    backup(WB_PATH)
+
+    wb = xw.Book(WB_PATH)
+    dash = wb.sheets[DASHBOARD]
+    today = date.today()
+
+    print(f"Painting Today's Focus...\n")
     
-    # Find the header row
-    for r in range(1, 50):
-        for c in range(1, 15):
-            val = ws.range((r, c)).value
-            if val and "Last Revised" in str(val):
-                table_row = r
-                last_rev_col = c
-                break
-        if table_row:
-            break
-            
-    if not table_row:
-        print("Could not find the 'Last Revised' column. Exiting.")
-    else:
-        print(f"Found table at Row {table_row}, Last Revised is Column {last_rev_col}")
-        
-        # 1. Insert the new column right before 'Last Revised'
-        ws.range((table_row, last_rev_col)).api.EntireColumn.Insert(Shift=-4161)
-        
-        # 2. Set up the Header
-        header_cell = ws.range((table_row, last_rev_col))
-        header_cell.value = "% Complete"
-        
-        # Colours matching the rest of the table
-        c_header = rgb(207, 226, 243)
-        c_zebra = rgb(249, 249, 249)
-        c_white = rgb(255, 255, 255)
-        c_border = rgb(220, 220, 220)
-        
-        # 3. Style the Header
-        header_cell.api.Interior.Color = c_header
-        header_cell.api.Font.Bold = True
-        header_cell.api.Font.Name = "Segoe UI"
-        header_cell.api.HorizontalAlignment = -4108 # Center
-        
-        for b_idx in [7, 8, 9, 10]:
-            header_cell.api.Borders(b_idx).LineStyle = 1
-            header_cell.api.Borders(b_idx).Color = c_border
-            
-        # 4. Add formulas and styling to the rows
-        for r in range(table_row + 1, table_row + 11): # 10 subjects
-            cell = ws.range((r, last_rev_col))
-            
-            # Formula: Completed (Col E) / Total Topics (Col B)
-            cell.formula = f"=IFERROR(E{r}/B{r}, 0)"
-            cell.number_format = "0%"
-            
-            # Formatting
-            cell.api.Font.Name = "Segoe UI"
-            cell.api.HorizontalAlignment = -4108 # Center
-            cell.api.Font.Color = rgb(59, 59, 59)
-            
-            for b_idx in [7, 8, 9, 10]:
-                cell.api.Borders(b_idx).LineStyle = 1
-                cell.api.Borders(b_idx).Color = c_border
-                
-            # Zebra stripes
-            if r % 2 == 0:
-                cell.api.Interior.Color = c_zebra
-            else:
-                cell.api.Interior.Color = c_white
-                
-        # 5. Adjust width
-        ws.range((table_row, last_rev_col)).api.EntireColumn.ColumnWidth = 14
+    for col in SESSION_COLS:
+        raw = dash.range(f"{col}{FOCUS_SUBJECT_ROW}").value
+        subject = str(raw).strip() if raw else ""
 
-        app.calculate()
-        wb.save()
-        print("Success! Percentage column added cleanly without breaking anything.")
-        
-    wb.close()
+        if not subject or subject == "-":
+            paint_box(dash, FOCUS_BOX_ROWS, col, WHITE)
+            print(f"  {col}: (blank) -> WHITE")
+            continue
 
-except Exception as e:
-    print(f"An error occurred: {e}")
-finally:
-    app.quit()
+        last_date = last_revised_date(wb, subject)
+
+        if last_date == today:
+            color, tag = GREEN, "GREEN"
+        elif last_date is None:
+            color, tag = RED, "RED (no dates)"
+        else:
+            color, tag = RED, f"RED ({last_date.strftime('%d/%m/%Y')})"
+
+        paint_box(dash, FOCUS_BOX_ROWS, col, color)
+        print(f"  {col}: {subject:<25} -> {tag}")
+
+    wb.save()
+    print("\nSaved successfully.")
+
+if __name__ == "__main__":
+    main()
