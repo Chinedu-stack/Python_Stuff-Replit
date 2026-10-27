@@ -1,104 +1,70 @@
 import xlwings as xw
-import shutil, os
-from datetime import date, datetime
 
-# ---------- CONFIG ----------
-WB_PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
-DASHBOARD = "Dashboard"
+PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
 
-# Today's Focus Layout
-FOCUS_SUBJECT_ROW = 27          
-FOCUS_BOX_ROWS    = [27, 28]    
-SESSION_COLS      = ["A", "C", "E", "G"]   
+print("Opening Excel...")
+app = xw.App(visible=False, add_book=False)
+app.display_alerts = False
+app.screen_updating = False
 
-# Colors
-GREEN = (217, 234, 211)
-RED   = (244, 204, 204)
-WHITE = (255, 255, 255)
-# ----------------------------
+def rgb(r, g, b):
+    return b * 65536 + g * 256 + r
 
-def backup(path):
-    folder, name = os.path.split(path)
-    stem, ext = os.path.splitext(name)
-    stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    dst = os.path.join(folder, f"{stem}_BACKUP_{stamp}{ext}")
-    shutil.copy2(path, dst)
-    print(f"✅ Backup written: {dst}\n")
-
-def last_revised_date(wb, subject):
-    """Look at the subject tab and return the max date in Column D."""
+try:
+    wb = app.books.open(PATH)
+    ws = wb.sheets["Dashboard"]
+    
+    print("Adding Week Toggle and updating formulas...")
+    
+    # 1. Setup the Toggle in A24 (just above Today's Focus)
+    ws.range("A24").value = "Current Week:"
+    ws.range("A24").api.Font.Bold = True
+    ws.range("A24").api.Font.Color = rgb(31, 78, 120)
+    
+    toggle_cell = ws.range("B24")
+    toggle_cell.value = 2 # Default to Week 2 right now
+    toggle_cell.api.HorizontalAlignment = -4108 # Center
+    
+    # Style the toggle box
+    toggle_cell.api.Interior.Color = rgb(207, 226, 243) # Soft blue
+    toggle_cell.api.Font.Bold = True
+    
+    # Add Dropdown (1 or 2) to B24
     try:
-        sheet = wb.sheets[subject]
-    except Exception:
-        return None
+        toggle_cell.api.Validation.Delete()
+        toggle_cell.api.Validation.Add(3, 1, 1, "1,2") # 3 = xlValidateList
+    except: pass
 
-    last_row = sheet.range("A" + str(sheet.cells.last_cell.row)).end("up").row
-    if last_row < 4:
-        return None
-
-    dates = sheet.range(f"D4:D{last_row}").value
-    if not isinstance(dates, list):
-        dates = [dates]
-
-    real_dates = []
-    for d in dates:
-        if isinstance(d, datetime):
-            real_dates.append(d.date())
-        elif isinstance(d, date):
-            real_dates.append(d)
-        elif isinstance(d, str) and d.strip():
-            for fmt in ("%d/%m/%y", "%d/%m/%Y", "%Y-%m-%d"):
-                try:
-                    real_dates.append(datetime.strptime(d.strip(), fmt).date())
-                    break
-                except ValueError:
-                    pass
-                    
-    return max(real_dates) if real_dates else None
-
-def paint_box(sheet, rows, col_letter, color):
-    """Color the 2x2 grid solidly without messing up borders."""
-    right_col = chr(ord(col_letter) + 1)
-    top = rows[0]
-    bot = rows[-1]
+    # 2. Update the Today's Focus Formulas
+    # We assume the Focus subject boxes are at A27, C27, E27, G27
+    # (If they moved, this script might need to be adjusted, but based on our last screenshot they are at 27)
     
-    # Color every cell in the 2x2 block solidly
-    for r in rows:
-        for c in (col_letter, right_col):
-            sheet.range(f"{c}{r}").color = color
-
-def main():
-    backup(WB_PATH)
-
-    wb = xw.Book(WB_PATH)
-    dash = wb.sheets[DASHBOARD]
-    today = date.today()
-
-    print(f"Painting Today's Focus...\n")
+    start_row = 27
+    sessions = ["Session 1", "Session 2", "Session 3", "Session 4"]
+    col_starts = [1, 3, 5, 7] # A, C, E, G
     
-    for col in SESSION_COLS:
-        raw = dash.range(f"{col}{FOCUS_SUBJECT_ROW}").value
-        subject = str(raw).strip() if raw else ""
+    for i, session_name in enumerate(sessions):
+        c = col_starts[i]
+        col_index = i + 1
+        
+        formula_cell = ws.range((start_row, c))
+        
+        # The Magic Dynamic Formula
+        # It looks at $B$24. If 1 -> INDEX/Range A2:E8. If 2 -> INDEX/Range G2:K8.
+        formula = (
+            f'=IFERROR('
+            f'HYPERLINK("#\'"&INDEX(IF($B$24=1, \'Revision Timetable\'!B2:E8, \'Revision Timetable\'!H2:K8), MATCH(TEXT(TODAY(),"dddd"), \'Revision Timetable\'!A2:A8, 0), {col_index})&"\'!A4", '
+            f'INDEX(IF($B$24=1, \'Revision Timetable\'!B2:E8, \'Revision Timetable\'!H2:K8), MATCH(TEXT(TODAY(),"dddd"), \'Revision Timetable\'!A2:A8, 0), {col_index})), "-")'
+        )
+        
+        formula_cell.formula = formula
 
-        if not subject or subject == "-":
-            paint_box(dash, FOCUS_BOX_ROWS, col, WHITE)
-            print(f"  {col}: (blank) -> WHITE")
-            continue
-
-        last_date = last_revised_date(wb, subject)
-
-        if last_date == today:
-            color, tag = GREEN, "GREEN"
-        elif last_date is None:
-            color, tag = RED, "RED (no dates)"
-        else:
-            color, tag = RED, f"RED ({last_date.strftime('%d/%m/%Y')})"
-
-        paint_box(dash, FOCUS_BOX_ROWS, col, color)
-        print(f"  {col}: {subject:<25} -> {tag}")
-
+    app.calculate()
     wb.save()
-    print("\nSaved successfully.")
+    wb.close()
+    print("Success! Week Toggle added. You can now switch between Week 1 and 2.")
 
-if __name__ == "__main__":
-    main()
+except Exception as e:
+    print(f"An error occurred: {e}")
+finally:
+    app.quit()
