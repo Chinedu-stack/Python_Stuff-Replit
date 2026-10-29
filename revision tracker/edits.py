@@ -1,6 +1,11 @@
 import xlwings as xw
+import shutil
 
 PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
+BACKUP_PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker_BACKUP_RAG.xlsx"
+
+print("Creating backup...")
+shutil.copy2(PATH, BACKUP_PATH)
 
 print("Opening Excel...")
 app = xw.App(visible=False, add_book=False)
@@ -14,55 +19,33 @@ try:
     wb = app.books.open(PATH)
     ws = wb.sheets["Dashboard"]
     
-    print("Adding Week Toggle and updating formulas...")
+    print("Fixing the RAG tile formulas...")
     
-    # 1. Setup the Toggle in A24 (just above Today's Focus)
-    ws.range("A24").value = "Current Week:"
-    ws.range("A24").api.Font.Bold = True
-    ws.range("A24").api.Font.Color = rgb(31, 78, 120)
+    # The tiles are in Row 9. 
+    # Green is A9:B9
+    # Amber is C9:D9
+    # Red is E9:F9
     
-    toggle_cell = ws.range("B24")
-    toggle_cell.value = 2 # Default to Week 2 right now
-    toggle_cell.api.HorizontalAlignment = -4108 # Center
+    # 1. Green Formula
+    # This SUMPRODUCT formula counts all "Green" in column C of every subject sheet.
+    formula_green = '=SUMPRODUCT(COUNTIFS(INDIRECT("\'"&Subjects&"\'!A4:A1000"),"?*",INDIRECT("\'"&Subjects&"\'!C4:C1000"),"Green"))'
+    ws.range("A9").formula = formula_green
+    ws.range("A9").number_format = "General"
     
-    # Style the toggle box
-    toggle_cell.api.Interior.Color = rgb(207, 226, 243) # Soft blue
-    toggle_cell.api.Font.Bold = True
+    # 2. Amber Formula
+    formula_amber = '=SUMPRODUCT(COUNTIFS(INDIRECT("\'"&Subjects&"\'!A4:A1000"),"?*",INDIRECT("\'"&Subjects&"\'!C4:C1000"),"Amber"))'
+    ws.range("C9").formula = formula_amber
+    ws.range("C9").number_format = "General"
     
-    # Add Dropdown (1 or 2) to B24
-    try:
-        toggle_cell.api.Validation.Delete()
-        toggle_cell.api.Validation.Add(3, 1, 1, "1,2") # 3 = xlValidateList
-    except: pass
-
-    # 2. Update the Today's Focus Formulas
-    # We assume the Focus subject boxes are at A27, C27, E27, G27
-    # (If they moved, this script might need to be adjusted, but based on our last screenshot they are at 27)
-    
-    start_row = 27
-    sessions = ["Session 1", "Session 2", "Session 3", "Session 4"]
-    col_starts = [1, 3, 5, 7] # A, C, E, G
-    
-    for i, session_name in enumerate(sessions):
-        c = col_starts[i]
-        col_index = i + 1
-        
-        formula_cell = ws.range((start_row, c))
-        
-        # The Magic Dynamic Formula
-        # It looks at $B$24. If 1 -> INDEX/Range A2:E8. If 2 -> INDEX/Range G2:K8.
-        formula = (
-            f'=IFERROR('
-            f'HYPERLINK("#\'"&INDEX(IF($B$24=1, \'Revision Timetable\'!B2:E8, \'Revision Timetable\'!H2:K8), MATCH(TEXT(TODAY(),"dddd"), \'Revision Timetable\'!A2:A8, 0), {col_index})&"\'!A4", '
-            f'INDEX(IF($B$24=1, \'Revision Timetable\'!B2:E8, \'Revision Timetable\'!H2:K8), MATCH(TEXT(TODAY(),"dddd"), \'Revision Timetable\'!A2:A8, 0), {col_index})), "-")'
-        )
-        
-        formula_cell.formula = formula
+    # 3. Red Formula
+    formula_red = '=SUMPRODUCT(COUNTIFS(INDIRECT("\'"&Subjects&"\'!A4:A1000"),"?*",INDIRECT("\'"&Subjects&"\'!C4:C1000"),"Red"))'
+    ws.range("E9").formula = formula_red
+    ws.range("E9").number_format = "General"
 
     app.calculate()
     wb.save()
     wb.close()
-    print("Success! Week Toggle added. You can now switch between Week 1 and 2.")
+    print("Success! RAG numbers fixed.")
 
 except Exception as e:
     print(f"An error occurred: {e}")
