@@ -1,51 +1,85 @@
 import xlwings as xw
-import shutil
+import json
+import datetime
+import os
 
 PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker.xlsx"
-BACKUP_PATH = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\Revision_Tracker_BACKUP_RAG.xlsx"
+OUTPUT_FILE = r"C:\Users\chine\OneDrive\Python Stuff\revision tracker\extracted_data.json"
 
-print("Creating backup...")
-shutil.copy2(PATH, BACKUP_PATH)
+# The 10 subjects we want to extract
+SUBJECTS = [
+    "Biology", "Chemistry", "Physics", "Mathematics",
+    "English Language", "English Literature", "Geography",
+    "History", "Spanish", "Computer Science"
+]
 
-print("Opening Excel...")
+print("Opening Excel to extract data...")
 app = xw.App(visible=False, add_book=False)
 app.display_alerts = False
 app.screen_updating = False
 
-def rgb(r, g, b):
-    return b * 65536 + g * 256 + r
+# We need a helper to convert Python dates to JSON-friendly strings
+def parse_date(val):
+    if isinstance(val, (datetime.date, datetime.datetime)):
+        return val.strftime("%Y-%m-%d")
+    elif isinstance(val, str) and val.strip() != "":
+        return val.strip()
+    return None
+
+data_export = {"subjects": []}
 
 try:
     wb = app.books.open(PATH)
-    ws = wb.sheets["Dashboard"]
     
-    print("Fixing the RAG tile formulas...")
-    
-    # The tiles are in Row 9. 
-    # Green is A9:B9
-    # Amber is C9:D9
-    # Red is E9:F9
-    
-    # 1. Green Formula
-    # This SUMPRODUCT formula counts all "Green" in column C of every subject sheet.
-    formula_green = '=SUMPRODUCT(COUNTIFS(INDIRECT("\'"&Subjects&"\'!A4:A1000"),"?*",INDIRECT("\'"&Subjects&"\'!C4:C1000"),"Green"))'
-    ws.range("A9").formula = formula_green
-    ws.range("A9").number_format = "General"
-    
-    # 2. Amber Formula
-    formula_amber = '=SUMPRODUCT(COUNTIFS(INDIRECT("\'"&Subjects&"\'!A4:A1000"),"?*",INDIRECT("\'"&Subjects&"\'!C4:C1000"),"Amber"))'
-    ws.range("C9").formula = formula_amber
-    ws.range("C9").number_format = "General"
-    
-    # 3. Red Formula
-    formula_red = '=SUMPRODUCT(COUNTIFS(INDIRECT("\'"&Subjects&"\'!A4:A1000"),"?*",INDIRECT("\'"&Subjects&"\'!C4:C1000"),"Red"))'
-    ws.range("E9").formula = formula_red
-    ws.range("E9").number_format = "General"
+    for sub_name in SUBJECTS:
+        ws = wb.sheets[sub_name]
+        
+        # 1. Get the General Notes for the Subject (from the merged/unmerged F4:F18 box)
+        subject_notes = ws.range("F4").value
+        if subject_notes is None:
+            subject_notes = ""
+            
+        subject_data = {
+            "subject_name": sub_name,
+            "general_notes": str(subject_notes).strip(),
+            "topics": []
+        }
+        
+        print(f"Scanning {sub_name}...")
+        
+        # 2. Loop through the rows to get topics (Rows 4 to 50)
+        for r in range(4, 50):
+            topic_name = ws.range(f"A{r}").value
+            
+            # If column A is empty, we've reached the end of the topics for this subject
+            if not topic_name:
+                continue
+                
+            status = ws.range(f"B{r}").value
+            confidence = ws.range(f"C{r}").value
+            last_revised = parse_date(ws.range(f"D{r}").value)
+            next_action = ws.range(f"E{r}").value
+            
+            topic_data = {
+                "name": str(topic_name).strip(),
+                "status": str(status).strip() if status else "Not Started",
+                "confidence": str(confidence).strip() if confidence else None,
+                "last_revised": last_revised,
+                "next_action": str(next_action).strip() if next_action else None
+            }
+            
+            subject_data["topics"].append(topic_data)
+            
+        data_export["subjects"].append(subject_data)
 
-    app.calculate()
-    wb.save()
+    # 3. Save to JSON
+    print("Saving to JSON file...")
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(data_export, f, indent=4)
+        
+    print(f"Success! Data extracted to: {OUTPUT_FILE}")
+    
     wb.close()
-    print("Success! RAG numbers fixed.")
 
 except Exception as e:
     print(f"An error occurred: {e}")
